@@ -1,5 +1,5 @@
 
-How do I install this bucket?
+How do I add this bucket?
 ---------------------------------
 
 To add this bucket, run `scoop bucket add MyScoop "https://github.com/KrisSchneider/MyScoop"`. To install, do `scoop install <manifest>`.
