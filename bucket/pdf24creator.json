@@ -1,10 +1,10 @@
 {
-    "version": "11.3.0",
+    "version": "11.4.0",
     "description": "Free and Easy to use PDF software with many features",
     "homepage": "https://tools.pdf24.org/en/creator",
     "license": "Freeware",
-    "url": "https://download.pdf24.org/pdf24-creator-11.3.0.msi",
-    "hash": "308A69F125492FB2E8ED7A0ED2FF4AABB529425CFD49D9EF584FAAC022C5E1DB",
+    "url": "https://download.pdf24.org/pdf24-creator-11.4.0.msi",
+    "hash": "11A2E59C1100EF416DA7D3716C4CFA91BB2DA9A6D692B8054EDF544144831D98",
     "extract_dir": "Program Files/PDF24",
     "shortcuts": [
         [
