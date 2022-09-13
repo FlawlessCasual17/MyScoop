@@ -35,10 +35,13 @@
     "persist": [
         "dnscrypt-proxy\\"
     ],
-    "post_uninstall": [
-        "if (Test-Path \"$dir\") {Remove-Item \"$dir\" | Out-Null}",
-        "if (Test-Path \"$persist_dir\") {Remove-Item \"$persist_dir\" | Out-Null}"
-    ],
+    "uninstaller": {
+        "script":[
+            "Stop-Service -Name \"dnscrypt-proxy\"; Remove-Service -Name \"dnscrypt-proxy\" | Out-Null",
+            "if (Test-Path \"$dir\") {Remove-Item \"$dir\" | Out-Null}",
+            "if (Test-Path \"$persist_dir\") {Remove-Item \"$persist_dir\" | Out-Null}"
+        ]
+    },
     "checkver": {
         "github": "https://github.com/bitbeans/SimpleDnsCrypt"
     },
