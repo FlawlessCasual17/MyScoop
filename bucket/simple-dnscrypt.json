@@ -30,7 +30,6 @@
     ],
     "bin": "SimpleDnsCrypt.exe",
     "persist": [
-        "dnscrypt-proxy\\",
         "dnscrypt-proxy\\blacklist.txt",
         "dnscrypt-proxy\\blocked.log",
         "dnscrypt-proxy\\dnscrypt-proxy.toml",
