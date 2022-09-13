@@ -30,11 +30,7 @@
     ],
     "bin": "SimpleDnsCrypt.exe",
     "persist": [
-        "dnscrypt-proxy\\blacklist.txt",
-        "dnscrypt-proxy\\blocked.log",
-        "dnscrypt-proxy\\domain-blacklist",
-        "dnscrypt-proxy\\domain-whitelist",
-        "dnscrypt-proxy\\query.log"
+        "dnscrypt-proxy\\"
     ],
     "uninstaller": {
         "file": "Uninstall.exe"
