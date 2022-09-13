@@ -36,7 +36,8 @@
         "dnscrypt-proxy\\"
     ],
     "uninstaller": {
-        "file": "Uninstall.exe"
+        "file": "$dir\\Uninstall.exe",
+        "script": "Remove-Item $dir\\Uninstall.exe"
     },
     "checkver": {
         "github": "https://github.com/bitbeans/SimpleDnsCrypt"
