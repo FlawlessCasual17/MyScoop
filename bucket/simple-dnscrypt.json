@@ -35,9 +35,7 @@
     "persist": [
         "dnscrypt-proxy\\"
     ],
-    "uninstaller": {
-        "file": "Uninstall.exe"
-    },
+
     "checkver": {
         "github": "https://github.com/bitbeans/SimpleDnsCrypt"
     },
