@@ -35,7 +35,7 @@
     "persist": [
         "dnscrypt-proxy\\"
     ],
-    "pre_uninstall": [
+    "post_uninstall": [
         "if (Test-Path \"$dir\") {Remove-Item \"$dir\" | Out-Null}",
         "if (Test-Path \"$persist_dir\") {Remove-Item \"$persist_dir\" | Out-Null}"
     ],
