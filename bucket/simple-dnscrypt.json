@@ -6,7 +6,7 @@
     "suggest": {
         "vcredist2017": "extras/vcredist2017"
     },
-    "pre_install": "if (!(Test-Path \"$env:LOCALAPPDATA\")) {New-Item \"$env:LOCALAPPDATA\\SimpleDnsCrypt\\\" -ItemType \"directory\" | Out-Null}",
+    "pre_install": "if (!(Test-Path \"$env:LOCALAPPDATA\")) {New-Item \"$env:LOCALAPPDATA\\SimpleDnsCrypt\" -ItemType \"directory\" | Out-Null}",
     "architecture": {
         "64bit": {
             "url": "https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.7.1/SimpleDNSCrypt64.msi",
