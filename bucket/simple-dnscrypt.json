@@ -1,6 +1,12 @@
 {
-    "version": "1.0",
-    "url": "",
+    "version": "0.7.1",
+    "homepage": "https://github.com/bitbeans/SimpleDnsCrypt",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": ""
+        }
+    },
     "extract_dir": "cowsay-psh-master",
     "bin": "cowsay.ps1"
 }
