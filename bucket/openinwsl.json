@@ -5,7 +5,7 @@
         "identifier": "Modified MIT",
         "url": "https://github.com/Opticos/OpenInWSL-Source/blob/main/LICENSE.md"
     },
-    "notes": "Settings and other Configuration files are stored in the \"$env:APPDATA\\OpenInWSL\\\" directory",
+    "notes": "Settings and other Configuration files are stored in the $env:APPDATA\\OpenInWSL\\ directory",
     "innosetup": true,
     "url": "https://github.com/Opticos/OpenInWSL-Source/releases/download/v1.5/OpenInWSL.Traditional.1.5.release.x64.exe",
     "hash": "7adb2b2f3cf4a6dc999ddb9b2ab9771789ed261dde9eaa81b9f9e818042911a8",
