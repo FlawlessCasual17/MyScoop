@@ -6,7 +6,7 @@
         "url": "https://github.com/Opticos/OpenInWSL-Source/blob/main/LICENSE.md"
     },
     "notes": [
-        "Settings and other Configuration files are stored in the $home\\AppData\\Roaming\\OpenInWSL directory"
+        "Settings and other Configuration files are stored in the AppData\\Roaming\\OpenInWSL directory"
     ],
     "innosetup": true,
     "url": "https://github.com/Opticos/OpenInWSL-Source/releases/download/v1.5/OpenInWSL.Traditional.1.5.release.x64.exe",
