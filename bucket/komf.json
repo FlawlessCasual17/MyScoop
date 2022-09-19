@@ -6,7 +6,7 @@
     "notes": [
         "For a guide on how to use the app, click here: https://github.com/Snd-R/komf#run",
         "To run this app with Java, use:",
-        "java -jar \"$dir\\komf.jar\" <path to config>",
+        "java -jar \"$dir\\#komf.jar\" <path to config>",
         ""
     ],
     "suggest": {
