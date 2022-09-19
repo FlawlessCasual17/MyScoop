@@ -6,7 +6,7 @@
     "notes": [
         "For a guide on how to use the app, click here: https://github.com/Snd-R/komf#run",
         "To run this app with Java, use:",
-        "java -jar \"~/scoop/apps/komf/current/komf-$version.jar\" <path to config>"
+        "java -jar \"~/scoop/apps/komf/current/komf-0.11.5.jar\" <path to config>"
     ],
     "suggest": {
         "JDK": [
@@ -18,9 +18,7 @@
     "url": "https://github.com/Snd-R/komf/releases/download/0.11.5/komf-0.11.5.jar",
     "hash": "889FF02CB2EEA6782D5DA9D4F589AD83DE60E3DF91DD874F1321681B77189FAB",
     "bin": "komf-0.11.5.jar",
-    "checkver": {
-        "github": "https://github.com/Snd-R/komf/"
-    },
+    "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/Snd-R/komf/releases/download/$version/komf-$version.jar"
     }
