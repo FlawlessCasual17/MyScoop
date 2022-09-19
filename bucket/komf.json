@@ -20,7 +20,7 @@
     "hash": "889FF02CB2EEA6782D5DA9D4F589AD83DE60E3DF91DD874F1321681B77189FAB",
     "persist": "database.sqlite",
     "post_install": [
-        "if (!(Test-Path \"$dir\\%23$app.jar\")) {Rename-Item \"$dir\\%23$app.jar\" -NewName \"komf.jar\" | Out-Null}"
+        "if (!(Test-Path \"$dir\\%23$app.jar\")) {Rename-Item \"$dir\\#$app.jar\" -NewName \"komf.jar\" | Out-Null}"
     ],
     "checkver": "github",
     "autoupdate": {
