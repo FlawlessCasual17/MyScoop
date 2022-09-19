@@ -5,10 +5,10 @@
     "license": "MIT",
     "notes": [
         "For a guide on how to use the app, click here: https://github.com/Snd-R/komf#run",
+        "A Java JDK is required to use this app!",
         "To run this app with Java, use:",
         "java -jar \"$dir\\#komf.jar\" <path to config>",
-        "",
-        "A Java JDK is required to use this app"
+        ""
     ],
     "suggest": {
         "JDK": [
