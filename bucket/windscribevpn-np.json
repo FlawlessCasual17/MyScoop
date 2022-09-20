@@ -25,7 +25,7 @@
         "script": [
             "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
             "Write-Host \"Please click the 'Yes' button to uninstall $app properly\"",
-            "Start-Process \"$dir\\app\\uninstall.exe\" -Wait -ArgumentList @('-silent') | Out-Null"
+            "Start-Process \"$dir\\app\\uninstall.exe\" -Wait -ArgumentList @('/s') | Out-Null"
         ]
     },
     "checkver": {
