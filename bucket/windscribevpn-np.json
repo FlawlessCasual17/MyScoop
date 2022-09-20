@@ -10,7 +10,8 @@
         "script": [
             "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
             "Write-Host \"Please click the 'install' button to install the app properly\"",
-            "Invoke-ExternalCommand \"$dir\\vpnsetup.exe\" -silent | Out-Null",
+            "Start-Process \"$dir\\vpnsetup.exe\" -Wait -Confirm -ArgumentList \"-silent\", \"-dir $dir\\app\"| Out-Null",
+            "if (!(Test-Pat \"$dir\")) {error \"$app was not installed successfully\"; break}",
             "Stop-Process -Name \"Windscribe\" -Force -ErrorAction SilentlyContinue",
             "Stop-Process -Name \"WindscribeService\" -Force -ErrorAction SilentlyContinue",
             "Remove-Item \"$Env:Public\\Desktop\\Windscribe.lnk\"",
@@ -25,7 +26,7 @@
         "script": [
             "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
             "Write-Host \"Please click the 'OK' button to uninstall the app properly\"",
-            "Invoke-ExternalCommand \"${env:ProgramFiles(x86)}\\uninstall.exe\" -silent | Out-Null"
+            "Start-Process \"$dir\\uninstall.exe\" | Out-Null"
         ]
     },
     "checkver": {
