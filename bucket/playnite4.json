@@ -1,0 +1,68 @@
+{
+    "version": "10.1",
+    "description": "Video game library manager and launcher with support for 3rd party libraries like Steam, GOG, Origin, Battle.net, ...",
+    "homepage": "https://playnite.link",
+    "license": "MIT",
+    "url": "https://github.com/JosefNemec/Playnite/releases/download/10.1/Playnite101.zip",
+    "hash": "6377cbab9a2160b3c4b342d7701b7422e1719b4e927025978f01f28948e1e2ca",
+    "pre_install": [
+        "'audio', 'CustomControls', 'DefaultControls', 'DerivedStyles', 'Images', 'Views' | ForEach-Object {",
+        "    if (!(Test-Path \"$dir\\Themes\\Fullscreen\\$_\")) {New-Item \"$dir\\Themes\\Fullscreen\\$_\" -ItemType Directory | Out-Null }",
+        "}",
+        "'CustomControls', 'DefaultControls', 'DerivedStyles', 'Images', 'Views' | ForEach-Object {",
+        "    if (!(Test-Path \"$dir\\Themes\\Desktop\\$_\")) {New-Item \"$dir\\Themes\\Desktop\\$_\" -ItemType Directory | Out-Null }",
+        "}",
+        "Copy-Item \"$persist_dir\\config.json\" \"$dir\" -ErrorAction 'SilentlyContinue'",
+        "if (Test-Path \"$persist_dir\\Themes\") {",
+        "    # Only copy themes that does not exist in $dir",
+        "    # This avoids overwriting newer version of themes with the old ones",
+        "    Get-ChildItem \"$persist_dir\\Themes\\Desktop\" | ForEach-Object {",
+        "        if (!(Test-Path \"$dir\\Themes\\Desktop\\$_\")) { Copy-Item \"$persist_dir\\Themes\\Desktop\\$_\" \"$dir\\Themes\\Desktop\\\" -Recurse }",
+        "    }",
+        "    Get-ChildItem \"$persist_dir\\Themes\\Fullscreen\" | ForEach-Object {",
+        "        if (!(Test-Path \"$dir\\Themes\\Fullscreen\\$_\")) { Copy-Item \"$persist_dir\\Themes\\Fullscreen\\$_\" \"$dir\\Themes\\Fullscreen\\\" -Recurse }",
+        "    }",
+        "}"
+    ],
+    "pre_uninstall": [
+        "Stop-Process -Name 'Playnite.DesktopApp' -ErrorAction SilentlyContinue",
+        "Copy-Item \"$dir\\config.json\" \"$persist_dir\" -ErrorAction 'SilentlyContinue' -Force",
+        "Copy-Item \"$dir\\themes\" \"$persist_dir\\\" -Recurse -Force"
+    ],
+    "bin": [
+        [
+            "Playnite.DesktopApp.exe",
+            "Playnite"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "Playnite.DesktopApp.exe",
+            "Playnite"
+        ]
+    ],
+    "persist": [
+        "Themes\\Fullscreen\\audio",
+        "Themes\\Fullscreen\\CustomControls",
+        "Themes\\Fullscreen\\DefaultControls",
+        "Themes\\Fullscreen\\DerivedStyles",
+        "Themes\\Fullscreen\\Images",
+        "Themes\\Fullscreen\\Views",
+        "Themes\\Desktop\\CustomControls",
+        "Themes\\Desktop\\DefaultControls",
+        "Themes\\Desktop\\DerivedStyles",
+        "Themes\\Desktop\\Images",
+        "Themes\\Desktop\\Views",
+        "browsercache",
+        "cache",
+        "Extensions",
+        "ExtensionsData",
+        "library"
+    ],
+    "checkver": {
+        "github": "https://github.com/JosefNemec/Playnite"
+    },
+    "autoupdate": {
+        "url": "https://github.com/JosefNemec/Playnite/releases/download/$version/Playnite$cleanVersion.zip"
+    }
+}
