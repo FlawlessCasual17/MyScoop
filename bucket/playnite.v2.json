@@ -36,17 +36,7 @@
         ]
     ],
     "persist": [
-        "Themes\\Fullscreen\\Default\\audio",
-        "Themes\\Fullscreen\\Default\\CustomControls",
-        "Themes\\Fullscreen\\Default\\DefaultControls",
-        "Themes\\Fullscreen\\Default\\DerivedStyles",
-        "Themes\\Fullscreen\\Default\\Images",
-        "Themes\\Fullscreen\\Default\\Views",
-        "Themes\\Desktop\\Default\\CustomControls",
-        "Themes\\Desktop\\Default\\DefaultControls",
-        "Themes\\Desktop\\Default\\DerivedStyles",
-        "Themes\\Desktop\\Default\\Images",
-        "Themes\\Desktop\\Default\\Views",
+        "Themes",
         "browsercache",
         "cache",
         "Extensions",
