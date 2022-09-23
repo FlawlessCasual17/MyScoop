@@ -6,12 +6,6 @@
     "url": "https://github.com/JosefNemec/Playnite/releases/download/10.1/Playnite101.zip",
     "hash": "6377cbab9a2160b3c4b342d7701b7422e1719b4e927025978f01f28948e1e2ca",
     "pre_install": [
-        "'audio', 'CustomControls', 'DefaultControls', 'DerivedStyles', 'Images', 'Views' | ForEach-Object {",
-        "    if (!(Test-Path \"$dir\\Themes\\Fullscreen\\Default\\$_\")) {New-Item \"$dir\\Themes\\Fullscreen\\Default\\$_\" -ItemType Directory | Out-Null }",
-        "}",
-        "'CustomControls', 'DefaultControls', 'DerivedStyles', 'Images', 'Views' | ForEach-Object {",
-        "    if (!(Test-Path \"$dir\\Themes\\Desktop\\Default\\$_\")) {New-Item \"$dir\\Themes\\Desktop\\Default\\$_\" -ItemType Directory | Out-Null }",
-        "}",
         "Copy-Item \"$persist_dir\\config.json\" \"$dir\" -ErrorAction 'SilentlyContinue'",
         "if (Test-Path \"$persist_dir\\Themes\") {",
         "    # Only copy themes that does not exist in $dir",
