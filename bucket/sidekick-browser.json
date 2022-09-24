@@ -11,6 +11,7 @@
   "pre_install": [
     "Expand-7zipArchive \"$dir\\sidekick.7z\" -Removal"
   ],
+  "extract_dir": "Sidekick-bin",
   "checkver": {
         "url": "https://www.softpedia.com/get/Internet/Browsers/Sidekick-PushPlayLabs.shtml",
         "regex": "<span>Sidekick ([\\d.]+) for Windows</span></a></div>"
