@@ -1,7 +1,7 @@
 {
     "version": "15.6.1.0",
     "homepage": "https://www.adlice.com/roguekiller/",
-    "description": "A security tool that can be used to terminate and remove malicious processes and programs from your computer.",
+    "description": "A security app used for terminating malicious processes, and programs from your computer.",
     "license": {
         "identifier": "Freeware",
         "url": "https://www.adlice.com/global-eula/"
