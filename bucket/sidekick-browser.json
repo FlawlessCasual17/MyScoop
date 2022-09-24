@@ -9,7 +9,7 @@
   "url": "https://fast-cdn.meetsidekick.com/builds/sidekick-win-release-x64-104.28.1.24085-16229a5-df.exe#/dl.7z",
   "hash": "FCFD36F87014D4D15B04ABEA924BC1064C21900859D53A67079DDEB2D1E8A4AB",
   "pre_install": [
-    "Expand-7zip \"$dir\\dl.7z\" -Removal | Out-Null"
+    "Expand-7zipArchive \"$dir\\sidekick.7z\" -Removal"
   ],
   "checkver": {
         "url": "https://www.softpedia.com/get/Internet/Browsers/Sidekick-PushPlayLabs.shtml",
