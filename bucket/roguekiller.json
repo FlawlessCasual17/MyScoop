@@ -14,8 +14,7 @@
         "64bit": {
             "pre_install": [
                 "Rename-Item \"$dir\\RogueKillerSvc,2.exe\" 'RogueKillerSvc.exe'; Rename-Item \"$dir\\RogueKillerShell,2.dll\" 'RogueKillerShell.dll' | Out-Null",
-                "Remove-Item (\"$dir\\RogueKiller.exe\", \"$dir\\rkmon32.dll\", \"$dir\\RogueKillerShell,1.dll\", \"$dir\\RogueKillerSvc,1.exe\", \"$dir\\Updater.exe\") | Out-Null",
-                "Remove-Item \"$dir\\install.rk\" | Out-Null"
+                "Remove-Item (\"$dir\\RogueKiller.exe\", \"$dir\\rkmon32.dll\", \"$dir\\RogueKillerShell,1.dll\", \"$dir\\RogueKillerSvc,1.exe\", \"$dir\\Updater.exe\") | Out-Null"
             ],
             "bin": "RogueKiller64.exe",
             "shortcuts": [
@@ -29,8 +28,7 @@
         "32bit": {
             "pre_install": [
                 "Rename-Item \"$dir\\RogueKillerSvc,1.exe\" 'RogueKillerSvc.exe'; Rename-Item \"$dir\\RogueKillerShell,1.dll\" 'RogueKillerShell.dll' | Out-Null",
-                "Remove-Item (\"$dir\\RogueKiller64.exe\", \"$dir\\rkmon64.dll\", \"$dir\\RogueKillerShell,2.dll\", \"$dir\\RogueKillerSvc,2.exe\", \"$dir\\Updater.exe\") | Out-Null",
-                "Remove-Item \"$dir\\install.rk\" | Out-Null"
+                "Remove-Item (\"$dir\\RogueKiller64.exe\", \"$dir\\rkmon64.dll\", \"$dir\\RogueKillerShell,2.dll\", \"$dir\\RogueKillerSvc,2.exe\", \"$dir\\Updater.exe\") | Out-Null"
             ],
             "bin": "RogueKiller.exe",
             "shortcuts": [
