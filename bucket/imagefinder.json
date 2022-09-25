@@ -32,6 +32,7 @@
         "url": "https://kurtzimmermann.com/imversions_de.html",
         "regex": "v([\\d.]+)"
     },
+    "persist": "settings.ini",
     "autoupdate": {
         "architecture": {
             "32bit": {

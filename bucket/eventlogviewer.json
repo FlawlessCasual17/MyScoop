@@ -18,7 +18,7 @@
     },
     "pre_install": [
         "$filefolders = ('Settings', 'Temp', 'Update', 'XML')",
-        "if (!(Test-Path \"$dir\\$filefolders\")) {New-Item \"$dir\\$filefolders\" -ItemType Directory | Out-Null}",
+        "$filefolders | ForEach-Object {if (!(Test-Path \"$dir\\$_\")) {New-Item \"$dir\\$_\" -ItemType Directory | Out-Null}}",
         "Remove-Item \"$dir\\Updater.exe\" | Out-Null"
     ],
     "bin": "EventLogViewer.exe",
@@ -27,6 +27,9 @@
             "EventLogViewer.exe",
             "EventLogViewer"
         ]
+    ],
+    "persist": [
+        "Settings", "Temp", "Update", "XML"
     ],
     "checkver": {
         "url": "https://www.majorgeeks.com/files/details/eventlogviewer.html",
