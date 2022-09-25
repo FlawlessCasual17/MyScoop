@@ -1,0 +1,20 @@
+{
+    "version": "1.322",
+    "homepage": "https://kurtzimmermann.com/regcoolext_en.html",
+    "description": "Developed by Kurt Zimmermann.",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://kurtzimmermann-com.translate.goog/datenschutz_en.html?_x_tr_sl=auto&_x_tr_tl=en-US&_x_tr_hl=en-US"
+    },
+    "architecture": {
+        "32bit": {
+            "url": "https://kurtzimmermann.com/files/HDCleanerX32.zip",
+            "hash": "58794F462E24EFC33E435F8ED5C1D0A625D4E8ECBD23AE125B1A59B06047C2CC"
+        },
+        "64bit": {
+            "url": "https://kurtzimmermann.com/files/HDCleanerX64.zip",
+            "hash": "4E8C5A441BE42A717DAF012DB354F40C1143C8FC7A1BC326A3ADB8AADD1CDB4C"
+        }
+    },
+
+}
