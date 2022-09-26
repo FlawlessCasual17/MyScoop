@@ -19,6 +19,14 @@
         "dir \"$dir\\extract_folder\\AttachedContainer\\*.msi\" | ForEach-Object {Expand-MsiArchive $_ \"$dir\" | Out-Null}",
         "Remove-Item \"$dir\\extract_folder\" -Recurse -Force | Out-Null"
     ],
+    "env_add_path": [
+        "Developer\\Toolchains\\unknown-Asserts-development.xctoolchain\\usr\\bin",
+        "icu-69.1\\usr\\bin"
+    ],
+    "env_set": {
+        "SDKROOT": "$dir\\Developer\\Platforms\\Windows.platform\\Developer\\SDKs\\Windows.sdk",
+        "DEVELOPER_DIR": "$dir\\Developer"
+    },
     "checkver": {
         "url": "https://www.swift.org/download/",
         "regex": ">Swift\\s([\\d.]+)</h3>"
