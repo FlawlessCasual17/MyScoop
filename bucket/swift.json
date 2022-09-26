@@ -21,7 +21,7 @@
     ],
     "env_add_path": [
         "Developer\\Toolchains\\unknown-Asserts-development.xctoolchain\\usr\\bin",
-        "icu-([\\d.]+)\\usr\\bin",
+        "icu-69.1\\usr\\bin",
         "runtime-development\\usr\\bin"
     ],
     "env_set": {
