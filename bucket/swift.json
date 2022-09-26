@@ -8,7 +8,7 @@
         "vcredist": "extras/vcredist"
     },
     "notes": [
-        "To make swift toolchain work, you must have Visual Studio and Windows SDK components installed.",
+        "To make Swift toolchain work, you must have Visual Studio and Windows SDK components installed.",
         "Please read https://www.swift.org/getting-started/#support-files for Supporting Files installation guide."
     ],
     "depends": "dark",
