@@ -6,6 +6,7 @@
         "identifier": "Freeware",
         "url": "https://help.eset.com/esi/1/en-US/eula.html"
     },
+    "notes": "ESET Sysinspector guide: https://help.eset.com/esi/1/en-US/",
     "architecture": {
         "32bit": {
             "url": "https://download.eset.com/com/eset/tools/diagnosis/sysinspector/latest/sysinspector_nt32_enu.exe#/sysinspector.exe",
