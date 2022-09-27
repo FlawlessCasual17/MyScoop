@@ -1,9 +1,22 @@
 {
     "version": "2.0.38",
     "homepage": "https://ludwig.guru/",
-    "description": "A sentence search engine that assists with writing better English.",
+    "description": "A unique sentence search engine that assists with writing better English.",
     "license": {
         "identifier": "Freeware",
         "url": "https://ludwig.guru/terms"
+    },
+    "url": "https://desktop.ludwig.guru/download/2.0.38/windows_64/Ludwig%20Setup%202.0.38.exe",
+    "hash": "F6E003C9CA05A0B3AC6A532FFF4031C4E5B1928A2996128BB4AF185C08AB18C7",
+    "pre_install": [
+        "Expand-7zipArchive \"$dir\\ludwig-$version-full.nupkg\" -Removal"
+    ],
+    "checkver": {
+        "url": "https://ludwig.guru/download",
+        "re": "<small>\\s64\\sbit\\sv.([\\d.]+)</small>",
+        "reverse": true
+    },
+    "autoupdate": {
+        "url": "https://desktop.ludwig.guru/download/$version/windows_64/Ludwig%20Setup%20$version.exe"
     }
 }
