@@ -9,7 +9,9 @@
     },
     "notes": [
         "To make Swift toolchain work, you must have Visual Studio and Windows SDK components installed.",
-        "Please read https://www.swift.org/getting-started/#support-files for Supporting Files installation guide."
+        "Please read https://www.swift.org/getting-started/#support-files for Supporting Files installation guide.",
+        "For documentation on Swift, please click here https://www.swift.org/documentation/",
+        ""
     ],
     "depends": "dark",
     "url": "https://download.swift.org/swift-5.7-release/windows10/swift-5.7-RELEASE/swift-5.7-RELEASE-windows10.exe#/swiftsetup.exe",
