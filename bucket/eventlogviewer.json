@@ -13,7 +13,7 @@
         },
         "64bit": {
             "url": "https://kurtzimmermann.com/files/EventLogViewerX64.zip",
-            "hash": "24254a9dccd5e9022d077312712dace54849e9a02ba26d69223201fca4a67b18"
+            "hash": "c21cf450edcf6755c6dea6e9c21be5ddda136d31ad6abb146892212f7c259fd3"
         }
     },
     "pre_install": [
