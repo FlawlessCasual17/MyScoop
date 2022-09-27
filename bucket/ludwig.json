@@ -17,7 +17,8 @@
         }
     },
     "pre_install": [
-        "Expand-7zipArchive \"$dir\\ludwig-$version-full.nupkg\" -Removal"
+        "Expand-7zipArchive \"$dir\\ludwig-$version-full.nupkg\" -Removal",
+        "Remove-Item \"$dir\\*\" -Exclude 'lib'"
     ],
     "checkver": {
         "url": "https://ludwig.guru/download",
