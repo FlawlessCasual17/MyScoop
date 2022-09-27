@@ -1,0 +1,9 @@
+{
+    "version": "2.0.38",
+    "homepage": "https://ludwig.guru/",
+    "description": "A sentence search engine that assists with writing better English.",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://ludwig.guru/terms"
+    }
+}
