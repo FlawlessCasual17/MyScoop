@@ -6,6 +6,7 @@
         "identifier": "Freeware",
         "url": "https://ludwig.guru/terms"
     },
+    
     "url": "https://desktop.ludwig.guru/download/2.0.38/windows_64/Ludwig%20Setup%202.0.38.exe#/package.7z",
     "hash": "F6E003C9CA05A0B3AC6A532FFF4031C4E5B1928A2996128BB4AF185C08AB18C7",
     "pre_install": [
