@@ -6,6 +6,7 @@
         "identifier": "Freeware",
         "url": "https://ludwig.guru/terms"
     },
+    "notes": "Application settings are store in here: ~\\Appdata\\Roaming\\Ludwig",
     "architecture": {
         "64bit": {
             "url": "https://desktop.ludwig.guru/download/2.0.38/windows_64/Ludwig%20Setup%202.0.38.exe#/package.7z",
@@ -18,7 +19,15 @@
     },
     "pre_install": [
         "Expand-7zipArchive \"$dir\\ludwig-$version-full.nupkg\" -Removal",
-        "Remove-Item \"$dir\\Update.exe\" ; Move-Item \"$dir\\lib\\net45\\*\" \"$dir\\\" -Exclude 'Update.exe' | Out-Null"
+        "Remove-Item \"$dir\\Update.exe\"; Move-Item \"$dir\\lib\\net45\\*\" \"$dir\\\" -Exclude 'Update.exe' | Out-Null",
+        "Remove-Item \"$dir\\lib\" -Recurse"
+    ],
+    "bin": "Ludwig.exe",
+    "shortcuts": [
+        [
+            "Ludwig.exe",
+            "Ludwig"
+        ]
     ],
     "checkver": {
         "url": "https://ludwig.guru/download",
