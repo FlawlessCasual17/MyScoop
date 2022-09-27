@@ -18,7 +18,7 @@
     },
     "pre_install": [
         "Expand-7zipArchive \"$dir\\ludwig-$version-full.nupkg\" -Removal",
-        "Remove-Item \"$dir\\*\" -Exclude 'lib'"
+        "Move-Item  \"$dir\\lib\\net45\\*\" \"$dir\" | Out-Null"
     ],
     "checkver": {
         "url": "https://ludwig.guru/download",
@@ -26,6 +26,13 @@
         "reverse": true
     },
     "autoupdate": {
-        "url": "https://desktop.ludwig.guru/download/$version/windows_64/Ludwig%20Setup%20$version.exe"
+        "architecture": {
+            "64bit": {
+                "url": "https://desktop.ludwig.guru/download/$version/windows_64/Ludwig%20Setup%20$version.exe"
+            },
+            "32bit": {
+                "url": "https://desktop.ludwig.guru/download/2.0.38/windows_32/Ludwig%20Setup%202.0.38-ia32.exe"
+            }
+        }
     }
 }
