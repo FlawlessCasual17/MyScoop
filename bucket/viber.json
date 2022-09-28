@@ -13,8 +13,8 @@
         }
     },
     "pre_install": [
-        "Expand-DarkArchive \"$dir\\ViberSetup.exe\" \"$dir\\extract_folder\" -Removal | Out-Null",
-        "Expand-MsiArchive \"$dir\\extract_folder\\ViberSetup.msi\" $dir -Removal | Out-Null"
+        "Expand-DarkArchive \"$dir\\ViberSetup.exe\" $dir -Removal | Out-Null",
+        "Expand-MsiArchive \"$dir\\AttachedContainer\\ViberSetup.msi\" $dir -Removal | Out-Null"
     ],
     "checkver": {
         "url": "https://www.filehorse.com/download-viber-for-windows/",
