@@ -21,6 +21,10 @@
         "}",
         "if (!( Test-Path \"$dir\\localization\" )) { New-Item \"$dir\\localization\" -ItemType 'Directory' | Out-Null }"
     ],
+    "persist": [
+        "vtu_settings.json",
+        "localization"
+    ],
     "shortcuts": [
         [
             "uploader.exe",
