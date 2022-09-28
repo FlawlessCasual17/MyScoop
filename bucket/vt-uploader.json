@@ -13,7 +13,7 @@
         "and add it to your $dir\\localization folder"
     ],
     "url": "https://github.com/SamuelTulach/VirusTotalUploader/releases/download/0.1.9/portable_anycpu_signed.zip",
-    "hash": "2EEB2D48833E3909A6DE8428EE718ECC9EEA11AC9415AB91D03C7A4942B6FB25",
+    "hash": "913f57c93d81d592ebec2af7dbe2372d871033d34960013244386a12cbd56d72",
     "extract_dir": "rel",
     "pre_install": [
         "if (!( Test-Path \"$dir\\vtu_settings.json\" )) {",
