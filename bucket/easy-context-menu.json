@@ -1,6 +1,7 @@
 {
     "version": "1.6",
     "homepage": "https://www.sordum.org/7615/easy-context-menu",
+    "description": "A simple app for editing the context menu.",
     "license": {
         "identifier": "Freeware",
         "url": "https://www.sordum.org/eula/"
