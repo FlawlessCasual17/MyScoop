@@ -8,7 +8,8 @@
     },
     "url": "https://www.sordum.org/files/easy-context-menu/ec_menu.zip",
     "hash": "sha1:9894C8E2F22640A03A22B2225EC68FC0C037CC9C",
-    "extract_to": "$dir",
+    "extract_to": "app",
+    "pre_install": "Move-Item \"$dir\\app\\EcMenu_v$version\" $dir | Out-Null; Remove-Item \"$dir\\app\" | Out-Null",
     "architecture": {
         "32bit": {
             "pre_install": "Remove-Item \"$dir\\EcMenu_x64.exe\" | Out-Null",
