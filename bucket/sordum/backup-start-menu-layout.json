@@ -1,0 +1,27 @@
+{
+    "version": "1.6",
+    "homepage": "https://www.sordum.org/10997/backup-start-menu-layout",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://www.sordum.org/eula/"
+    },
+    "url": "https://www.sordum.org/files/download/backup-start-menu-layout/BackupSML.zip",
+    "hash": "sha1:803017485861C60F2AD433E954B721623CC71F54",
+    "extract_dir": "BackupSML",
+    "architecture": {
+        "32bit": {
+            "pre_install": "Remove-Item \"$dir\\BackupSML_x64.exe\" | Out-Null"
+        },
+        "64bit": {
+            "pre_install": "Remove-Item \"$dir\\BackupSML.exe\" | Out-Null"
+        }
+    },
+    "persist": [
+        "BackupSML.ini",
+        "MenuLayouts\\"
+    ],
+    "checkver": "Backup\\sStart\\sMenu\\sLayout\\sv([\\d.]+)",
+    "autoupdate": {
+        "url": "https://www.sordum.org/files/download/backup-start-menu-layout/BackupSML.zip"
+    }
+}

@@ -5,5 +5,18 @@
         "identifier": "Freeware",
         "url": "https://www.sordum.org/eula/"
     },
-    "url": "https://www.sordum.org/files/download/webcam-on-off/WebcamOnOff.zip"
+    "url": "https://www.sordum.org/files/download/webcam-on-off/WebcamOnOff.zip",
+    "hash": "sha1:0BD91F0C3D3342B9A8B63A5325544BE92D58EC19",
+    "extract_dir": "Webcam_on_off_v$version",
+    "shortcuts": [
+        [
+            "WebCam.exe",
+            "WebCam On Off"
+        ]
+    ],
+    "persist": "WebCam.ini",
+    "checkver": "WebCam\\sOn-Off\\sv([\\d.]+)",
+    "autoupdate": {
+        "url": "https://www.sordum.org/files/download/webcam-on-off/WebcamOnOff.zip"
+    }
 }
