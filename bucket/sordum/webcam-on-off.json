@@ -1,6 +1,7 @@
 {
     "version": "1.4",
     "homepage": "https://www.sordum.org/8585/webcam-on-off",
+    "description": "A simple app that allows you turn your webcam on or off.",
     "license": {
         "identifier": "Freeware",
         "url": "https://www.sordum.org/eula/"
@@ -8,6 +9,7 @@
     "url": "https://www.sordum.org/files/download/webcam-on-off/WebcamOnOff.zip",
     "hash": "sha1:0BD91F0C3D3342B9A8B63A5325544BE92D58EC19",
     "extract_dir": "Webcam_on_off_v$version",
+    "bin": "WebCam.exe",
     "shortcuts": [
         [
             "WebCam.exe",

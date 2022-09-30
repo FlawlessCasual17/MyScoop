@@ -1,6 +1,7 @@
 {
     "version": "1.6",
     "homepage": "https://www.sordum.org/10997/backup-start-menu-layout",
+    "description": "A simple app that allows you backup and restore your StartMenu layout.",
     "license": {
         "identifier": "Freeware",
         "url": "https://www.sordum.org/eula/"
@@ -11,6 +12,7 @@
     "architecture": {
         "32bit": {
             "pre_install": "Remove-Item \"$dir\\BackupSML_x64.exe\" | Out-Null",
+            "bin": "BackupSML.exe",
             "shortcuts": [
                 [
                     "BackupSML.exe",
@@ -20,6 +22,12 @@
         },
         "64bit": {
             "pre_install": "Remove-Item \"$dir\\BackupSML.exe\" | Out-Null",
+            "bin": [
+                [
+                    "BackupSML_x64.exe",
+                    "BackupSML"
+                ]
+            ],
             "shortcuts": [
                 [
                     "BackupSML_x64.exe",

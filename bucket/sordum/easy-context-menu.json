@@ -32,7 +32,7 @@
         "reg delete 'HKEY_CLASSES_ROOT\\Directory\\Background\\shell\\Z001AAC' /f | Out-Null",
         "if (Test-Path \"$env:ProgramFiles\\Easy Context Menu\") {Remove-Item \"$env:ProgramFiles\\Easy Context Menu\" -Recurse -Force | Out-Null}"
     ],
-    "persist": "EcMenu.ini",
+    "persist": "Files\\EcMenu.ini",
     "checkver": "Easy\\sContext\\sMenu\\sv([\\d.]+)",
     "autoupdate": {
         "url": "https://www.sordum.org/files/easy-context-menu/ec_menu.zip"
