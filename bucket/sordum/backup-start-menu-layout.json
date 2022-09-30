@@ -10,10 +10,22 @@
     "extract_dir": "BackupSML",
     "architecture": {
         "32bit": {
-            "pre_install": "Remove-Item \"$dir\\BackupSML_x64.exe\" | Out-Null"
+            "pre_install": "Remove-Item \"$dir\\BackupSML_x64.exe\" | Out-Null",
+            "shortcuts": [
+                [
+                    "BackupSML.exe",
+                    "Backup Start Menu Layout"
+                ]
+            ]
         },
         "64bit": {
-            "pre_install": "Remove-Item \"$dir\\BackupSML.exe\" | Out-Null"
+            "pre_install": "Remove-Item \"$dir\\BackupSML.exe\" | Out-Null",
+            "shortcuts": [
+                [
+                    "BackupSML_x64.exe",
+                    "Backup Start Menu Layout"
+                ]
+            ]
         }
     },
     "persist": [
