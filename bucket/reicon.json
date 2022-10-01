@@ -29,7 +29,7 @@
     ],
     "persist": [
         [
-            "$dir\\IconLayoutsFor$env:USERNAME.ini",
+            "IconLayoutsFor$env:USERNAME.ini",
             "IconLayouts"
         ],
         "ReIcon.ini"
