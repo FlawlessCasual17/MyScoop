@@ -17,6 +17,10 @@
             "pre_install": "Remove-Item \"$dir\\ReIcon_x64.exe\" | Out-Null"
         }
     },
+    "pre_uninstall": [
+        "if (Test-Path \"$dir\\IconLayoutsFor$env:USERNAME.ini\") {Copy-Item \"$dir\\IconLayoutsFor$env:USERNAME.ini\" $persist_dir | Out-Null}",
+        "if (Test-Path \"$persist_dir\\IconLayoutsFor$env:USERNAME.ini\") {Copy-Item \"$persist_dir\\IconLayoutsFor$env:USERNAME.ini\" $dir | Out-Null}"
+    ],
     "bin": "ReIcon.exe",
     "shortcuts": [
         [
@@ -27,12 +31,6 @@
     "persist": "ReIcon.ini",
     "checkver": "ReIcon\\sv([\\d.]+)",
     "autoupdate": {
-        "url": "https://www.sordum.org/files/download/restore-desktop-icon-layouts/ReIcon.zip",
-        "installer": {
-            "script": [
-                "if (Test-Path \"$dir\\IconLayoutsFor$env:USERNAME.ini\") {Copy-Item \"$dir\\IconLayoutsFor$env:USERNAME.ini\" $persist_dir | Out-Null}",
-                "if (Test-Path \"$persist_dir\\IconLayoutsFor$env:USERNAME.ini\") {Copy-Item \"$persist_dir\\IconLayoutsFor$env:USERNAME.ini\" $dir | Out-Null}"
-            ]
-        }
+        "url": "https://www.sordum.org/files/download/restore-desktop-icon-layouts/ReIcon.zip"
     }
 }
