@@ -1,0 +1,45 @@
+{
+    "version": "2.0",
+    "homepage": "https://www.sordum.org/8366/reicon",
+    "description": "A simple app that allows you backup and restore your Desktop Icon layout.",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://www.sordum.org/eula/"
+    },
+    "url": "https://www.sordum.org/files/download/restore-desktop-icon-layouts/ReIcon.zip",
+    "hash": "0917519c64dcea763b9ef0b91737baecb195181f8bf3585ba3ed94b85c766acd",
+    "extract_dir": "ReIcon",
+    "installer": {
+        "script": "if (!(Test-Path \"$dir\\IconLayoutsFor$env:USERNAME.ini\")) {New-Item \"$dir\\IconLayoutsFor$env:USERNAME.ini\" -ItemType 'File' | Out-Null}"
+    },
+    "architecture": {
+        "64bit": {
+            "pre_install": "Remove-Item \"$dir\\ReIcon.exe\" | Out-Null; Rename-Item \"$dir\\ReIcon_x64.exe\" 'ReIcon.exe' | Out-Null",
+            "bin": "ReIcon.exe",
+            "shortcuts": [
+                [
+                    "ReIcon.exe",
+                    "ReIcon"
+                ]
+            ]
+        },
+        "32bit": {
+            "pre_install": "Remove-Item \"$dir\\ReIcon_x64.exe\" | Out-Null",
+            "bin": "ReIcon.exe",
+            "shortcuts": [
+                [
+                    "ReIcon.exe",
+                    "ReIcon"
+                ]
+            ]
+        }
+    },
+    "persist": [
+        "IconLayoutsFor$env:USERNAME.ini",
+        "ReIcon.ini"
+    ],
+    "checkver": "ReIcon\\sv([\\d.]+)",
+    "autoupdate": {
+        "url": "https://www.sordum.org/files/download/restore-desktop-icon-layouts/ReIcon.zip"
+    }
+}

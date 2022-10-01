@@ -7,8 +7,8 @@
         "url": "https://www.sordum.org/eula/"
     },
     "url": "https://www.sordum.org/files/download/webcam-on-off/WebcamOnOff.zip",
-    "hash": "sha1:0BD91F0C3D3342B9A8B63A5325544BE92D58EC19",
-    "extract_dir": "Webcam_on_off_v$version",
+    "hash": "4d38834bd15b9dcf93e28fa5afcee6786f6c0cb78039c79b7f31a8b9a60a7041",
+    "extract_dir": "Webcam_on_off_v1.4",
     "bin": "WebCam.exe",
     "shortcuts": [
         [
