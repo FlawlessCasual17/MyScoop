@@ -1,7 +1,7 @@
 {
     "version": "1.5",
     "homepage": "https://www.sordum.org/8727/runastool",
-    "description": "A simple app that allows you backup and restore your StartMenu layout.",
+    "description": "A simple app that allows users to run a specific program with administrator privileges without the need to enter the administrator password.",
     "license": {
         "identifier": "Freeware",
         "url": "https://www.sordum.org/eula/"
