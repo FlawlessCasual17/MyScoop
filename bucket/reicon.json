@@ -14,10 +14,10 @@
     },
     "architecture": {
         "64bit": {
-            "pre_install": "Remove-Item \"$dir\\ReIcon.exe\" | Out-Null; Rename-Item \"$dir\\ReIcon_x64.exe\" 'ReIcon.exe' | Out-Null",
+            "pre_install": "Remove-Item \"$dir\\ReIcon.exe\" | Out-Null; Rename-Item \"$dir\\ReIcon_x64.exe\" 'ReIcon.exe' | Out-Null"
         },
         "32bit": {
-            "pre_install": "Remove-Item \"$dir\\ReIcon_x64.exe\" | Out-Null",
+            "pre_install": "Remove-Item \"$dir\\ReIcon_x64.exe\" | Out-Null"
         }
     },
     "bin": "ReIcon.exe",
