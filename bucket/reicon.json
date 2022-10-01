@@ -27,13 +27,7 @@
             "ReIcon"
         ]
     ],
-    "persist": [
-        [
-            "IconLayoutsFor$env:USERNAME.ini",
-            "IconLayouts"
-        ],
-        "ReIcon.ini"
-    ],
+    "persist": "ReIcon.ini",
     "checkver": "ReIcon\\sv([\\d.]+)",
     "autoupdate": {
         "url": "https://www.sordum.org/files/download/restore-desktop-icon-layouts/ReIcon.zip"
