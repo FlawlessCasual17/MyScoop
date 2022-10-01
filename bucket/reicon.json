@@ -18,8 +18,8 @@
         }
     },
     "pre_uninstall": [
-        "if (Test-Path \"$dir\\IconLayoutsFor$env:USERNAME.ini\") {Copy-Item \"$dir\\IconLayoutsFor$env:USERNAME.ini\" $persist_dir | Out-Null}",
-        "if (Test-Path \"$persist_dir\\IconLayoutsFor$env:USERNAME.ini\") {Copy-Item \"$persist_dir\\IconLayoutsFor$env:USERNAME.ini\" $dir | Out-Null}"
+        "Copy-Item \"$dir\\IconLayoutsFor$env:USERNAME.ini\" $persist_dir | Out-Null}",
+        "Copy-Item \"$persist_dir\\IconLayoutsFor$env:USERNAME.ini\" $dir | Out-Null}"
     ],
     "bin": "ReIcon.exe",
     "shortcuts": [
