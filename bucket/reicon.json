@@ -30,9 +30,9 @@
         "url": "https://www.sordum.org/files/download/restore-desktop-icon-layouts/ReIcon.zip",
         "installer": {
             "script": [
-                "if (Test-Path \"$dir\\IconLayoutsFor$env:USERNAME.ini\") {Copy-Item \"$dir\\IconLayoutsFor$env:USERNAME.ini\" $persist_dir | Out-Null}"
+                "if (Test-Path \"$dir\\IconLayoutsFor$env:USERNAME.ini\") {Copy-Item \"$dir\\IconLayoutsFor$env:USERNAME.ini\" $persist_dir | Out-Null}",
+                "if (Test-Path \"$persist_dir\\IconLayoutsFor$env:USERNAME.ini\") {Copy-Item \"$persist_dir\\IconLayoutsFor$env:USERNAME.ini\" $dir | Out-Null}"
             ]
-        },
-        "post_install": "if (Test-Path \"$persist_dir\\IconLayoutsFor$env:USERNAME.ini\") {Copy-Item \"$persist_dir\\IconLayoutsFor$env:USERNAME.ini\" $dir | Out-Null}"
+        }
     }
 }
