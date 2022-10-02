@@ -1,0 +1,20 @@
+{
+    "version": "1.0.5",
+    "homepage": "https://github.com/tabulapdf/tabula-java",
+    "description": "A Java library that allows users to extract tables from PDF files.",
+    "license": "MIT",
+    "notes": [
+        "For a guide on how to use this app, click here: https://github.com/tabulapdf/tabula-java#usage-examples",
+        "A JDK or JRE is required to use this app!",
+        "To run this app with Java, use:",
+        "java -jar \"$dir\\tabula.jar\" <path to config>",
+        "Or you can simply use:     tabula <path to config>",
+        ""
+    ],
+    "suggest": {
+        "Java": [
+            "java/temurin-jdk",
+            "java/temurin-jre"
+        ]
+    }
+}

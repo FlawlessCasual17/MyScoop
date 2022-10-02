@@ -12,7 +12,7 @@
         ""
     ],
     "suggest": {
-        "JDK": [
+        "Java": [
             "java/temurin-jdk",
             "java/temurin-jre"
         ],
