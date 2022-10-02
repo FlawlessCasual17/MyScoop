@@ -6,7 +6,8 @@
     "notes": [
         "This app depends on MSEdgeWebview2 and VB-Cable Virtual Audio Device to function properly.",
         "Click below to download the latest verison of MSEdgeWebview2:",
-        "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/592b44fb-644a-48a1-9d98-a5d4c1f0a724/MicrosoftEdgeWebView2RuntimeInstallerX64.exe",
+        "Short url: https://dub.sh/TAjl79y",
+        "Long url: https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/592b44fb-644a-48a1-9d98-a5d4c1f0a724/MicrosoftEdgeWebView2RuntimeInstallerX64.exe",
         "Click below to download the latest version of VB-Cable Virtual Audio Device: (Make sure to execute the x64 .exe file, not the x86 .exe file.)",
         "https://download.vb-audio.com/Download_CABLE/VBCABLE_Driver_Pack43.zip"
     ],
