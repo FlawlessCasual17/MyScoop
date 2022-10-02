@@ -21,7 +21,7 @@
     "hash": "e5796e6afec4db25745da72493f2e9e506fa14d6f6e76d96a549300aa6b6477e",
     "bin": [
         [
-            "java -jar \"$dir\\komf.jar\" $Args[0]",
+            "komf.jar",
             "komf"
         ]
     ],
