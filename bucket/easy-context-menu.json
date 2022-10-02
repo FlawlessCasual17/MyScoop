@@ -8,7 +8,7 @@
     },
     "url": "https://www.sordum.org/files/easy-context-menu/ec_menu.zip",
     "hash": "7fda0f551fd769b150d1519c614131e2d610a2d98769f87ff654e3cd6de76167",
-    "extract_dir": "EcMenu_v*",
+    "extract_dir": "EcMenu_v1.6",
     "pre_install": "New-Item \"$dir\\Files\\EcMenu.ini\" -ItemType 'File' | Out-Null",
     "architecture": {
         "32bit": {
