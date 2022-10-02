@@ -21,8 +21,8 @@
     "hash": "2161E3FFF65939D7CE0812479CF9CA36860DB5697F7FC1FA01161ED4092A0745",
     "bin": [
         [
-            "tabula.jar",
-            "tabula"
+            "tabula-java.jar",
+            "tabula-java"
         ]
     ],
     "checkver": "github",
