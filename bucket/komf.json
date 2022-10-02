@@ -5,16 +5,16 @@
     "license": "MIT",
     "notes": [
         "For a guide on how to use this app, click here: https://github.com/Snd-R/komf#run",
-        "A JDK is required to use this app!",
+        "A JDK or JRE is required to use this app!",
         "To run this app with Java, use:",
         "java -jar \"$dir\\komf.jar\" <path to config>",
-        "Or you can simply use: komf <path to config>",
+        "Or you can simply use:     komf <path to config>",
         ""
     ],
     "suggest": {
         "JDK": [
             "java/temurin-jdk",
-            "java/openjdk"
+            "java/temurin-jre"
         ],
         "Komga": "extras/komga"
     },
