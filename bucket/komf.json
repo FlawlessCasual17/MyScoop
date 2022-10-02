@@ -8,6 +8,7 @@
         "A JDK is required to use this app!",
         "To run this app with Java, use:",
         "java -jar \"$dir\\komf.jar\" <path to config>",
+        "Or you can simply use: komf <path to config>",
         ""
     ],
     "suggest": {
