@@ -29,14 +29,7 @@
         ]
     ],
     "bin": "SimpleDnsCrypt.exe",
-    "persist": [
-        "dnscrypt-proxy\\dnscrypt-proxy.toml",
-        "dnscrypt-proxy\\blacklist.txt",
-        "dnscrypt-proxy\\blocked.log",
-        "dnscrypt-proxy\\query.log",
-        "dnscrypt-proxy\\domain-blacklist.txt",
-        "dnscrypt-proxy\\domain-whitelist.txt"
-    ],
+
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "",
