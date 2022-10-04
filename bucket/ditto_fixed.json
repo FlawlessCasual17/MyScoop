@@ -48,7 +48,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/sabrogden/Ditto/releases/download/$version/DittoPortable_64bit_$underscoreVersion.zip"
+                "url": "https://github.com/sabrogden/Ditto/releases/download/$version/DittoPortable_64bit_$underscoreVersion_0.zip"
             },
             "32bit": {
                 "url": "https://github.com/sabrogden/Ditto/releases/download/$version/DittoPortable_$underscoreVersion_0.zip"
