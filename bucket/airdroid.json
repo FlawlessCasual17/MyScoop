@@ -23,6 +23,6 @@
         "regex": "AirDroid_Desktop_Client_([\\d.]+).exe"
     },
     "autoupdate": {
-        "url": "https://dl.airdroid.com/AirDroid_Desktop_Client_3.7.1.1.exe"
+        "url": "https://dl.airdroid.com/AirDroid_Desktop_Client_$version.exe"
     }
 }
