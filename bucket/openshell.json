@@ -5,20 +5,16 @@
     "license": "MIT",
     "url": "https://github.com/Open-Shell/Open-Shell-Menu/releases/download/v4.4.170/OpenShellSetup_4_4_170.exe#/package.exe",
     "hash": "0417041CFFED3478F13A840E45EE304CCF8D1F9CA38E4126BC315161AC9F1669",
-    "installer": {
-        "script": [
-            "Set-Location $dir; Start-Process \"$dir\\package.exe\" -Wait -Verb 'RunAs' -ArgumentList 'extract64' | Out-Null; Set-Location",
-            "Remove-Item \"$dir\\package.exe\" | Out-Null; Rename-Item \"$dir\\*\" 'package.msi' | Out-Null",
-            "Start-Process 'msiexec.exe' -Wait -ArgumentList @('/i', '\"$dir\\package.msi\"', '/qn') -Verb RunAs"
-        ]
-    },
-    "uninstaller": {
-        "script": [
-            "Stop-Process -Name 'StartMenu' -Force; Start-Process 'msiexec.exe' -Wait -ArgumentList @('/x', '\"$dir\\package.msi\"', '/qn') -Verb RunAs",
-            "Remove-Item \"$env:LOCALAPPDATA\\OpenShell\" -Force -Recurse | Out-Null",
-            "Stop-Process -Name 'explorer'; Start-Sleep -Seconds 2"
-        ]
-    },
+    "pre_install": [
+        "Set-Location $dir; Start-Process \"$dir\\package.exe\" -Wait -Verb 'RunAs' -ArgumentList 'extract64' | Out-Null; Set-Location",
+        "Remove-Item \"$dir\\package.exe\" | Out-Null; Rename-Item \"$dir\\*\" 'package.msi' | Out-Null"
+    ],
+    "post_install": "Start-Process 'msiexec' -Wait -ArgumentList @('/i', '\"$dir\\package.msi\"', '/qn')",
+    "pre_uninstall": [
+        "Stop-Process -Name 'StartMenu' -Force; Start-Process 'msiexec' -Wait -ArgumentList @('/x', '\"$dir\\package.msi\"', '/qn')",
+        "Remove-Item \"$env:LOCALAPPDATA\\OpenShell\" -Force -Recurse | Out-Null",
+        "Stop-Process -Name 'explorer'; Start-Sleep -Seconds 2"
+    ],
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/Open-Shell/Open-Shell-Menu/releases/download/v$version/OpenShellSetup_$underscoreVersion.exe#/package.exe"
