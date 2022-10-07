@@ -1,11 +1,11 @@
 {
     "version": "4.4.170",
     "homepage": "https://github.com/Open-Shell/Open-Shell-Menu",
-    "description": "A fork of Classic Shell with additonal fixes and more features",
+    "description": "A fork of Classic Shell with additonal fixes and more features.",
     "license": "MIT",
     "url": "https://github.com/Open-Shell/Open-Shell-Menu/releases/download/v4.4.170/OpenShellSetup_4_4_170.exe#/package.exe",
     "hash": "0417041CFFED3478F13A840E45EE304CCF8D1F9CA38E4126BC315161AC9F1669",
-    "pre_install": "package.exe extract64",
+    "pre_install": "& \"$dir\\package.exe\" extract64",
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/Open-Shell/Open-Shell-Menu/releases/download/v$version/OpenShellSetup_$underscoreVersion.exe#/package.exe"
