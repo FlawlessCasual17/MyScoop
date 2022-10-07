@@ -29,7 +29,10 @@
         ]
     ],
     "persist": [
-        "Settings", "Temp", "Update", "XML"
+        "Settings",
+        "Temp",
+        "Update",
+        "XML"
     ],
     "checkver": {
         "url": "https://www.majorgeeks.com/files/details/eventlogviewer.html",
