@@ -8,7 +8,7 @@
     "pre_install": [
         "Set-Location $dir; Start-Process \"$dir\\package.exe\" -Wait -Verb 'RunAs' -ArgumentList 'extract64' | Out-Null; Set-Location",
         "Remove-Item \"$dir\\package.exe\" | Out-Null; Rename-Item \"$dir\\*\" 'package.msi' | Out-Null",
-        "Start-Process 'msiexec' -Wait -Verb 'RunAs' -ArgumentList @('/i', '\"$dir\\package.msi\"', '/qn')"
+        "Start-Process 'msiexec' -Wait -ArgumentList @('/i', '\"$dir\\package.msi\"', '/qn') -Verb 'RunAs' "
     ],
     "pre_uninstall": [
         "Stop-Process -Name 'StartMenu' -Force; Start-Process 'msiexec' -Wait -Verb 'RunAs' -ArgumentList @('/x', '\"$dir\\package.msi\"', '/qn')",
