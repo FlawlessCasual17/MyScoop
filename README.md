@@ -1,3 +1,4 @@
+[![Excavator](https://github.com/Zliced13/MyScoop/actions/workflows/excavator.yml/badge.svg)](https://github.com/Zliced13/MyScoop/actions/workflows/excavator.yml)
 
 How do I add this bucket?
 ---------------------------------
