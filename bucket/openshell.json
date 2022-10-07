@@ -13,6 +13,7 @@
     ],
     "pre_uninstall": [
         "Stop-Process -Name 'StartMenu' -Force; Start-Process 'msiexec' -Wait -Verb 'RunAs' -ArgumentList @('/x', '\"$dir\\package.msi\"', '/qn')",
+        "Remove-Item \"$env:LOCALAPPDATA\\OpenShell\" -Force -Recurse | Out-Null",
         "Stop-Process -Name 'explorer'; Start-Sleep -Seconds 2"
     ],
     "checkver": "github",
