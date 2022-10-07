@@ -30,6 +30,12 @@
             "SimpleTransfer Desktop.exe",
             "SimpleTransfer"
         ]
-    ]
-
+    ],
+    "checkver": {
+        "url": "https://rambax.com/simpletransfer/download",
+        "regex": "/simpletransfer/desktop/SimpleTransfer\\sDesktop\\sSetup\\s([\\d.]+).exe"
+    },
+    "autoupdate": {
+        "url": "https://rambax.com/simpletransfer/desktop/SimpleTransfer%20Desktop%20Setup%20$version.exe#/dl.7z"
+    }
 }
