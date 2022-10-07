@@ -9,12 +9,12 @@
         "script": [
             "Set-Location $dir; Start-Process \"$dir\\package.exe\" -Wait -Verb 'RunAs' -ArgumentList 'extract64' | Out-Null; Set-Location",
             "Remove-Item \"$dir\\package.exe\" | Out-Null; Rename-Item \"$dir\\*\" 'package.msi' | Out-Null",
-            "Start-Process 'msiexec' -Wait -ArgumentList @('/i', '\"$dir\\package.msi\"', '/qn') -Verb 'RunAs' "
+            "Start-Process 'msiexec.exe' -Wait -ArgumentList @('/i', '\"$dir\\package.msi\"', '/qn') -Verb RunAs"
         ]
     },
     "uninstaller": {
         "script": [
-            "Stop-Process -Name 'StartMenu' -Force; Start-Process 'msiexec' -Wait -Verb 'RunAs' -ArgumentList @('/x', '\"$dir\\package.msi\"', '/qn')",
+            "Stop-Process -Name 'StartMenu' -Force; Start-Process 'msiexec.exe' -Wait -ArgumentList @('/x', '\"$dir\\package.msi\"', '/qn') -Verb RunAs",
             "Remove-Item \"$env:LOCALAPPDATA\\OpenShell\" -Force -Recurse | Out-Null",
             "Stop-Process -Name 'explorer'; Start-Sleep -Seconds 2"
         ]
