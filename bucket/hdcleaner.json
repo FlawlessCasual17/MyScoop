@@ -20,10 +20,7 @@
             "hash": "3cd39eed17455f5a8ab4e6f68099d6d7ecd0b6415ef8f2b5331bff3630b30ccf"
         }
     },
-    "pre_install": [
-        "if (!(Test-Path \"$dir\\Settings\")) {New-Item \"$dir\\Settings\" -ItemType Directory | Out-Null}",
-        "Remove-Item \"$dir\\Uninstaller.exe\" | Out-Null"
-    ],
+    "pre_install": "Remove-Item \"$dir\\Uninstaller.exe\" | Out-Null",
     "bin": "HDCleaner.exe",
     "shortcuts": [
         [

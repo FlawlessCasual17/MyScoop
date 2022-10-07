@@ -20,10 +20,7 @@
             "hash": "8184d01ff5185e6ace5dada6f6202a20ef4178c7d374743da7b3ce97b2df3022"
         }
     },
-    "pre_install": [
-        "if (!(Test-Path \"$dir\\Settings\")) {New-Item \"$dir\\Settings\" -ItemType Directory | Out-Null}",
-        "Remove-Item \"$dir\\Updater.exe\" | Out-Null"
-    ],
+    "pre_install": "Remove-Item \"$dir\\Updater.exe\" | Out-Null",
     "bin": "RegCool.exe",
     "shortcuts": [
         [

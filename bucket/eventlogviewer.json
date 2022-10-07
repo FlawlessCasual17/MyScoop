@@ -16,11 +16,7 @@
             "hash": "c21cf450edcf6755c6dea6e9c21be5ddda136d31ad6abb146892212f7c259fd3"
         }
     },
-    "pre_install": [
-        "$filefolders = ('Settings', 'Temp', 'Update', 'XML')",
-        "$filefolders | ForEach-Object {if (!(Test-Path \"$dir\\$_\")) {New-Item \"$dir\\$_\" -ItemType Directory | Out-Null}}",
-        "Remove-Item \"$dir\\Updater.exe\" | Out-Null"
-    ],
+    "pre_install": "Remove-Item \"$dir\\Updater.exe\" | Out-Null",
     "bin": "EventLogViewer.exe",
     "shortcuts": [
         [
