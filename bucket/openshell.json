@@ -9,9 +9,9 @@
         "Set-Location $dir; Start-Process \"$dir\\package.exe\" -Wait -Verb 'RunAs' -ArgumentList 'extract64' | Out-Null; Set-Location",
         "Remove-Item \"$dir\\package.exe\" | Out-Null; Rename-Item \"$dir\\*\" 'package.msi' | Out-Null"
     ],
-    "post_install": "msiexec.exe /i \"$dir\\package.msi\" /qn",
+    "post_install": "msiexec /i \"$dir\\package.msi\" /qn",
     "pre_uninstall": [
-        "Stop-Process -Name 'StartMenu' -Force; Start-Process 'msiexec' -Wait -ArgumentList @('/x', '\"$dir\\package.msi\"', '/qn')",
+        "Stop-Process -Name 'StartMenu' -Force; msiexec.exe /x \"$dir\\package.msi\" /qn",
         "Remove-Item \"$env:LOCALAPPDATA\\OpenShell\" -Force -Recurse | Out-Null",
         "Stop-Process -Name 'explorer'; Start-Sleep -Seconds 2"
     ],
