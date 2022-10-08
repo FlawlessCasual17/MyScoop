@@ -17,7 +17,7 @@
         "Remove-Item \"$env:LOCALAPPDATA\\OpenShell\" -Force -Recurse | Out-Null",
         "Stop-Process -Name 'explorer'; Start-Sleep -Seconds 2"
     ],
-    "installer": {
+    "uninstaller": {
         "script": "msiexec /x \"$dir\\package.msi\" /qn"
     },
     "checkver": "github",
