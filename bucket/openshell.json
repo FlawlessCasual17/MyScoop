@@ -15,11 +15,11 @@
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
         "Stop-Process -Name 'StartMenu' -Force",
         "Remove-Item \"$env:LOCALAPPDATA\\OpenShell\" -Force -Recurse | Out-Null",
-        "Stop-Process -Name 'explorer'; Start-Sleep -Seconds 2"
+        "msiexec /x \"$dir\\package.msi\" /qn",
+        "Write-Host 'Restoring previous Start Menu, please wait and don't cancel the script...' -f Yellow",
+        "taskkill /F /IM 'explorer.exe'; Start-Sleep -Seconds 10"
     ],
-    "uninstaller": {
-        "script": "msiexec /x \"$dir\\package.msi\" /qn"
-    },
+    "post_uninstall": "Write-Host 'Previous Start Menu Restored!' -f Yellow; Start-Process 'explorer.exe' -Wait",
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/Open-Shell/Open-Shell-Menu/releases/download/v$version/OpenShellSetup_$underscoreVersion.exe#/package.exe"
