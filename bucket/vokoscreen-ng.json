@@ -15,7 +15,6 @@
             "Remove-Item \"$HOME\\Desktop\\vokoscreenNG-3.4.0.lnk\" -Force | Out-Null"
         ]
     },
-    "pre_uninstall": "",
     "checkver": {
         "url": "https://linuxecke.volkoh.de/vokoscreen/vokoscreen-download.html",
         "regex": "vokoscreenNG-([\\d.]+)-win64.exe"
