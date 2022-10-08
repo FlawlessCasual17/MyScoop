@@ -8,14 +8,18 @@
     "pre_install": [
         "Set-Location $dir; Start-Process \"$dir\\package.exe\" -Wait -Verb 'RunAs' -ArgumentList 'extract64' | Out-Null; Set-Location",
         "Remove-Item \"$dir\\package.exe\" | Out-Null; Rename-Item \"$dir\\*\" 'package.msi' | Out-Null",
+        "msiexec /i \"$dir\\package.msi\" /qn",
         "Stop-Process -Name 'explorer'; Start-Sleep -Seconds 2"
     ],
-    "post_install": "msiexec /i \"$dir\\package.msi\" /qn",
     "pre_uninstall": [
-        "Stop-Process -Name 'StartMenu' -Force; msiexec /x \"$dir\\package.msi\" /qn",
+        "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
+        "Stop-Process -Name 'StartMenu' -Force",
         "Remove-Item \"$env:LOCALAPPDATA\\OpenShell\" -Force -Recurse | Out-Null",
         "Stop-Process -Name 'explorer'; Start-Sleep -Seconds 2"
     ],
+    "installer": {
+        "script": "msiexec /x \"$dir\\package.msi\" /qn"
+    },
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/Open-Shell/Open-Shell-Menu/releases/download/v$version/OpenShellSetup_$underscoreVersion.exe#/package.exe"
