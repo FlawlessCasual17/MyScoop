@@ -11,11 +11,11 @@
     "pre_install": [
         "Start-Process \"$dir\\GoodSync-Setup.exe\" -Wait -ArgumentList '/S' -Verb RunAs",
         "Stop-Process -Name 'gs-server' -Force; Remove-Item \"$dir\\GoodSync-Setup.exe\" | Out-Null"
-
     ],
     "pre_uninstall": [
-        "Stop-Process -Name 'gs-server' -Force",
-        "Start-Process \"$env:ProgramFiles\\Siber Systems\\GoodSync\\gs-runner.exe\" -Wait -ArgumentList @('/stop-remove-services', '/S') -Verb RunAs"
+        "if (Get-Process -Name 'gs-server') {Stop-Process -Name 'gs-server' -Force}",
+        "Start-Process \"$env:ProgramFiles\\Siber Systems\\GoodSync\\gs-runner.exe\" -Wait -ArgumentList @('/stop-remove-services', '/S') -Verb RunAs",
+        "Remove-Item \"$env:ProgramData\\GoodSync\" -Force"
     ],
     "checkver": {
         "url": "https://www.goodsync.com/news-windows",
