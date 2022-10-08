@@ -8,6 +8,6 @@
     "bin": "git-branchless.exe",
     "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/arxanas/git-branchless/releases/download/v0.5.1/git-branchless-v0.5.1-x86_64-pc-windows-msvc.zip"
+        "url": "https://github.com/arxanas/git-branchless/releases/download/v$version/git-branchless-v$version-x86_64-pc-windows-msvc.zip"
     }
 }
