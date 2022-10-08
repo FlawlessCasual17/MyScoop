@@ -11,7 +11,7 @@
     ],
     "post_install": "msiexec /i \"$dir\\package.msi\" /qn",
     "pre_uninstall": [
-        "Stop-Process -Name 'StartMenu' -Force; msiexec.exe /x \"$dir\\package.msi\" /qn",
+        "Stop-Process -Name 'StartMenu' -Force; msiexec /x \"$dir\\package.msi\" /qn",
         "Remove-Item \"$env:LOCALAPPDATA\\OpenShell\" -Force -Recurse | Out-Null",
         "Stop-Process -Name 'explorer'; Start-Sleep -Seconds 2"
     ],
