@@ -11,7 +11,6 @@
         "Remove-Item \"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\Programs\\vokoscreenNG-3.4.0.lnk\" -Force | Out-Null",
         "Remove-Item \"$HOME\\Desktop\\vokoscreenNG-3.4.0.lnk\" -Force | Out-Null"
     ],
-    "bin": "vokoscreenNG.exe",
     "shortcuts": [
         [
             "vokoscreenNG.exe",
