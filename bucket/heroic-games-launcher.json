@@ -1,6 +1,6 @@
 {
     "version": "2.4.3",
-    "description": "A native GOG and Epic Games Launcher GUI for Linux, Windows and Mac.",
+    "description": "Unofficial native GUI reimplementation for GOG and Epic Games Launcher",
     "homepage": "https://heroicgameslauncher.com/",
     "license": "GPL-3.0",
     "architecture":{
