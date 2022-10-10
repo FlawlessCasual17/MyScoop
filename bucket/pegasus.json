@@ -14,6 +14,7 @@
             "--portable"
         ]
     ],
+    "persist": "config",
     "checkver": {
         "url": "https://github.com/mmatyas/pegasus-frontend/releases",
         "regex": "(?<Release>[\\w_]+)/pegasus-fe_([\\w-]+)_win-mingw-static.zip"
