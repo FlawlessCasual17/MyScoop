@@ -10,7 +10,8 @@
     "shortcuts": [
         [
             "pegasus-fe.exe",
-            "Pegasus Frontend"
+            "Pegasus Frontend",
+            "--portable"
         ]
     ],
     "checkver": {
