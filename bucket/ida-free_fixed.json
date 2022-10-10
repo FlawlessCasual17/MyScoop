@@ -2,7 +2,10 @@
     "version": "8.1",
     "description": "A multi-processor disassembler and debugger that offers so many features it is hard to describe them all",
     "homepage": "https://hex-rays.com/ida-free/",
-    "license": "Freeware",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://hex-rays.com/terms_of_use/"
+    },
     "architecture": {
         "64bit": {
             "url": "https://out7.hex-rays.com/files/idafree81_windows.exe#/installer.exe",
@@ -18,12 +21,10 @@
     },
     "pre_install": "if (!(is_admin)) { throw 'Administrator privileges are required' }",
     "installer": {
-        "file": "installer.exe",
-        "args": [
-            "--mode unattended",
-            "--unattendedmodeui minimal",
-            "--installpassword freeware",
-            "--prefix \"$dir\""
+        "script": [
+            "Start-Process \"$dir\\installer.exe\" -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('--mode', 'unattended', ",
+            " '--unattendedmodeui', 'minimal', '--prefix', \"$dir\")",
+            "Remove-Item \"$dir\\installer.exe\""
         ]
     },
     "uninstaller": {
