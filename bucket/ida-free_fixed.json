@@ -34,7 +34,6 @@
         "script": "Start-Sleep -Seconds 3"
     },
     "bin": "ida64.exe",
-
     "checkver": {
         "url": "https://hex-rays.com/ida-free/#download",
         "regex": "IDA\\sv([\\d.]+)\\s+"
