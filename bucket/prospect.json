@@ -11,6 +11,13 @@
     },
     "extract_dir": "$PLUGINSDIR",
     "pre_install": "Remove-Item \"$dir\\*.dll\"; Start-Sleep -Seconds 2; Expand-7zipArchive \"$dir\\app-64.7z\" $dir -Removal",
+    "bin": "Prospect Mail.exe",
+    "shortcuts": [
+        [
+            "Prospect Mail.exe",
+            "Prospect Mail"
+        ]
+    ],
     "checkver": "github",
     "autoupdate": {
         "architecture": {
