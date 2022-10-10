@@ -1,0 +1,39 @@
+{
+    "version": "3.02",
+    "homepage": "https://www.botproductions.com/iconview/iconview.html",
+    "description": "A Windows Explorer extension that lets you easily view, copy, and save icons contained within programs and libraries.",
+    "license": "Freeware",
+    "notes": "This is is a windows explorer extension, not an application. So don't expect any binaries or executable shortcuts (besides the help shortcut).",
+    "architecture": {
+        "32bit": {
+            "url": "https://www.botproductions.com/iconview/download/IconViewer3.02-Setup-x86.exe#/dl.7z",
+            "hash": "2EB365EA3E2F20848206B0B1835C58CC71E2ACA1323A19319896B3C8E3BF3956",
+            "pre_install": "Remove-Item \"$dir\\Setup.exe\"; Start-Process 'regsvr32' -Wait -Verb 'RunAs' -ArgumentList @(\"$dir\\iconview.dll\", '/s')"
+        },
+        "64bit": {
+            "url": "https://www.botproductions.com/iconview/download/IconViewer3.02-Setup-x86.exe#/dl.7z",
+            "hash": "2EB365EA3E2F20848206B0B1835C58CC71E2ACA1323A19319896B3C8E3BF3956",
+            "pre_install": "Remove-Item (\"$dir\\Setup.exe\", \"$dir\\x86\"); Start-Process 'regsvr32' -Wait -Verb 'RunAs' -ArgumentList @(\"$dir\\iconview.dll\", '/s')"
+        }
+    },
+    "shortcuts": [
+        [
+            "iconview.chm",
+            "IconViewer Help"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.botproductions.com/iconview/download.html",
+        "regex": "IconViewer\\s([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://www.botproductions.com/iconview/download/IconViewer$version-Setup-x86.exe#/dl.7z"
+            },
+            "64bit": {
+                "url": "https://www.botproductions.com/iconview/download/IconViewer$version-Setup-x86.exe#/dl.7z"
+            }
+        }
+    }
+}
