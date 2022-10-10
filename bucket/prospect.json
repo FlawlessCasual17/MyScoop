@@ -11,7 +11,12 @@
     },
     "extract_dir": "$PLUGINSDIR",
     "pre_install": "Remove-Item \"$dir\\*.dll\"; Start-Sleep -Seconds 2; Expand-7zipArchive \"$dir\\app-64.7z\" $dir -Removal",
-    "bin": "Prospect Mail.exe",
+    "bin": [
+        [
+            "Prospect Mail.exe",
+            "Prospect-Mail"
+        ]
+    ],
     "shortcuts": [
         [
             "Prospect Mail.exe",
