@@ -22,15 +22,19 @@
     "pre_install": "if (!(is_admin)) { throw 'Administrator privileges are required' }",
     "installer": {
         "script": [
-            "Start-Process \"$dir\\installer.exe\" -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('--mode', 'unattended', ",
-            " '--unattendedmodeui', 'minimal', '--prefix', \"$dir\")",
-            "Remove-Item \"$dir\\installer.exe\""
+            "Start-Process \"$dir\\installer.exe\" -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('--mode', 'unattended',",
+            "'--unattendedmodeui', 'minimal', '--prefix', \"$dir\")",
+            "Remove-Item \"$env:ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\IDA Freeware $version\" -Force -Recurse",
+            "Start-Sleep -Seconds 2; Remove-Item \"$dir\\installer.exe\""
         ]
     },
     "uninstaller": {
         "file": "uninstall.exe",
-        "args": "--mode unattended"
+        "args": "--mode unattended",
+        "script": "Start-Sleep -Seconds 2"
     },
+    "bin": "ida64.exe",
+
     "checkver": {
         "url": "https://hex-rays.com/ida-free/#download",
         "regex": "IDA\\sv([\\d.]+)\\s+"
