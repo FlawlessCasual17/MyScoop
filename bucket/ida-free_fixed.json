@@ -31,7 +31,7 @@
     "uninstaller": {
         "file": "uninstall.exe",
         "args": "--mode unattended",
-        "script": "Start-Sleep -Seconds 2"
+        "script": "Start-Sleep -Seconds 3"
     },
     "bin": "ida64.exe",
 
