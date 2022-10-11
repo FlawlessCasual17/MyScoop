@@ -21,13 +21,18 @@
         "'blacklist.txt', 'blocked.log', 'query.log', 'domain-blacklist.txt', 'domain-whitelist.txt' | ForEach-Object {",
         "    if (!(Test-Path \"$persist_dir\\$_\")) { New-Item \"$dir\\dnscrypt-proxy\\$_\" -ItemType 'File' | Out-Null }",
         "}",
-        "$cont = Get-Content \"$dir\\UniExtract.ini\"",
-        "if (!($cont -match 'ID=[0-9A-F]+')) {",
-        "    $new_id = ''",
-        "    1..25 | ForEach-Object { $new_id += '{0:X}' -f (Get-Random -Max 15) }",
-        "    $cont = $cont.Replace('ID=', \"ID=$new_id\")",
-        "    $cont | Set-Content \"$dir\\UniExtract.ini\" -Encoding Ascii",
-        "}"
+        "# Credit to @Rasa for this powershell script",
+        "$configFile = \"$dir\\SimpleDnsCrypt.exe.config\" ",
+        "[xml]$configFileContent = Get-Content \"$configFile\" ",
+        "",
+        "foreach ($item in $configFileContent.configuration.userSettings.'SimpleDnsCrypt.Properties.Settings'.setting) {",
+        "   if ($item.name -eq 'AutoUpdate') {",
+        "       $item.value = 'False' ",
+        "    }",
+        "}",
+        "",
+        "Copy-Item \"$configFile\" \"$configFile.backup\" ",
+        "$configFileContent.Save(\"$configFile\")"
     ],
     "shortcuts": [
         [
