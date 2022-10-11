@@ -3,7 +3,7 @@
     "homepage": "https://ludo.libretro.com/",
     "description": "A minalist styled front-end for retro video game emulators written in Go.",
     "license": "GPL-3.0",
-    "notes": "Settings are stored in the \"$env:LOCALAPPDATA\\ludo\\settings.toml\" directory.",
+    "notes": "Settings are stored in the \"$env:LOCALAPPDATA\\ludo\" directory.",
     "architecture": {
         "64bit": {
             "url": "https://github.com/libretro/ludo/releases/download/v0.16.20/Ludo-Windows-x86_64-0.16.20.zip",
