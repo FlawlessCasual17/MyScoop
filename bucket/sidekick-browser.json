@@ -1,5 +1,5 @@
 {
-    "version": "104.29.3.25043-e335c0c",
+    "version": "104.29.3.24854-c883f29",
     "homepage": "https://www.meetsidekick.com/",
     "description": "A work browser that is focused on productivity, speed, and security.",
     "license": {
@@ -35,7 +35,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://fast-cdn.meetsidekick.com/builds/sidekick-win-release-x64-104.29.3.24854-c883f29-df.exe#/dl.7z"
+                "url": "https://fast-cdn.meetsidekick.com/builds/sidekick-win-release-x64-$version-df.exe#/dl.7z"
             }
         }
     }
