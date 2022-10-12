@@ -19,8 +19,7 @@
     },
     "pre_install": [
         "Remove-Item \"$dir\\*\" -Exclude 'ludwig-2.1.1-full.nupkg'; Expand-7zipArchive \"$dir\\ludwig-$version-full.nupkg\" $dir -Removal",
-        "Remove-Item \"$dir\\*\" -Recurse -Exclude 'lib'; Move-Item \"$dir\\lib\\net45\\*\" \"$dir\\\" -Exclude 'Update.exe' | Out-Null",
-        "Remove-Item \"$dir\\lib\" -Recurse"
+        "Remove-Item \"$dir\\*\" -Recurse -Exclude 'lib'"
     ],
     "bin": "Ludwig.exe",
     "shortcuts": [
