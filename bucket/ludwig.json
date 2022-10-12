@@ -18,8 +18,9 @@
         }
     },
     "pre_install": [
-        "Remove-Item \"$dir\\*\" -Exclude 'ludwig-2.1.1-full.nupkg'; Expand-7zipArchive \"$dir\\ludwig-$version-full.nupkg\" $dir -Removal",
-        "Remove-Item \"$dir\\*\" -Recurse -Exclude \"$dir\\lib\\net45\\*\""
+        "Remove-Item \"$dir\\*\" -Exclude \"ludwig-*-full.nupkg\"; Expand-7zipArchive \"$dir\\ludwig-*-full.nupkg\" $dir -Removal",
+        "Remove-Item $dir -Include @('_rels', 'package', '*.xml', 'ludwig.nuspec') -Recurse; Move-Item \"$dir\\lib\\net45\\*\" $dir -Exclude 'Update.exe' | Out-Null",
+        "Remove-Item \"$dir\\lib\" -Recurse"
     ],
     "bin": "Ludwig.exe",
     "shortcuts": [
