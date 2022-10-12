@@ -1,0 +1,7 @@
+{
+    "version": "alpha05",
+    "homepage": "https://www.quaddicted.com/tools/quake_injector",
+    "description": "A tool designed to make downloading, installing and playing custom Quake maps (and singleplayer Quake-style mods) easy and convenient.",
+    "license": "GPL-3.0",
+
+}
