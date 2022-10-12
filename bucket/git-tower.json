@@ -13,6 +13,13 @@
         "Remove-Item $dir -Include @('_rels', 'package', '*.xml', 'Tower.nuspec') -Recurse; Move-Item \"$dir\\lib\\net45\\*\" $dir | Out-Null",
         "Remove-Item \"$dir\\lib\" -Recurse"
     ],
+    "bin": "Tower.exe",
+    "shortcuts": [
+        [
+            "Tower.exe",
+            "Git Tower"
+        ]
+    ],
     "checkver": {
         "script": [
             "$redirUrl = [System.Net.HttpWebRequest]::Create('https://www.git-tower.com/download/windows').GetResponse().ResponseUri.AbsoluteUri",
