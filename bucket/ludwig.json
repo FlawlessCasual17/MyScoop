@@ -17,7 +17,11 @@
             "hash": "a377c9f609d8d0e60ab186a06b7895fca498e98d2a10b5b61f10e72dbbfa11d2"
         }
     },
-
+    "pre_install": [
+        "Expand-7zipArchive \"$dir\\ludwig-$version-full.nupkg\" $dir -Removal",
+        "Remove-Item \"$dir\\Update.exe\"; Move-Item \"$dir\\lib\\net45\\*\" \"$dir\\\" -Exclude 'Update.exe' | Out-Null",
+        "Remove-Item \"$dir\\lib\" -Recurse"
+    ],
     "bin": "Ludwig.exe",
     "shortcuts": [
         [
