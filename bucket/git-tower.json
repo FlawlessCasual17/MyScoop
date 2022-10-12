@@ -8,7 +8,11 @@
     },
     "url": "https://www.git-tower.com/download/windows#/Setup.7z",
     "hash": "sha1:246C1A4F91905E512767FC2D0288BD98B7B72AE3",
-
+    "pre_install": [
+        "Remove-Item \"$dir\\*\" -Exclude 'Tower-*-full.nupkg'; Expand-7zipArchive \"$dir\\Tower-*-full.nupkg\" $dir -Removal",
+        "Remove-Item $dir -Include @('_rels', 'package', '*.xml', 'Tower.nuspec') -Recurse; Move-Item \"$dir\\lib\\net45\\*\" $dir | Out-Null",
+        "Remove-Item \"$dir\\lib\" -Recurse"
+    ],
     "checkver": {
         "script": [
             "$redirUrl = [System.Net.HttpWebRequest]::Create('https://www.git-tower.com/download/windows').GetResponse().ResponseUri.AbsoluteUri",
