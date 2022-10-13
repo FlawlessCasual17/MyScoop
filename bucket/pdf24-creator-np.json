@@ -14,7 +14,8 @@
     },
     "pre_install": "Start-Process 'msiexec' -Wait -Verb 'RunAs' -ArgumentList ('/i', \"$dir\\Setup.exe\", '/qn')",
     "pre_uninstall": [
-        "Stop-Process -Name 'pdf24' -Force -ErrorAction 'SilentlyContinue'; Start-Process 'msiexec' -Wait -Verb 'RunAs' -ArgumentList ('/x', \"$dir\\Setup.exe\", '/qn')"
+        "Stop-Process -Name 'pdf24' -Force -ErrorAction 'SilentlyContinue'; Start-Process 'msiexec' -Wait -Verb 'RunAs' -ArgumentList ('/x', \"$dir\\Setup.exe\", '/qn')",
+        "Start-Sleep -Seconds 5"
     ],
     "checkver": "Version\\s([\\d.]+)",
     "autoupdate": {
