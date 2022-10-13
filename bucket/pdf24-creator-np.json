@@ -15,7 +15,7 @@
     "pre_install": "Start-Process 'msiexec' -Wait -Verb 'RunAs' -ArgumentList ('/i', \"$dir\\Setup.msi_\", '/qn')",
     "pre_uninstall": [
         "Stop-Process -Name 'pdf24' -Force -ErrorAction 'SilentlyContinue'; Start-Process 'msiexec' -Wait -Verb 'RunAs' -ArgumentList ('/x', \"$dir\\Setup.msi_\", '/qn')",
-        "Start-Sleep -Seconds 5"
+        "Start-Sleep -Seconds 2"
     ],
     "checkver": "Version\\s([\\d.]+)",
     "autoupdate": {
