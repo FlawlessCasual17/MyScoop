@@ -12,7 +12,9 @@
             "hash": "70146F0079B3DAEE377EAAB202BCAF341593084F754B245F6E49B950EF26DCA4"
         }
     },
-    "pre_install": "Start-Process 'msiexec' -Wait -Verb 'RunAs' -ArgumentList ('/i', \"$dir\\Setup.msi\", '/qn')",
+    "installer":{
+        "script": "Start-Process 'msiexec' -Wait -Verb 'RunAs' -ArgumentList ('/i', \"$dir\\Setup.msi\", '/qn')"
+    },
     "pre_uninstall": [
         "Stop-Process -Name 'pdf24' -Force -ErrorAction 'SilentlyContinue'; Start-Process 'msiexec' -Wait -Verb 'RunAs' -ArgumentList ('/x', \"$dir\\Setup.msi\", '/qn')",
         "Start-Sleep -Seconds 5"
