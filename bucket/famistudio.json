@@ -21,6 +21,6 @@
         "github": "https://github.com/BleuBleu/FamiStudio"
     },
     "autoupdate": {
-        "url": "https://github.com/BleuBleu/FamiStudio/releases/download/$version/FamiStudio404-WinPortableExe.zip"
+        "url": "https://github.com/BleuBleu/FamiStudio/releases/download/$version/FamiStudio$cleanVersion-WinPortableExe.zip"
     }
 }
