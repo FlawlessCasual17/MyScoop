@@ -28,7 +28,7 @@
             "Start-Process \"$dir\\Windscribe\\uninstall.exe\" -WindowStyle 'Hidden' -Verb 'RunAs' -ArgumentList '/SILENT' -Wait"
         ]
     },
-    "bin": "windscribe-cli.exe",
+    "bin": "Windscribe\\windscribe-cli.exe",
     "checkver": {
         "github": "https://github.com/Windscribe/Desktop-App/"
     },
