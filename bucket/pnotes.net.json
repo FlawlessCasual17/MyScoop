@@ -7,7 +7,7 @@
     "hash": "50B55645E1C9B66FEDAD68F9A7DA840998286AADBB26583AB49FD97E17976CA8",
     "extract_dir": "PNotes.NET",
     "pre_install": [
-        "'settings.db3', 'contacts.db3' | ForEach-Object {if (!(Test-Path \"$dir\\$_\")) {New-Item \"$dir\\$_\" | Out-Null}}",
+        "'settings.db3', 'pnotes.log','contacts.db3' | ForEach-Object {if (!(Test-Path \"$dir\\$_\")) {New-Item \"$dir\\$_\" | Out-Null}}",
         "Remove-Item \"$dir\\PNUpdater.exe\" -ErrorAction 'SilentlyContinue'"
     ],
     "bin": "PNotes.NET.exe",
@@ -25,6 +25,7 @@
         "sounds",
         "themes",
         "settings.db3",
+        "pnotes.log",
         "contacts.db3"
     ],
     "checkver": {
