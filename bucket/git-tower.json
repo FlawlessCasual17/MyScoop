@@ -1,4 +1,4 @@
- {
+{
     "version": "4.0.410",
     "homepage": "https://www.git-tower.com/",
     "description": "An easy to use GUI client for Git with powerful features.",
@@ -34,4 +34,4 @@
             "find": "$sha1"
         }
     }
- }
+}
