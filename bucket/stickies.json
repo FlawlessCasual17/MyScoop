@@ -5,6 +5,22 @@
     "license": "Freeware",
     "url": "https://www.zhornsoftware.co.uk/stickies/stickies_setup_10_1b.exe#/dl.exe",
     "hash": "F1123D0F52A614AC697210767F9E5BB2AF813C4ACF9F58EF9609D1A78A7CFA28",
-    "pre_install": "Set-Location \"$dir\"; Start-Process \"$dir\\dl.exe\" -Wait -Verb 'RunAs'"
+    "pre_install": "Set-Location \"$dir\"; Start-Process 'dl.exe' -Verb 'RunAs' -ArgumentList '-extract' -Wait; Remove-Item 'dl.exe'; Set-Location '-'",
+    "bin": "stickies.exe",
+    "shortcuts": [
+        [
+            "stickies.exe",
+            "Stickies"
+        ],
+        [
+            "stickies.chm",
+            "Stickies Help"
+        ],
+        [
+            "mdb2db.exe",
+            "Stickies v8/v9 to v10 Data Converter"
+        ]
+    ],
+
 
 }
