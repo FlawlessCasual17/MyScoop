@@ -1,7 +1,7 @@
 {
     "version": "3.8.2.2",
     "homepage": "https://pnotes-1932d.firebaseapp.com/home",
-    "description": "A simple sticky notes application for your desktop. It's light-weight, flexible, and skinnable.",
+    "description": "A simple sticky notes application for the user's desktop. It's light-weight, flexible, and skinnable.",
     "license": "GPL-2.0",
     "url": "https://sourceforge.net/projects/pnotes/files/PNotes.NET/Bin/PNotesNET3822.zip",
     "hash": "50B55645E1C9B66FEDAD68F9A7DA840998286AADBB26583AB49FD97E17976CA8",
