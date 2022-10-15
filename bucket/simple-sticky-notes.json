@@ -18,7 +18,7 @@
     ],
     "checkver": {
         "url": "https://www.simplestickynotes.com/download/",
-        "regex": "</a>:\\s([\\d.]+)<br>)"
+        "regex": "</a>:\\s([\\d.]+)<br>"
     },
     "autoupdate": {
         "url": "https://www.simplestickynotes.com/setup/Setup_SimpleStickyNotes.exe"
