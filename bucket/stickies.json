@@ -2,7 +2,10 @@
     "version": "10.1b",
     "homepage": "https://www.zhornsoftware.co.uk/stickies/index.html",
     "description": "A small and simple utility for creating virtual sticky notes on the user's desktop.",
-    "license": "Freeware",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://infozip.sourceforge.net/license.html"
+    },
     "notes": "Settings is stored in this directory, \"$env:APPDATA\\stickies\"",
     "url": "https://www.zhornsoftware.co.uk/stickies/stickies_setup_10_1b.exe#/dl.exe",
     "hash": "F1123D0F52A614AC697210767F9E5BB2AF813C4ACF9F58EF9609D1A78A7CFA28",
