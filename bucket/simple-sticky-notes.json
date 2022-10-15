@@ -6,6 +6,7 @@
         "identifier": "Freeware",
         "url": "https://www.simplestickynotes.com/eula/"
     },
+    "notes": "Settings are stored in this directory: \"$home\\Documents\\Simple Sticky Notes\"",
     "url": "https://www.simplestickynotes.com/setup/Setup_SimpleStickyNotes.exe",
     "hash": "BDC760713CAE3C6CFE0CFF6CD3095578386A117B834EC08E85F79F8AC3538505",
     "innosetup": true,
