@@ -8,12 +8,16 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://zoom.us/client/5.12.2.9281/ZoomInstaller.exe?archType=x64#/dl.7z",
-            "hash": "1AD313D8A5574E3EA343BE1B9DDE9E65508D211956B12F1560DD390E0BDA1906"
+            "url": "https://cdn.zoom.us/prod/5.12.2.9281/x64/ZoomInstallerFull.exe#/dl.7z",
+            "hash": "f7cba2e790a7d41658ea0f430ac775f08d9872add59168fd72f12262bc9f9786"
         },
         "32bit": {
-            "url": "https://zoom.us/client/5.12.2.9281/ZoomInstaller.exe?archType=x86#/dl.7z",
-            "hash": "02A6D6C34B332FEDBCD0EFAD99D36E7C5570932BFAFF575F95443F38CBDB31D8"
+            "url": "https://cdn.zoom.us/prod/5.12.2.9281/ZoomInstaller.exe#/dl.7z",
+            "hash": "02a6d6c34b332fedbcd0efad99d36e7c5570932bfaff575f95443f38cbdb31d8"
+        },
+        "arm64": {
+            "url": "https://cdn.zoom.us/prod/5.12.2.9281/arm64/ZoomInstallerFull.exe#/dl.7z",
+            "hash": "4469285d3ecaa03b2bc644f3beb755ce0b8530327ca24790a733f78117fa54f8"
         }
     },
     "pre_install": [
@@ -41,19 +45,19 @@
         ]
     ],
     "checkver": {
-        "script": [
-            "$redirUrl = [System.Net.HttpWebRequest]::Create('https://zoom.us/client/latest/ZoomInstaller.exe').GetResponse().ResponseUri.AbsoluteUri",
-            "Write-Output $redirUrl"
-        ],
-        "regex": "([\\d.]+)/ZoomInstaller.exe"
+        "url": "https://www.zoom.us/rest/download?os=win",
+        "jsonpath": "$.result.downloadVO.zoom.version"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://zoom.us/client/$version/ZoomInstaller.exe?archType=x64#/dl.7z"
+                "url": "https://cdn.zoom.us/prod/$version/x64/ZoomInstallerFull.exe#/dl.7z"
             },
             "32bit": {
-                "url": "https://zoom.us/client/$version/ZoomInstaller.exe?archType=x86#/dl.7z"
+                "url": "https://cdn.zoom.us/prod/$version/ZoomInstaller.exe#/dl.7z"
+            },
+            "arm64": {
+                "url": "https://cdn.zoom.us/prod/$version/arm64/ZoomInstallerFull.exe#/dl.7z"
             }
         }
     }
