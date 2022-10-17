@@ -25,7 +25,11 @@
     "uninstaller": {
         "file": "uninstall.exe",
         "args": "--mode unattended",
-        "script": "Start-Sleep -Seconds 3"
+        "script": [
+            "Start-Sleep -Seconds 3",
+            "if (reg query 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\IDA Freeware $version') {",
+            "reg delete 'KEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\IDA Freeware $version' /f}"
+        ]
     },
     "bin": "ida64.exe",
     "shortcuts": [
