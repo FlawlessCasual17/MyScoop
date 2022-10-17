@@ -18,6 +18,7 @@
             "Start-Process \"$dir\\installer.exe\" -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('--mode', 'unattended',",
             "'--unattendedmodeui', 'minimal', '--prefix', \"$dir\")",
             "Remove-Item \"$env:ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\IDA Freeware *\" -Force -Recurse",
+            "Remove-Item \"$Env:Public\\Desktop\\IDA Freeware *.lnk\" -Force",
             "Start-Sleep -Seconds 2; Remove-Item \"$dir\\installer.exe\""
         ]
     },
