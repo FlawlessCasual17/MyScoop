@@ -15,7 +15,7 @@
     "persist": "Optimizer Downloads",
     "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/hellzerg/optimizer/releases/download/14.1/Optimizer-14.1.exe#/Optimizer.exe",
+        "url": "https://github.com/hellzerg/optimizer/releases/download/$version/Optimizer-$version.exe#/Optimizer.exe",
         "hash": {
             "url": "https://github.com/hellzerg/optimizer/releases/latest",
             "find": "<p>$sha256</p></div>"
