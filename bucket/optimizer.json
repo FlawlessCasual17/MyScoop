@@ -12,6 +12,7 @@
             "Optimizer"
         ]
     ],
+    "persist": "Optimizer Downloads",
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/hellzerg/optimizer/releases/download/14.1/Optimizer-14.1.exe#/Optimizer.exe",
