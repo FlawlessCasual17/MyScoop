@@ -17,9 +17,10 @@
     "post_install": "Write-Host 'Please restart your computer for Portmaster to work properly' -F 'Red'",
     "pre_uninstall": [
         "if (!(is_admin)) { throw 'Administrator privileges are required' }",
-        "Start-Process \"$env:ProgramData\\Safing\\Portmaster\\portmaster-uninstaller.exe\" -Verb RunAs -ArgumentList '/S' -Wait; Start-Sleep -Seconds 5",
-        "Write-Host 'Please restart your computer to uninstall Portmaster properly' -F 'Red'"
+        "Write-Host 'Please wait for Portmaster to uninstall. Do not cancel this script!' -F 'Yellow'",
+        "Start-Process \"$env:ProgramData\\Safing\\Portmaster\\portmaster-uninstaller.exe\" -Verb RunAs -ArgumentList '/S' -Wait; Start-Sleep -Seconds 5"
     ],
+    "post_uninstall": "Write-Host 'Please restart your computer to uninstall Portmaster properly' -F 'Red'",
     "checkver": {
         "github": "https://github.com/safing/portmaster"
     },
