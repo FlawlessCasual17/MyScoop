@@ -3,8 +3,14 @@
 How do I add this bucket?
 ---------------------------------
 
-To add this bucket, run `scoop bucket add MyScoop 'https://github.com/Zliced13/MyScoop'`. 
-To install, do `scoop install <manifest>`.
+To add this bucket, run
+```
+scoop bucket add MyScoop 'https://github.com/Zliced13/MyScoop'
+```
+To install, do
+```
+scoop install <manifest>
+```
 
 How do I contribute new manifests?
 ----------------------------------
