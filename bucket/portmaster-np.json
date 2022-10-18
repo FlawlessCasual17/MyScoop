@@ -11,9 +11,10 @@
     },
     "pre_install": [
         "if (!(is_admin)) { throw 'Administrator privileges are required' }",
-        "Start-Process \"$dir\\portmaster-installer.exe\" -Verb RunAs -ArgumentList '/S' -Wait; Remove-Item \"$dir\\portmaster-installer.exe\"",
-        "Write-Host 'Please restart your computer for Portmaster to work properly' -F 'Red'"
+        "Write-Host 'Please wait for Portmaster to install. Do not cancel this script!' -F 'Yellow'",
+        "Start-Process \"$dir\\portmaster-installer.exe\" -Verb RunAs -ArgumentList '/S' -Wait; Remove-Item \"$dir\\portmaster-installer.exe\""
     ],
+    "post_install": "Write-Host 'Please restart your computer for Portmaster to work properly' -F 'Red'",
     "pre_uninstall": [
         "if (!(is_admin)) { throw 'Administrator privileges are required' }",
         "Start-Process \"$env:ProgramData\\Safing\\Portmaster\\portmaster-uninstaller.exe\" -Verb RunAs -ArgumentList '/S' -Wait; Start-Sleep -Seconds 5",
