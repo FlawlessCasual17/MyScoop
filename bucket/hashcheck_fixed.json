@@ -4,7 +4,6 @@
     "homepage": "https://github.com/gurnec/HashCheck",
     "license": "BSD-3-Clause",
     "notes": "Before uninstallation, please close Explorer (or other files management tool, e.g., Total Commander) windows where you've used HashCheck from.",
-    "depends": "sudo",
     "url": "https://github.com/gurnec/HashCheck/releases/download/v2.4.0/HashCheckSetup-v2.4.0.exe",
     "hash": "2d6067f00bbb93526d146d2228a46dc4851f0fa866e69250279c6b2f00b8f1b7",
     "installer": {
