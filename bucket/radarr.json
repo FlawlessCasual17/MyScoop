@@ -24,7 +24,7 @@
     "shortcuts": [
         [
             "Radarr.exe",
-            "Radarr Movie Collection Manager"
+            "Radarr"
         ]
     ],
     "checkver": {
