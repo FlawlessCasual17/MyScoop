@@ -3,6 +3,9 @@
     "description": "Snapshot releases of the tool for converting video from nearly any format to a selection of modern, widely supported codecs.",
     "homepage": "https://handbrake.fr",
     "license": "GPL-2.0-only",
+    "suggest": {
+        ".NET Desktop Runtime": "extras/windowsdesktop-runtime-lts"
+    },
     "architecture": {
         "64bit": {
             "url": "https://github.com/HandBrake/HandBrake-snapshots/releases/download/win/HandBrake-20221012-6583fb06a-x86_64-Win_GUI.zip",
