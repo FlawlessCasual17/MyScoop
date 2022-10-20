@@ -30,7 +30,7 @@
     "shortcuts": [
         [
             "HandBrake.exe",
-            "HandBrake"
+            "HandBrake Snapshot"
         ]
     ],
     "checkver": {
