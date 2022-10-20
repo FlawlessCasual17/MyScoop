@@ -1,12 +1,12 @@
 {
-    "version": "0.9.7",
+    "version": "1.0.0",
     "homepage": "https://safing.io/",
     "description": "An open-source application firewall that allows for monitoring of network activity, blocking system-wide trackers and ads, aswell as enforcing system-wide DNS-over-HTTPS and DNS-over-TLS.",
     "license": "AGPL-3.0",
     "architecture": {
         "64bit": {
             "url": "https://updates.safing.io/latest/windows_amd64/packages/portmaster-installer.exe",
-            "hash": "b0c03a122b27165af162a071e51d3997059083715cdb056df62b68acb88280b4"
+            "hash": "61cb59f25c4fcb130df0e925f6a1df21569379280c501dab1754080a24260856"
         }
     },
     "pre_install": [
