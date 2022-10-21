@@ -1,0 +1,7 @@
+{
+    "version": "2.0.6.3_beta_2021-06-17",
+    "homepage": "https://www.duplicati.com/",
+    "description": "A free, open source, backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers.",
+    "license": "LGPL-2.1",
+
+}
