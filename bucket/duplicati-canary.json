@@ -23,7 +23,7 @@
         ]
     ],
     "checkver": {
-        "github": "https://github.com/duplicati/duplicati",
+        "url": "https://github.com/duplicati/duplicati/tags",
         "regex": "v(?<HalfVersion>[\\d.]+)-([\\d.]+_canary_[\\d-]+)"
     },
     "autoupdate": {
