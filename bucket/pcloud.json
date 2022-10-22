@@ -18,7 +18,8 @@
     },
     "pre_install": [
         "Expand-DarkArchive \"$dir\\dl.exe\" \"$dir\" -Removal; Move-Item \"$dir\\AttachedContainer\\pCloud Drive.msi\" \"$dir\"",
-        "Remove-Item \"$dir\\AttachedContainer\", \"$dir\\UX\" -Recurse; Expand-MsiArchive \"$dir\\Cloud Drive.msi\" \"$dir\" -Removal"
+        "Remove-Item \"$dir\\AttachedContainer\", \"$dir\\UX\" -Recurse; Start-Sleep -Seconds 2",
+        "Expand-MsiArchive \"$dir\\Cloud Drive.msi\" \"$dir\" -ExtractDir 'pCloud Drive'"
     ],
     "checkver": {
         "url": "https://www.pcloud.com/release-notes/windows.html",
