@@ -9,17 +9,42 @@
     "architecture": {
         "64bit": {
             "url": "https://p-def3.pcloud.com/cBZiyhQSxZ3woRHNZZZMeoSc7ZAkZZtdVZkZwa0a7Z77ZIzZSpZi7ZLRZH5Z35ZRzZgHZozZgRZ9RZjRZ0VZq7mjVZkPDpdsCiGdYHsl4BVOIs0FzbYvTk/pCloud_Windows_3.11.15_x64.exe#/dl.exe",
-            "hash": "EDF9EB68FA412506C27FDFF449E972D23A070F56CC6194BB939B9DEEDDEF612D"
+            "hash": "EDF9EB68FA412506C27FDFF449E972D23A070F56CC6194BB939B9DEEDDEF612D",
+            "post_install": [
+                "Start-Process 'regsvr32' -ArgumentList @(\"$dir\\OverlayIcon64.dll\", '/s') -Verb 'RunAs' -Wait",
+                "Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force"
+            ],
+            "pre_uninstall": [
+                "if (Get-Process -Name 'pCloud' -ErrorAction 'SilentlyContinue') {Stop-Process -Name 'pCloud' -ErrorAction 'SilentlyContinue' -Force}",
+                "Start-Process 'regsvr32' -ArgumentList @('/u', \"$dir\\OverlayIcon64.dll\", '/s') -Verb 'RunAs' -Wait",
+                "Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force; Start-Sleep -Seconds 2"
+            ]
         },
         "32bit": {
             "url": "https://p-def3.pcloud.com/cBZWiBQSxZIloRHNZZZteoSc7ZAkZZtdVZkZcH4N7ZIFZCzZ0VZ1LZdkZrzZ5pZ7LZVRZ4HZWHZHLZGpZqHZA7mjVZCGJRSplL6UQPcegW24KqzR1QsHak/pCloud_Windows_3.11.15_x86.exe#/dl.exe",
-            "hash": "6E7050C8CFB534B3BDBB1230098E2652A987967271CBFB5FA851570F2BB47B43"
+            "hash": "6E7050C8CFB534B3BDBB1230098E2652A987967271CBFB5FA851570F2BB47B43",
+            "post_install": [
+                "Start-Process 'regsvr32' -ArgumentList @(\"$dir\\OverlayIcon.dll\", '/s') -Verb 'RunAs' -Wait",
+                "Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force"
+            ],
+            "pre_uninstall": [
+                "if (Get-Process -Name 'pCloud' -ErrorAction 'SilentlyContinue') {Stop-Process -Name 'pCloud' -ErrorAction 'SilentlyContinue' -Force}",
+                "Start-Process 'regsvr32' -ArgumentList @('/u', \"$dir\\OverlayIcon.dll\", '/s') -Verb 'RunAs' -Wait",
+                "Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force; Start-Sleep -Seconds 2"
+            ]
         }
     },
     "pre_install": [
-        "Expand-DarkArchive \"$dir\\dl.exe\" \"$dir\\extracted\" -Removal; Start-Sleep -Seconds 2",
+        "Expand-DarkArchive \"$dir\\dl.exe\" \"$dir\\extracted\" -Removal",
         "Expand-MsiArchive \"$dir\\extracted\\AttachedContainer\\pCloud Drive.msi\" \"$dir\" -ExtractDir 'pCloud Drive' -Removal",
         "Remove-Item \"$dir\\extracted\" -Recurse"
+    ],
+    "bin": "pCloud.exe",
+    "shortcuts": [
+        [
+            "pCloud.exe",
+            "pCloud Drive"
+        ]
     ],
     "checkver": {
         "url": "https://www.pcloud.com/release-notes/windows.html",
