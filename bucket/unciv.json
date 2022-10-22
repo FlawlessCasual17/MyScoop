@@ -1,5 +1,5 @@
 {
-    "version": "4.2.13",
+    "version": "4.2.14",
     "homepage": "https://github.com/yairm210/UnCiv",
     "description": "An open-source, mod-friendly Android+Desktop remake of Civ V, made with LibGDX.",
     "license": "MPL-2.0",
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/yairm210/Unciv/releases/download/4.2.13/Unciv-Windows64.zip",
-            "hash": "b31a2dc5a05ca7c0eeaf8ceb6d3e3b89c61c2ead3b7c7c876309e3f61edcdd3f"
+            "url": "https://github.com/yairm210/Unciv/releases/download/4.2.14/Unciv-Windows64.zip",
+            "hash": "692966197aa3eff35d5ec460fb4d59b1c26edcbd82e2e7a1b25b7cfdd5e37047"
         }
     },
     "pre_install": [
