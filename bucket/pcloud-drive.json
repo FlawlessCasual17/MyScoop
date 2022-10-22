@@ -15,6 +15,7 @@
                 "Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force; Start-Sleep -Seconds 2"
             ],
             "pre_uninstall": [
+                "if (Get-Process -Name 'pCloud' -ErrorAction 'SilentlyContinue') {Stop-Process -Name 'pCloud' -ErrorAction 'SilentlyContinue' -Force}",
                 "Start-Process 'regsvr32' -ArgumentList @('/u', \"$dir\\OverlayIcon64.dll\", '/s') -Verb 'RunAs' -Wait",
                 "Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force; Start-Sleep -Seconds 2"
             ]
@@ -27,6 +28,7 @@
                 "Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force; Start-Sleep -Seconds 2"
             ],
             "pre_uninstall": [
+                "if (Get-Process -Name 'pCloud' -ErrorAction 'SilentlyContinue') {Stop-Process -Name 'pCloud' -ErrorAction 'SilentlyContinue' -Force}",
                 "Start-Process 'regsvr32' -ArgumentList @('/u', \"$dir\\OverlayIcon.dll\", '/s') -Verb 'RunAs' -Wait",
                 "Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force; Start-Sleep -Seconds 2"
             ]
@@ -37,9 +39,6 @@
         "Expand-MsiArchive \"$dir\\extracted\\AttachedContainer\\pCloud Drive.msi\" \"$dir\" -ExtractDir 'pCloud Drive' -Removal",
         "Remove-Item \"$dir\\extracted\" -Recurse"
     ],
-    "uninstaller": {
-        "script": "if (Get-Process -Name 'pCloud' -ErrorAction 'SilentlyContinue') {Stop-Process -Name 'pCloud' -ErrorAction 'SilentlyContinue' -Force}"
-    },
     "bin": "pCloud.exe",
     "shortcuts": [
         [
