@@ -20,7 +20,22 @@
         [
             "Duplicati.GUI.TrayIcon.exe",
             "Duplicati Canary"
+        ],
+        [
+            "Duplicati.WindowsService.exe",
+            "Install Duplicati Server Service",
+            "install"
+        ],
+        [
+            "Duplicati.WindowsService.exe",
+            "Uninstall Duplicati Server Service",
+            "uninstall"
         ]
+    ],
+    "pre_uninstall": [
+        "if (Get-Service -Name 'Duplicati' -ErrorAction 'SilentlyContinue') {",
+        "    Start-Process \"$dir\\Duplicati.WindowsService.exe\" -Wait -Verb 'RunAs' -ArgumentList 'uninstall' -WindowStyle 'Hidden'",
+        "}"
     ],
     "checkver": {
         "url": "https://github.com/duplicati/duplicati/tags",
