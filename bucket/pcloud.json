@@ -18,7 +18,7 @@
     },
     "pre_install": [
         "Expand-DarkArchive \"$dir\\dl.exe\" \"$dir\\extracted\" -Removal",
-        "Expand-MsiArchive \"$dir\\extracted\\AttachedContainer\\pCloud Drive.msi\" \"$dir\\extracted\" --ExtractDir 'pCloud Drive' -Removal"
+        "Expand-MsiArchive \"$dir\\extracted\\AttachedContainer\\pCloud Drive.msi\" \"$dir\" -Removal"
     ],
     "checkver": {
         "url": "https://www.pcloud.com/release-notes/windows.html",
