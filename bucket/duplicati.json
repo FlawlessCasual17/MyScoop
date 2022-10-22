@@ -20,16 +20,6 @@
         [
             "Duplicati.GUI.TrayIcon.exe",
             "Duplicati"
-        ],
-        [
-            "Duplicati.WindowsService.exe",
-            "Install Duplicati Server Service",
-            "install"
-        ],
-        [
-            "Duplicati.WindowsService.exe",
-            "Uninstall Duplicati Server Service",
-            "uninstall"
         ]
     ],
     "pre_uninstall": [
