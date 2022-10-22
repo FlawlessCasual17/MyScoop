@@ -19,7 +19,7 @@
     "shortcuts": [
         [
             "Duplicati.GUI.TrayIcon.exe",
-            "Duplicati"
+            "Duplicati Canary"
         ]
     ],
     "checkver": {
