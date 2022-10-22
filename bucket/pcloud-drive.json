@@ -13,11 +13,6 @@
             "post_install": [
                 "Start-Process 'regsvr32' -ArgumentList @(\"$dir\\OverlayIcon64.dll\", '/s') -Verb 'RunAs' -Wait",
                 "Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force; Start-Sleep -Seconds 2"
-            ],
-            "pre_uninstall": [
-                "if (Get-Process -Name 'pCloud' -ErrorAction 'SilentlyContinue') {Stop-Process -Name 'pCloud' -ErrorAction 'SilentlyContinue' -Force}",
-                "Start-Process 'regsvr32' -ArgumentList @('/u', \"$dir\\OverlayIcon64.dll\", '/s') -Verb 'RunAs' -Wait",
-                "Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force; Start-Sleep -Seconds 2"
             ]
         },
         "32bit": {
@@ -25,11 +20,6 @@
             "hash": "6E7050C8CFB534B3BDBB1230098E2652A987967271CBFB5FA851570F2BB47B43",
             "post_install": [
                 "Start-Process 'regsvr32' -ArgumentList @(\"$dir\\OverlayIcon.dll\", '/s') -Verb 'RunAs' -Wait",
-                "Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force; Start-Sleep -Seconds 2"
-            ],
-            "pre_uninstall": [
-                "if (Get-Process -Name 'pCloud' -ErrorAction 'SilentlyContinue') {Stop-Process -Name 'pCloud' -ErrorAction 'SilentlyContinue' -Force}",
-                "Start-Process 'regsvr32' -ArgumentList @('/u', \"$dir\\OverlayIcon.dll\", '/s') -Verb 'RunAs' -Wait",
                 "Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force; Start-Sleep -Seconds 2"
             ]
         }
@@ -45,6 +35,17 @@
             "pCloud.exe",
             "pCloud Drive"
         ]
+    ],
+    "pre_uninstall": [
+        "if (Get-Process -Name 'pCloud' -ErrorAction 'SilentlyContinue') {Stop-Process -Name 'pCloud' -ErrorAction 'SilentlyContinue' -Force}",
+        "if ($architecture -eq '64bit') {",
+        "   Start-Process 'regsvr32' -ArgumentList @('/u', \"$dir\\OverlayIcon64.dll\", '/s') -Verb 'RunAs' -Wait",
+        "   Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force; Start-Sleep -Seconds 2",
+        "}",
+        "elseif ($architecture -eq '32bit') {",
+        "   Start-Process 'regsvr32' -ArgumentList @('/u', \"$dir\\OverlayIcon.dll\", '/s') -Verb 'RunAs' -Wait",
+        "   Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force; Start-Sleep -Seconds 2",
+        "}"
     ],
     "checkver": {
         "url": "https://www.pcloud.com/release-notes/windows.html",
