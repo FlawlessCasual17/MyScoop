@@ -1,0 +1,69 @@
+{
+    "##": "The license will be inside the app directory after installation.",
+    "version": "11.00",
+    "homepage": "https://www.petges.lu",
+    "description": "A Windows Explorer shell extension that allows users to easily change file and folder properties with a right-click.",
+    "license": "Freeware",
+    "notes": [
+        "IMPORTANT FOR NON-ENGLISH SPEAKERS!!!",
+        "If you want this application translated to your native langauge, please run the following command:",
+        "Remove-Item \"$dir\\template.ini\"; Copy-Item \"$dir\\messages,<#REPLACE_WITH_NUMBER#>.ini\" \"$dir\\template.ini\"",
+        "**Please replace where it says '<#REPLACE_WITH_NUMBER#>' with the number that corresponds to your native langauge before running the command.**",
+        "",
+        " 1 = BRAZILIAN PORTUGUESE",
+        " 2 = CZECH",
+        " 3 = DANISH",
+        " 4 = FRENCH",
+        " 5 = GERMAN",
+        " 6 = HUNGARIAN",
+        " 7 = ITALIAN",
+        " 8 = KOREAN",
+        " 9 = POLISH",
+        "10 = SPANISH",
+        "11 = SWEDISH",
+        "12 = TURKISH",
+        "13 = ENGLISH   (ONLY IF YOU NEED TO RESET THE 'template.ini' FILE)"
+    ],
+    "url": "https://www.petges.lu/pubfiles/ac-11_00.exe",
+    "hash": "md5:2F158D9531FB1E9749C5287EAF533AC0",
+    "innosetup": true,
+    "architecture": {
+        "64bit": {
+            "pre_install": [
+                "Remove-Item \"$dir\\acmain,1.exe\", \"$dir\\acshell,1.dll\"; Rename-Item \"$dir\\acmain,2.exe\" 'acmain.exe'",
+                "Start-Process 'regsvr32' -ArgumentList @(\"$dir\\acshell,2.dll\", '/s') -Verb 'RunAs' -Wait; Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force",
+                "Start-Sleep -Seconds 2",
+                "Copy-Item \"$dir\\template.ini\" \"$dir\\messages,13.ini\""
+            ],
+            "pre_uninstall": [
+                "Start-Process 'regsvr32' -ArgumentList @('/u', \"$dir\\acshell,2.dll\", '/s') -Verb 'RunAs' -Wait; Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force",
+                "Start-Sleep -Seconds 2"
+            ]
+        },
+        "32bit": {
+            "pre_install": [
+                "Remove-Item \"$dir\\acmain,2.exe\", \"$dir\\acshell,2.dll\"; Rename-Item \"$dir\\acmain,1.exe\" 'acmain.exe'",
+                "Start-Process 'regsvr32' -ArgumentList @(\"$dir\\acshell,1.dll\", '/s') -Verb 'RunAs' -Wait; Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force",
+                "Start-Sleep -Seconds 2",
+                "Copy-Item \"$dir\\template.ini\" \"$dir\\messages,13.ini\""
+            ],
+            "pre_uninstall": [
+                "Start-Process 'regsvr32' -ArgumentList @('/u', \"$dir\\acshell,1.dll\", '/s') -Verb 'RunAs' -Wait; Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force",
+                "Start-Sleep -Seconds 2"
+            ]
+        }
+    },
+    "bin": "acmain.exe",
+    "checkver": {
+        "url": "https://www.petges.lu/download/",
+        "regex": "ac-([\\d]+)_([\\w]+).exe",
+        "replace": "${1}.${2}"
+    },
+    "autoupdate": {
+        "url": "https://www.petges.lu/pubfiles/ac-$underscoreVersion.exe",
+        "hash": {
+            "url": "https://www.petges.lu/download/",
+            "regex": "<p>MD5\\sChecksum:\\s$md5</p>"
+        }
+    }
+}
