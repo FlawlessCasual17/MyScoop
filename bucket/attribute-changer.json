@@ -68,7 +68,7 @@
         "$MinusValue7 = ($documents - $subtract) + 6; Rename-Item \"$dir\\ac,$MinusValue7.pdf\" 'ac,10.pdf'",
         "$MinusValue8 = ($documents - $subtract) + 7; Rename-Item \"$dir\\ac,$MinusValue8.pdf\" 'ac,11.pdf'",
         "$MinusValue9 = ($documents - $subtract) + 8; Rename-Item \"$dir\\ac,$MinusValue9.pdf\" 'ac,12.pdf'",
-        "Copy-Item \"$dir\\ac.pdf\" \"$dir\\ac,13.pdf\"",
+        "Copy-Item \"$dir\\ac.pdf\" \"$dir\\ac,$documents.pdf\"",
         "New-Item \"$dir\\change_language.ps1\" -Value '$ac_language = Read-Host -Prompt \"Please enter the number that corresponds to your native langauge\"' | Out-Null",
         "Add-Content \"$dir\\change_language.ps1\" -Value @(",
         "'`nCopy-Item \"$dir\\messages,$ac_language.ini\" \"$dir\\messages.ini\" -Force', 'Copy-Item \"$dir\\ac,$ac_language.pdf\" \"$dir\\ac.pdf\" -Force'",
