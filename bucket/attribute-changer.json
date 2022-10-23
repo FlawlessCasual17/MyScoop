@@ -55,7 +55,7 @@
     },
     "post_install": [
         "New-Item \"$dir\\change_language.ps1\" -Value (",
-        "'Remove-Item \"$dir\\template.ini\" -ErrorAction ''SilentlyContinue''; Copy-Item \"$dir\\messages,$language.ini\" \"$dir\\template.ini\"'",
+        "   \"Remove-Item \"\"$dir\\template.ini\"\" -ErrorAction 'SilentlyContinue'; Copy-Item \"\"$dir\\messages,$language.ini\"\" \"\"$dir\\template.ini\"\"\" ",
         ") | Out-Null"
     ],
     "bin": "acmain.exe",
