@@ -30,22 +30,26 @@
     "architecture": {
         "64bit": {
             "pre_install": [
+                "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
                 "Remove-Item \"$dir\\acmain,1.exe\", \"$dir\\acshell,1.dll\"; Rename-Item \"$dir\\acmain,2.exe\" 'acmain.exe'",
                 "Start-Process 'regsvr32' -ArgumentList @(\"$dir\\acshell,2.dll\", '/s') -Verb 'RunAs' -Wait; Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force",
                 "Start-Sleep -Seconds 2"
             ],
             "pre_uninstall": [
+                "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
                 "Start-Process 'regsvr32' -ArgumentList @('/u', \"$dir\\acshell,2.dll\", '/s') -Verb 'RunAs' -Wait; Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force",
                 "Start-Sleep -Seconds 2"
             ]
         },
         "32bit": {
             "pre_install": [
+                "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
                 "Remove-Item \"$dir\\acmain,2.exe\", \"$dir\\acshell,2.dll\"; Rename-Item \"$dir\\acmain,1.exe\" 'acmain.exe'",
                 "Start-Process 'regsvr32' -ArgumentList @(\"$dir\\acshell,1.dll\", '/s') -Verb 'RunAs' -Wait; Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force",
                 "Start-Sleep -Seconds 2"
             ],
             "pre_uninstall": [
+                "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
                 "Start-Process 'regsvr32' -ArgumentList @('/u', \"$dir\\acshell,1.dll\", '/s') -Verb 'RunAs' -Wait; Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force",
                 "Start-Sleep -Seconds 2"
             ]
