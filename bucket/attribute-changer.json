@@ -22,7 +22,7 @@
         "10 = SPANISH",
         "11 = SWEDISH",
         "12 = TURKISH",
-        "13 = ENGLISH   (ONLY IF YOU NEED TO RESET THE 'template.ini' FILE)"
+        "13 = ENGLISH   (ONLY IF YOU NEED TO RESET THE 'template.ini' FILE BACK TO ENGLISH.)"
     ],
     "url": "https://www.petges.lu/pubfiles/ac-11_00.exe",
     "hash": "md5:2F158D9531FB1E9749C5287EAF533AC0",
