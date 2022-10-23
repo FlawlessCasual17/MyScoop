@@ -57,7 +57,9 @@
     },
     "post_install": [
         "Copy-Item \"$dir\\template.ini\" \"$dir\\messages,13.ini\"; Copy-Item \"$dir\\template.ini\" \"$dir\\messages.ini\"; Copy-Item \"$dir\\ac,4.pdf\" \"$dir\\ac.pdf\"",
-        "Move-Item \"$dir\\ac,13.pdf\" \"$dir\\ac,4.pdf\" -Force; Copy-Item \"$dir\\ac.pdf\" \"$dir\\ac,13.pdf\"",
+        "Remove-Item \"$dir\\ac,4.pdf\"; Rename-Item \"$dir\\ac,5.pdf\" 'ac,4.pdf'; Rename-Item \"$dir\\ac,6.pdf\" 'ac,5.pdf'; Rename-Item \"$dir\\ac,7.pdf\" 'ac,6.pdf'",
+        "Rename-Item \"$dir\\ac,8.pdf\" 'ac,7.pdf'; Rename-Item \"$dir\\ac,9.pdf\" 'ac,8.pdf'; Rename-Item \"$dir\\ac,10.pdf\" 'ac,9.pdf'; Rename-Item \"$dir\\ac,11.pdf\" 'ac,10.pdf';",
+        "Rename-Item \"$dir\\ac,12.pdf\" 'ac,11.pdf'; Rename-Item \"$dir\\ac,13.pdf\" 'ac,12.pdf'; Copy-Item \"$dir\\ac.pdf\" \"$dir\\ac,13.pdf\"",
         "New-Item \"$dir\\change_language.ps1\" -Value '$ac_language = Read-Host -Prompt \"Please enter the number that corresponds to your native langauge\"' | Out-Null",
         "Add-Content \"$dir\\change_language.ps1\" -Value @(",
         "'`nCopy-Item \"$dir\\messages,$ac_language.ini\" \"$dir\\messages.ini\" -Force', 'Copy-Item \"$dir\\ac,$ac_language.pdf\" \"$dir\\ac.pdf\"'",
