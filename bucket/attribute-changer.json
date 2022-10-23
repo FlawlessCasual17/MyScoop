@@ -56,9 +56,11 @@
         }
     },
     "post_install": [
-        "Copy-Item \"$dir\\template.ini\" \"$dir\\messages,13.ini\"; Copy-Item \"$dir\\template.ini\" \"$dir\\messages.ini\"",
+        "Copy-Item \"$dir\\template.ini\" \"$dir\\messages,13.ini\"; Copy-Item \"$dir\\template.ini\" \"$dir\\messages.ini\"; Copy-Item \"$dir\\ac,4.pdf\" \"$dir\\ac.pdf\"",
+        "Move-Item \"$dir\\ac,13.pdf\" \"$dir\\ac,4.pdf\" -Force; Copy-Item \"$dir\\ac.pdf\" \"$dir\\ac,13.pdf\"",
         "New-Item \"$dir\\change_language.ps1\" -Value '$ac_language = Read-Host -Prompt \"Please enter the number that corresponds to your native langauge\"' | Out-Null",
-        "Add-Content \"$dir\\change_language.ps1\" -Value '`nCopy-Item \"$dir\\messages,$ac_language.ini\" \"$dir\\messages.ini\" -Force'",
+        "Add-Content \"$dir\\change_language.ps1\" -Value @(",
+        "'`nCopy-Item \"$dir\\messages,$ac_language.ini\" \"$dir\\messages.ini\" -Force', 'Copy-Item \"$dir\\ac,$ac_language.pdf\" \"$dir\\ac.pdf\"'",
         "$content = (Get-Content \"$dir\\change_language.ps1\")",
         "$content = $content.Replace('$dir', \"$dir\")",
         "$content | Set-Content -Path \"$dir\\change_language.ps1\"",
