@@ -7,7 +7,7 @@
     "notes": [
         "IMPORTANT FOR NON-ENGLISH SPEAKERS!!!",
         "If you want this application translated to your native langauge, please run the following command:",
-        "$langauge = <#REPLACE_WITH_NUMBER#>; powershell -f \"$dir\\change_language.ps1\"",
+        "$env:ac_language = <#REPLACE_WITH_NUMBER#>; powershell -f \"$dir\\change_language.ps1\"",
         "**Please replace where it says '<#REPLACE_WITH_NUMBER#>' with the number that corresponds to your native langauge before running the command.**",
         "",
         " 1 = BRAZILIAN PORTUGUESE",
