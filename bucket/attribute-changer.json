@@ -53,9 +53,12 @@
             ]
         }
     },
+    "env_set": {
+        "ac_language": "13"
+    },
     "post_install": [
         "New-Item \"$dir\\change_language.ps1\" -Value (",
-        "'Remove-Item \"$dir\\template.ini\" -ErrorAction ''SilentlyContinue''; Copy-Item \"$dir\\messages,$language.ini\" \"$dir\\template.ini\"'",
+        "'Remove-Item \"$dir\\template.ini\" -ErrorAction ''SilentlyContinue''; Copy-Item \"$dir\\messages,$env:ac_language.ini\" \"$dir\\template.ini\"'",
         ") | Out-Null",
         "$content = (Get-Content \"$dir\\change_language.ps1\")",
         "$content = $content.Replace('$dir', \"$dir\")",
