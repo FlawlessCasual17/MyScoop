@@ -62,7 +62,7 @@
         "Rename-Item \"$dir\\ac,12.pdf\" 'ac,11.pdf'; Rename-Item \"$dir\\ac,13.pdf\" 'ac,12.pdf'; Copy-Item \"$dir\\ac.pdf\" \"$dir\\ac,13.pdf\"",
         "New-Item \"$dir\\change_language.ps1\" -Value '$ac_language = Read-Host -Prompt \"Please enter the number that corresponds to your native langauge\"' | Out-Null",
         "Add-Content \"$dir\\change_language.ps1\" -Value @(",
-        "'`nCopy-Item \"$dir\\messages,$ac_language.ini\" \"$dir\\messages.ini\" -Force', 'Copy-Item \"$dir\\ac,$ac_language.pdf\" \"$dir\\ac.pdf\"'",
+        "'`nCopy-Item \"$dir\\messages,$ac_language.ini\" \"$dir\\messages.ini\" -Force', 'Copy-Item \"$dir\\ac,$ac_language.pdf\" \"$dir\\ac.pdf\" -Force'",
         ")",
         "$content = (Get-Content \"$dir\\change_language.ps1\")",
         "$content = $content.Replace('$dir', \"$dir\")",
