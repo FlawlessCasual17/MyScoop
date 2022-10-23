@@ -9,7 +9,12 @@
             "hash": "A16DADABE083E22BD4728F53404CF03A3ECEA9DC3DE10A05DB3C5C05436572AD"
         }
     },
-    "bin": "BOOTICEx64.exe",
+    "bin": [
+        [
+            "BOOTICEx64.exe",
+            "bootice"
+        ]
+    ],
     "shortcuts": [
         [
             "BOOTICEx64.exe",
