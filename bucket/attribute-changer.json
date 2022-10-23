@@ -55,9 +55,9 @@
     },
     "post_install": [
         "New-Item \"$dir\\change_language.ps1\" -Value (",
-        "'$ac_language = Read-Host -Prompt \"Please enter the number that corresponds to your native langauge\"',",
-        "'`nRemove-Item \"$dir\\template.ini\" -ErrorAction ''SilentlyContinue''', 'Copy-Item \"$dir\\messages,$ac_language.ini\" \"$dir\\template.ini\"'",
+        "'$ac_language = Read-Host -Prompt \"Please enter the number that corresponds to your native langauge\"', '`nRemove-Item \"$dir\\template.ini\" -ErrorAction ''SilentlyContinue'''",
         ") | Out-Null",
+        "Add-Content \"$dir\\change_language.ps1\" -Value 'Copy-Item \"$dir\\messages,$ac_language.ini\" \"$dir\\template.ini\"'",
         "$content = (Get-Content \"$dir\\change_language.ps1\")",
         "$content = $content.Replace('$dir', \"$dir\")",
         "$content | Set-Content -Path \"$dir\\change_language.ps1\"",
