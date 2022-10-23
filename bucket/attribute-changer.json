@@ -55,8 +55,12 @@
     },
     "post_install": [
         "New-Item \"$dir\\change_language.ps1\" -Value (",
-        "   \"Remove-Item \"\"$dir\\template.ini\"\" -ErrorAction 'SilentlyContinue'; Copy-Item \"\"$dir\\messages,$language.ini\"\" \"\"$dir\\template.ini\"\"\" ",
-        ") | Out-Null"
+        "'Remove-Item \"$dir\\template.ini\" -ErrorAction ''SilentlyContinue''; Copy-Item \"$dir\\messages,$language.ini\" \"$dir\\template.ini\"'",
+        ") | Out-Null",
+        "$content = (Get-Content \"$dir\\change_language.ps1\")",
+        "$content = $content.Replace('$dir', \"$dir\")",
+        "$content | Set-Content -Path \"$dir\\change_language.ps1\"",
+        "Start-Sleep -Seconds 2"
     ],
     "bin": "acmain.exe",
     "checkver": {
