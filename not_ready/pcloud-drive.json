@@ -8,7 +8,7 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://p-def3.pcloud.com/cBZiyhQSxZ3woRHNZZZMeoSc7ZAkZZtdVZkZwa0a7Z77ZIzZSpZi7ZLRZH5Z35ZRzZgHZozZgRZ9RZjRZ0VZq7mjVZkPDpdsCiGdYHsl4BVOIs0FzbYvTk/pCloud_Windows_3.11.15_x64.exe#/dl.exe",
+            "url": "https://p-def3.pcloud.com/cBZiyhQSxZ3woRHNZZZtyWjc7Z2ZZtdVZkZwa0a7Z77ZIzZSpZi7ZLRZH5Z35ZRzZgHZozZgRZ9RZjRZ0VZq7mjVZ6nWOclVG2NHtFwoEBagSlJa8dr4V/pCloud_Windows_3.11.15_x64.exe#/dl.exe",
             "hash": "EDF9EB68FA412506C27FDFF449E972D23A070F56CC6194BB939B9DEEDDEF612D",
             "post_install": [
                 "Start-Process 'regsvr32' -ArgumentList @(\"$dir\\OverlayIcon64.dll\", '/s') -Verb 'RunAs' -Wait",
@@ -51,6 +51,9 @@
     ],
     "checkver": {
         "url": "https://www.pcloud.com/release-notes/windows.html",
+        "script": [
+            
+        ],
         "regex": "<b>([\\d.]+)</b>"
     },
     "autoupdate": {
