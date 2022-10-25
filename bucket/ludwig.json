@@ -1,5 +1,5 @@
 {
-    "version": "2.1.3",
+    "version": "2.1.1",
     "homepage": "https://ludwig.guru/",
     "description": "A unique sentence search engine that assists with writing better English.",
     "license": {
@@ -35,10 +35,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://desktop.ludwig.guru/download/2.1.1/windows_64#/Setup.7z"
+                "url": "https://desktop.ludwig.guru/download/$version/windows_64#/Setup.7z"
             },
             "32bit": {
-                "url": "https://desktop.ludwig.guru/download/2.1.1/windows_32#/Setup.7z"
+                "url": "https://desktop.ludwig.guru/download/$version/windows_32#/Setup.7z"
             }
         }
     }
