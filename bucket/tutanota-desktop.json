@@ -9,7 +9,7 @@
             "hash": "CC88E04DDFF5675692BBB15689FDA21CA49DFF0EF4C72FEFC735238ED113ED3B"
         }
     },
-    "extract_dir": "`$PLUGINSDIR",
+    "extract_dir": "$PLUGINSDIR",
     "pre_install": "Expand-7zipArchive \"$dir\\app-64.7z\" \"$dir\" -Removal",
     "shortcuts": [
         [
