@@ -30,10 +30,10 @@
     "autoupdate": {
         "architecture": {
             "32bit": {
-                "url": "https://github.com/Tichau/FileConverter/releases/download/v1.2.3/FileConverter-1.2.3-x86-setup.msi#/installer.msi_"
+                "url": "https://github.com/Tichau/FileConverter/releases/download/v$version/FileConverter-$version-x86-setup.msi#/installer.msi_"
             },
             "64bit": {
-                "url": "https://github.com/Tichau/FileConverter/releases/download/v1.2.3/FileConverter-1.2.3-x64-setup.msi#/installer.msi_"
+                "url": "https://github.com/Tichau/FileConverter/releases/download/v$version/FileConverter-$version-x64-setup.msi#/installer.msi_"
             }
         }
     }
