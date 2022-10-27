@@ -13,7 +13,7 @@
     "pre_uninstall": [
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
         "Start-Process \"$dir\\unins000.exe\" -Wait -Verb 'RunAs' -ArgumentList @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/SUPPRESSMSGBOXES')",
-        "Stop-Process -Name 'explorer -Force -ErrorAction 'SilentlyContinue'; Start-Sleep -Seconds 2"
+        "Stop-Process -Name 'explorer' -Force -ErrorAction 'SilentlyContinue'; Start-Sleep -Seconds 2"
     ],
     "checkver": "github",
     "autoupdate": {
