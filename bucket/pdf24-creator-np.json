@@ -15,7 +15,7 @@
     "pre_install": [
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
         "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -ArgumentList @('/VERYSILENT', \"/DIR=$dir\", '/ALLUSERS', '/SUPPRESSMSGBOXES')",
-        "Stop-Process -Name 'pdf24' -Force -ErrorAction 'SilentlyContinue'; Remove-Item \"$dir\\setup.exe\" "
+        "Stop-Process -Name 'pdf24' -Force -ErrorAction 'SilentlyContinue'; Remove-Item \"$dir\\setup.exe\""
     ],
     "pre_uninstall": [
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
