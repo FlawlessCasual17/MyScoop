@@ -14,13 +14,13 @@
     },
     "pre_install": [
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
-        "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -ArgumentList @('/VERYSILENT', \"/DIR=$dir\", '/ALLUSERS')",
-        "Stop-Process -Name 'pdf24' -Force -ErrorAction 'SilentlyContinue'; Remove-Item \"$dir\\setup.exe\""
+        "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -ArgumentList @('/VERYSILENT', \"/DIR=$dir\", '/ALLUSERS', '/SUPPRESSMSGBOXES')",
+        "Start-Sleep -Seconds 3; Remove-Item \"$dir\\setup.exe\"; Stop-Process -Name 'pdf24' -ErrorAction 'SilentlyContinue' -Force"
     ],
     "pre_uninstall": [
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
         "Stop-Process -Name 'pdf24' -Force -ErrorAction 'SilentlyContinue'",
-        "Start-Process \"$dir\\unins000.exe\" -Wait -Verb 'RunAs' -ArgumentList @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS')",
+        "Start-Process \"$dir\\unins000.exe\" -Wait -Verb 'RunAs' -ArgumentList @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/SUPPRESSMSGBOXES')",
         "Start-Sleep -Seconds 2"
     ],
     "checkver": "Version\\s([\\d.]+)",
