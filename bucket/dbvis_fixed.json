@@ -14,13 +14,18 @@
     },
     "extract_dir": "DbVisualizer",
     "bin": [
-        "dbvis.exe",
-        "dbviscmd.bat"
+        "dbviscmd.bat",
+        [
+            "dbviscmd.bat",
+            "dbvis"
+        ]
     ],
     "shortcuts": [
         [
-            "dbvis.exe",
-            "DbVisualizer"
+            "dbvisgui.bat",
+            "DbVisualizer",
+            "",
+            "dbvis.exe"
         ]
     ],
     "checkver": {
