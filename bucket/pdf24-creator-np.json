@@ -16,7 +16,7 @@
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
         "Start-Process \"$dir\\setup.exe\" -Verb 'RunAs' -ArgumentList @('/VERYSILENT', \"/DIR=$dir\", '/ALLUSERS', '/SUPPRESSMSGBOXES'); Start-Sleep -Seconds 8",
         "Stop-Process -Name 'explorer' -Force -ErrorAction 'SilentlyContinue'",
-        "Stop-Service -Name 'pdf24' -Force -ErrorAction 'SilentlyContinue'; Stop-Process -Name 'pdf24' -Force -ErrorAction 'SilentlyContinue'",
+        "Stop-Service -Name 'pdf24' -Force; Stop-Process -Name 'pdf24' -Force",
         "Remove-Item \"$dir\\setup.exe\" -ErrorAction 'SilentlyContinue'"
     ],
     "pre_uninstall": [
