@@ -20,6 +20,11 @@
             "FanControl"
         ]
     ],
+    "persist": [
+        "userConfig.json",
+        "CACHE",
+        "Plugins"
+    ],
     "checkver": {
         "github": "https://github.com/Rem0o/FanControl.Releases"
     },
