@@ -14,8 +14,8 @@
     },
     "pre_install": [
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
-        "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -ArgumentList @('/VERYSILENT', \"/DIR=$dir\", '/ALLUSERS', '/SUPPRESSMSGBOXES')",
-        "Stop-Process -Name 'explorer' -Force -ErrorAction 'SilentlyContinue'; Start-Sleep -Seconds 3"
+        "Start-Process \"$dir\\setup.exe\" -Verb 'RunAs' -ArgumentList @('/VERYSILENT', \"/DIR=$dir\", '/ALLUSERS', '/SUPPRESSMSGBOXES'); Start-Sleep -Seconds 8",
+        "Stop-Process -Name 'explorer' -Force -ErrorAction 'SilentlyContinue'"
     ],
     "post_install": [
         "Stop-Service -Name 'pdf24' -Force -ErrorAction 'SilentlyContinue'; Stop-Process -Name 'pdf24' -Force -ErrorAction 'SilentlyContinue'",
@@ -23,7 +23,7 @@
     ],
     "pre_uninstall": [
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
-        "if (Get-Process -Name 'pdf24' -ErrorAction 'SilentlyContinue') {Stop-Process -Name 'pdf24' -Force}",
+        "Stop-Process -Name 'pdf24' -Force -ErrorAction 'SilentlyContinue'; Stop-Service -Name 'pdf24' -Force -ErrorAction 'SilentlyContinue'",
         "Start-Process \"$dir\\unins000.exe\" -Wait -Verb 'RunAs' -ArgumentList @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/SUPPRESSMSGBOXES')",
         "Stop-Process -Name 'explorer' -Force -ErrorAction 'SilentlyContinue'; Start-Sleep -Seconds 3"
     ],
