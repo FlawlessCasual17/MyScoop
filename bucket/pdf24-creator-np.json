@@ -15,11 +15,12 @@
     "pre_install": [
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
         "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -ArgumentList @('/VERYSILENT', \"/DIR=$dir\", '/ALLUSERS', '/SUPPRESSMSGBOXES')",
-        "Start-Sleep -Seconds 3; Remove-Item \"$dir\\setup.exe\"; Stop-Process -Name 'pdf24' -ErrorAction 'SilentlyContinue' -Force"
+        "Start-Sleep -Seconds 6; Remove-Item \"$dir\\setup.exe\"",
+        "if (Get-Process -Name 'pdf24' -ErrorAction 'SilentlyContinue') {Stop-Process -Name 'pdf24' -Force}"
     ],
     "pre_uninstall": [
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
-        "Stop-Process -Name 'pdf24' -Force -ErrorAction 'SilentlyContinue'",
+        "if (Get-Process -Name 'pdf24' -ErrorAction 'SilentlyContinue') {Stop-Process -Name 'pdf24' -Force}",
         "Start-Process \"$dir\\unins000.exe\" -Wait -Verb 'RunAs' -ArgumentList @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/SUPPRESSMSGBOXES')",
         "Start-Sleep -Seconds 2"
     ],
