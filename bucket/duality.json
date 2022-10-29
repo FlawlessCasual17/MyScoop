@@ -11,10 +11,7 @@
         "   if (!(Test-Path \"$dir\\$_\")) {New-Item \"$dir\\$_\" | Out-Null}",
         "}; Remove-Item \"$dir\\DualityUpdater.exe\""
     ],
-    "bin": [
-        "DualityEditor.exe",
-        "DualityLauncher.exe"
-    ],
+    "bin": "DualityEditor.exe",
     "shortcuts": [
         [
             "DualityEditor.exe",
@@ -25,10 +22,6 @@
             "Duality Documentation",
             "",
             "DualityEditor.exe"
-        ],
-        [
-            "DualityLauncher.exe",
-            "Duality Launcher"
         ]
     ],
     "persist": [
