@@ -5,7 +5,7 @@
     "license": "MIT",
     "depends": "ttyd",
     "suggest": {
-        "ffmpeg": "extras/ffmpeg"
+        "ffmpeg": "main/ffmpeg"
     },
     "architecture": {
         "64bit": {
@@ -22,15 +22,15 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/charmbracelet/vhs/releases/download/v0.1.1/vhs_0.1.1_Windows_x86_64.zip"
+                "url": "https://github.com/charmbracelet/vhs/releases/download/v$version/vhs_$version_Windows_x86_64.zip"
             },
             "32bit": {
-                "url": "https://github.com/charmbracelet/vhs/releases/download/v0.1.1/vhs_0.1.1_Windows_i386.zip"
+                "url": "https://github.com/charmbracelet/vhs/releases/download/v$version/vhs_$version_Windows_i386.zip"
             }
         },
         "hash": {
             "url": "$baseurl/checksums.txt",
-            "regex": "$sha256\\s+vhs_0.1.1_Windows"
+            "regex": "$sha256\\s+vhs_$version_Windows"
         }
     }
 }
