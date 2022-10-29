@@ -35,7 +35,6 @@
         "architecture": {
             "64bit": {
                 "url": "https://download.derivative.ca/TouchDesigner.$version.exe#/dl.7z"
-
             }
         }
     }
