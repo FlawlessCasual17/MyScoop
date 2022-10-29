@@ -9,19 +9,13 @@
     "pre_install": [
         "'AppData.dat', 'DefaultUserData.dat', 'DesignTimeData.dat', 'EditorUserData.xml', 'logfile_editor.txt', 'perflog_editor.txt', 'UserData.dat', 'logfile.txt' | ForEach-Object {",
         "   if (!(Test-Path \"$dir\\$_\")) {New-Item \"$dir\\$_\" | Out-Null}",
-        "}; Remove-Item \"$dir\\DualityUpdater.exe\""
+        "}"
     ],
     "bin": "DualityEditor.exe",
     "shortcuts": [
         [
             "DualityEditor.exe",
             "Duality Editor"
-        ],
-        [
-            "DDoc.chm",
-            "Duality Documentation",
-            "",
-            "DualityEditor.exe"
         ]
     ],
     "persist": [
