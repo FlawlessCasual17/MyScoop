@@ -1,5 +1,5 @@
 {
-    "version": "0.13.2",
+    "version": "0.14.0",
     "homepage": "https://github.com/Snd-R/komf",
     "description": "A metadata fetcher for Komga.",
     "license": "MIT",
@@ -18,8 +18,8 @@
         ],
         "Komga": "extras/komga"
     },
-    "url": "https://github.com/Snd-R/komf/releases/download/0.13.2/komf-0.13.2.jar#/komf.jar",
-    "hash": "b2ced1cf3df47ff62414c08d746859d57310fb233959819e2f1c26a6f7886788",
+    "url": "https://github.com/Snd-R/komf/releases/download/0.14.0/komf-0.14.0.jar#/komf.jar",
+    "hash": "6701d2b68f8f866439b5b1abc7bc359d570415a85dc8f26f8c93a564c0ff188d",
     "bin": [
         [
             "komf.jar",
