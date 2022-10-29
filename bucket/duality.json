@@ -7,7 +7,7 @@
     "hash": "FB313CFE45CBDF5FAFA22885AE1BA226324687B780CFAE6C26310214A3EDF2DA",
     "extract_dir": "Duality",
     "pre_install": [
-        "'AppData.dat', 'DefaultUserData.dat', 'DesignTimeData.dat', 'EditorUserData.xml', 'logfile_editor.txt', 'perflog_editor.txt', 'UserData.dat', 'logfile.txt' | ForEach-Object {",
+        "'AppData.dat', 'DefaultUserData.dat', 'DesignTimeData.dat', 'logfile_editor.txt', 'perflog_editor.txt', 'UserData.dat', 'logfile.txt' | ForEach-Object {",
         "   if (!(Test-Path \"$persist_dir\\$_\")) {New-Item \"$dir\\$_\" | Out-Null}",
         "}"
     ],
@@ -22,7 +22,6 @@
         "AppData.dat",
         "DefaultUserData.dat",
         "DesignTimeData.dat",
-        "EditorUserData.xml",
         "logfile_editor.txt",
         "perflog_editor.txt",
         "UserData.dat",
