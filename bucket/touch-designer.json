@@ -12,8 +12,20 @@
             "hash": "7EF711FD95236304A22EB654417426D2E0FF848C6F1207C8432A65F84314AE81"
         }
     },
-    "pre_install": [
-        "Expand-InnoArchive \"$dir\\TouchDesigner.2022.29530.exe\" \"$dir\" -Removal; Remove-Item \"$dir\\TouchDesigner.2022.29530-1.bin\""
+    "pre_install": "Expand-InnoArchive \"$dir\\TouchDesigner.2022.29530.exe\" \"$dir\" -Removal",
+    "bin": [
+        "bin\\TouchDesigner.exe",
+        "bin\\TouchPlayer.exe"
+    ],
+    "shortcuts": [
+        [
+            "bin\\TouchDesigner.exe",
+            "TouchDesigner"
+        ],
+        [
+            "bin\\TouchPlayer.exe",
+            "TouchPlayer"
+        ]
     ],
     "checkver": {
         "url": "https://derivative.ca/download/archive",
