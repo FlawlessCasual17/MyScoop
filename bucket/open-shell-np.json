@@ -16,9 +16,9 @@
     "installer": {
         "script": [
             "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
-            "Remove-Item \"$dir\\package.exe\"; Rename-Item \"$dir\\*.msi\" 'setup.msi_' | Out-Null",
+            "Remove-Item \"$dir\\package.exe\"; Rename-Item \"$dir\\*.msi\" 'setup.msi' | Out-Null",
             "Write-Host \"Replacing Start Menu with Open Shell, please wait and don't cancel the script...\" -F 'Yellow'",
-            "Start-Process 'msiexec' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('/i', \"$dir\\setup.msi_\", '/qn', \"INSTALLDIR=$dir\", \"TARGETDIR=$dir\")",
+            "Start-Process 'msiexec' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('/i', \"$dir\\setup.msi\", '/qn', \"INSTALLDIR=$dir\", \"TARGETDIR=$dir\")",
             "Stop-Process -Name 'explorer'; Start-Sleep -Seconds 2; Write-Host \"Done!\" -F 'Yellow'"
         ]
     },
@@ -26,7 +26,7 @@
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
         "Stop-Process -Name 'StartMenu' -Force -ErrorAction 'SilentlyContinue'",
         "Write-Host \"Restoring previous Start Menu, please wait and don't cancel the script...\" -F 'Yellow'",
-        "Start-Process 'msiexec' -Wait -Verb 'RunAs' -ArgumentList @('/x', \"$dir\\setup.msi_\", '/qn')",
+        "Start-Process 'msiexec' -Wait -Verb 'RunAs' -ArgumentList @('/x', \"$dir\\setup.msi\", '/qn')",
         "Start-Process 'taskkill' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList ('/F', '/IM', 'explorer.exe'); Start-Sleep -Seconds 16",
         "Write-Host 'Previous Start Menu Restored!' -F 'Yellow'; Start-Process 'explorer.exe' -Wait -Verb 'RunAs' -WindowStyle 'Hidden'"
     ],
