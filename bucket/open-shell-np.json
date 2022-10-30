@@ -32,6 +32,6 @@
     ],
     "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/Open-Shell/Open-Shell-Menu/releases/download/v$version/OpenShellSetup_$underscoreVersion.exe#/package.exe"
+        "url": "https://github.com/Open-Shell/Open-Shell-Menu/releases/download/v$version/OpenShellSetup_$underscoreVersion.exe#/setup.exe"
     }
 }
