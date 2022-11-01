@@ -15,7 +15,7 @@
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Write-Host \"Please click the 'Yes' option to $cmd $app properly!\" -F 'Yellow'",
+        "Write-Host \"Please click the 'Yes' or 'No' option to $cmd $app properly!\" -F 'Yellow'",
         "Start-Process \"$dir\\BeautySearch.exe\" -Wait -Verb 'RunAs' -ArgumentList 'Uninstall'"
     ],
     "checkver": "github",
