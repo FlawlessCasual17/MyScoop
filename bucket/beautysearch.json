@@ -1,0 +1,25 @@
+{
+    "##": "This application can't be added to official buckets becuase there is no silent uninstall switch.",
+    "version": "1.15.1",
+    "homepage": "https://github.com/krlvm/BeautySearch",
+    "description": "A Windows 10+ Search Window appearance tweaker.",
+    "license": "GPL-3.0",
+    "url": "https://github.com/krlvm/BeautySearch/releases/download/v1.15.1/BeautySearch.exe",
+    "hash": "23625683C4A693E72C1463559B8F6EAE473637E9EA1FA7AD762C50B2B4613A52",
+    "bin": "BeautySearch.exe",
+    "shortcuts": [
+        [
+            "BeautySearch.exe",
+            "BeautySearch"
+        ]
+    ],
+    "pre_uninstall": [
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "Write-Host \"Please click the 'Yes' option to $cmd $app properly!\" -F 'Yellow'",
+        "Start-Process \"$dir\\BeautySearch.exe\" -Wait -Verb 'RunAs' -ArgumentList 'Uninstall'"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/krlvm/BeautySearch/releases/download/v$version/BeautySearch.exe"
+    }
+}
