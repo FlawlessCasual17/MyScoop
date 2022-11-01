@@ -6,7 +6,6 @@
         "identifier": "Freeware",
         "url": "https://infozip.sourceforge.net/license.html"
     },
-    "notes": "Settings is stored in this directory, \"$env:APPDATA\\stickies\"",
     "url": "https://www.zhornsoftware.co.uk/stickies/stickies_setup_10_1c.exe#/dl.exe",
     "hash": "0d5c0825253ee4e6fce15e4d4cbb64834ca120c6fefa2392776c6bbca55ae04c",
     "pre_install": "Set-Location \"$dir\"; Start-Process 'dl.exe' -Verb 'RunAs' -ArgumentList '-extract' -Wait; Remove-Item 'dl.exe'; Set-Location '-'",
