@@ -30,6 +30,11 @@
             "CloneSpy Help"
         ]
     ],
+    "persist": [
+        "CloneSpy.log",
+        "CSDefault.cst",
+        "CloneSpy.ini"
+    ],
     "checkver": "<strong>([\\d.]+)</strong>",
     "autoupdate": {
         "url": "https://clonespy.com/english/download/cspy$cleanVersion.exe#/dl.7z"
