@@ -14,7 +14,7 @@
         "Write-Host 'Please wait for Portmaster to install. Do not cancel this script!' -F 'Yellow'",
         "Start-Process \"$dir\\portmaster-installer.exe\" -Verb RunAs -ArgumentList '/S' -Wait; Remove-Item \"$dir\\portmaster-installer.exe\"; Start-Sleep -Seconds 4",
         "if (Test-Path \"$home\\Portmaster-NP Backup\") {",
-        "Copy-item \"$home\\Portmaster-NP Backup\\*\" \"$env:ProgramData\\Safing\\Portmaster\" -Recurse -Force",
+        "   Copy-item \"$home\\Portmaster-NP Backup\\*\" \"$env:ProgramData\\Safing\\Portmaster\" -Recurse -Force",
         "}"
     ],
     "post_install": "Write-Host 'Please restart your computer for Portmaster to work properly' -F 'Red'",
