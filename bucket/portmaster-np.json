@@ -17,7 +17,7 @@
         "   Copy-item \"$home\\Portmaster-NP Backup\\*\" \"$env:ProgramData\\Safing\\Portmaster\" -Recurse -Force",
         "}"
     ],
-    "post_install": "Write-Host 'Please restart your computer for Portmaster to work properly' -F 'Red'",
+    "post_install": "Write-Host 'Please restart your computer for Portmaster to $cmd properly' -F 'Red'",
     "pre_uninstall": [
         "if (!(is_admin)) { throw 'Administrator privileges are required' }",
         "if (!(Test-Path \"$home\\Portmaster-NP Backup\")) {New-Item \"$home\\Portmaster-NP Backup\" -ItemType 'Directory' | Out-Null}",
@@ -25,7 +25,7 @@
         "Copy-item \"$env:ProgramData\\Safing\\Portmaster\\*\" \"$home\\Portmaster-NP Backup\" -Include @('config.json', 'databases') -Recurse -Force; Start-Sleep -Seconds 4",
         "Start-Process \"$env:ProgramData\\Safing\\Portmaster\\portmaster-uninstaller.exe\" -Verb RunAs -ArgumentList '/S' -Wait; Start-Sleep -Seconds 5"
     ],
-    "post_uninstall": "Write-Host 'Please restart your computer to uninstall Portmaster properly' -F 'Red'",
+    "post_uninstall": "Write-Host 'Please restart your computer to $cmd Portmaster properly' -F 'Red'",
     "checkver": {
         "github": "https://github.com/safing/portmaster"
     },
