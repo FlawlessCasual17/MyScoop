@@ -25,6 +25,6 @@
         "regex": "Volume²\\s([\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://github.com/irzyxa/Volume2/releases/download/v$majorVersion$minorVersion$patchVersion/Volume2_$underscoreVersion.zip"
+        "url": "https://github.com/irzyxa/Volume2/releases/download/v$majorVersion.$minorVersion.$patchVersion/Volume2_$underscoreVersion.zip"
     }
 }
