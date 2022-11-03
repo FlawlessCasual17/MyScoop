@@ -17,6 +17,7 @@
             "openElement"
         ]
     ],
+    "pre_uninstall": "Remove-Item \"$env:LOCALAPPDATA\\openElement\" -Recurse",
     "checkver": {
         "url": "https://openelement.uk/Download.htm",
         "regex": "\">([\\d.]+)\\s([\\w]+)\\s",
