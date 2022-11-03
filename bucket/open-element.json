@@ -1,5 +1,5 @@
 {
-    "version": "1.57.9",
+    "version": "1.57.R9",
     "homepage": "https://openelement.uk/",
     "description": "A website editor that lets you have total control. Modify any element and style the way you want.",
     "license": "Freeware",
@@ -18,8 +18,9 @@
         ]
     ],
     "checkver": {
-        "url": "https://www.download.io/openelement-download-windows.html",
-        "regex": "openElement\\s([\\d.]+)"
+        "url": "https://openelement.uk/Download.htm",
+        "regex": "\">([\\d.]+)\\s([\\w]+)\\s",
+        "replace": "$1.$2"
     },
     "autoupdate": {
         "url": "https://openelement.uk/Files/Other/openElement.exe#/package.exe"
