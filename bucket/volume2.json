@@ -21,6 +21,11 @@
             "Volume²"
         ]
     ],
+    "persist": [
+        "ColorSchemes.ini",
+        "Schedules.ini",
+        "Config.ini"
+    ],
     "checkver": {
         "github": "https://github.com/irzyxa/Volume2",
         "regex": "Volume²\\s([\\d.]+)"
