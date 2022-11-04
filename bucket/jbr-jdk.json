@@ -9,7 +9,7 @@
             "hash": "6d7ab3cccc8aad21b226975b0549a16a4f5f8c2c2477da54bdc8a411948a2ed3"
         }
     },
-    "pre_install": "Expand-7zipArchive \"$dir\\$fname\" \"$dir\" -ExtractDir 'jbr-*' -Removal",
+    "pre_install": "Expand-7zipArchive \"$dir\\*.tar\" \"$dir\" -ExtractDir 'jbr-*' -Removal",
     "env_set": {
         "JAVA_HOME": "$dir"
     },
