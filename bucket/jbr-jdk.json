@@ -9,7 +9,7 @@
             "hash": "6d7ab3cccc8aad21b226975b0549a16a4f5f8c2c2477da54bdc8a411948a2ed3"
         }
     },
-    "pre_install": "Expand-7zipArchive \"$dir\\*.tar\" \"$dir\" -ExtractDir 'jbr-*' -Removal",
+    "extract_dir": "jbr-17.0.5-x64-b469",
     "env_set": {
         "JAVA_HOME": "$dir"
     },
@@ -28,6 +28,7 @@
                     "regex": "$sha256\\s"
                 }
             }
-        }
+        },
+        "extract_dir": "jbr-$matchFirst-x64-$matchSecond"
     }
 }
