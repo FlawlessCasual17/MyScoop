@@ -22,7 +22,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://cache-redirector.jetbrains.com/intellij-jbr/jbr-$matchFirst-windows-x64-$matchSecond.$matchThird.tar.gz",
+                "url": "https://cache-redirector.jetbrains.com/intellij-jbr/jbrsdk-$matchFirst-windows-x64-$matchSecond.$matchThird.tar.gz",
                 "hash": {
                     "url": "$url.checksum",
                     "regex": "$sha256\\s"
