@@ -38,7 +38,7 @@
                     "EiffelStudio\\EiffelStudio"
                 ],
                 [
-                    "studio\\spec\\win64\\bin\\esbuilder.exe",
+                    "esbuilder\\spec\\win64\\bin\\esbuilder.exe",
                     "EiffelStudio\\EiffelBuild"
                 ],
                 [
