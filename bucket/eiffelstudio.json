@@ -26,7 +26,38 @@
                 "ISE_EIFFEL": "$dir",
                 "ISE_PLATFORM": "win64",
                 "ISE_C_COMPILER": "$dir\\studio\\spec\\win64\\lib\\msc_vc140"
-            }
+            },
+            "env_add_path": [
+                "studio\\spec\\win64\\bin",
+                "tools\\spec\\win64\\bin",
+                "library\\gobo\\spec\\win64\\bin"
+            ],
+            "shortcuts": [
+                [
+                    "studio\\spec\\win64\\bin\\estudio.exe",
+                    "EiffelStudio\\EiffelStudio"
+                ],
+                [
+                    "studio\\spec\\win64\\bin\\esbuilder.exe",
+                    "EiffelStudio\\EiffelBuild"
+                ],
+                [
+                    "studio\\config\\win64\\esvars.bat",
+                    "EiffelStudio\\EiffelStudio Command Prompt"
+                ],
+                [
+                    "studio\\spec\\win64\\bin\\h2e.exe",
+                    "EiffelStudio\\Tools\\C constants to Eiffel class generator"
+                ],
+                [
+                    "wizards\\com\\com_wizard_launcher.exe",
+                    "EiffelStudio\\Tools\\EiffelCOM Wizard"
+                ],
+                [
+                    "rb\\bin\\rb.exe",
+                    "EiffelStudio\\Tools\\ResourceBench"
+                ]
+            ]
         },
         "32bit": {
             "url": "https://www.eiffel.com/cdn/EiffelStudio/22.05/106302/Eiffel_22.05_rev_106302-windows.7z",
@@ -35,41 +66,41 @@
                 "ISE_EIFFEL": "$dir",
                 "ISE_PLATFORM": "windows",
                 "ISE_C_COMPILER": "$dir\\studio\\spec\\windows\\lib\\msc_vc140"
-            }
+            },
+            "env_add_path": [
+                "studio\\spec\\windows\\bin",
+                "tools\\spec\\windows\\bin",
+                "library\\gobo\\spec\\windows\\bin"
+            ],
+            "shortcuts": [
+                [
+                    "studio\\spec\\windows\\bin\\estudio.exe",
+                    "EiffelStudio\\EiffelStudio"
+                ],
+                [
+                    "studio\\spec\\windows\\bin\\esbuilder.exe",
+                    "EiffelStudio\\EiffelBuild"
+                ],
+                [
+                    "studio\\config\\windows\\esvars.bat",
+                    "EiffelStudio\\EiffelStudio Command Prompt"
+                ],
+                [
+                    "studio\\spec\\windows\\bin\\h2e.exe",
+                    "EiffelStudio\\Tools\\C constants to Eiffel class generator"
+                ],
+                [
+                    "wizards\\com\\com_wizard_launcher.exe",
+                    "EiffelStudio\\Tools\\EiffelCOM Wizard"
+                ],
+                [
+                    "rb\\bin\\rb.exe",
+                    "EiffelStudio\\Tools\\ResourceBench"
+                ]
+            ]
         }
     },
     "extract_dir": "Eiffel_22.05",
-    "env_add_path": [
-        "$dir\\studio\\spec\\$env:ISE_PLATFORM\\bin",
-        "$dir\\tools\\spec\\$env:ISE_PLATFORM\\bin",
-        "$dir\\library\\gobo\\spec\\$env:ISE_PLATFORM\\bin"
-    ],
-    "shortcuts": [
-        [
-            "studio\\spec\\$env:ISE_PLATFORM\\bin\\estudio.exe",
-            "EiffelStudio\\EiffelStudio"
-        ],
-        [
-            "studio\\spec\\$env:ISE_PLATFORM\\bin\\esbuilder.exe",
-            "EiffelStudio\\EiffelBuild"
-        ],
-        [
-            "studio\\config\\$env:ISE_PLATFORM\\esvars.bat",
-            "EiffelStudio\\EiffelStudio Command Prompt"
-        ],
-        [
-            "studio\\spec\\$env:ISE_PLATFORM\\bin\\h2e.exe",
-            "EiffelStudio\\Tools\\C constants to Eiffel class generator"
-        ],
-        [
-            "wizards\\com\\com_wizard_launcher.exe",
-            "EiffelStudio\\Tools\\EiffelCOM Wizard"
-        ],
-        [
-            "rb\\bin\\rb.exe",
-            "EiffelStudio\\Tools\\ResourceBench"
-        ]
-    ],
     "checkver": {
         "url": "https://account.eiffel.com/downloads",
         "regex": "Eiffel_(?<First>[\\d.]+)_(?<Series>[\\w]+)_(?<Second>[\\d]+)",
