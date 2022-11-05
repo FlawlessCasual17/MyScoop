@@ -14,7 +14,7 @@
         [
             "Python\\pythonw.exe",
             "S.P.Y.D.E.R. (Scientific Python Development Environment)",
-            "\"Spyder.launch.pyw\"",
+            "Spyder.launch.pyw",
             "spyder.ico"
         ]
     ],
