@@ -13,8 +13,8 @@
     "shortcuts": [
         [
             "Python\\pythonw.exe",
-            "S.P.Y.D.E.R. (Scientific Python Development Environment)",
-            "Spyder.launch.pyw",
+            "SPYDER",
+            "$dir\\Spyder.launch.pyw",
             "spyder.ico"
         ]
     ],
