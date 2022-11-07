@@ -1,5 +1,5 @@
 {
-    "version": "2.026",
+    "version": "2.027",
     "homepage": "https://kurtzimmermann.com/index_e.html",
     "description": "A software tool that allows Windows 11 users to fine-tune their operating system and programs for optimum performance. Developed by Kurt Zimmermann.",
     "license": {
@@ -9,11 +9,11 @@
     "architecture": {
         "32bit": {
             "url": "https://kurtzimmermann.com/files/TweakPowerX32.zip",
-            "hash": "C90841429F8188CDA60CC1B021C388AB0C4C2AFCFCF49158894EF31A338DC954"
+            "hash": "693047b1d04b02c9394aeb0874f370dfc83f0843a7fb4a5456723a02d60ef141"
         },
         "64bit": {
             "url": "https://kurtzimmermann.com/files/TweakPowerX64.zip",
-            "hash": "58EC8711C6BC0B458CF7A47827CCC38733DAEBDAA8A84221EE7B47297128DC20"
+            "hash": "7ef43624fb1e99a119892163d45ebff7eb42b4453ee37688abbe31526488b0b4"
         }
     },
     "pre_install": "Remove-Item \"$dir\\Uninstaller.exe\" | Out-Null",
