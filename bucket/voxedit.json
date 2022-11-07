@@ -8,7 +8,7 @@
     },
     "url": "https://sandbox-voxedit-installers.s3-us-west-2.amazonaws.com/VoxEdit_WIN_latest.zip",
     "hash": "13aae7303727fef6731916f35efa0db96721510051ccc49e61fa421f23324c8b",
-    "pre_install": "Start-Process 'cmd' -Wait -Verb 'RunAs' -ArgumentList @('/C', \"$dir\\install.bat\"); Start-Sleep -Seconds 2",
+    "pre_install": "Start-Process 'cmd' -Wait -Verb 'RunAs' -ArgumentList @('/C', \"$dir\\install.bat\"); Start-Sleep -Seconds 2; Stop-Process -Name 'cmd'",
     "bin": "VoxEdit.bat",
     "shortcuts": [
         [
@@ -18,7 +18,7 @@
             "VoxEdit.exe"
         ]
     ],
-    "pre_uninstall": "Start-Process 'cmd' -Wait -Verb 'RunAs' -ArgumentList @('/C', \"$dir\\uninstall.bat\"); Start-Sleep -Seconds 2",
+    "pre_uninstall": "Start-Process 'cmd' -Wait -Verb 'RunAs' -ArgumentList @('/C', \"$dir\\uninstall.bat\"); Start-Sleep -Seconds 2; Stop-Process -Name 'cmd'",
     "checkver": {
         "useragent": "Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:100.0) Gecko/20100101 Firefox/100.0",
         "url": "https://translations.sandbox.game/en.json",
