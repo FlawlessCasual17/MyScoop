@@ -20,8 +20,10 @@
     ],
     "pre_uninstall": "Start-Process 'cmd' -Wait -Verb 'RunAs' -ArgumentList @('/C', \"$dir\\uninstall.bat\")",
     "checkver": {
-        "url": "https://www.sandbox.game/en/create/voxEdit-changelog/",
-        "regex": ">([\\w]+)\\s([\\d]+),\\s([\\d]+)\\s",
+        "useragent": "Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:100.0) Gecko/20100101 Firefox/100.0",
+        "url": "https://translations.sandbox.game/en.json",
+        "jsonpath": "$.changelogVoxedit..date",
+        "regex": "([\\w]+)\\s([\\d]+),\\s([\\d]+)\\s",
         "replace": "$1.$2.$3"
     },
     "autoupdate": {
