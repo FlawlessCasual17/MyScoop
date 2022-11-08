@@ -1,5 +1,5 @@
 {
-    "version": "17.0.5-b469.67",
+    "version": "17.0.4-cg54.3",
     "homepage": "https://github.com/JetBrains/JetBrainsRuntime",
     "description": "A fork of OpenJDK that includes a number enhancements in font rendering, HiDPI support, ligatures, performance improvements, and bugfixes. These are mainly for running IntelliJ Platform-based products",
     "license": "GPL-2.0",
@@ -15,9 +15,8 @@
     },
     "env_add_path": "bin",
     "checkver": {
-        "github": "https://github.com/JetBrains/JetBrainsRuntime",
-        "regex": "jbr-(?<First>[\\d.]+)-windows-x64-(?<Second>[\\w]+)\\.(?<Third>[\\d]+)",
-        "replace": "${First}-${Second}.${Third}"
+        "url": "https://github.com/JetBrains/JetBrainsRuntime/tree/jbr17",
+        "regex": "\">(?<First>[\\d.]+)-(?<Second>[\\w]+)\\.(?<Third>[\\d]+)</a></td>"
     },
     "autoupdate": {
         "architecture": {
