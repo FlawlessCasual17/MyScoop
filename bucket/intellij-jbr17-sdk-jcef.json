@@ -9,26 +9,26 @@
             "hash": "5985f20e2851781a2695ec4d25f675431a041ba5826c73e081fdcd5c72824af9"
         }
     },
-    "extract_dir": "jbr-17.0.5-x64-b469",
+    "extract_dir": "jbr-17.0.5-x64-b653",
     "env_set": {
         "JAVA_HOME": "$dir"
     },
     "env_add_path": "bin",
     "checkver": {
-        "github": "https://github.com/JetBrains/JetBrainsRuntime",
-        "regex": "jbr-(?<First>[\\d.]+)-windows-x64-(?<Second>[\\w]+)\\.(?<Third>[\\d]+)",
-        "replace": "${First}-${Second}.${Third}"
+        "url": "https://github.com/JetBrains/JetBrainsRuntime/tree/jbr17",
+        "regex": "\">(?<JBRVersion>[\\d.]+)-(?<Build>[\\w]+)\\.(?<Patch>[\\d]+)</a></td>",
+        "replace": "${JBRVersion}-${Build}.${Patch}"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://cache-redirector.jetbrains.com/intellij-jbr/jbrsdk-$matchFirst-windows-x64-$matchSecond.$matchThird.tar.gz",
+                "url": "https://cache-redirector.jetbrains.com/intellij-jbr/jbrsdk_jcef-$matchJBRVersion-windows-x64-$matchBuild.$matchPatch.tar.gz",
                 "hash": {
                     "url": "$url.checksum",
                     "regex": "$sha256\\s"
                 }
             }
         },
-        "extract_dir": "jbr-$matchFirst-x64-$matchSecond"
+        "extract_dir": "jbr-$matchJBRVersion-x64-$matchBuild"
     }
 }
