@@ -26,9 +26,9 @@
                 "hash": {
                     "url": "$url.checksum",
                     "regex": "$sha256\\s"
-                }
+                },
+                "extract_dir": "jbr-$matchJBRVersion-x64-$matchBuild"
             }
-        },
-        "extract_dir": "jbr-$matchJBRVersion-x64-$matchBuild"
+        }
     }
 }
