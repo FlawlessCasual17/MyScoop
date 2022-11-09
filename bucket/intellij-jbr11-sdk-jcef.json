@@ -5,8 +5,8 @@
     "license": "GPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://cache-redirector.jetbrains.com/intellij-jbr/jbrsdk_jcef-17.0.5-windows-x64-b653.6.tar.gz",
-            "hash": "9399551d88abec5900603d0e2a9aa3d27d234e554d692df936d1c50e2c0be91f",
+            "url": "https://cache-redirector.jetbrains.com/intellij-jbr/jbrsdk_jcef-11_0_16-windows-x64-b2043.64.tar.gz",
+            "hash": "aa1843f835a40afd760d3449c0830077ae1ae45b988a96f7842762d713fc4e63",
             "extract_dir": "jbr"
         }
     },
@@ -16,7 +16,7 @@
     "env_add_path": "bin",
     "checkver": {
         "url": "https://github.com/JetBrains/JetBrainsRuntime/tree/jbr11",
-        "regex": "\">(?<JBRVersion>[\\d.]+)-(?<Build>[\\w]+)\\.(?<Patch>[\\d]+)</a></td>",
+        "regex": "\">(?<JBRVersion>[\\d_]+)-(?<Build>[\\w]+)\\.(?<Patch>[\\d]+)</a></td>",
         "replace": "${JBRVersion}-${Build}.${Patch}"
     },
     "autoupdate": {
