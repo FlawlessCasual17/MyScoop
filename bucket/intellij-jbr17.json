@@ -15,8 +15,8 @@
     },
     "env_add_path": "bin",
     "checkver": {
-        "url": "https://github.com/JetBrains/JetBrainsRuntime/tree/jbr17",
-        "regex": "\">(?<JBRVersion>[\\d.]+)-(?<Build>[\\w]+)\\.(?<Patch>[\\d]+)</a></td>",
+        "url": "https://github.com/JetBrains/JetBrainsRuntime/releases",
+        "regex": "\\s(?<JBRVersion>[\\d.]+)-(?<Build>[\\w]+)\\.(?<Patch>[\\d]+)</h2>",
         "replace": "${JBRVersion}-${Build}.${Patch}"
     },
     "autoupdate": {
