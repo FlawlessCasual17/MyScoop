@@ -7,7 +7,7 @@
         "64bit": {
             "url": "https://cache-redirector.jetbrains.com/intellij-jbr/jbr-17.0.5-windows-x64-b653.6.tar.gz",
             "hash": "c5ce5210fca1d4885821b9299602f2b832a23f7e29210a94bcb7065fc1ce4bf7",
-            "extract_dir": "jbr-17.0.5-x64-b653"
+            "extract_dir": "jbr-17.0.5-x64-b653.6"
         }
     },
     "env_set": {
@@ -27,7 +27,7 @@
                     "url": "$url.checksum",
                     "regex": "$sha256\\s"
                 },
-                "extract_dir": "jbr-$matchJBRVersion-x64-$matchBuild"
+                "extract_dir": "jbr-$matchJBRVersion-x64-$matchBuild.$matchPatch"
             }
         }
     }
