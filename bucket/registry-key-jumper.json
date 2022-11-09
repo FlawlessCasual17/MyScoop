@@ -13,6 +13,7 @@
         "if ($architecture -eq '32bit') {Remove-Item \"$dir\\RegJump_x64.exe\"}",
         "elseif ($architecture -eq '64bit') {Remove-Item \"$dir\\RegJump.exe\"; Rename-Item \"$dir\\RegJump_x64.exe\" 'RegJump.exe'}"
     ],
+
     "bin": "RegJump.exe",
     "shortcuts": [
         [
@@ -20,6 +21,7 @@
             "Registry Key Jumper"
         ]
     ],
+    "persist": "RegJump.ini",
     "checkver": "Registry\\sKey\\sJumper\\sv([\\d.]+)",
     "autoupdate": {
         "url": "https://www.sordum.org/files/download/registry-key-jumper/RegJump.zip"
