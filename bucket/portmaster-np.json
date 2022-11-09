@@ -23,7 +23,7 @@
         "if (!(Test-Path \"$home\\Portmaster-NP Backup\")) {New-Item \"$home\\Portmaster-NP Backup\" -ItemType 'Directory' | Out-Null}",
         "Write-Host 'Please wait for Portmaster to $cmd. Do not cancel this script!' -F 'Yellow'",
         "Copy-item \"$env:ProgramData\\Safing\\Portmaster\\*\" \"$home\\Portmaster-NP Backup\" -Include @('config.json', 'databases') -Recurse -Force; Start-Sleep -Seconds 4",
-        "Start-Process \"$env:ProgramData\\Safing\\Portmaster\\portmaster-uninstaller.exe\" -Verb RunAs -ArgumentList '/S' -Wait; Start-Sleep -Seconds 5"
+        "if ($cmd -eq 'uninstall') {Start-Process \"$env:ProgramData\\Safing\\Portmaster\\portmaster-uninstaller.exe\" -Verb RunAs -ArgumentList '/S' -Wait; Start-Sleep -Seconds 5}"
     ],
     "post_uninstall": "Write-Host 'Please restart your computer to $cmd Portmaster properly' -F 'Red'",
     "checkver": {
