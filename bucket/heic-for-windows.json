@@ -18,7 +18,6 @@
         "Start-Sleep -Seconds 2"
     ],
     "checkver": {
-        "url": "https://scoop.sh",
         "script": [
             "$redirUrl = [System.Net.HttpWebRequest]::Create('https://www.copytrans.net/download-zip?program=CTH').GetResponse().ResponseUri.AbsoluteUri",
             "return $redirUrl"
