@@ -40,14 +40,14 @@
             }
         },
         "notes": [
-        "Yuescript Lua Module download links:",
-        "64bit",
-        "https://github.com/pigpigyyy/Yuescript/releases/download/v$version/yue-windows-x64-lua51-dll.7z",
-        "https://github.com/pigpigyyy/Yuescript/releases/download/v$version/yue-windows-x64-lua53-dll.7z",
-        "",
-        "32bit",
-        "https://github.com/pigpigyyy/Yuescript/releases/download/v$version/yue-windows-x86-lua51-dll.7z",
-        "https://github.com/pigpigyyy/Yuescript/releases/download/v$version/yue-windows-x86-lua53-dll.7z"
+            "Yuescript Lua Module download links:",
+            "64bit",
+            "https://github.com/pigpigyyy/Yuescript/releases/download/v$version/yue-windows-x64-lua51-dll.7z",
+            "https://github.com/pigpigyyy/Yuescript/releases/download/v$version/yue-windows-x64-lua53-dll.7z",
+            "",
+            "32bit",
+            "https://github.com/pigpigyyy/Yuescript/releases/download/v$version/yue-windows-x86-lua51-dll.7z",
+            "https://github.com/pigpigyyy/Yuescript/releases/download/v$version/yue-windows-x86-lua53-dll.7z"
         ]
     }
 }
