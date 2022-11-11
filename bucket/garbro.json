@@ -1,10 +1,10 @@
 {
-    "version": "1.5.43.2857",
+    "version": "1.5.44.2904",
     "homepage": "https://github.com/morkt/GARbro",
     "description": "A tool for browsing a wide range of Visual Novel resources through a GUI interface.",
     "license": "MIT",
-    "url": "https://github.com/morkt/GARbro/releases/download/v1.5.43/GARbro-v1.5.43.2857.rar",
-    "hash": "e1c20c3644560f46de683cfba2efc2d37a8f2276ee86a998b807dee9403f8ddc",
+    "url": "https://github.com/morkt/GARbro/releases/download/v1.5.44/GARbro-v1.5.44.2904.rar",
+    "hash": "c0e64b881f967e0a1473127b1d181c0808068a47e99d8b5f1fbe2d99a6b2ed53",
     "bin": [
         "GARbro.GUI.exe",
         [
