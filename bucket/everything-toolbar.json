@@ -5,7 +5,7 @@
     "license": "MIT",
     "notes": [
         "• Enable EverythingToolbar via the context menu of the taskbar",
-        "\u0020∘ Note: You will have to open the context menu twice as it doesn't show up the first time you open it.",
+        "∘ Note: You will have to open the context menu twice as it doesn't show up the first time you open it.",
         "• Adjust size and position after unlocking the taskbar. Demonstration video:",
         "   https://user-images.githubusercontent.com/17520641/107118574-19a1bf80-6882-11eb-843a-7e854e5d0684.gif"
     ],
