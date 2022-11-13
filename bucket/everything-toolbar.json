@@ -9,10 +9,10 @@
     "extract_dir": "EverythingToolbar",
     "pre_install": [
         "if (Test-Path \"$scoopdir\\apps\\everything-toolbar-scripts\") {",
-        "   Copy-Item \"$scoopdir\\apps\\everything-toolbar-scripts\\current\\*.cmd\" \"$dir\" -ErrorAction 'Break' -Recurse",
+        "   Copy-Item \"$scoopdir\\apps\\everything-toolbar-scripts\\current\\*.cmd\" \"$dir\" -ErrorAction 'Stop' -Recurse",
         "}",
         "elseif (Test-Path \"$globaldir\\apps\\everything-toolbar-scripts\") {",
-        "   Copy-Item \"$globaldir\\apps\\everything-toolbar-scripts\\current\\*.cmd\" \"$dir\" -ErrorAction 'Break' -Recurse",
+        "   Copy-Item \"$globaldir\\apps\\everything-toolbar-scripts\\current\\*.cmd\" \"$dir\" -ErrorAction 'Stop' -Recurse",
         "}",
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
         "Start-Process 'cmd' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('/c', \"$dir\\install.cmd\"); Stop-Process -Name 'explorer' -Force"
