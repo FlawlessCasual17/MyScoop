@@ -13,14 +13,10 @@
         "}",
         "elseif (Test-Path \"$globaldir\\apps\\everything-toolbar-scripts\") {",
         "   Copy-Item \"$globaldir\\apps\\everything-toolbar-scripts\\current\\*.cmd\" \"$dir\" -ErrorAction 'Break' -Recurse",
-        "}"
+        "}",
+        "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
+        "Start-Process 'cmd' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('/c', \"$dir\\install.cmd\"); Stop-Process -Name 'explorer' -Force"
     ],
-    "installer": {
-        "script": [
-            "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
-            "Start-Process 'cmd' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('/c', \"$dir\\install.cmd\")"
-        ]
-    },
     "pre_uninstall": [
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
         "Start-Process 'cmd' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('/c', \"$dir\\uninstall.cmd\"); Start-Sleep -Seconds 2"
