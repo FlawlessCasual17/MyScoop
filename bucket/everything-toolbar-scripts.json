@@ -1,0 +1,17 @@
+{
+    "version": "8919288",
+    "homepage": "https://github.com/stnkl/EverythingToolbar/wiki/Installation-per-user-(experimental)",
+    "description": "Install/Uninstall scripts for everything-toolbar. (REQUIRED FOR INSTALL/UNINSTALL PROCESS)",
+    "license": "MIT",
+    "url": "https://github.com/stnkl/EverythingToolbar/files/8919288/EverythingToolbar_install_uninstall.zip",
+    "hash": "f78117a74a924cfed75a304962b251add651f4e87f9b4a552b216e2c9bcba37a",
+    "pre_install": [
+        "$replacer = (Get-Content \"$dir\\*.cmd\")",
+        "$replacer = $replacer.Replace('pause', '')",
+        "$replacer | Set-Content \"$dir\\*.cmd\""
+    ],
+    "checkver": "files/([\\w]+)",
+    "autoupdate": {
+        "url": "https://github.com/stnkl/EverythingToolbar/files/$version/EverythingToolbar_install_uninstall.zip"
+    }
+}
