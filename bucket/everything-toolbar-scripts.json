@@ -11,7 +11,7 @@
         "$replacer1 | Set-Content \"$dir\\install.cmd\"",
         "$replacer2 = (Get-Content \"$dir\\uninstall.cmd\")",
         "$replacer2 = $replacer2.Replace('pause', '')",
-        "$replacer2 | Set-Content \"$dir\\unnstall.cmd\""
+        "$replacer2 | Set-Content \"$dir\\uninstall.cmd\""
     ],
     "checkver": "files/([\\w]+)",
     "autoupdate": {
