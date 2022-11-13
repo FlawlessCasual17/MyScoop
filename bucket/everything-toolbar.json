@@ -16,12 +16,11 @@
         "}",
         "Start-Sleep -Seconds 3",
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
-        "Start-Process 'cmd' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('/c', \"$dir\\install.cmd\"); Stop-Process -Name 'explorer' -Force"
+        "Start-Process 'cmd' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('/c', \"$dir\\install.cmd\")"
     ],
     "pre_uninstall": [
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
-        "Start-Process 'cmd' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('/c', \"$dir\\uninstall.cmd\"); Stop-Process -Name 'explorer' -Force",
-        "Start-Sleep -Seconds 2"
+        "Start-Process 'cmd' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('/c', \"$dir\\uninstall.cmd\"); Start-Sleep -Seconds 2"
     ],
     "checkver": "github",
     "autoupdate": {
