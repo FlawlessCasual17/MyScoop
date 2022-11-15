@@ -1,13 +1,13 @@
 {
-    "version": "3.002",
+    "version": "3.100",
     "homepage": "https://www.copytrans.net/support/install-iphone-ipod-touch-and-ipad-drivers-without-installing-itunes/",
     "description": "An installer for installing iOS drivers without installing iTunes.",
     "license": {
         "identifier": "Freeware",
         "url": "https://www.copytrans.net/support/terms-and-conditions/"
     },
-    "url": "https://www.copytrans.net/bin/CopyTransDriversInstallerv3.002.zip",
-    "hash": "871a9ced3f434cc7280082a3219d7239383210636fc8dc0f713a49b102abb71d",
+    "url": "https://www.copytrans.net/bin/CopyTransDriversInstallerv3.100.zip",
+    "hash": "5aadc38f2f2d64f87b0e55b5aac6a460cbcd966f7a4fcd3aa4355f8af00d45a1",
     "bin": "CopyTransDriversInstaller.exe",
     "shortcuts": [
         [
