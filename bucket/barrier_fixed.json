@@ -29,7 +29,7 @@
     ],
     "pre_uninstall": [
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
-        "Remove-Service -Name 'Barrier' -Verbose -ErrorAction 'SilentlyContinue' | Out-Null"
+        "Remove-Service -Name 'Barrier' -Verbose -ErrorAction 'SilentlyContinue'"
     ],
     "checkver": "github",
     "autoupdate": {
