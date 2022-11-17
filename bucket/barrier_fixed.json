@@ -13,6 +13,7 @@
         }
     },
     "innosetup": true,
+    "pre_install": "New-Service -Name 'Barrier' -BinaryPathName \"$dir\\barrierd.exe\" -StartupType 'Manual' -Description 'Manages the Barrier background processes.'",
     "bin": [
         "barrierc.exe",
         "barriers.exe"
@@ -23,6 +24,7 @@
             "Barrier"
         ]
     ],
+    "pre_uninstall": "Remove-Service -Name 'Barrier' -Verbose",
     "checkver": "github",
     "autoupdate": {
         "architecture": {
