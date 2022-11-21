@@ -16,6 +16,7 @@
             "KDE Dolphin Nightly"
         ]
     ],
+    "pre_install": "Stop-Process -Name 'dbus-daemon' -Force -ErrorAction 'SilentlyContinue'",
     "checkver": {
         "url": "https://binary-factory.kde.org/job/Dolphin_Nightly_win64/",
         "regex": "dolphin-master-([\\d]+)-windows-cl-msvc(?<Year>[\\d]+)-x86_64"
