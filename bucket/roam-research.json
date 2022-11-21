@@ -28,7 +28,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://roam-electron-deploy.s3.us-east-2.amazonaws.com/Roam+Research+Setup+0.0.15.exe#/dl.7z",
+                "url": "https://roam-electron-deploy.s3.us-east-2.amazonaws.com/Roam+Research+Setup+$version.exe#/dl.7z",
                 "hash": {
                     "url": "$baseurl/latest.yml",
                     "regex": "sha512:\\s$base64"
