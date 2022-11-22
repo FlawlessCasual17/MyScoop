@@ -6,7 +6,7 @@
         "identifier": "Freeware",
         "url": "https://www.fjsoft.at/en/Imprint/index.html"
     },
-    "url": "https://www.fosshub.com/MyPhoneExplorer.html?dwl=MyPhoneExplorer_Setup_2.0.exe#/dl.7z",
+    "url": "https://www.fjsoft.at/files/MyPhoneExplorer_Setup_2.0.exe#/dl.7z",
     "hash": "82ce190f9db80775eb448506153348f6a6e164781de7d4bdc0375fb8dceee260",
     "pre_install": "Remove-Item \"$dir\" -Include '$*', 'MyPhoneExplorer.exe' -Recurse; Rename-Item \"$dir\\MyPhoneExplorer portable.exe\" 'MyPhoneExplorer.exe'",
     "bin": "MyPhoneExplorer.exe",
@@ -18,6 +18,6 @@
     ],
     "checkver": "<br>Version\\s([\\d.]+)</td>",
     "autoupdate": {
-        "url": "https://www.fosshub.com/MyPhoneExplorer.html?dwl=MyPhoneExplorer_Setup_$version.exe#/dl.7z"
+        "url": "https://www.fjsoft.at/files/MyPhoneExplorer_Setup_$version.exe#/dl.7z"
     }
 }
