@@ -14,7 +14,7 @@
     ],
     "pre_uninstall": [
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
-        "Start-Process \"${env:ProgramFiles(x86)}\\MyPhoneExplorer\\uninstall.exe\" -Wait -Verb 'RunAs' -ArgumentList '/S'; Start-Sleep -Seconds 2"
+        "if ($cmd -eq 'uninstall') {Start-Process \"${env:ProgramFiles(x86)}\\MyPhoneExplorer\\uninstall.exe\" -Wait -Verb 'RunAs' -ArgumentList '/S'; Start-Sleep -Seconds 2}"
     ],
     "checkver": "<br>Version\\s([\\d.]+)</td>",
     "autoupdate": {

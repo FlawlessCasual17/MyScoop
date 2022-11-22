@@ -16,6 +16,7 @@
             "My Phone Explorer"
         ]
     ],
+    "persist": "Data",
     "checkver": "<br>Version\\s([\\d.]+)</td>",
     "autoupdate": {
         "url": "https://www.fjsoft.at/files/MyPhoneExplorer_Setup_$version.exe#/dl.7z"
