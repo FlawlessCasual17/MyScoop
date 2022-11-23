@@ -27,7 +27,7 @@
         "   Copy-Item \"$dir\\Plugins\\Monitoring\\AIDA64.cfg\" \"$dir\\Plugins\\Monitoring\\AIDA64.cfg.user\"",
         "   Copy-Item \"$dir\\Plugins\\Monitoring\\PerfCounter.cfg\" \"$dir\\Plugins\\Monitoring\\PerfCounter.cfg.user\"",
         "}",
-        "Copy-Item \"$persist_dir\\Plugins\\Client\" \"$dir\\Plugins\\Client\" -Recurse -ErrorAction 'SilentlyContinue'"
+        "Copy-Item \"$persist_dir\\Plugins\\Monitoring\" \"$dir\\Plugins\\Monitoring\" -Recurse -ErrorAction 'SilentlyContinue'"
     ],
     "post_install": [
         "if (Test-Path \"$persist_dir\\AB_Profiles\") {",
@@ -44,7 +44,7 @@
         ]
     ],
     "persist": "Profiles",
-    "pre_uninstall": "if (Test-Path \"$persist_dir\") {Copy-Item \"$dir\\Plugins\\Client\" \"$persist_dir\\Plugins\\Client\" -Recurse -ErrorAction 'SilentlyContinue'}",
+    "pre_uninstall": "if (Test-Path \"$persist_dir\") {Copy-Item \"$dir\\Plugins\\Monitoring\" \"$persist_dir\\Plugins\\Monitoring\" -Recurse -ErrorAction 'SilentlyContinue'}",
     "checkver": {
         "url": "https://www.guru3d.com/files-details/msi-afterburner-beta-download.html",
         "regex": ">Download\\s+([\\d.]+)\\s+Stable\\s+\\(Final\\)",
