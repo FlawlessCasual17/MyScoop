@@ -1,12 +1,12 @@
 {
-    "version": "0.8.0-rc.4-f5383d",
+    "version": "0.8.0-rc.5-7e6ec2",
     "description": "A messenger, crypto wallet, and Web3 browser.",
     "homepage": "https://status.im/",
     "license": "MPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/status-im/status-desktop/releases/download/0.8.0-rc.4/StatusIm-Desktop-v0.8.0-rc.4-f5383d.7z",
-            "hash": "bbdfa212081c3bcd0bf5ae32e4a3fba407a459e1ac4fee04f25eea3dbc979381"
+            "url": "https://github.com/status-im/status-desktop/releases/download/0.8.0-rc.5/StatusIm-Desktop-v0.8.0-rc.5-7e6ec2.7z",
+            "hash": "274242ed71ac037832cddaf9e4a46a65fdbd1e963b6d8baebc62c349362d0dda"
         }
     },
     "extract_dir": "Status",
