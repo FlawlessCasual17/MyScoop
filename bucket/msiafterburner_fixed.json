@@ -44,7 +44,7 @@
         ]
     ],
     "persist": "Profiles",
-    "pre_uninstall": "Copy-Item \"$dir\\Plugins\\Client\" \"$persist_dir\\Plugins\\Client\" -Recurse -ErrorAction 'SilentlyContinue'",
+    "pre_uninstall": "if (Test-Path \"$persist_dir\") {Copy-Item \"$dir\\Plugins\\Client\" \"$persist_dir\\Plugins\\Client\" -Recurse -ErrorAction 'SilentlyContinue'}",
     "checkver": {
         "url": "https://www.guru3d.com/files-details/msi-afterburner-beta-download.html",
         "regex": ">Download\\s+([\\d.]+)\\s+Stable\\s+\\(Final\\)",
