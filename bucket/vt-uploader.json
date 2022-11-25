@@ -28,8 +28,8 @@
     "persist": "vtu_settings.json",
     "pre_uninstall": [
         "if ($cmd -eq 'uninstall') {",
-        "   Start-Process 'reg' -Wait -Verb 'RunAs' -ArgumentList @('delete', 'HKLM\\SOFTWARE\\Classes\\*\\shell\\Upload to VirusTotal', '/f')",
-        "   Start-Process 'reg' -Wait -Verb 'RunAs' -ArgumentList @('delete', 'HKCR\\*\\shell\\Upload to VirusTotal', '/f')",
+        "   reg delete 'HKLM\\SOFTWARE\\Classes\\*\\shell\\Upload to VirusTotal' /f",
+        "   reg delete 'HKCR\\*\\shell\\Upload to VirusTotal' /f",
         "}"
     ],
     "checkver": "github",
