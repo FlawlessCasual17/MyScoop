@@ -16,7 +16,7 @@
     "hash": "142751060f6e68b989af65df8b16420e7d29979849f6aaa27e782d59901beae9",
     "pre_install": [
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
-        "Expand-InnoArchive \"$dir\\uploader.exe\" \"$dir\" -Removal",
+        "Rename-Item \"$dir\\uploader.exe\" 'setup.exe'; Expand-InnoArchive \"$dir\\setup.exe\" \"$dir\" -Removal",
         "if (!( Test-Path \"$dir\\vtu_settings.json\" )) {",
         "   New-Item \"$dir\\vtu_settings.json\" -ItemType 'File' -Value '{\"ApiKey\":\"\",\"Language\":\"\",\"DirectUpload\":false}' | Out-Null",
         "}",
