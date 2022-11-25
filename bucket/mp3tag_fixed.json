@@ -27,7 +27,7 @@
     ],
     "persist": [
         "data\\panels",
-        "date\\columns",
+        "data\\columns",
         "data\\columns.ini",
         "data\\usrfields.ini",
         "mp3tag.cfg"
