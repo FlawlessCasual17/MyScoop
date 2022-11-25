@@ -14,9 +14,11 @@
         "Rename-Item \"$dir\\uploader.exe\" 'setup.exe'; Expand-InnoArchive \"$dir\\setup.exe\" \"$dir\" -Removal",
         "if (!(Test-Path \"$dir\\vtu_settings.json\")) {",
         "   New-Item \"$dir\\vtu_settings.json\" -ItemType 'File' -Value '{\"ApiKey\":\"\",\"Language\":\"\",\"DirectUpload\":false}' | Out-Null",
-        "}",
-        "reg add 'HKLM\\SOFTWARE\\Classes\\*\\shell\\Upload to VirusTotal\\command' /v '(Default)' /t 'REG_SZ' /d \"\\\"\"$dir\\\\uploader.exe\\\"\" \\\"\"%1\\\"\"\" /f",
-        "reg add 'HKCR\\*\\shell\\Upload to VirusTotal\\command' /v '(Default)' /t 'REG_SZ' /d \"\\\"\"$dir\\\\uploader.exe\\\"\" \\\"\"%1\\\"\"\" /f"
+        "}"
+    ],
+    "post_install": [
+        "reg add 'HKLM\\SOFTWARE\\Classes\\*\\shell\\Upload to VirusTotal\\command' /v '(Default)' /t 'REG_SZ' /d \"\\\"\"$dir\\uploader.exe\\\"\" \\\"\"%1\\\"\"\" /f",
+        "reg add 'HKCR\\*\\shell\\Upload to VirusTotal\\command' /v '(Default)' /t 'REG_SZ' /d \"\\\"\"$dir\\uploader.exe\\\"\" \\\"\"%1\\\"\"\" /f"
     ],
     "bin": "uploader.exe",
     "shortcuts": [
