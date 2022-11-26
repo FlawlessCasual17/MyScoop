@@ -20,7 +20,8 @@
         "Copy-Item \"$bucketsdir\\MyScoop\\scripts\\vt-uploader\\install-context.reg\" \"$dir\\install-context.reg\"",
         "$vtPath = $dir.Replace('\\', '\\\\')",
         "$regContent = (Get-Content \"$dir\\install-context.reg\").Replace('$dir', \"$vtPath\")",
-        "Set-Content \"$dir\\install-context.reg\" -Value \"$regContent\" -Encoding 'Ascii'"
+        "Set-Content \"$dir\\install-context.reg\" -Value \"$regContent\" -Encoding 'Ascii'",
+        "reg import \"$dir\\install-context.reg\""
     ],
     "bin": "uploader.exe",
     "shortcuts": [
