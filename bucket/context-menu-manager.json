@@ -4,7 +4,7 @@
     "description": "A program to manage the Windows right-click context menu.",
     "license": "MIT",
     "url": [
-        "https://github.com/BluePointLilac/ContextMenuManager/releases/download/3.3.3.1/ContextMenuManager.NET.4.0.exe#/ContextMenuManager.exe",
+        "https://github.com/BluePointLilac/ContextMenuManager/releases/download/3.3.3.1/ContextMenuManager.NET.4.0.exe#/context-menu-manager.exe",
         "https://raw.githubusercontent.com/BluePointLilac/ContextMenuManager/3.3.3.1/languages/en-US.ini"
     ],
     "hash": [
@@ -19,10 +19,10 @@
         "   New-Item \"$dir\\Config\\Config.ini\" -Force -Value \"`n[General]`nLanguage=en-US`nUpdateFrequency=-1`nShowFilePath=1`nOpenMoreRegedit=1`n`n[Window]\" | Out-Null",
         "}"
     ],
-    "bin": "ContextMenuManager.exe",
+    "bin": "context-menu-manager.exe",
     "shortcuts": [
         [
-            "ContextMenuManager.exe",
+            "context-menu-manager.exe",
             "ContextMenuManager"
         ]
     ],
@@ -40,7 +40,7 @@
     },
     "autoupdate": {
         "url": [
-            "https://github.com/BluePointLilac/ContextMenuManager/releases/download/$version/ContextMenuManager.NET.4.0.exe#/ContextMenuManager.exe",
+            "https://github.com/BluePointLilac/ContextMenuManager/releases/download/$version/ContextMenuManager.NET.4.0.exe#/context-menu-manager.exe",
             "https://raw.githubusercontent.com/BluePointLilac/ContextMenuManager/$version/languages/en-US.ini"
         ]
     }
