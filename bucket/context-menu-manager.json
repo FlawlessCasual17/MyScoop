@@ -1,0 +1,36 @@
+{
+    "version": "3.3.3.1",
+    "homepage": "https://bluepointlilac.github.io/ContextMenuManager/",
+    "description": "A program to manage the Windows right-click context menu.",
+    "license": "MIT",
+    "url": "https://github.com/BluePointLilac/ContextMenuManager/releases/download/3.3.3.1/ContextMenuManager.NET.4.0.exe#/ContextMenuManager.exe",
+    "hash": "1352c2222d2d28dd1a8824334f16c0676dfe88cd7211de873ec9b125f6782ec7",
+    "suggest": {
+        "dotNet-Runtime": "extras/windowsdesktop-runtime"
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\Config\\Config.ini\")) {",
+        "   New-Item \"$dir\\Config\\Config.ini\" -Force",
+        "}"
+    ],
+    "bin": "ContextMenuManager.exe",
+    "shortcuts": [
+        [
+            "ContextMenuManager.exe",
+            "ContextMenuManager"
+        ]
+    ],
+    "": [
+        "Config",
+        "Config\\Backup",
+        "Config\\Dictionaries",
+        "Config\\Dictionaries\\User",
+        "Config\\Dictionaries\\Web",
+        "Config\\Programs",
+        "Config\\Languages"
+    ],
+    "post_install": [
+
+    ],
+
+}
