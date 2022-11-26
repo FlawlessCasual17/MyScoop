@@ -23,7 +23,6 @@
     "persist": [
         "Config\\Config.ini",
         "Config\\Backup",
-        "Config\\Dictionaries",
         "Config\\Dictionaries\\User",
         "Config\\Dictionaries\\Web",
         "Config\\Programs",
