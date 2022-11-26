@@ -16,7 +16,9 @@
         "   New-Item \"$dir\\vtu_settings.json\" -ItemType 'File' -Value '{\"ApiKey\":\"\",\"Language\":\"\",\"DirectUpload\":false}' | Out-Null",
         "}"
     ],
-    "post_install": "reg add 'HKCR\\*\\shell\\Upload to VirusTotal\\command' /v '(Default)' /t 'REG_SZ' /d \"$dir\\uploader.exe %*\" /f",
+    "post_install": [
+        "New-ItemProperty \"Registry::HKEY_CLASSES_ROOT\\*\\shell\\Upload to VirusTotal\\command\" -Name '(Default)' -PropertyType 'String' -Value  \"\"\"C:\\Users\\krist\\scoop\\apps\\vt-uploader\\current\\uploader.exe\"\" \"\"%1\"\"\" -Force"
+    ],
     "bin": "uploader.exe",
     "shortcuts": [
         [
