@@ -21,7 +21,6 @@
         ]
     ],
     "persist": [
-        "Config",
         "Config\\Config.ini",
         "Config\\Backup",
         "Config\\Dictionaries",
