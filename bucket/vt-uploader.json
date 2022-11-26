@@ -17,7 +17,10 @@
         "}"
     ],
     "post_install": [
-        "New-ItemProperty \"Registry::HKEY_CLASSES_ROOT\\*\\shell\\Upload to VirusTotal\\command\" -Name '(Default)' -PropertyType 'String' -Value  \"\"\"C:\\Users\\krist\\scoop\\apps\\vt-uploader\\current\\uploader.exe\"\" \"\"%1\"\"\" -Force"
+        "Copy-Item \"$bucketdir\\MyScoop\\scripts\\vt-uploader\\install-context.reg\" \"$dir\\install-context.reg\"",
+        "$vtPath = $dir.Replace('\\', '\\\\')",
+        "$regContent = (Get-Content \"$dir\\install-context.reg\" -Encoding 'Ascii').Replace('$dir', \"$vtPath\")",
+        "Set-Content \"$dir\\install-context.reg\" -Value \"$regContent\""
     ],
     "bin": "uploader.exe",
     "shortcuts": [
