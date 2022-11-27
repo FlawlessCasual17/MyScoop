@@ -13,8 +13,8 @@
     "pre_install": [
         "Remove-Item \"$dir\\data\\obs-plugins\\droidcam-obs\\`$_13_\" -Recurse",
         "if (Test-Path \"$(appdir obs-studio $global)\") {",
-        "   Copy-Item \"$dir\\data\\obs-plugins\\droidcam-obs\" \"$(appdir obs-studio $global)\\current\\data\\droidcam-obs\" -Recurse",
-        "   Copy-Item \"$dir\\obs-plugins\\64bit\\*\" \"$(appdir obs-studio $global)\\current\\obs-plugins\\64bit\" -Recurse",
+        "   Copy-Item \"$dir\\data\\obs-plugins\\droidcam-obs\" \"$(appdir obs-studio $global)\\current\\data\\droidcam-obs\" -Recurse -ErrorAction 'SilentlyContinue'",
+        "   Copy-Item \"$dir\\obs-plugins\\64bit\\*\" \"$(appdir obs-studio $global)\\current\\obs-plugins\\64bit\" -Recurse -ErrorAction 'SilentlyContinue'",
         "}",
         "elseif (!(Test-Path \"$(appdir obs-studio $global)\")) {error \"$app requires 'obs-studio' to be installed\"; break}"
     ],
