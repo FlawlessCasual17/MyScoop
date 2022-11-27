@@ -16,8 +16,8 @@
         "Copy-Item \"$dir\\obs-plugins\\64bit\\*\" \"$(appdir obs-studio $global)\\current\\obs-plugins\\64bit\" -Recurse"
     ],
     "pre_uninstall": [
-        "Remove-Item \"$(appdir obs-studio $global)\\current\\data\\droidcam-obs\" -Recurse -ErrorAction 'SilentlyContinue' -Force",
-        "Remove-Item \"$(appdir obs-studio $global)\\current\\obs-plugins\\64bit\\droidcam-obs.*\" -Recurse -ErrorAction 'SilentlyContinue' -Force"
+        "Remove-Item \"$(appdir obs-studio $global)\\current\\data\\droidcam-obs\" -Recurse -ErrorAction 'SilentlyContinue'",
+        "Remove-Item \"$(appdir obs-studio $global)\\current\\obs-plugins\\64bit\\droidcam-obs.*\" -Recurse -ErrorAction 'SilentlyContinue'"
     ],
     "checkver": {
         "github": "https://github.com/dev47apps/droidcam-obs-plugin"
