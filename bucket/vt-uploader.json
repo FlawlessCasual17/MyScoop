@@ -36,7 +36,7 @@
     "persist": "vtu_settings.json",
     "pre_uninstall": [
         "if ($cmd -eq 'uninstall') {",
-        "   reg delete 'HKCU\\*\\shell\\Upload to VirusTotal' /f",
+        "   reg delete 'HKCU\\Software\\Classes\\*\\shell\\Upload to VirusTotal' /f",
         "}"
     ],
     "checkver": "github",
