@@ -18,6 +18,7 @@
     "post_install": [
         "$vtPath = $dir.Replace('\\', '\\\\')",
         "$regContent = (Get-Content \"$bucketsdir\\MyScoop\\scripts\\vt-uploader\\install-context.reg\").Replace('$dir', \"$vtPath\")",
+        "if ($global) { $regContent = $regContent.Replace('HKEY_CURRENT_USER', 'HKEY_LOCAL_MACHINE') }",
         "Set-Content \"$dir\\install-context.reg\" -Value $regContent -Encoding 'Ascii'",
         "reg import \"$dir\\install-context.reg\""
     ],
@@ -36,7 +37,9 @@
     "persist": "vtu_settings.json",
     "pre_uninstall": [
         "if ($cmd -eq 'uninstall') {",
-        "   reg delete 'HKCU\\Software\\Classes\\*\\shell\\Upload to VirusTotal' /f",
+        "    $registry = \"HKCU\\Software\\Classes\\*\\shell\\Upload to VirusTotal\"",
+        "    if ($global) { reg delete $registry.Replace('HKCU', 'HKLM') /f }",
+        "    else { reg delete $registry /f }",
         "}"
     ],
     "checkver": "github",
