@@ -22,10 +22,10 @@
         "        Copy-Item \"$dir\\data\" \"$obs\\current\" -Recurse -ErrorAction SilentlyContinue",
         "        Copy-Item \"$dir\\obs-plugins\" \"$obs\\current\" -Recurse -ErrorAction SilentlyContinue",
         "    }",
-        "    elseif (!(Test-Path $obs)) {",
+        "    elseif (!($obs)) {",
         "       error \"$app requires any obs-studio variant to be installed!`nPlease install either,`nextras/obs-studio`nextras/obs-studio-small`nversions/obs-studio27`nversions/obs-studio-pre\"",
         "       break",
-        "   }",
+        "    }",
         "}"
     ],
     "pre_uninstall": [
