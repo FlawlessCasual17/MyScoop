@@ -62,7 +62,11 @@
         "    Remove-Item \"$fontInstallDir\\$($_.Name)\" -Force -ErrorAction SilentlyContinue",
         "}",
         "if ($cmd -eq \"uninstall\") {",
-        "    Write-Host \"The '$app' Font family has been uninstalled and will not be present after restarting your computer.\" -Foreground Magenta",
+        "    Write-Host (\"The '$app' Font family has been uninstalled and will not be present after restarting your computer.`n\",",
+        "    \"You can reinstall the old Segoe UI Emoji and Segoe UI Symbols Fonts by using these commands:`n\",",
+        "    \"fontview.exe \"\"$($env:windir)\\Fonts\\seguisym.ttf\"\"`n\",",
+        "    \"fontview.exe \"\"$($env:windir)\\Fonts\\seguiemj.ttf\"\"\"",
+        "    )",
         "}"
     ],
     "checkver": "github",
