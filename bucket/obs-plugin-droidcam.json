@@ -22,10 +22,6 @@
         "        Copy-Item \"$dir\\data\\droidcam-obs\" \"$obs\\current\\data\\droidcam-obs\" -Recurse -ErrorAction SilentlyContinue",
         "        Copy-Item \"$dir\\obs-plugins\\64bit\\*\" \"$obs\\current\\obs-plugins\\64bit\" -Recurse -ErrorAction SilentlyContinue",
         "    }",
-        "    elseif (!(Test-Path \"$obs\\current\\obs-plugins\")) {",
-        "       error \"$app requires any obs-studio variant to be installed!`nPlease install either,`nextras/obs-studio`nextras/obs-studio-small`nversions/obs-studio27`nversions/obs-studio-pre\"",
-        "       break",
-        "    }",
         "}"
     ],
     "pre_uninstall": [
