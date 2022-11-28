@@ -19,7 +19,7 @@
         "    $obs = \"$(appdir $_ $global)\"",
         "    if (Test-Path $obs) {",
         "        info \"Install for $_\"",
-        "        Copy-Item \"$dir\\data\\droidcam-obs\" \"$obs\\current\\data\\droidcam-obs\" -Recurse -ErrorAction SilentlyContinue",
+        "        Copy-Item \"$dir\\data\\obs-plugins\\droidcam-obs\" \"$obs\\current\\data\\obs-plugins\\droidcam-obs\" -Recurse -ErrorAction SilentlyContinue",
         "        Copy-Item \"$dir\\obs-plugins\\64bit\\*\" \"$obs\\current\\obs-plugins\\64bit\" -Recurse -ErrorAction SilentlyContinue",
         "    }",
         "}"
@@ -29,7 +29,7 @@
         "    $obs = \"$(appdir $_ $global)\"",
         "    if (Test-Path $obs) {",
         "        info \"Uninstall for $_\"",
-        "        Remove-Item \"$obs\\current\\data\\droidcam-obs\" -Force -Recurse -ErrorAction SilentlyContinue",
+        "        Remove-Item \"$obs\\current\\data\\obs-plugins\\droidcam-obs\" -Force -Recurse -ErrorAction SilentlyContinue",
         "        Remove-Item \"$obs\\current\\obs-plugins\\64bit\\droidcam-obs.*\" -Force -ErrorAction SilentlyContinue",
         "    }",
         "}"
