@@ -4,7 +4,7 @@
     "homepage": "https://www.userbenchmark.com/",
     "license": "Unknown",
     "url": "https://www.userbenchmark.com/resources/download/UserBenchmark.zip",
-    "hash": "eeaac3fa41ed1d76c47ebfd2b53a486b1230aa4ab4b327aae20bbb0dff6f9822",
+    "hash": "1f5630174eedeed9bb19aa8c90a0cbb374d14d9740b7f563668d581990e22f2e",
     "extract_dir": "UserBenchmark",
     "pre_install": "ensure \"$persist_dir\" | Out-Null; Copy-Item \"$persist_dir\\User\\*\" \"$dir\\User\" -Recurse -ErrorAction 'SilentlyContinue'",
     "bin": "UserBenchmark.exe",
