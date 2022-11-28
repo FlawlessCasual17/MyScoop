@@ -7,7 +7,7 @@
     "hash": "1f5630174eedeed9bb19aa8c90a0cbb374d14d9740b7f563668d581990e22f2e",
     "extract_dir": "UserBenchmark",
     "pre_install": "ensure \"$persist_dir\" | Out-Null; Copy-Item \"$persist_dir\\User\\*\" \"$dir\\User\" -Recurse -ErrorAction 'SilentlyContinue'",
-    "env_add_path": "$dir",
+    "env_add_path": ".",
     "shortcuts": [
         [
             "UserBenchmark.exe",
