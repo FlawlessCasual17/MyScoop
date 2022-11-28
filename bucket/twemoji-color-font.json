@@ -10,7 +10,7 @@
     "pre_install": [
         "$cmdContent = (Get-Content \"$dir\\install.cmd\") -Replace ('(CHOICE\\s/\\w\\s\"\\w\\w(\\w+\\s)+\\w+(\\s\\w+)+\\w\\w(\\w+\\s)+\\w+\\s\\w+\\?\"$)', 'EXIT /b')",
         "$cmdContent | Set-Content \"$dir\\install.cmd\"",
-        "Remove-Item \"$dir\\uninstall.cmd\"; Start-Process 'cmd' -Wait -Verb 'RunAs' -ArgumentList @('/c', \"$dir\\install.cmd\")",
+        "Remove-Item \"$dir\\uninstall.cmd\"; Start-Process 'cmd' -Wait -NoNewWindow -ArgumentList @('/c', \"$dir\\install.cmd\")",
         "$currentBuildNumber = [int] (Get-ItemProperty \"HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\").CurrentBuildNumber",
         "$windows11Version22H2BuildNumber = 22621",
         "$doesPerUserFontInstallationHaveIssue = $currentBuildNumber -ge $windows11Version22H2BuildNumber",
@@ -50,7 +50,7 @@
         "Get-ChildItem $dir -Filter '*Twemoji.*' | ForEach-Object {",
         "    $value = if ($isFontInstallationForAllUsers) { $_.Name } else { \"$fontInstallDir\\$($_.Name)\" }",
         "    New-ItemProperty -Path $registryKey -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Value $value -Force | Out-Null",
-        "    Copy-Item $_.FullName -Destination $fontInstallDir",
+        "    Copy-Item $_.FullName -Destination $fontInstallDir -Force",
         "}"
     ],
     "pre_uninstall": [
@@ -62,7 +62,7 @@
         "    Remove-Item \"$fontInstallDir\\$($_.Name)\" -Force -ErrorAction SilentlyContinue",
         "}",
         "if ($cmd -eq \"uninstall\") {",
-        "    Write-Host \"The '$($app.Replace('-NF', ''))' Font family has been uninstalled and will not be present after restarting your computer.\" -Foreground Magenta",
+        "    Write-Host \"The '$($app Font family has been uninstalled and will not be present after restarting your computer.\" -Foreground Magenta",
         "}"
     ],
     "checkver": "github",
