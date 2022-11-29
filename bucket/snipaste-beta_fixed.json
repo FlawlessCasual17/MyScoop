@@ -48,7 +48,7 @@
         },
         "hash": {
             "url": "https://dl.snipaste.com/sha-1.txt",
-            "regex": "($sha1)\\s\\*?\\w+-[\\d\\.+]*-Beta-(x86|x64)\\.zip"
+            "regex": "($sha1)\\s\\*?\\w+-[\\d\\.+]*-Beta([\\d]*)-(x86|x64)\\.zip"
         }
     }
 }
