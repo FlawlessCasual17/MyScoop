@@ -14,7 +14,7 @@
         }
     },
     "pre_install": [
-        "if (!(Test-Path \"$persist_dir\" -Include 'config.ini', 'splog.txt')) { Set-Content \"$dir\" '' -Encoding ASCII -Include 'config.ini', 'splog.txt' }",
+        "if (!(Test-Path \"$persist_dir\" -Include 'config.ini', 'splog.txt')) { Set-Content \"$dir\" '' -Encoding ASCII -Include 'config.ini', 'splog.txt' -Force }",
         "Copy-Item \"persist_dir\\*\" \"$dir\\*\" -Include 'config.ini', 'splog.txt' -ErrorAction 'SilentlyContinue' -Recurse"
     ],
     "bin": "Snipaste.exe",
