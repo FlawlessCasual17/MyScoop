@@ -15,7 +15,7 @@
     },
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\" -Include 'config.ini', 'splog.txt')) { Set-Content \"$dir\\config.ini\", \"$dir\\splog.txt\"  '' -Encoding ASCII -Force }",
-        "Copy-Item \"persist_dir\" \"$dir\" -Include 'config.ini', 'splog.txt' -ErrorAction 'SilentlyContinue'"
+        "'config.ini', 'splog.txt' | ForEach-Object { Copy-Item \"persist_dir\\$_\" \"$dir\\$_\" -ErrorAction 'SilentlyContinue' }"
     ],
     "bin": "Snipaste.exe",
     "shortcuts": [
@@ -31,7 +31,7 @@
         "history",
         "crashes",
     ],
-    "pre_uninstall": "Copy-Item \"$dir\" \"persist_dir\" -Include 'config.ini', 'splog.txt' -ErrorAction 'SilentlyContinue'",
+    "pre_uninstall": "'config.ini', 'splog.txt' | ForEach-Object { Copy-Item \"$dir\\$_\" \"persist_dir\\$_\" -ErrorAction 'SilentlyContinue' }",
     "checkver": {
         "url": "https://bitbucket.org/liule/snipaste/downloads",
         "regex": "Snipaste-(?<main>[\\d.]+)-Beta(?<build>[\\d]*)-x86\\.zip",
