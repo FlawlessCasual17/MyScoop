@@ -16,6 +16,7 @@
     "hash": "841c55824f88b7fd6d1474adb8e4f7aa854677dfaf1ce4542768dd99eb73ab59",
     "innosetup": true,
     "pre_install": [
+        "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
         "if ($architecture -eq '32bit') {",
         "   Remove-Item \"$dir\\*,2.*\" -Recurse",
         "   $dirItems = Get-ChildItem \"$dir\\*,1.*\" -Recurse",
@@ -25,9 +26,9 @@
         "   Remove-Item \"$dir\\*,1.*\" -Recurse",
         "   $dirItems = Get-ChildItem \"$dir\\*,2.*\" -Recurse",
         "   $dirItems | Rename-Item -NewName {$_.Name -replace '([\\w?.]+),2\\.([\\w]+)', '$1.$2'}",
-        "}",
-        "New-Service -Name 'Encrypto.Service' -DisplayName 'Encrypto Service' -BinaryPathName \"$dir\\Encrypto.Service.exe\" -StartupType 'AutomaticDelayedStart' -Description 'Encrypto helper service' -ErrorAction 'SilentlyContinue' | Out-Null"
+        "}"
     ],
+    "post_install": "New-Service -Name 'Encrypto.Service' -DisplayName 'Encrypto Service' -BinaryPathName \"$dir\\Encrypto.Service.exe\" -StartupType 'AutomaticDelayedStart' -Description 'Encrypto helper service' -ErrorAction 'SilentlyContinue' | Out-Null",
     "bin": "Encrypto.exe",
     "shortcuts": [
         [
@@ -36,6 +37,7 @@
         ]
     ],
     "pre_uninstall": [
+        "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
         "Stop-Service -Name 'Encrypto.Service' -Force -ErrorAction 'SilentlyContinue'; Remove-Service -Name 'Encrypto.Service' -Force -ErrorAction 'SilentlyContinue'",
         "Start-Process 'regsvr32' -Wait -Verb 'RunAs' -ArgumentList @('/u', \"$dir\\Encrypto.ShellExt.dll\", '/s')"
     ],
