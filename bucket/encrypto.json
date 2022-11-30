@@ -39,7 +39,10 @@
         "Stop-Service -Name 'Encrypto.Service' -Force; Remove-Service -Name 'Encrypto.Service' -Force",
         "Start-Process 'regsvr32' -Wait -Verb 'RunAs' -ArgumentList @('/u', \"$dir\\Encrypto.ShellExt.dll\", '/s')"
     ],
-    "checkver": "<p>([\\d.]+),",
+    "checkver": {
+        "regex": "<p>([\\d.]+),",
+        "reverse": true
+    },
     "autoupdate": {
         "url": "https://dl.devmate.com/com.macpaw.win.Encrypto/EncryptoforWin.exe"
     }
