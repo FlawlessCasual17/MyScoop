@@ -28,7 +28,10 @@
         "   $dirItems | Rename-Item -NewName {$_.Name -replace '([\\w?.]+),2\\.([\\w]+)', '$1.$2'}",
         "}"
     ],
-    "post_install": "New-Service -Name 'Encrypto.Service' -DisplayName 'Encrypto Service' -BinaryPathName \"$dir\\Encrypto.Service.exe\" -StartupType 'AutomaticDelayedStart' -Description 'Encrypto helper service' -ErrorAction 'SilentlyContinue' | Out-Null",
+    "post_install": [
+        "New-Service -Name 'Encrypto.Service' -DisplayName 'Encrypto Service' -BinaryPathName \"$dir\\Encrypto.Service.exe\" -StartupType 'AutomaticDelayedStart' -Description 'Encrypto helper service' -ErrorAction 'SilentlyContinue' | Out-Null",
+        "Start-Service -Name 'Encrypto.Service'"
+    ],
     "bin": "Encrypto.exe",
     "shortcuts": [
         [
