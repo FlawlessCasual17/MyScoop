@@ -17,13 +17,13 @@
     "innosetup": true,
     "pre_install": [
         "if ($architecture -eq '32bit') {",
-        "   Remove-Item \"$dir\\Encrypto\\*,2.*\" -Recurse",
-        "   $dirItems = Get-ChildItem \"$dir\\Encrypto\\*,1.*\" -Recurse",
+        "   Remove-Item \"$dir\\*,2.*\" -Recurse",
+        "   $dirItems = Get-ChildItem \"$dir\\*,1.*\" -Recurse",
         "   $dirItems | Rename-Item -NewName {$_.Name -replace '([\\w?.]+),1\\.([\\w]+)', '$1.$2'}",
         "}",
         "elseif ($architecture -eq '64bit') {",
-        "   Remove-Item \"$dir\\Encrypto\\*,1.*\" -Recurse",
-        "   $dirItems = Get-ChildItem \"$dir\\Encrypto\\*,2.*\" -Recurse",
+        "   Remove-Item \"$dir\\*,1.*\" -Recurse",
+        "   $dirItems = Get-ChildItem \"$dir\\*,2.*\" -Recurse",
         "   $dirItems | Rename-Item -NewName {$_.Name -replace '([\\w?.]+),2\\.([\\w]+)', '$1.$2'}",
         "}",
         "New-Service -Name 'Encrypto.Service' -DisplayName 'Encrypto Service' -BinaryPathName \"$dir\\Encrypto.Service.exe\" -StartupType 'AutomaticDelayedStart' -Description 'Encrypto helper service' | Out-Null"
