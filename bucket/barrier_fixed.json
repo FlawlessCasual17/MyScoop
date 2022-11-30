@@ -5,9 +5,9 @@
     "license": "GPL-2.0-only",
     "notes": [
         "To add the 'Barrier' service run:",
-        "start 'powershell' -verb 'RunAs' -args \"$dir\\add-service.ps1\"",
+        "start 'powershell' -Verb 'RunAs' -args \"$dir\\add-service.ps1\"",
         "To remove the 'Barrier' service run:",
-        "start 'powershell' -verb 'RunAs' -args \"$dir\\remove-service.ps1\""
+        "start 'powershell' -Verb 'RunAs' -args \"$dir\\remove-service.ps1\""
     ],
     "suggest": {
         "vcredist": "extras/vcredist2022"
