@@ -39,7 +39,8 @@
     "pre_uninstall": [
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
         "Stop-Service -Name 'Encrypto.Service' -Force -ErrorAction 'SilentlyContinue'; Remove-Service -Name 'Encrypto.Service' -ErrorAction 'SilentlyContinue'",
-        "Start-Process 'regsvr32' -Wait -Verb 'RunAs' -ArgumentList @('/u', \"$dir\\Encrypto.ShellExt.dll\", '/s')"
+        "Start-Process 'regsvr32' -Wait -Verb 'RunAs' -ArgumentList @('/u', \"$dir\\Encrypto.ShellExt.dll\", '/s'); Stop-Process -Name 'explorer' -Force",
+        "Start-Sleep -Seconds 2"
     ],
     "checkver": {
         "regex": "<p>([\\d.]+),",
