@@ -1,0 +1,42 @@
+{
+    "version": "1.0.1",
+    "homepage": "https://macpaw.com/encrypto#Windows",
+    "description": "A free file encryptor that allows to encrypt any file with AES-256 encryption.",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://macpaw.com/eula"
+    },
+    "notes": [
+        "To add 'encrypto' as a context menu option, run:",
+        "start 'regsvr32' -Verb 'RunAs' -Args @(\"$dir\\Encrypto.ShellExt.dll\", '/s')",
+        "To remove 'encrypto' from the context menu, run:",
+        "start 'regsvr32' -Verb 'RunAs' -Args @('/u', \"$dir\\Encrypto.ShellExt.dll\", '/s')"
+    ],
+    "url": "https://dl.devmate.com/com.macpaw.win.Encrypto/EncryptoforWin.exe",
+    "hash": "841c55824f88b7fd6d1474adb8e4f7aa854677dfaf1ce4542768dd99eb73ab59",
+    "innosetup": true,
+    "pre_install": [
+        "if ($architecture -eq '32bit') {",
+        "   Remove-Item \"$dir\\Encrypto\\*,2.*\" -Recurse",
+        "   $dirItems = Get-ChildItem \"$dir\\Encrypto\\*,1.*\" -Recurse",
+        "   $dirItems | Rename-Item -NewName {$_.Name -replace '([\\w?.]+),1\\.([\\w]+)', '$1.$2'}",
+        "}",
+        "elseif ($architecture -eq '64bit') {",
+        "   Remove-Item \"$dir\\Encrypto\\*,1.*\" -Recurse",
+        "   $dirItems = Get-ChildItem \"$dir\\Encrypto\\*,2.*\" -Recurse",
+        "   $dirItems | Rename-Item -NewName {$_.Name -replace '([\\w?.]+),2\\.([\\w]+)', '$1.$2'}",
+        "}",
+        "New-Service -Name 'Encrypto.Service' -DisplayName 'Encrypto Service' -BinaryPathName \"$dir\\Encrypto.Service.exe\" -StartupType 'AutomaticDelayedStart' -Description 'Encrypto helper service' | Out-Null"
+    ],
+    "bin": "Encrypto.exe",
+    "shortcuts": [
+        [
+            "Encrypto.exe",
+            "Encrypto"
+        ]
+    ],
+    "checkver": "<p>([\\d.]+),",
+    "autoupdate": {
+        "url": "https://dl.devmate.com/com.macpaw.win.Encrypto/EncryptoforWin.exe"
+    }
+}
