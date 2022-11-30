@@ -26,7 +26,7 @@
         "   $dirItems = Get-ChildItem \"$dir\\*,2.*\" -Recurse",
         "   $dirItems | Rename-Item -NewName {$_.Name -replace '([\\w?.]+),2\\.([\\w]+)', '$1.$2'}",
         "}",
-        "New-Service -Name 'Encrypto.Service' -DisplayName 'Encrypto Service' -BinaryPathName \"$dir\\Encrypto.Service.exe\" -StartupType 'AutomaticDelayedStart' -Description 'Encrypto helper service' | Out-Null"
+        "New-Service -Name 'Encrypto.Service' -DisplayName 'Encrypto Service' -BinaryPathName \"$dir\\Encrypto.Service.exe\" -StartupType 'AutomaticDelayedStart' -Description 'Encrypto helper service' -ErrorAction 'SilentlyContinue' | Out-Null"
     ],
     "bin": "Encrypto.exe",
     "shortcuts": [
@@ -36,7 +36,7 @@
         ]
     ],
     "pre_uninstall": [
-        "Stop-Service -Name 'Encrypto.Service' -Force; Remove-Service -Name 'Encrypto.Service' -Force",
+        "Stop-Service -Name 'Encrypto.Service' -Force -ErrorAction 'SilentlyContinue'; Remove-Service -Name 'Encrypto.Service' -Force -ErrorAction 'SilentlyContinue'",
         "Start-Process 'regsvr32' -Wait -Verb 'RunAs' -ArgumentList @('/u', \"$dir\\Encrypto.ShellExt.dll\", '/s')"
     ],
     "checkver": {
