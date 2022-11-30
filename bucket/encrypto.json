@@ -35,6 +35,7 @@
             "Encrypto"
         ]
     ],
+    "pre_uninstall": "Start-Process 'regsvr32' -Wait -Verb 'RunAs' -ArgumentList @('/u', \"$dir\\Encrypto.ShellExt.dll\", '/s')",
     "checkver": "<p>([\\d.]+),",
     "autoupdate": {
         "url": "https://dl.devmate.com/com.macpaw.win.Encrypto/EncryptoforWin.exe"
