@@ -19,7 +19,7 @@
         }
     },
     "innosetup": true,
-    "pre_install": [
+    "post_install": [
         "New-Item \"$dir\\add-service.ps1\" -Value (",
         "    \"New-Service -Name 'Barrier' -BinaryPathName \"\"$dir\\barrierd.exe\"\" -StartupType 'Manual' -Description 'Manages the Barrier background processes.' -ErrorAction 'SilentlyContinue'\"",
         ") | Out-Null",
