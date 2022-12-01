@@ -1,5 +1,5 @@
 {
-    "version": "3.11.15",
+    "version": "3.11.17",
     "homepage": "https://www.pcloud.com/",
     "description": "The official Windows 10/11 client for syncronising local files/folders to your pCloud drive, and vice versa.",
     "license": {
@@ -8,16 +8,16 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://p-def3.pcloud.com/cBZiyhQSxZ3woRHNZZZtyWjc7Z2ZZtdVZkZwa0a7Z77ZIzZSpZi7ZLRZH5Z35ZRzZgHZozZgRZ9RZjRZ0VZq7mjVZ6nWOclVG2NHtFwoEBagSlJa8dr4V/pCloud_Windows_3.11.15_x64.exe#/dl.exe",
-            "hash": "EDF9EB68FA412506C27FDFF449E972D23A070F56CC6194BB939B9DEEDDEF612D",
+            "url": "https://partner.pcloud.com/dl/win64#/setup.exe",
+            "hash": "66f1d5eeb11615d6a581b23f69e358e2afe1ab33b7bfa9437b50981c37fa9018",
             "post_install": [
                 "Start-Process 'regsvr32' -ArgumentList @(\"$dir\\OverlayIcon64.dll\", '/s') -Verb 'RunAs' -Wait",
                 "Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force; Start-Sleep -Seconds 2"
             ]
         },
         "32bit": {
-            "url": "https://p-def3.pcloud.com/cBZWiBQSxZIloRHNZZZteoSc7ZAkZZtdVZkZcH4N7ZIFZCzZ0VZ1LZdkZrzZ5pZ7LZVRZ4HZWHZHLZGpZqHZA7mjVZCGJRSplL6UQPcegW24KqzR1QsHak/pCloud_Windows_3.11.15_x86.exe#/dl.exe",
-            "hash": "6E7050C8CFB534B3BDBB1230098E2652A987967271CBFB5FA851570F2BB47B43",
+            "url": "https://partner.pcloud.com/dl/win#/setup.exe",
+            "hash": "6f21127b474a0f827fd0b62e4f2962dac67b27c00f889b928ecf707e6d87507a",
             "post_install": [
                 "Start-Process 'regsvr32' -ArgumentList @(\"$dir\\OverlayIcon.dll\", '/s') -Verb 'RunAs' -Wait",
                 "Stop-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' -Force; Start-Sleep -Seconds 2"
@@ -26,7 +26,7 @@
     },
     "pre_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Expand-DarkArchive \"$dir\\dl.exe\" \"$dir\\extracted\" -Removal",
+        "Expand-DarkArchive \"$dir\\setup.exe\" \"$dir\\extracted\" -Removal",
         "Expand-MsiArchive \"$dir\\extracted\\AttachedContainer\\pCloud Drive.msi\" \"$dir\" -ExtractDir 'pCloud Drive' -Removal",
         "Remove-Item \"$dir\\extracted\" -Recurse"
     ],
@@ -51,18 +51,15 @@
     ],
     "checkver": {
         "url": "https://www.pcloud.com/release-notes/windows.html",
-        "script": [
-            
-        ],
         "regex": "<b>([\\d.]+)</b>"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://p-def3.pcloud.com/cBZiyhQSxZ3woRHNZZZMeoSc7ZAkZZtdVZkZwa0a7Z77ZIzZSpZi7ZLRZH5Z35ZRzZgHZozZgRZ9RZjRZ0VZq7mjVZkPDpdsCiGdYHsl4BVOIs0FzbYvTk/pCloud_Windows_$version_x64.exe#/dl.exe"
+                "url": "https://partner.pcloud.com/dl/win64#/setup.exe"
             },
             "32bit": {
-                "url": "https://p-def3.pcloud.com/cBZWiBQSxZIloRHNZZZteoSc7ZAkZZtdVZkZcH4N7ZIFZCzZ0VZ1LZdkZrzZ5pZ7LZVRZ4HZWHZHLZGpZqHZA7mjVZCGJRSplL6UQPcegW24KqzR1QsHak/pCloud_Windows_$version_x86.exe#/dl.exe"
+                "url": "https://partner.pcloud.com/dl/win#/setup.exe"
             }
         }
     }
