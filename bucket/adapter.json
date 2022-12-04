@@ -6,6 +6,9 @@
         "identifier": "Freeware",
         "url": "https://macroplant.com/adapter/eula"
     },
+    "suggest": {
+        "FFmpeg": "main/ffmpeg"
+    },
     "url": "https://assets.macroplant.com/download/6/Adapter-2.1.2.exe",
     "hash": "89efa9f4fea8d38780531a4904fc2d500835f952a827412cb81713f33314f828",
     "shortcuts": [
