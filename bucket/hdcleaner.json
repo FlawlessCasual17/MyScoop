@@ -13,11 +13,11 @@
     "architecture": {
         "32bit": {
             "url": "https://kurtzimmermann.com/files/HDCleanerX32.zip",
-            "hash": "63217b01c088573da603aa4cc61b50615eeff5dbdfb825e7b8f47fdbb34bb086"
+            "hash": "0a2eb551c0849e35ae72275ab656a30b48352305db8bbcf9f1e8fbb2109d6799"
         },
         "64bit": {
             "url": "https://kurtzimmermann.com/files/HDCleanerX64.zip",
-            "hash": "5851e9fc29de8627728d9d49ef9f397018c325b489e6c765c46980a73a149c61"
+            "hash": "71925837c20f0a7a4402270fc1ed4ac4f0c6052f67203834ac234cdc3786a9d6"
         }
     },
     "pre_install": "Remove-Item \"$dir\\Uninstaller.exe\" | Out-Null",
