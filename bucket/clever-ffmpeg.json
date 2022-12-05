@@ -1,0 +1,33 @@
+{
+    "version": "3.0.5",
+    "homepage": "https://www.videohelp.com/software/clever-FFmpeg-GUI",
+    "description": "A small, but powerful GUI for FFmpeg that processes audio and video streams separately.",
+    "license": "Freeware",
+    "suggest": {
+        "FFmpeg": "main/ffmpeg"
+    },
+    "url": "https://www.videohelp.com/download/clever_ffmpeg_gui_305.zip?r=bmJPJvDd#/dl.7z",
+    "hash": "681623eaa1acd01221fdfd35168f373b11daaa646789f5252c2b3dc56944b9ff",
+    "extract_dir": "AnyCPU",
+    "shortcuts": [
+        [
+            "clever FFmpeg GUI.exe",
+            "Clever FFmpeg"
+        ]
+    ],
+    "checkver": {
+        "script": [
+            "(Invoke-WebRequest 'https://www.videohelp.com/software/clever-FFmpeg-GUI') -match '(?<url>https:\\/\\/www.*./*/clever_ffmpeg_gui_\\d+\\.zip|7z)' | Out-Null",
+            "$getURL = $Matches['url']",
+            "(Invoke-WebRequest \"$getURL\") -match 'clever_ffmpeg_gui_\\d+\\.(zip|7z)\\?r=(?<code>[\\w]+)' | Out-Null",
+            "$siteData = $Matches['code']",
+            "(Invoke-WebRequest 'https://www.videohelp.com/software/clever-FFmpeg-GUI/version-history') -match '\\s+version\\s+(?<version>[\\d.]+)\\.' | Out-Null",
+            "$siteData += ', ' + $Matches['version']",
+            "Write-Output \"$siteData\""
+        ],
+        "regex": "(?<Code>[\\w]),\\s([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://www.videohelp.com/download/clever_ffmpeg_gui_$cleanVersion.zip?r=$matchCode#/dl.7z"
+    }
+}
