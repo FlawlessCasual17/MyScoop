@@ -10,10 +10,14 @@
         }
     },
     "post_install": [
-        "Rename-Item \"$dir\\EncodeGUI*setup.exe\" 'setup.exe'; $arguments = @('/VERYSILENT', '/CURRENTUSER', '/SUPPRESSMSGBOXES')",
+        "Rename-Item \"$dir\\EncodeGUI*setup.exe\" 'setup.exe'; $arguments = @('/VERYSILENT', '/CURRENTUSER', \"/DIR=$dir\", '/SUPPRESSMSGBOXES')",
+        "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
         "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -ArgumentList $arguments; Remove-Item \"$dir\\setup.exe\""
     ],
-    "pre_uninstall": "Start-Process \"$dir\\unins000.exe\" -Wait -Verb 'RunAs' -ArgumentList @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/SUPPRESSMSGBOXES')",
+    "pre_uninstall": [
+        "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
+        "Start-Process \"$dir\\unins000.exe\" -Wait -Verb 'RunAs' -ArgumentList @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/SUPPRESSMSGBOXES')"
+    ],
     "checkver": {
         "github": "https://github.com/DaGooseYT/EncodeGUI"
     },
