@@ -11,7 +11,7 @@
     },
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\fastflix.yaml\")) {",
-        "   New-Item \"$persist_dir\\fastflix.yaml\" -Value \"language: eng`r`ndisable_version_check: true`ndisable_update_check: true\" | Out-Null",
+        "   New-Item \"$dir\\fastflix.yaml\" -Value \"language: eng`r`ndisable_version_check: true`ndisable_update_check: true\" | Out-Null",
         "}"
     ],
     "bin": "FastFlix.exe",
