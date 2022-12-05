@@ -25,7 +25,8 @@
         "UserFormats.txt",
         "UserDimensions.txt",
         "UserACodecs.txt",
-        "UserPresets.ini"
+        "UserPresets.ini",
+        "SmartFFmpeg.ini"
     ],
     "checkver": "\\(Current\\sversion:\\s([\\d.]+)\\)",
     "autoupdate": {
