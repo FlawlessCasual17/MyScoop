@@ -18,7 +18,6 @@
         "if(!(Test-Path \"$persist_dir\" -Include 'Fav.ini', 'XMediaRecode.json')) {",
         "New-Item \"$dir\\Fav.ini\" | Out-Null; Set-Content \"$dir\\XMediaRecode.json\" -Value '{}' -Encoding 'utf8' -Force"
     ],
-    "bin": "XMedia Recode.exe",
     "shortcuts": [
         [
             "XMedia Recode.exe",
