@@ -1,5 +1,5 @@
 {
-    "version": "3.0.5.",
+    "version": "3.0.5",
     "homepage": "https://www.videohelp.com/software/clever-FFmpeg-GUI",
     "description": "A small, but powerful GUI for FFmpeg that processes audio and video streams separately.",
     "license": "Freeware",
@@ -17,7 +17,7 @@
     ],
     "checkver": {
         "url": "https://www.videohelp.com/software/clever-FFmpeg-GUI/version-history",
-        "regex": "\\s+version\\s+([\\d.]+)"
+        "regex": "\\s+version\\s+([\\d.]+)\\."
     },
     "autoupdate": {
         "url": "https://www.videohelp.com/download/clever_ffmpeg_gui_$cleanVersion.zip"
