@@ -14,7 +14,6 @@
         "   New-Item \"$dir\\fastflix.yaml\" -Value \"language: eng`r`ndisable_version_check: true`ndisable_update_check: true\" | Out-Null",
         "}"
     ],
-    "bin": "FastFlix.exe",
     "shortcuts": [
         [
             "FastFlix.exe",
