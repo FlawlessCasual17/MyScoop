@@ -1,0 +1,21 @@
+{
+    "version": "1.5.1",
+    "homepage": "http://freeware.satria.de/SmartFFmpeg/index.php?lang=EN",
+    "description": "A GUI for the powerful, open source multimedia-converter ffmpeg.",
+    "license": "Freeware",
+    "suggest": {
+        "FFmpeg": "main/ffmpeg"
+    },
+    "url": "http://freeware.satria.de/SmartFFmpeg/SmartFFmpeg.7z",
+    "hash": "5a890a49fdf42b3b32bf0f91695937ac198b8d691ad37f7d02063b5bf5106d3a",
+    "shortcuts": [
+        [
+            "SmartFFmpeg.exe",
+            "SmartFFmpeg"
+        ]
+    ],
+    "checkver": "\\(Current\\sversion:\\s([\\d.]+)\\)",
+    "autoupdate": {
+        "url": "http://freeware.satria.de/SmartFFmpeg/SmartFFmpeg.7z"
+    }
+}
