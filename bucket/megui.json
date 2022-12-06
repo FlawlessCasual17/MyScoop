@@ -40,7 +40,7 @@
     "pre_uninstall": "Copy-Item \"$dir\\joblists.xml\" \"$persist_dir\\joblists.xml\" -ErrorAction 'SilentlyContinue'",
     "checkver": {
         "url": "https://sourceforge.net/projects/megui/rss?path=/megui-stable",
-        "regex": "\\/megui-stable\\/([2913])\\/"
+        "regex": "\\/megui-stable\\/([\\d]+)\\/"
     },
     "autoupdate": {
         "hash": {
