@@ -26,7 +26,7 @@
     ],
     "checkver": {
         "url": "http://www.havysoft.cl/descargar.html",
-        "regex": "<td\\s+width=\"\\d+\">([\\d.]+)</td>"
+        "regex": "\\s+<td\\swidth=\"\\d+\">([\\d.]+)</td>"
     },
     "autoupdate": {
         "url": "http://www.havysoft.cl/download/IE_Install.zip"
