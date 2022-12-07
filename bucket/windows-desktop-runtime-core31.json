@@ -33,8 +33,8 @@
             "(Invoke-WebRequest \"https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-$getVersion-windows-x64-installer\") -match \"$regex\" | Out-Null",
             "$getPart_64 = $Matches['parts']",
             "(Invoke-WebRequest \"https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-$getVersion-windows-x86-installer\") -match \"$regex\" | Out-Null",
-            "$getPart_86 = $Matches['parts']",
-            "return \"$getVersion, 64bit:$getPart_64, 32bit:$getPart_86\""
+            "$getPart_32 = $Matches['parts']",
+            "return \"$getVersion, 64bit:$getPart_64, 32bit:$getPart_32\""
         ],
         "regex": "([\\d.]+),\\s64bit:(?<Part64>[\\w-]+\\/[\\w]+),\\s32bit:(?<Part32>[\\w-]+\\/[\\w]+)"
     },
