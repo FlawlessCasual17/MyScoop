@@ -4,7 +4,7 @@
     "description": "An Alternative Control Panel for Windows 10.",
     "license": "MIT",
     "suggest": {
-        "Microsoft .NET 3.1 Desktop Runtime Core": "extras/windows-desktop-runtime-core31"
+        "Microsoft .NET 3.1 Desktop Runtime Core": "MyScoop/windows-desktop-runtime-core31"
     },
     "architecture": {
         "64bit": {
