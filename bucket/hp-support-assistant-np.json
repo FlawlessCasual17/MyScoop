@@ -16,6 +16,10 @@
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -ArgumentList @('/f', \"$dir\", '/s'); Remove-Item \"$dir\\setup.exe\""
     ],
+    "pre_uninstall": [
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "Start-Process \"$dir\\UninstallHPSA.exe\" -Wait -Verb 'RunAs' -ArgumentList '/s'; Start-Sleep -Seconds 4"
+    ],
     "checkver": {
         "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",
         "url": "https://hpsa-redirectors.hpcloud.hp.com/common/hpsaredirector.js",
