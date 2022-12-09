@@ -32,7 +32,7 @@
             "$redirUrl = [System.Net.HttpWebRequest]::Create('https://www.vmware.com/go/getplayer-win').GetResponse().ResponseUri.AbsoluteUri",
             "return $redirUrl"
         ],
-        "re": "WKST-PLAYER-(<CleanVer>[\\d]+)\\/VMware-player-full-([\\d.]+-[\\w]+)"
+        "regex": "WKST-PLAYER-(<CleanVer>[\\d]+)\\/VMware-player-full-([\\d.]+-[\\w]+)"
     },
     "autoupdate": {
         "architecture": {
