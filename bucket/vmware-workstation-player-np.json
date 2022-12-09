@@ -20,9 +20,12 @@
         "Remove-Item \"$msiInstaller\" -Force"
     ],
     "pre_uninstall": [
-        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process 'msiexec' -Wait -Verb 'RunAs' -ArgumentList @('/x', \"$dir\\setup.msi\", '/qn', '/norestart', 'REBOOT=ReallySuppress')",
-        "Start-Sleep -Seconds 2"
+        "if ($cmd -eq 'uninstall') {",
+        "   if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "   Start-Process 'msiexec' -Wait -Verb 'RunAs' -ArgumentList @('/x', \"$dir\\setup.msi\", '/qn', '/norestart', 'REBOOT=ReallySuppress')",
+        "   Start-Sleep -Seconds 2",
+        "   Write-Host \"Please restart your computer to uninstall $app properly\" -F 'Red'",
+        "}"
     ],
     "checkver": {
         "script": [
