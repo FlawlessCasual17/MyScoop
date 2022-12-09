@@ -29,9 +29,13 @@
             "$redirUrl = [System.Net.HttpWebRequest]::Create('https://www.vmware.com/go/getplayer-win').GetResponse().ResponseUri.AbsoluteUri",
             "return $redirUrl"
         ],
-        "regex": "VMware-player-full-([\\d.]+)-(?<Build>[\\w]+)"
+        "regex": "WKST-PLAYER-(<CleanVer>[\\d]+)\\/VMware-player-full-([\\d.]+-[\\w]+)"
     },
     "autoupdate": {
-
+        "architecture": {
+            "64bit": {
+                "url": "https://download3.vmware.com/software/WKST-PLAYER-$matchCleanVer/VMware-player-full-$version.exe#/setup.exe"
+            }
+        }
     }
 }
