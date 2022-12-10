@@ -7,16 +7,22 @@
     "hash": "f9cb043d420c18f4c8567f102511ecf25ac255b3a1451257a379e5d97e7ff858",
     "pre_install": [
         "ensure \"$persist_dir\" | Out-Null",
-        "Copy-Item \"$persist_dir\\*\" \"$dir\" -Filter @('Shortcuts', 'config') -Recurse -ErrorAction 'SilentlyContinue'"
+        "Copy-Item \"$persist_dir\\*\" \"$dir\" -Filter 'Shortcuts', 'config' -Recurse -ErrorAction 'SilentlyContinue'"
     ],
     "bin": "TaskbarGroups.exe",
     "shortcuts": [
         [
             "TaskbarGroups.exe",
             "Taskbar Groups"
+        ],
+        [
+            "Shortcuts",
+            "Taskbar Groups Shortcuts",
+            "",
+            "TaskbarGroups.exe"
         ]
     ],
-    "pre_uninstall": "Copy-Item \"$dir\\*\" \"$persist_dir\" -Filter @('Shortcuts', 'config') -Recurse -ErrorAction 'SilentlyContinue'",
+    "pre_uninstall": "Copy-Item \"$dir\\*\" \"$persist_dir\" -Filter 'Shortcuts', 'config' -Recurse -ErrorAction 'SilentlyContinue'",
     "checkver": {
         "url": "https://github.com/tjackenpacken/taskbar-groups/tags",
         "regex": "tag\\/v([\\d.]+)"
