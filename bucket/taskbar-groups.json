@@ -6,12 +6,17 @@
     "url": "https://github.com/tjackenpacken/taskbar-groups/releases/download/v0.2.0.0/TaskbarGroups.zip",
     "hash": "f9cb043d420c18f4c8567f102511ecf25ac255b3a1451257a379e5d97e7ff858",
     "bin": "TaskbarGroups.exe",
+    "pre_install": [
+        "ensure \"$persist_dir\" | Out-Null",
+        "Copy-Item \"$persist_dir\\*\" \"$dir\" -Filter @('Shortcuts', 'config') -Recurse -ErrorAction 'SilentlyContinue'"
+    ],
     "shortcuts": [
         [
             "TaskbarGroups.exe",
             "Taskbar Groups"
         ]
     ],
+    "pre_uninstall": "Copy-Item \"$dir\\*\" \"$persist_dir\" -Filter @('Shortcuts', 'config') -Recurse -ErrorAction 'SilentlyContinue'",
     "checkver": {
         "url": "https://github.com/tjackenpacken/taskbar-groups/tags",
         "regex": "tag\\/v([\\d.]+)"
