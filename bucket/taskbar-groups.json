@@ -10,6 +10,7 @@
         "ensure \"$persist_dir\" | Out-Null",
         "Copy-Item \"$persist_dir\\*\" \"$dir\" -Include 'Shortcuts', 'config' -Recurse -ErrorAction 'SilentlyContinue'"
     ],
+    "post_install": "New-Item \"$dir\\OpenTaskbarGroupsShortcuts.ps1\" -Value \" Invoke-Item \"\"$dir\\Shortcuts\"\" \" | Out-Null",
     "bin": "TaskbarGroups.exe",
     "shortcuts": [
         [
@@ -17,8 +18,8 @@
             "Taskbar Groups"
         ],
         [
-            "Shortcuts",
-            "Taskbar Groups Shortcuts",
+            "OpenTaskbarGroupsShortcuts.ps1",
+            "Open Taskbar Groups Shortcuts",
             "",
             "TaskbarGroups.exe"
         ]
