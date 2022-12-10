@@ -20,7 +20,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/Dummerle/Rare/releases/download/$version/Rare-Windows-$version.zip"
+                "url": "https://github.com/Dummerle/Rare/releases/download/$version/Rare-Windows-$version.msi"
             }
         }
     }
