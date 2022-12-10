@@ -8,9 +8,9 @@
     "extract_dir": "TaskbarGroups",
     "pre_install": [
         "ensure \"$persist_dir\" | Out-Null",
+        "New-Item \"$dir\\OpenTaskbarGroupsShortcuts.ps1\" -Value \" Invoke-Item \"\"$dir\\Shortcuts\"\" \" | Out-Null",
         "Copy-Item \"$persist_dir\\*\" \"$dir\" -Include 'Shortcuts', 'config' -Recurse -ErrorAction 'SilentlyContinue'"
     ],
-    "post_install": "New-Item \"$dir\\OpenTaskbarGroupsShortcuts.ps1\" -Value \" Invoke-Item \"\"$dir\\Shortcuts\"\" \" | Out-Null",
     "bin": "TaskbarGroups.exe",
     "shortcuts": [
         [
