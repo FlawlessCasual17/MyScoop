@@ -15,8 +15,9 @@
     "url": "https://clients.chime.aws/win/releases/Chime.4.39.10416.exe",
     "hash": "4f0e01cf998e9ee2cb98aa0e7f0d4d5d0dc0b74830bd0a7e36b10ed1d57f2243",
     "innosetup": true,
-    "extract_dir": "{userappdata}",
+    "extract_dir": "{userappdata}\\Chime",
     "pre_install": [
+        "Remove-Item \"$dir\\unins000.*\"",
         "$currentDir = $dir.Replace(\"$version\", 'current')",
         "$value = (",
         "    '$command = $args',",
