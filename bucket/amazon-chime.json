@@ -19,7 +19,7 @@
     "pre_install": [
         "if ($architecture -eq '32bit') { Remove-Item \"$dir\\MediaClient,2.dll\"; Rename-Item \"$dir\\MediaClient,1.dll\" 'MediaClient.dll' }",
         "elseif ($architecture -eq '64bit') { Remove-Item \"$dir\\MediaClient,1.dll\"; Rename-Item \"$dir\\MediaClient,2.dll\" 'MediaClient.dll' }",
-        "Remove-Item \"$dir\\unins000.*\"",
+        "Remove-Item \"$dir\\unins000.\"",
         "$currentDir = $dir.Replace(\"$version\", 'current')",
         "$value = (",
         "    '$command = $args',",
