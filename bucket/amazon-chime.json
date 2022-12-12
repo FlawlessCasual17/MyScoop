@@ -1,0 +1,61 @@
+{
+    "version": "4.39.10416",
+    "homepage": "https://aws.amazon.com/chime/",
+    "description": "A communications service that lets you meet, chat, and place business calls inside and outside your organization, all using a single application.",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://aws.amazon.com/terms/?nc1=f_pr"
+    },
+    "notes": [
+        "To add 'Amazon Chime' to the context menu run:",
+        "chime-context-menu.ps1 install",
+        "To remove 'Amazon Chime' from the context menu run:",
+        "chime-context-menu.ps1 uninstall"
+    ],
+    "url": "https://clients.chime.aws/win/releases/Chime.4.39.10416.exe",
+    "hash": "4f0e01cf998e9ee2cb98aa0e7f0d4d5d0dc0b74830bd0a7e36b10ed1d57f2243",
+    "innosetup": true,
+    "extract_dir": "{userappdata}",
+    "pre_install": [
+        "$currentDir = $dir.Replace(\"$version\", 'current')",
+        "$value = (",
+        "    '$command = $args',",
+        "    'if ($command -eq ''install'') {',",
+        "    \"    New-item 'REGISTRY::HKEY_CURRENT_USER\\SOFTWARE\\Classes\\Chime\\shell\\open' -Name 'command' -Value \"\"$currentDir\\Chime.exe %1\"\" -Force | Out-Null\",",
+        "    '} elseif ($command -eq ''uninstall'') { Remove-Item ''REGISTRY::HKEY_CURRENT_USER\\SOFTWARE\\Classes\\Chime'' -Recurse -Force }',",
+        "    'else {',",
+        "    '    Write-Output \"Command Usage:`n\", \"chime-context-menu.ps1 <arguments>\"',",
+        "    '    Write-Output \"`tinstall - to add ''Amazon Chime'' to the context menu\", \"`tuninstall - to remove ''Amazon Chime'' from the context menu`n\"',",
+        "    '}'",
+        ")",
+        "New-Item \"$dir\\chime-context-menu.ps1\" -Value \"$value\" | Out-Null"
+    ],
+    "bin": [
+        "Chime.exe",
+        "chime-context-menu.ps1"
+    ],
+    "shortcuts": [
+        [
+            "Chime.exe",
+            "Amazon Chime"
+        ]
+    ],
+    "post_install": [
+        "Write-Host \"Registering 'URL:chime' protocol handler\"",
+        "New-item 'HKCU:\\SOFTWARE\\Classes\\Chime' -Name 'DefaultIcon' -Value \"$dir\\Chime.exe,0\" -Force",
+        "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\Chime' -Name '(Default)' -Value 'URL:chime' -Force",
+        "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\Chime' -Name 'URL Protocol' -Value '' -Force",
+        "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\Chime' -Name 'UseOriginalUrlEncoding' -PropertyType 'Dword' -Value '1' -Force"
+    ],
+    "pre_uninstall": "Write-Host \"Unregistering 'URL:chime' protocol handler\"; Remove-Item 'HKCU:\\SOFTWARE\\Classes\\Chime' -Recurse -Force",
+    "checkver": {
+        "script": [
+            "$redirUrl = [System.Net.HttpWebRequest]::Create('https://clients.chime.aws/win/latest').GetResponse().ResponseUri.AbsoluteUri",
+            "Return \"$redirUrl\""
+        ],
+        "regex": "Chime\\.([\\d.]+)\\.exe"
+    },
+    "autoupdate": {
+        "url": "https://clients.chime.aws/win/releases/Chime.$version.exe"
+    }
+}
