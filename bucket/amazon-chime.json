@@ -1,5 +1,5 @@
 {
-    "version": "4.39.10416",
+    "version": "4.39.20010",
     "homepage": "https://aws.amazon.com/chime/",
     "description": "A communications service that lets you meet, chat, and place business calls inside and outside your organization, all using a single application.",
     "license": {
@@ -12,8 +12,8 @@
         "To remove 'Amazon Chime' from the context menu run:",
         "chime-context-menu.ps1 uninstall"
     ],
-    "url": "https://clients.chime.aws/win/releases/Chime.4.39.10416.exe",
-    "hash": "4f0e01cf998e9ee2cb98aa0e7f0d4d5d0dc0b74830bd0a7e36b10ed1d57f2243",
+    "url": "https://clients.chime.aws/win/releases/Chime.4.39.20010.exe",
+    "hash": "76a458f269e6bf8797692f504410e916eef9448d1b4dc29dea49fb5950042b8a",
     "innosetup": true,
     "extract_dir": "{userappdata}\\Chime",
     "pre_install": [
