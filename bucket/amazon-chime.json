@@ -43,10 +43,10 @@
     ],
     "post_install": [
         "Write-Host \"Registering 'URL:chime' protocol handler\"",
-        "New-item 'HKCU:\\SOFTWARE\\Classes\\Chime' -Name 'DefaultIcon' -Value \"$dir\\Chime.exe,0\" -Force",
-        "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\Chime' -Name '(Default)' -Value 'URL:chime' -Force",
-        "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\Chime' -Name 'URL Protocol' -Value '' -Force",
-        "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\Chime' -Name 'UseOriginalUrlEncoding' -PropertyType 'Dword' -Value '1' -Force"
+        "New-item 'HKCU:\\SOFTWARE\\Classes\\Chime' -Name 'DefaultIcon' -Value \"$dir\\Chime.exe,0\" -Force | Out-Null",
+        "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\Chime' -Name '(Default)' -Value 'URL:chime' -Force | Out-Null",
+        "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\Chime' -Name 'URL Protocol' -Value '' -Force | Out-Null",
+        "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\Chime' -Name 'UseOriginalUrlEncoding' -PropertyType 'Dword' -Value '1' -Force | Out-Null"
     ],
     "pre_uninstall": "Write-Host \"Unregistering 'URL:chime' protocol handler\"; Remove-Item 'HKCU:\\SOFTWARE\\Classes\\Chime' -Recurse -Force",
     "checkver": {
