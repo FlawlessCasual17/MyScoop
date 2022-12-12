@@ -26,7 +26,7 @@
         "    \"`r\",",
         "    \"    New-item 'REGISTRY::HKEY_CURRENT_USER\\SOFTWARE\\Classes\\Chime\\shell\\open' -Name 'command' -Value \"\"$currentDir\\Chime.exe %1\"\" -Force | Out-Null\",",
         "    \"`r\",",
-        "    '} elseif ($command -eq ''uninstall'') { Remove-Item ''REGISTRY::HKEY_CURRENT_USER\\SOFTWARE\\Classes\\Chime'' -Recurse -Force }',",
+        "    '} elseif ($command -eq ''uninstall'') { Remove-Item ''REGISTRY::HKEY_CURRENT_USER\\SOFTWARE\\Classes\\Chime\\shell'' -Recurse -Force }',",
         "    \"`r\",",
         "    'else {',",
         "    \"`r\",",
