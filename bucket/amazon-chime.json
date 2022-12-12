@@ -57,7 +57,10 @@
         "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\Chime' -Name 'URL Protocol' -Value '' -Force | Out-Null",
         "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\Chime' -Name 'UseOriginalUrlEncoding' -PropertyType 'Dword' -Value '1' -Force | Out-Null"
     ],
-    "pre_uninstall": "Write-Host \"Unregistering 'URL:chime' protocol handler\"; Remove-Item 'HKCU:\\SOFTWARE\\Classes\\Chime' -Recurse -Force",
+    "pre_uninstall": [
+        "Write-Host \"Unregistering 'URL:chime' protocol handler\"; Remove-Item 'HKCU:\\SOFTWARE\\Classes\\Chime' -Recurse -Force",
+        "Remove-Item \"$env:APPDATA\" -Filer 'AWS Mobile Services', 'Amazon' -Recurse -Force"
+    ],
     "checkver": {
         "script": [
             "$redirUrl = [System.Net.HttpWebRequest]::Create('https://clients.chime.aws/win/latest').GetResponse().ResponseUri.AbsoluteUri",
