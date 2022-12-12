@@ -36,7 +36,7 @@
         "    \"`r\",",
         "    '}'",
         ")",
-        "Set-Content \"$dir\\chime-context-menu.ps1\" -Value \"$value\" -Encoding 'Unicode' | Out-Null"
+        "Set-Content \"$dir\\chime-context-menu.ps1\" -Value \"$value\" -Encoding 'UTF8' | Out-Null"
     ],
     "bin": [
         "Chime.exe",
