@@ -59,7 +59,7 @@
     ],
     "pre_uninstall": [
         "Write-Host \"Unregistering 'URL:chime' protocol handler\"; Remove-Item 'HKCU:\\SOFTWARE\\Classes\\Chime' -Recurse -Force",
-        "Remove-Item \"$env:APPDATA\" -Filter 'AWS Mobile Services', 'Amazon' -Recurse -Force"
+        "Remove-Item \"$env:APPDATA\" -Include 'AWS Mobile Services', 'Amazon' -Recurse -Force"
     ],
     "checkver": {
         "script": [
