@@ -28,7 +28,7 @@
             "burpsuite-community.cmd",
             "Burpsuite Community Edition",
             "",
-            "icon.ico"
+            "favicon.ico"
         ]
     ],
     "checkver": {

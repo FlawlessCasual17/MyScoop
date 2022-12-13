@@ -28,7 +28,7 @@
             "burpsuite-pro.cmd",
             "Burpsuite Professional Edition",
             "",
-            "icon.ico"
+            "favicon.ico"
         ]
     ],
     "checkver": {
