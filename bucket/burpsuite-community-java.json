@@ -12,11 +12,11 @@
     },
     "url": [
         "https://portswigger-cdn.net/burp/releases/download?product=community&version=2022.12.3&type=Jar#/burpsuite-community.jar",
-        "https://portswigger.net/content/images/svg/icons/community.svg#/icon.ico"
+        "https://portswigger.net/content/images/logos/favicon.ico"
     ],
     "hash": [
         "fd622dde31901fb02f4d1bc8fe491445c2d7241b83afbdb43326ca7d0badffd7",
-        "f7bb3362a99bec553f02cc09e4ff73cd8286a7de40e7e19b2375718ade339a82"
+        "2220571c52f5480c6c5742d1551d9e2647467f4e006ac042cdadebfb67d1ed6e"
     ],
     "pre_install": [
         "$currentDir = $dir.Replace(\"$version\", 'current')",
