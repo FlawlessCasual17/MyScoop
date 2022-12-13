@@ -1,5 +1,5 @@
 {
-    "version": "2022.12.3",
+    "version": "2022.11",
     "homepage": "https://portswigger.net/burp",
     "description": "An application that comes with set of tools used for penetration and security testing of web applications.",
     "license": {
@@ -13,7 +13,7 @@
         }
     },
     "post_install": [
-        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }; Rename-Item \"$dir\\burpsuite_*.exe\"",
         "Start-Process \"$dir\\burpsuite_*.exe\" -Wait -Verb 'RunAs' -ArgumentList @('-q', '-dir', \"$dir\"); Remove-Item \"$dir\\burpsuite_*.exe\""
     ],
     "pre_uninstall": [
