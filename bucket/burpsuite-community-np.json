@@ -16,7 +16,7 @@
             "hash": "363fe00576c62e4aac9326bef65994917d0bf307f6a4a0d5f763289b7cc1a582"
         }
     },
-    "pre_install": [
+    "post_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -ArgumentList @('-q', '-dir', \"$dir\"); Remove-Item \"$dir\\setup.exe\""
     ],
