@@ -22,7 +22,7 @@
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process \"$dir\\uninstall.exe\" -Wait -Verb 'RunAs' -ArgumentList '-q; Start-Sleep -Seconds 2"
+        "Start-Process \"$dir\\uninstall.exe\" -Wait -Verb 'RunAs' -ArgumentList '-q'; Start-Sleep -Seconds 2"
     ],
     "checkver": {
         "url": "https://portswigger.net/burp/releases/data",
