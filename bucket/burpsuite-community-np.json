@@ -13,11 +13,28 @@
     "architecture": {
         "64bit": {
             "url": "https://portswigger-cdn.net/burp/releases/download?product=community&version=2022.12.3&type=WindowsX64#/setup.exe",
-            "hash": ""
+            "hash": "363fe00576c62e4aac9326bef65994917d0bf307f6a4a0d5f763289b7cc1a582"
         }
     },
-    "bin": "",
-    "shortcuts": [],
-    "checkver": {},
-    "autoupdate": {}
+    "pre_install": [
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -ArgumentList @('-q', '-dir', \"$dir\"); Remove-Item \"$dir\\setup.exe\""
+    ],
+    "pre_uninstall": [
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "Start-Process \"$dir\\uninstall.exe\" -Wait -Verb 'RunAs' -ArgumentList '-q'; Start-Sleep -Seconds 2"
+    ],
+    "checkver": {
+        "url": "https://portswigger.net/burp/releases/data",
+        "jsonpath": "$.ResultSet.Results..version",
+        "regex": "([\\d.]+)"
+    },
+    "autoupdate": {
+        "hash": {
+            "url": "https://portswigger.net/burp/releases/data",
+            "mode": "json",
+            "jsonpath": "$.ResultSet.Results..builds..Sha256Checksum",
+            "find": "$sha256"
+        }
+    }
 }
