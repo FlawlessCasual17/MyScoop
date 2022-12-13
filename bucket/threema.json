@@ -5,7 +5,7 @@
     "license": "AGPL-3.0",
     "architecture": {
         "64bit": {
-            "url": "https://releases.threema.ch/web-electron/v1/release/Threema-Latest.exe#dl.7z",
+            "url": "https://releases.threema.ch/web-electron/v1/release/Threema-Latest.exe#/dl.7z",
             "hash": "1cae62c64539341a194a3aff138a2ccb938150eef8f3bb1c21fbcc6eb5aaae50"
         }
     },
