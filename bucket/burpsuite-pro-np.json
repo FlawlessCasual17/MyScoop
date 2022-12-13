@@ -6,10 +6,6 @@
         "identifier": "Shareware",
         "url": "https://portswigger.net/legal"
     },
-    "suggest": {
-        "JDK": "java/openjdk",
-        "JRE": "java/temurin-jre"
-    },
     "architecture": {
         "64bit": {
             "url": "https://portswigger-cdn.net/burp/releases/download?product=pro&version=2022.12.3&type=WindowsX64#/setup.exe",
