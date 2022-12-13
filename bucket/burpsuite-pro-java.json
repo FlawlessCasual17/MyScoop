@@ -41,7 +41,7 @@
         "hash": {
             "url": "https://portswigger.net/burp/releases/data",
             "mode": "json",
-            "jsonpath": "$.Results..builds..Sha256Checksum",
+            "jsonpath": "$.ResultSet.Results..builds..Sha256Checksum",
             "find": "$sha256"
         }
     }
