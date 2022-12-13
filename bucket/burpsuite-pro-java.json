@@ -3,7 +3,7 @@
     "homepage": "https://portswigger.net/burp",
     "description": "An application that comes with set of tools used for penetration and security testing of web applications.",
     "license": {
-        "identifier": "Freeware",
+        "identifier": "Shareware",
         "url": "https://portswigger.net/legal"
     },
     "suggest": {
