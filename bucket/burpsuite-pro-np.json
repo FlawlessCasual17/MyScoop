@@ -24,6 +24,7 @@
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "Start-Process \"$dir\\uninstall.exe\" -Wait -Verb 'RunAs' -ArgumentList '-q'; Start-Sleep -Seconds 2"
     ],
+    "bin": "BurpSuitePro.exe",
     "checkver": {
         "url": "https://portswigger.net/burp/releases/data",
         "jsonpath": "$.ResultSet.Results..version",
