@@ -1,0 +1,23 @@
+{
+    "version": "2022.12.3",
+    "homepage": "https://portswigger.net/burp",
+    "description": "An application that comes with set of tools used for penetration and security testing of web applications.",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://portswigger.net/legal"
+    },
+    "suggest": {
+        "JDK": "java/openjdk",
+        "JRE": "java/temurin-jre"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://portswigger-cdn.net/burp/releases/download?product=community&version=2022.12.3&type=WindowsX64#/setup.exe",
+            "hash": ""
+        }
+    },
+    "bin": "",
+    "shortcuts": [],
+    "checkver": {},
+    "autoupdate": {}
+}
