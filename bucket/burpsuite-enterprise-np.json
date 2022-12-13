@@ -8,13 +8,13 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://portswigger-cdn.net/burp/releases/download?product=enterprise&version=2022.11&type=WindowsX64#/setup.exe",
-            "hash": "6a46eb5c238f9bbbd8fb4112a71cf96f8fc3cbffd68f0669e73cfab64bdf8db1"
+            "url": "https://portswigger-cdn.net/burp/releases/download?product=enterprise&version=2022.11&type=WindowsX64#/setup.7z",
+            "hash": "913011f9ca8e23316a6e364c82298c1da55f5fe1ca0a2414067c1287347d1dfc"
         }
     },
     "post_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -ArgumentList @('-q', '-dir', \"$dir\"); Remove-Item \"$dir\\setup.exe\""
+        "Start-Process \"$dir\\burpsuite_*.exe\" -Wait -Verb 'RunAs' -ArgumentList @('-q', '-dir', \"$dir\"); Remove-Item \"$dir\\burpsuite_*.exe\""
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
