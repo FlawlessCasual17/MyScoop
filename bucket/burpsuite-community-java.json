@@ -12,7 +12,7 @@
     },
     "url": [
         "https://portswigger-cdn.net/burp/releases/download?product=community&version=2022.12.3&type=Jar#/burpsuite-community.jar",
-        "https://portswigger.net/content/images/svg/icons/community.svg"
+        "https://portswigger.net/content/images/svg/icons/community.svg#/icon.ico"
     ],
     "hash": [
         "fd622dde31901fb02f4d1bc8fe491445c2d7241b83afbdb43326ca7d0badffd7",
@@ -28,7 +28,7 @@
             "burpsuite-community.cmd",
             "Burpsuite Community Edition",
             "",
-            "community.svg"
+            "icon.ico"
         ]
     ],
     "checkver": {

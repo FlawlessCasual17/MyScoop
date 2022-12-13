@@ -12,7 +12,7 @@
     },
     "url": [
         "https://portswigger-cdn.net/burp/releases/download?product=pro&version=2022.12.3&type=Jar#/burpsuite-pro.jar",
-        "https://portswigger.net/content/images/svg/icons/professional.svg"
+        "https://portswigger.net/content/images/svg/icons/professional.svg#/icon.ico"
     ],
     "hash": [
         "9c227fb4d8b2ed456d0ff42dc6ab4d925d121dd690c5f203a7c8004963b5b0ba",
@@ -28,7 +28,7 @@
             "burpsuite-pro.cmd",
             "Burpsuite Professional Edition",
             "",
-            "professional.svg"
+            "icon.ico"
         ]
     ],
     "checkver": {
