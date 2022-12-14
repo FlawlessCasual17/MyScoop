@@ -9,12 +9,12 @@
     "pre_install": [
         "if ($architecture -eq '32bit') {",
         "   Get-ChildItem \"$dir\\jre\" -Recurse -Filter '*,1.*' | Remove-Item; $get32bit_Items = Get-ChildItem \"$dir\\jre\" -Recurse -Filter '*,2.*'",
-        "   $get32bit_Items | Rename-Item -NewName { $_.Name -replace '([\\w?.|_]+),\\d+\\.([\\w]+)', '$1.$2' }",
-        "   $get32bit_Items | Rename-Item -NewName { $_.Name -replace '([\\w?.|_]+),\\d+', '$1' }",
+        "   $get32bit_Items | Rename-Item -NewName { $_.Name -replace '([\\w?.|_]+),\\d+\\.([\\w]+)', '$1.$2' } -ErrorAction 'SilentlyContinue'",
+        "   $get32bit_Items | Rename-Item -NewName { $_.Name -replace '([\\w?.|_]+),\\d+', '$1' } -ErrorAction 'SilentlyContinue'",
         "} elseif ($architecture -eq '64bit') {",
-        "   Get-ChildItem \"$dir\\jre\" -Recurse -Filter '*,2.*' | Remove-Item; $get64bit_Items = Get-ChildItem \"$dir\\jre\" -Recurse -Filter '*,1.*'",
-        "   $get64bit_Items | Rename-Item -NewName { $_.Name -replace '([\\w?.|_]+),\\d+\\.([\\w]+)', '$1.$2' }",
-        "   $get64bit_Items | Rename-Item -NewName { $_.Name -replace '([\\w?.|_]+),\\d+', '$1' }",
+        "   Get-ChildItem \"$dir\\jre\" -Recurse -Filter '*,2.*' | Remove-Item; $get64bit_Items = Get-ChildItem \"$dir\\jre\" -Recurse -Filter '*,1*'",
+        "   $get64bit_Items | Rename-Item -NewName { $_.Name -replace '([\\w?.|_]+),\\d+\\.([\\w]+)', '$1.$2' } -ErrorAction 'SilentlyContinue'",
+        "   $get64bit_Items | Rename-Item -NewName { $_.Name -replace '([\\w?.|_]+),\\d+', '$1' } -ErrorAction 'SilentlyContinue'",
         "}"
     ],
     "bin": [
