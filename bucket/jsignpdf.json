@@ -15,7 +15,9 @@
         "   Get-ChildItem \"$dir\\jre\" -Recurse -Filter '*,2.*' | Remove-Item; $get64bit_Items = Get-ChildItem \"$dir\\jre\" -Recurse -Filter '*,1*'",
         "   $get64bit_Items | Rename-Item -NewName { $_.Name -replace '([\\w?.|_]+),\\d+\\.([\\w]+)', '$1.$2' } -ErrorAction 'SilentlyContinue'",
         "   $get64bit_Items | Rename-Item -NewName { $_.Name -replace '([\\w?.|_]+),\\d+', '$1' } -ErrorAction 'SilentlyContinue'",
-        "}"
+        "}",
+        "ensure \"$persist_dir\" | Out-Null",
+        "Copy-Item \"$persist_dir\\conf\" \"$dir\\conf\" -Recurse -ErrorAction 'SilentlyContinue'"
     ],
     "bin": [
         "InstallCert.exe",
@@ -35,6 +37,7 @@
             "JSignPdf Guide"
         ]
     ],
+    "pre_uninstall": "Copy-Item \"$dir\\conf\" \"$persist_dir\\conf\" -Recurse -ErrorAction 'SilentlyContinue'",
     "checkver": {
         "url": "https://sourceforge.net/projects/jsignpdf/rss?path=/stable",
         "regex": "\\/stable\\/JSignPdf\\s([\\d.]+)"
