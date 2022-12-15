@@ -1,5 +1,5 @@
 {
-    "version": "",
+    "version": "1.0.7",
     "homepage": "https://github.com/krlvm/AcrylicMenus",
     "description": "A tiny application that applies acrylic effect to almost all existing Win32 context menus on Windows 10 and Windows 11 via native Win32 hooking API.",
     "license": "GPL-3.0",
