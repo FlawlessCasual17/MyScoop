@@ -17,9 +17,9 @@
     "pre_install": [
         "'backup.xml', 'config.xml' | ForEach-Object {",
         "   if (!(Test-Path \"$persist_dir\\$_\")) {",
-        "       Start-Process \"$dir\\driverscloud.exe\" -WindowStyle 'Hidden'",
+        "       Start-Process \"$dir\\driverscloud.exe\" -WindowStyle 'Minimized' -Verb 'Open'",
         "       while (!(Test-Path \"$dir\\config.xml\")) { Start-Sleep -Seconds 1 }",
-        "       Stop-Process -Name driverscloud",
+        "       Stop-Process -Name 'driverscloud' -Force",
         "       New-Item \"$dir\\backup.xml\" | Out-Null",
         "   }",
         "}",
