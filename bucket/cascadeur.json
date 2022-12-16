@@ -8,10 +8,11 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://cdn.cascadeur.com/builds/windows/58/cascadeur_2022.3.exe",
+            "url": "https://cdn.cascadeur.com/builds/windows/58/cascadeur_2022.3.exe#/dl.7z",
             "hash": "f6e15a287e34b3fc8a2100f96afcd0e7c0e4d2c2b95d048b7895c4093b1a833f"
         }
     },
+    "pre_install": "Remove-Item \"$dir\" -Filter 'uninstall.*', '$*' -Recurse",
     "shortcuts": [
         [
             "cascadeur.exe",
@@ -26,7 +27,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://cdn.cascadeur.com/builds/windows/$matchBuild/cascadeur_$matchVersion.exe"
+                "url": "https://cdn.cascadeur.com/builds/windows/$matchBuild/cascadeur_$matchVersion.exe#/dl.7z"
             }
         }
     }
