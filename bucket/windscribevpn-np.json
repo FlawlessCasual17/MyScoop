@@ -25,7 +25,6 @@
             "Start-Process \"$dir\\Windscribe\\uninstall.exe\" -WindowStyle 'Hidden' -Verb 'RunAs' -ArgumentList '/VERYSILENT' -Wait"
         ]
     },
-    "bin": "Windscribe\\windscribe-cli.exe",
     "checkver": {
         "script": [
             "$redirURL = [System.Net.HttpWebRequest]::Create('https://windscribe.com/install/desktop/windows').GetResponse().ResponseUri.AbsoluteUri",
