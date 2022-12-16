@@ -1,0 +1,18 @@
+{
+    "version": "2022.3.58",
+    "homepage": "https://cascadeur.com/",
+    "description": "A physics‑based 3D animation software powered by artificial intelligence (A.I.). ",
+    "license": {
+        "identifier": "Shareware",
+        "url": "https://cascadeur.com/help/cascadeur_end_user_agreement"
+    },
+    "architecture": {
+        "64bit": {
+
+        }
+    },
+    "bin": "",
+    "shortcuts": [],
+    "checkver": "",
+    "autoupdate": {}
+}
