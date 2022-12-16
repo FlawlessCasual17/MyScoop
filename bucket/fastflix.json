@@ -24,7 +24,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/cdgriffith/FastFlix/releases/download/$version/FastFlix_$version`_win64.zip"
+                "url": "https://github.com/cdgriffith/FastFlix/releases/download/$version/FastFlix_$version_win64.zip"
             }
         }
     }
