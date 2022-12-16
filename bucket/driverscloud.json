@@ -18,7 +18,7 @@
         "'backup.xml', 'config.xml' | ForEach-Object {",
         "   if (!(Test-Path \"$persist_dir\\$_\")) {",
         "       Start-Process \"$dir\\driverscloud.exe\" -WindowStyle 'Hidden'",
-        "       while (!(Test-Path \"$dir\\config.xml\")) { Start-Sleep -Seconds 2 }",
+        "       while (!(Test-Path \"$dir\\config.xml\")) { Start-Sleep -Seconds 1 }",
         "       Stop-Process -Name driverscloud",
         "       New-Item \"$dir\\backup.xml\" | Out-Null",
         "   }",
