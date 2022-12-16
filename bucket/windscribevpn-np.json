@@ -27,9 +27,11 @@
     },
     "bin": "Windscribe\\windscribe-cli.exe",
     "checkver": {
-        "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",
-        "script": "[System.Net.HttpWebRequest]::Create('https://windscribe.com/install/desktop/windows').GetResponse().ResponseUri.AbsoluteUri",
-        "regex": "/desktop-apps/([\\d.]+)/*"
+        "script": [
+            "$redirURL = [System.Net.HttpWebRequest]::Create('https://windscribe.com/install/desktop/windows').GetResponse().ResponseUri.AbsoluteUri",
+            "Return $redirURL"
+        ],
+        "regex": "/desktop-apps/([\\d.]+)/"
     },
     "autoupdate": {
         "url": "https://deploy.totallyacdn.com/desktop-apps/$version/Windscribe_$version.exe#/vpnsetup.exe"
