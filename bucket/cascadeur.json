@@ -8,11 +8,26 @@
     },
     "architecture": {
         "64bit": {
-
+            "url": "https://cdn.cascadeur.com/builds/windows/58/cascadeur_2022.3.exe",
+            "hash": "f6e15a287e34b3fc8a2100f96afcd0e7c0e4d2c2b95d048b7895c4093b1a833f"
         }
     },
-    "bin": "",
-    "shortcuts": [],
-    "checkver": "",
-    "autoupdate": {}
+    "shortcuts": [
+        [
+            "cascadeur.exe",
+            "Cascadeur"
+        ]
+    ],
+    "checkver": {
+        "url": "https://cascadeur.com/after-download?platform=windows",
+        "regex": "windows/(?<Build>[\\d]+)/cascadeur_(?<Version>[\\w.]+)\\.exe",
+        "replace": "${Version}.${Build}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://cdn.cascadeur.com/builds/windows/$matchBuild/cascadeur_$matchVersion.exe"
+            }
+        }
+    }
 }
