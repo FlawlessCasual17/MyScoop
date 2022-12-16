@@ -27,6 +27,7 @@
     },
     "bin": "Windscribe\\windscribe-cli.exe",
     "checkver": {
+        "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",
         "script": "[System.Net.HttpWebRequest]::Create('https://windscribe.com/install/desktop/windows').GetResponse().ResponseUri.AbsoluteUri",
         "regex": "/desktop-apps/([\\d.]+)/*"
     },
