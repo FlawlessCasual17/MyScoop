@@ -32,9 +32,11 @@
         "DriversBackup"
     ],
     "pre_uninstall": [
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "'Logs', 'config.xml' | ForEach-Object {",
         "   Copy-Item \"$dir\\$_\" \"$persist_dir\" -ErrorAction 'SilentlyContinue' -Recurse",
-        "}"
+        "}",
+        "Remove-item 'HKLM:\\SOFTWARE\\Classes\\driverscloud' -Recurse -Force"
     ],
     "checkver": {
         "url": "https://www.driverscloud.com/en/my-drivers",
