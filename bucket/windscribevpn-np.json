@@ -1,11 +1,11 @@
 {
     "##": "This package is non-portable because the app requires installing drivers/services to work properly.",
-    "version": "2.4.11",
+    "version": "2.5.18",
     "description": "Open Source VPN with AdBlocking Proxy.",
     "homepage": "https://windscribe.com/",
     "license": "GPL-2.0",
-    "url": "https://github.com/Windscribe/Desktop-App/releases/download/v2.4.11/Windscribe_2.4.11.exe#/vpnsetup.exe",
-    "hash": "5328DBC9EDDDB1AF7231354C16AC95FA2DE0FC66CFC4F2B3CD57057D42DA0333",
+    "url": "https://deploy.totallyacdn.com/desktop-apps/2.5.18/Windscribe_2.5.18.exe#/vpnsetup.exe",
+    "hash": "a58515e3c3b350de864bfd41ebd570724efdffe44e17de571f78da74b5ef7475",
     "post_install": [
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
         "Start-Process \"$dir\\vpnsetup.exe\" -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('-silent', '-dir', \"$dir\\Windscribe\")",
