@@ -6,7 +6,7 @@
     "license": "GPL-2.0",
     "url": "https://github.com/Windscribe/Desktop-App/releases/download/v2.4.11/Windscribe_2.4.11.exe#/vpnsetup.exe",
     "hash": "5328DBC9EDDDB1AF7231354C16AC95FA2DE0FC66CFC4F2B3CD57057D42DA0333",
-    "pre_install": [
+    "post_install": [
         "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
         "Start-Process \"$dir\\vpnsetup.exe\" -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('-silent', '-dir', \"$dir\\Windscribe\")",
         "Stop-Process -Name \"Windscribe\" -Force -ErrorAction SilentlyContinue",
@@ -27,9 +27,10 @@
     },
     "bin": "Windscribe\\windscribe-cli.exe",
     "checkver": {
-        "github": "https://github.com/Windscribe/Desktop-App/"
+        "script": "[System.Net.HttpWebRequest]::Create('https://windscribe.com/install/desktop/windows').GetResponse().ResponseUri.AbsoluteUri",
+        "regex": "/desktop-apps/([\\d.]+)/*"
     },
     "autoupdate": {
-        "url": "https://github.com/Windscribe/Desktop-App/releases/download/v$version/Windscribe_$version.exe#/vpnsetup.exe"
+        "url": "https://deploy.totallyacdn.com/desktop-apps/$version/Windscribe_$version.exe#/vpnsetup.exe"
     }
 }
