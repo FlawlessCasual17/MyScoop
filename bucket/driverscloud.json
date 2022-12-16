@@ -31,7 +31,11 @@
         "backup.xml",
         "DriversBackup"
     ],
-    "pre_uninstall": "Copy-Item \"$dir\\Logs\" \"$persist_dir\\Logs\" -ErrorAction 'SilentlyContinue' -Recurse",
+    "pre_uninstall": [
+        "'Logs', 'config.xml' | ForEach-Object {",
+        "   Copy-Item \"$dir\\$_\" \"$persist_dir\\$_\" -ErrorAction 'SilentlyContinue' -Recurse",
+        "}"
+    ],
     "checkver": {
         "url": "https://www.driverscloud.com/en/my-drivers",
         "regex": ">Current\\sagent\\sversion:\\s([\\d.]+)<"
