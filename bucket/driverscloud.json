@@ -1,15 +1,50 @@
 {
-    "version": "",
-    "homepage": "",
-    "description": "",
-    "license": "",
-    "url": "",
-    "hash": "",
-    "architecture": {},
-    "bin": "",
-    "shortcuts": [],
-    "checkver": {
-        "url": ""
+    "version": "11.2.6.0",
+    "homepage": "https://www.driverscloud.com/",
+    "description": "The essential specialist for detecting and downloading drivers for internal components and external devices of your Windows PC.",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://mcdrivers.driverscloud.com/applis/DriversCloudx64_11_2_6_0.zip",
+            "hash": "18a4a4fda6468b0ebed53a0179b41e37dd4ce2f12b00b5fb2ef006d6d5acc6bb"
+        },
+        "32bit": {
+            "url": "https://mcdrivers.driverscloud.com/applis/DriversCloud_11_2_6_0.zip",
+            "hash": "cad1c7a047bdd373a28ed5064d3b5b9a60aef48e3df22cdf57cded4ad20474b4"
+        }
     },
-    "autoupdate": {}
+    "extract_dir": "DriversCloud",
+    "pre_install": [
+        "'backup.xml', 'config.xml' | ForEach-Object {",
+        "   if (!(Test-Path \"$persist_dir\\$_\")) {",
+        "       Start-Process \"$dir\\driverscloud.exe\" -WindowStyle 'Hidden'",
+        "       while (!(Test-Path \"$dir\\config.xml\")) { Start-Sleep -Milliseconds 500 }",
+        "       Stop-Process -Name driverscloud",
+        "       New-Item \"$dir\\config.xml\" | Out-null",
+        "   }",
+        "}",
+        "Copy-Item \"$persist_dir\\Logs\" \"$dir\\Logs\" -Recurse -ErrorAction 'SilentlyContinue'"
+    ],
+    "bin": "driverscloud.exe",
+    "shortcuts": [
+        [
+            "driverscloud.exe",
+            "DriversCloud"
+        ]
+    ],
+    "pre_uninstall": "Copy-Item \"$dir\\Logs\" \"$persist_dir\\Logs\" -Recurse -ErrorAction 'SilentlyContinue'",
+    "checkver": {
+        "url": "https://www.driverscloud.com/en/my-drivers",
+        "regex": ">Current\\sagent\\sversion:\\s([\\d.]+)<"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://mcdrivers.driverscloud.com/applis/DriversCloudx64_$underscoreVersion.zip"
+            },
+            "32bit": {
+                "url": "https://mcdrivers.driverscloud.com/applis/DriversCloud_$underscoreVersion.zip"
+            }
+        }
+    }
 }
