@@ -15,15 +15,10 @@
     },
     "extract_dir": "DriversCloud",
     "pre_install": [
-        "'backup.xml', 'config.xml' | ForEach-Object {",
-        "   if (!(Test-Path \"$persist_dir\\$_\")) {",
-        "       Start-Process \"$dir\\driverscloud.exe\" -WindowStyle 'Minimized' -Verb 'Open'",
-        "       while (!(Test-Path \"$dir\\config.xml\")) { Start-Sleep -Seconds 1 }",
-        "       Stop-Process -Name 'driverscloud' -Force",
-        "       New-Item \"$dir\\backup.xml\" | Out-Null",
-        "   }",
+        "'Logs', 'config.xml' | ForEach-Object {",
+        "   Copy-Item \"$persist_dir\\$_\" \"$dir\\$_\" -ErrorAction 'SilentlyContinue' -Recurse",
         "}",
-        "Copy-Item \"$persist_dir\\Logs\" \"$dir\\Logs\" -ErrorAction 'SilentlyContinue' -Recurse"
+        "if (!(Test-Path \"$persist_dir\\backup.xml\")) { New-Item \"$dir\\backup.xml\" | Out-Null }"
     ],
     "bin": "driverscloud.exe",
     "shortcuts": [
@@ -34,7 +29,6 @@
     ],
     "persist": [
         "backup.xml",
-        "config.xml",
         "DriversBackup"
     ],
     "pre_uninstall": "Copy-Item \"$dir\\Logs\" \"$persist_dir\\Logs\" -ErrorAction 'SilentlyContinue' -Recurse",
