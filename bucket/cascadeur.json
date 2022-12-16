@@ -12,7 +12,7 @@
             "hash": "f6e15a287e34b3fc8a2100f96afcd0e7c0e4d2c2b95d048b7895c4093b1a833f"
         }
     },
-    "pre_install": "Remove-Item \"$dir\" -Filter 'uninstall.*', '$*' -Recurse",
+    "pre_install": "Remove-Item \"$dir\" -Include 'uninstall.*', '$*' -Recurse",
     "shortcuts": [
         [
             "cascadeur.exe",
