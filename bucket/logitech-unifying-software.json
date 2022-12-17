@@ -6,8 +6,12 @@
         "identifier": "Freeware",
         "url": "https://www.logitech.com/en-us/tos/software-license-agreement.html"
     },
-    "url": "https://download01.logi.com/web/ftp/pub/techsupport/unifying/unifying252.exe#/dl.7z",
-    "hash": "bea2ca4c9d9abd1ff214166d638792be974ffad7907a8a8ed0370acba800e815",
+    "architecture": {
+        "64bit": {
+            "url": "https://download01.logi.com/web/ftp/pub/techsupport/unifying/unifying252.exe#/dl.7z",
+            "hash": "bea2ca4c9d9abd1ff214166d638792be974ffad7907a8a8ed0370acba800e815"
+        }
+    },
     "pre_install": [
         "Remove-Item \"$dir\" -Include '$*', 'Unifying*' -Exclude '$_32_' -Recurse; Rename-Item \"$dir\\`$_32_\" 'LU'",
         "Remove-Item \"$dir\\LU\" -Include 'Logi*', 'Lu*n*' -Recurse"
