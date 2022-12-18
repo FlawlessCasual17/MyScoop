@@ -19,7 +19,10 @@
             "stacher.io"
         ]
     ],
-    "checkver": "https://stacher.io/version.php",
+    "checkver": {
+        "url": "https://stacher.io/version.php",
+        "regex": "([\\d.]+)"
+    },
     "autoupdate": {
         "architecture": {
             "64bit": {
