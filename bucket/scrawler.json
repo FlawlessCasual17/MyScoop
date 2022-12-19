@@ -15,6 +15,10 @@
             "SCrawler"
         ]
     ],
+    "persist": [
+        "Settings",
+        "Plugins"
+    ],
     "checkver": "github",
     "autoupdate": {
         "architecture": {
