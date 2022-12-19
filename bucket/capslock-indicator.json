@@ -5,7 +5,7 @@
     "license": "Apache-2.0",
     "url": "https://github.com/jonaskohl/CapsLockIndicator/releases/download/3.16.1.2/CLIv3-3.16.1.2.exe#/capslock-indicator.exe",
     "hash": "md5:9a7cabedbf071dedceb494c8b0bd4ec4",
-    "pre_install": "ensure \"$persist_dir\" | Out-Null; Copy-Item \"$persist_dir\\*.ico\" \"$dir\" -Include '*.ico', '*.dll' -ErrorAction 'SilentlyContinue' -Recurse",
+    "pre_install": "ensure \"$persist_dir\" | Out-Null; Copy-Item \"$persist_dir\" \"$dir\" -Include '*.ico', '*.dll' -ErrorAction 'SilentlyContinue' -Recurse",
     "shortcuts": [
         [
             "capslock-indicator.exe",
