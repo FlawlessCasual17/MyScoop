@@ -12,7 +12,12 @@
             "CapsLock Indicator"
         ]
     ],
-    "pre_uninstall": "Copy-Item \"$dir\\*.ico\" \"$persist_dir\" -ErrorAction 'SilentlyContinue' -Recurse",
+    "pre_uninstall": [
+        "Copy-Item \"$dir\\*.ico\" \"$persist_dir\" -ErrorAction 'SilentlyContinue' -Recurse",
+        "if (Get-ItemProperty 'HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run' -Name 'CapsLock Indicator' -ErrorAction 'SilentlyContinue') {",
+        "   Remove-ItemProperty 'HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run' -Name 'CapsLock Indicator' -Force",
+        "}"
+    ],
     "checkver": {
         "github": "https://github.com/jonaskohl/CapsLockIndicator"
     },
