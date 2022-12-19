@@ -12,7 +12,7 @@
             "Types"
         ]
     ],
-    "checkver": ">Download 2.6.5<",
+    "checkver": ">Download\\s([\\d.+])<",
     "autoupdate": {
         "url": "https://ystr.github.io/types/Types.zip"
     }
