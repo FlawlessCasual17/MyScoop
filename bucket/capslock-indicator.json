@@ -1,0 +1,26 @@
+{
+    "version": "3.16.1.2",
+    "homepage": "https://cli.jonaskohl.de/",
+    "description": "A small utility that indicates the state of the Num lock, Caps lock and Scroll lock key.",
+    "license": "Apache-2.0",
+    "url": "https://github.com/jonaskohl/CapsLockIndicator/releases/download/3.16.1.2/CLIv3-3.16.1.2.exe#/capslock-indicator.exe",
+    "hash": "md5:9a7cabedbf071dedceb494c8b0bd4ec4",
+    "shortcuts": [
+        [
+            "capslock-indicator.exe",
+            "CapsLock Indicator"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/jonaskohl/CapsLockIndicator"
+    },
+    "autoupdate": {
+        "url": "https://github.com/jonaskohl/CapsLockIndicator/releases/download/$version/CLIv$majorVersion-$version.exe#/capslock-indicator.exe",
+        "hash": {
+            "mode": "json",
+            "url": "https://clireleases.jonaskohl.de/releases/api.php",
+            "jsonpath": "$..hashes..value",
+            "find": "$md5"
+        }
+    }
+}
