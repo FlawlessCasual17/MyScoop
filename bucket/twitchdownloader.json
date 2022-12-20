@@ -12,7 +12,7 @@
     "shortcuts": [
         [
             "TwitchDownloader.exe",
-            "TwitchDownloader.exe"
+            "TwitchDownloader"
         ]
     ],
     "checkver": "github",
