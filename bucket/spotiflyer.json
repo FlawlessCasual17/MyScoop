@@ -3,6 +3,9 @@
     "homepage": "https://spotiflyer.app/",
     "description": "A music downloader for Spotify, Youtube, Gaana, Jio-Saavn and SoundCloud.",
     "license": "GPL-3.0",
+    "suggest": {
+        "ffmpeg": "main/ffmpeg"
+    },
     "architecture": {
         "64bit": {
             "url": "https://github.com/Shabinder/SpotiFlyer/releases/download/v3.6.3/SpotiFlyer-3.6.3.msi",
