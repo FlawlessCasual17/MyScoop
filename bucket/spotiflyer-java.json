@@ -12,7 +12,6 @@
         "$currentDir = $dir.Replace(\"$version\", 'current')",
         "Set-Content \"$dir\\SpotiFlyer.cmd\" -Value \"@start javaw -jar \"\"$currentDir\\SpotiFlyer.jar\"\"\" -Encoding 'utf8' -Force"
     ],
-    "bin": "SpotiFlyer.jar",
     "shortcuts": [
         [
             "SpotiFlyer.cmd",
