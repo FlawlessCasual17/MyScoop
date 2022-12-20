@@ -22,7 +22,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/Shabinder/SpotiFlyer/releases/download/v$version/SpotiFlyer-$version.msi"
+                "url": "https://github.com/Shabinder/SpotiFlyer/releases/download/v$version/SpotiFlyer-windows-x64-$version.jar#/SpotiFlyer.jar"
             }
         }
     }
