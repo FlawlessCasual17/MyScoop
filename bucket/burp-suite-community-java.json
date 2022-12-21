@@ -1,5 +1,5 @@
 {
-    "version": "2022.12.4",
+    "version": "2022.12.5",
     "homepage": "https://portswigger.net/burp",
     "description": "An application that comes with set of tools used for penetration and security testing of web applications.",
     "license": {
@@ -10,8 +10,8 @@
         "JDK": "java/openjdk",
         "JRE": "java/temurin-jre"
     },
-    "url": "https://portswigger-cdn.net/burp/releases/download?product=community&version=2022.12.4&type=Jar#/burpsuite-community.jar",
-    "hash": "5155e83b9e52191ffc0ad3de3466286fa326bcb81b4036393651fe4fddb036ca",
+    "url": "https://portswigger-cdn.net/burp/releases/download?product=community&version=2022.12.5&type=Jar#/burpsuite-community.jar",
+    "hash": "ac9dd1ba7b9e960fb025fbade9ee4bd2e546798a0090d2be546467d41b0b9d73",
     "pre_install": [
         "$currentDir = $dir.Replace(\"$version\", 'current')",
         "Set-Content \"$dir\\burpsuite-community.cmd\" -Value \"@start javaw -jar \"\"$currentDir\\burpsuite-community.jar\"\"\" -Encoding 'utf8' -Force"
