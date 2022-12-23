@@ -24,7 +24,11 @@
             "WhoCrashed"
         ]
     ],
-    "checkver": "Latest\\sversion:\\s(?:v)([\\d.]+)\\s+",
+    "checkver": {
+        "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",
+        "url": "https://www.resplendence.com/bin/rspupdate.dll/checkforupdate?product=WhoCrashed&edition=home",
+        "regex": "LatestVersion=([\\d.]+),"
+    },
     "autoupdate": {
         "url": "https://www.resplendence.com/download/whocrashedSetup.exe"
     }
