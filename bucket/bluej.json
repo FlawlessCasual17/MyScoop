@@ -19,6 +19,7 @@
             "BlueJ"
         ]
     ],
+    "persist": "userhome",
     "checkver": "Version\\s([\\d.]+),",
     "autoupdate": {
         "architecture": {
