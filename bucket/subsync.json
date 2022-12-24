@@ -9,6 +9,7 @@
             "hash": "6288f178565ab7c3823a6cb5c022d9b861e42207ed7dc8da385f0aa26a4d5882"
         }
     },
+    "extract_dir": "subsync",
     "bin": "subsync-cmd.exe",
     "shortcuts": [
         [
