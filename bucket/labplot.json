@@ -28,12 +28,6 @@
             "64bit": {
                 "url": "https://download.kde.org/stable/labplot/$version/labplot-$version-64bit-setup.exe#/dl.7z"
             }
-        },
-        "shortcuts": [
-            [
-                "bin\\labplot$majorVersion.exe",
-                "LabPlot$majorVersion"
-            ]
-        ]
+        }
     }
 }
