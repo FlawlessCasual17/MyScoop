@@ -9,7 +9,6 @@
             "hash": "0820b9014d380bfc158e47e1d7b46516a2f259dae1ad223103fa7370dac05619"
         }
     },
-    "bin": "bin\\Gajim.exe",
     "shortcuts": [
         [
             "bin\\Gajim.exe",
