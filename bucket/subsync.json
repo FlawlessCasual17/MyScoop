@@ -13,7 +13,7 @@
     "shortcuts": [
         [
             "subsync.exe",
-            "SubSync"
+            "SubSync (Subtitle Speech Synchronizer)"
         ]
     ],
     "checkver": {
