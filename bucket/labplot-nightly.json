@@ -12,7 +12,7 @@
     "shortcuts": [
         [
             "bin\\labplot2.exe",
-            "LabPlot2"
+            "LabPlot2 Nightly"
         ]
     ],
     "checkver": {
