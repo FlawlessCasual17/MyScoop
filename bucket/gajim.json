@@ -26,7 +26,7 @@
         "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\xmpp' -Name 'URL Protocol' -PropertyType 'String' -Value '' -Force | Out-Null",
         "Write-Host 'Done!'"
     ],
-    "pre_uninstall": "Remove-Item 'HKCU:\\SOFTWARE\\Classes\\xmpp' -Force",
+    "pre_uninstall": "Remove-Item 'HKCU:\\SOFTWARE\\Classes\\xmpp' -Force -Recurse",
     "checkver": ">Gajim\\s([\\d.]+)\\s+",
     "autoupdate": {
         "architecture": {
