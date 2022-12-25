@@ -9,7 +9,7 @@ if (is_admin) {
     if ($subCommand -eq 'add') {
         $actions = New-ScheduledTaskAction -Execute "REPLACE_HERE\MenuTools.exe"
         $triggers = New-ScheduledTaskTrigger -AtStartup -RandomDelay 2
-        $pSrincipal = New-ScheduledTaskPrincipal -RunLevel 'Highest' -LogonType 'Interactive' -ProcessTokenSidType 'Default' -UserId $env:USERNAME
+        $principal = New-ScheduledTaskPrincipal -RunLevel 'Highest' -LogonType 'Interactive' -ProcessTokenSidType 'Default' -UserId $env:USERNAME
         $settings = New-ScheduledTaskSettingsSet -Compatibility 'Win8' -MultipleInstances 'IgnoreNew'
         $task = New-ScheduledTask -Description 'Launches MenuTools at startup' -Action $actions -Trigger $triggers -Principal $principal -Settings $settings
         Register-ScheduledTask -TaskName 'MenuTools' -TaskPath '\' -InputObject $task
