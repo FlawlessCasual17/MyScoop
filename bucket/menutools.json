@@ -15,6 +15,7 @@
             "hash": "3fc6c21ad78d1bdbef8464b02fac7735ac2bc8b131063021afa037df617a258c"
         }
     },
+    "innosetup": true,
     "pre_install": [
         "$currentDir = $dir.Replace($version, 'current')",
         "$content = Get-Content \"$bucketsdir\\MyScoop\\scripts\\menutools\\menutools-task.ps1\"",
