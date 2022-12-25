@@ -31,7 +31,10 @@
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"menutools requires admin rights to $cmd\"; break }",
-        "Stop-Process -Name 'MenuTools', 'MenuTools64' -Force -ErrorAction 'SilentlyContinue'"
+        "Stop-Process -Name 'MenuTools', 'MenuTools64' -Force -ErrorAction 'SilentlyContinue'",
+        "if (Get-ScheduledTask 'MenuTools' -ErrorAction 'SilentlyContinue') {",
+        "   Start-Process 'schtasks.exe' -Wait -Verb 'RunAs' -ArgumentList @('/delete', '/tn', 'MenuTools', '/f')",
+        "}"
     ],
     "checkver": "github",
     "autoupdate": {
