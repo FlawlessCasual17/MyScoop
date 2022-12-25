@@ -29,6 +29,10 @@
             "MenuTools"
         ]
     ],
+    "pre_uninstall": [
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "Stop-Process -Name 'MenuTools', 'MenuTools64' -Force"
+    ],
     "checkver": "github",
     "autoupdate": {
         "architecture": {
