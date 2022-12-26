@@ -7,7 +7,7 @@
     "notes": [
         "IMPORTANT FOR NON-ENGLISH SPEAKERS!!!",
         "If you want this application translated to your native langauge, please run the following command:",
-        "& \"$dir\\change_language.ps1\"",
+        "change_language.ps1",
         "**The powershell script will propmt you to enter the number that corresponds to your native langauge.**",
         "",
         "1 = BRAZILIAN PORTUGUESE",
@@ -58,9 +58,8 @@
     "installer": {
         "script": [
             "New-Item \"$dir\\change_language.ps1\" -Value '$ac_language = Read-Host -Prompt \"Please enter the number that corresponds to your native langauge\"' | Out-Null",
-            "$currentDir = $dir.Replace($version, 'current')",
             "Add-Content \"$dir\\change_language.ps1\" -Value @(",
-            "'`nCopy-Item \"$currentDir\\messages,$ac_language.ini\" \"$currentDir\\messages.ini\" -Force', 'Copy-Item \"$currentDir\\ac,$ac_language.pdf\" \"$currentDir\\ac.pdf\" -Force'",
+            "'`nCopy-Item \"$dir\\messages,$ac_language.ini\" \"$dir\\messages.ini\" -Force', 'Copy-Item \"$dir\\ac,$ac_language.pdf\" \"$dir\\ac.pdf\" -Force'",
             ")"
         ]
     },
@@ -86,7 +85,10 @@
         "$content2 | Set-Content -Path \"$dir\\change_language.ps1\"",
         "Start-Sleep -Seconds 2"
     ],
-    "bin": "acmain.exe",
+    "bin": [
+        "acmain.exe",
+        "change_language.ps1"
+    ],
     "checkver": {
         "url": "https://www.petges.lu/download/",
         "regex": "ac-([\\d]+)_([\\w]+).exe",
