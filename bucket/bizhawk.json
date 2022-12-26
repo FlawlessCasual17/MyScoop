@@ -10,8 +10,20 @@
             "hash": "cbbbeb86684ad504ae818dfe5a151174e4a6f087afa5022e4775e05798a1e060"
         }
     },
-    "bin": "",
-    "shortcuts": [],
+    "bin": [
+        "DiscoHawk.exe",
+        "EmuHawk.exe"
+    ],
+    "shortcuts": [
+        [
+            "DiscoHawk.exe",
+            "DiscoHawk"
+        ],
+        [
+            "EmuHawk.exe",
+            "EmuHawk"
+        ]
+    ],
     "pre_uninstall": "Copy-Item \"$dir\\config.ini\" \"$persist_dir\\config.ini\" -ErrorAction 'SilentlyContinue'",
     "checkver": {
         "github": "https://github.com/TASEmulators/BizHawk"
