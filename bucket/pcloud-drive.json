@@ -1,7 +1,7 @@
 {
     "version": "4.0.1",
     "homepage": "https://www.pcloud.com",
-    "description": "The official Windows 10/11 client for syncronising local files/folders to your pCloud drive, and vice versa.",
+    "description": "The official Windows 10/11 client for synchronizing local files/folders to your pCloud drive, and vice versa.",
     "license": {
         "identifier": "Freeware",
         "url": "https://www.pcloud.com/terms_and_conditions.html"
