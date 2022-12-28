@@ -22,7 +22,7 @@
     ],
     "checkver": {
         "url": "https://www.kdevelop.org/download",
-        "regex": "stable/kdevelop/([\\d.]+)"
+        "regex": "stable/kdevelop/([\\d.]+)/bin/windows"
     },
     "autoupdate": {
         "architecture": {
