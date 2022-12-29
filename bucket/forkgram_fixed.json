@@ -6,15 +6,28 @@
         "identifier": "GPL-3.0-openssl-exception",
         "url": "https://github.com/Forkgram/tdesktop/blob/dev/LICENSE"
     },
+    "notes": [
+        "To register the 'URL:Telegram Link' protocol, run:",
+        "protocol-handler.ps1 register",
+        "To unregister the 'URL:Telegram Link' protocol, run:",
+        "protocol-handler.ps1 unregister"
+    ],
     "url": "https://github.com/Forkgram/tdesktop/releases/download/v4.4.1/Telegram.zip",
     "hash": "9b33a758da2aaa87c10dc7352c31b57534e2d3cb7345b6a273192b1041f4dc41",
-    "pre_install": "if (Test-Path \"$persist_dir\\log.txt\") { Copy-Item \"$persist_dir\\log.txt\" \"$dir\\\" }",
+    "pre_install": [
+        "if (Test-Path \"$persist_dir\\log.txt\") { Copy-Item \"$persist_dir\\log.txt\" \"$dir\\\" }",
+        "$currentDir = $dir.Replace($version, 'current')",
+        "$content = Get-Content \"$bucketsdir\\MyScoop\\scripts\\telegram\\protocol-handler.ps1\"",
+        "$content = $content.Replace('REPLACE_HERE', $currentDir)",
+        "Set-Content \"$dir\\protocol-handler.ps1\" $content -Force"
+    ],
     "bin": [
         "Telegram.exe",
         [
             "Telegram.exe",
             "Forkgram"
-        ]
+        ],
+        "protocol-handler.ps1"
     ],
     "shortcuts": [
         [
@@ -23,21 +36,10 @@
         ]
     ],
     "persist": "tdata",
-    "post_install": [
-        "Write-Host 'Registering ''URL:Telegram Link'' protocol handler...'",
-        "New-Item 'HKCU:\\SOFTWARE\\Classes\\tg\\shell\\open\\command' -Value \"\"\"$dir\\Telegram.exe\"\"  -- \"\"%1\"\"\" -Force | Out-Null",
-        "New-Item 'HKCU:\\SOFTWARE\\Classes\\tg\\DefaultIcon' -Value \"$dir\\Telegram.exe,1\" -Force | Out-Null",
-        "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\tg' -Name 'URL Protocol' -Value '' -Force | Out-Null",
-        "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\tg' -Name '(Default)' -Value 'URL:Telegram Link' -Force | Out-Null",
-        "New-Item 'HKCU:\\SOFTWARE\\Classes\\TelegramDesktop\\Capabilities\\UrlAssociations' -Name 'tg' -Value 'tdesktop.tg' -Force | Out-Null",
-        "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\TelegramDesktop\\Capabilities' -Name 'ApplicationName' -Value 'Telegram Desktop' -Force | Out-Null",
-        "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\TelegramDesktop\\Capabilities' -Name 'ApplicationDescription' -Value 'Telegram Desktop' -Force | Out-Null",
-        "Write-Host 'Done!'"
-    ],
     "pre_uninstall": [
         "if (Test-Path \"$dir\\log.txt\") { Copy-Item \"$dir\\log.txt\" \"$persist_dir\\\" }",
-        "Write-Host 'Unregistering ''URL:Telegram Link'' protocol handler...'; Remove-Item 'HKCU:\\SOFTWARE\\Classes\\tg', 'HKCU:\\SOFTWARE\\Classes\\TelegramDesktop' -Force -Recurse",
-        "Write-Host 'Done!'"
+        "Write-Host 'Unregistering ''URL:Telegram Link'' protocol handler...'",
+        "Remove-Item 'HKCU:\\SOFTWARE\\Classes\\tg', 'HKCU:\\SOFTWARE\\Classes\\TelegramDesktop' -Force -Recurse -ErrorAction 'SilentlyContinue'; Write-Host 'Done!'"
     ],
     "checkver": {
         "github": "https://github.com/Forkgram/tdesktop"
