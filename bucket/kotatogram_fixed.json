@@ -24,6 +24,7 @@
         "$content = $content.Replace('Telegram.exe', 'Kotatogram.exe')",
         "Set-Content \"$dir\\protocol-handler.ps1\" $content -Force"
     ],
+    "bin": "protocol-handler.ps1",
     "shortcuts": [
         [
             "Kotatogram.exe",
