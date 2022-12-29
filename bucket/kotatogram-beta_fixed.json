@@ -36,7 +36,6 @@
         "Write-Host 'Done!'"
     ],
     "pre_uninstall": [
-        "if (Test-Path \"$dir\\log.txt\") { Copy-Item \"$dir\\log.txt\" \"$persist_dir\\\" }",
         "Write-Host 'Unregistering ''URL:Telegram Link'' protocol handler...'; Remove-Item 'HKCU:\\SOFTWARE\\Classes\\tg', 'HKCU:\\SOFTWARE\\Classes\\TelegramDesktop' -Force -Recurse",
         "Write-Host 'Done!'"
     ],
