@@ -33,35 +33,35 @@
     "shortcuts": [
         [
             "startYACY.bat",
-            "Start YaCy",
+            "YaCy\\Start YaCy",
             "",
             "addon\\YaCy.ico"
         ],
         [
             "startYACY_debug.bat",
-            "Start YaCy (DeBug)",
+            "YaCy\\Start YaCy (DeBug)",
             "",
             "addon\\YaCy.ico"
         ],
         [
             "stopYACY.bat",
-            "Stop YaCy",
+            "YaCy\\Stop YaCy",
             "",
             "uninstall.exe"
         ],
         [
             "uninstallYaCyWindowsService.bat",
-            "Uninstall YaCy Windows Service",
+            "YaCy\\Uninstall YaCy Windows Service",
             "",
             "addon\\windowsService\\prunsrv.exe"
         ],
         [
             "getWin32MaxHeap.bat",
-            "Get Win32 Max Heap"
+            "YaCy\\Get Win32 Max Heap"
         ],
         [
             "installYaCyWindowsService.bat",
-            "Install YaCy Windows Service",
+            "YaCy\\Install YaCy Windows Service",
             "",
             "addon\\windowsService\\prunsrv.exe"
         ]
