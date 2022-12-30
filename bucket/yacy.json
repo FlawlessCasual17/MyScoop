@@ -71,6 +71,7 @@
         "'uninstallYaCyWindowsService.bat', 'stopYACY.bat' | ForEach-Object {",
         "   Start-Process 'cmd' -Wait -NoNewWindow -Args @('/c', \"$dir\\$_\") -WorkingDirectory $dir",
         "}",
+        "Start-Process \"$dir\\uninstall.exe\" -Wait -Verb 'RunAs' -Args '/S'",
         "Start-Sleep -Seconds 2"
     ],
     "checkver": {
