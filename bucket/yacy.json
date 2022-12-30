@@ -58,7 +58,9 @@
         ],
         [
             "getWin32MaxHeap.bat",
-            "YaCy\\Get Win32 Max Heap"
+            "YaCy\\Get Win32 Max Heap",
+            "",
+            "htroot\\env\\grafics\\dfltfvcn.ico"
         ],
         [
             "installYaCyWindowsService.bat",
@@ -74,7 +76,7 @@
         "   Start-Process 'cmd' -Wait -NoNewWindow -Args @('/c', \"$dir\\$_\") -WorkingDirectory \"$dir\"",
         "}",
         "Start-Process \"$dir\\uninstall.exe\" -Wait -Verb 'RunAs' -Args '/S'",
-        "Start-Sleep -Seconds 2"
+        "Start-Sleep -Seconds 4"
     ],
     "checkver": {
         "url": "https://yacy.net/download_installation/#yacy-for-windows",
