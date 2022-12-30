@@ -58,7 +58,7 @@
         ],
         [
             "getWin32MaxHeap.bat",
-            "YaCy\\Get Win32 Max Heap",
+            "YaCy\\Get Win32 Max Heap (YaCy)",
             "",
             "htroot\\env\\grafics\\dfltfvcn.ico"
         ],
