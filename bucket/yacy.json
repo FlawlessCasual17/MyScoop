@@ -16,6 +16,7 @@
         "uninstallYaCyWindowsService.ps1"
     ],
     "pre_install": [
+        "Remove-Item \"$dir\\`$*\"",
         "$currentDir = $dir.Replace($version, 'current')",
         "Get-ChildItem \"$dir\\*.bat\" | ForEach-Object {",
         "   $value = \"Start-Process 'cmd' -Wait -NoNewWindow -Args @('/c', \"\"$dir\\$($_.Name)\"\") -WorkingDirectory $currentDir\"",
