@@ -52,7 +52,7 @@
         ],
         [
             "uninstallYaCyWindowsService.bat",
-            "YaCy\\Uninstall YaCy Windows Service",
+            "YaCy\\Uninstall YaCy Windows service",
             "",
             "addon\\windowsService\\prunsrv.exe"
         ],
@@ -64,7 +64,7 @@
         ],
         [
             "installYaCyWindowsService.bat",
-            "YaCy\\Install YaCy Windows Service",
+            "YaCy\\Install YaCy Windows service",
             "",
             "addon\\windowsService\\prunsrv.exe"
         ]
