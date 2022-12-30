@@ -16,10 +16,12 @@
         "uninstallYaCyWindowsService.ps1"
     ],
     "pre_install": [
+        "ensure \"$persist_dir\" | Out-Null",
+        "Copy-Item \"$persist_dir\\DATA\\*\" \"$dir\\DATA\" -ErrorAction 'SilentlyContinue' -Recurse",
         "Remove-Item \"$dir\\`$*\" -Recurse",
         "$currentDir = $dir.Replace($version, 'current')",
         "Get-ChildItem \"$dir\\*.bat\" | ForEach-Object {",
-        "   $value = \"Start-Process 'cmd' -Wait -NoNewWindow -Args @('/c', \"\"$dir\\$($_.Name)\"\") -WorkingDirectory $currentDir\"",
+        "   $value = \"Start-Process 'cmd' -Wait -NoNewWindow -Args @('/c', \"\"$currentDir\\$($_.Name)\"\") -WorkingDirectory $currentDir\"",
         "   Set-Content \"$dir\\$(($_.Name).Replace('.bat', '')).ps1\" $value -Force",
         "}"
     ],
@@ -68,6 +70,7 @@
         ]
     ],
     "pre_uninstall": [
+        "Copy-Item \"$dir\\DATA\\*\" \"$persist_dir\\DATA\" -ErrorAction 'SilentlyContinue' -Recurse",
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "'uninstallYaCyWindowsService.bat', 'stopYACY.bat' | ForEach-Object {",
         "   Start-Process 'cmd' -Wait -NoNewWindow -Args @('/c', \"$dir\\$_\") -WorkingDirectory $dir",
