@@ -71,7 +71,7 @@
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "'uninstallYaCyWindowsService.bat', 'stopYACY.bat' | ForEach-Object {",
-        "   Start-Process 'cmd' -Wait -NoNewWindow -Args @('/c', \"$dir\\$_\") -WorkingDirectory $dir",
+        "   Start-Process 'cmd' -Wait -NoNewWindow -Args @('/c', \"$dir\\$_\") -WorkingDirectory \"$dir\"",
         "}",
         "Start-Process \"$dir\\uninstall.exe\" -Wait -Verb 'RunAs' -Args '/S'",
         "Start-Sleep -Seconds 2"
