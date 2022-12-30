@@ -18,7 +18,7 @@
     "pre_install": [
         "$currentDir = $dir.Replace($version, 'current')",
         "Get-ChildItem \"$dir\\*.bat\" | ForEach-Object {",
-        "   $value = \"Start-Process 'cmd' -Wait -NoNewWindow -Args @('/c', \"\"$($_.Name)\"\") -WorkingDirectory $currentDir\"",
+        "   $value = \"Start-Process 'cmd' -Wait -NoNewWindow -Args @('/c', \"\"$dir\\$($_.Name)\"\") -WorkingDirectory $currentDir\"",
         "   Set-Content \"$dir\\$(($_.Name).Replace('.bat', '')).ps1\" $value -Force",
         "}"
     ],
