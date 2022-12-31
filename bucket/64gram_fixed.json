@@ -27,7 +27,8 @@
         [
             "Telegram.exe",
             "64Gram"
-        ]
+        ],
+        "protocol-handler.ps1"
     ],
     "shortcuts": [
         [
