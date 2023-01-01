@@ -11,7 +11,7 @@
     "pre_install": [
         "ensure \"$persist_dir\" | Out-Null",
         "Start-Process \"$dir\\IE_Install.exe\" -Wait -ArgumentList @('/SP-', '/VERYSILENT', '/PORTABLE=1', \"/DIR=$dir\"); Remove-Item \"$dir\\IE_Install.exe\"",
-        "Copy-Item \"$persist_dir\\Config.ini\" \"$dir\\Config.ini\" -ErrorAction 'SilentlyContinue' -Force"
+        "Copy-Item \"$persist_dir\\Config.ini\" \"$dir\\Config.ini\" -ErrorAction 'SilentlyContinue'"
     ],
     "bin": "InnoExtractor.exe",
     "shortcuts": [
@@ -22,7 +22,7 @@
     ],
     "pre_uninstall": [
         "Start-Process 'reg' -Wait -WindowStyle 'Hidden' -ArgumentList @('delete', 'HKCU\\SOFTWARE\\Classes\\exefile\\shell\\InnoExtractor', '/f')",
-        "Copy-Item \"$dir\\Config.ini\" \"$persist_dir\\Config.ini\" -ErrorAction 'SilentlyContinue' -Force"
+        "Copy-Item \"$dir\\Config.ini\" \"$persist_dir\\Config.ini\" -ErrorAction 'SilentlyContinue'"
     ],
     "checkver": {
         "url": "http://www.havysoft.cl/descargar.html",
