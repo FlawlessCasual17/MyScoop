@@ -1,7 +1,7 @@
 {
     "version": "2023.1.2.0",
     "homepage": "https://github.com/AAndyProgram/SCrawler",
-    "description": "A program to download photo and video from any site (e.g. Reddit, Twitter, Instagram, TikTok, RedGifs, PornHub, XHamster, XVIDEOS, LPSG).",
+    "description": "A program to download photos and videos from any site (e.g. Reddit, Twitter, Instagram, TikTok, RedGifs, PornHub, XHamster, XVIDEOS, LPSG).",
     "license": "GPL-3.0",
     "architecture": {
         "64bit": {
