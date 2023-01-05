@@ -8,10 +8,7 @@
     },
     "url": "http://www.havysoft.cl/download/IE_Install.zip",
     "hash": "e1277ade19bea5145167e0168be86c5166b3763fe696fca43d6327e03d7f553e",
-    "pre_install": [
-        "ensure \"$persist_dir\" | Out-Null",
-        "Expand-InnoArchive \"$dir\\IE_Install.exe\" \"$dir\" -Removal"
-    ],
+    "pre_install": "Expand-InnoArchive \"$dir\\IE_Install.exe\" \"$dir\" -Removal",
     "bin": "InnoExtractor.exe",
     "shortcuts": [
         [
