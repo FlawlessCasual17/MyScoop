@@ -10,8 +10,7 @@
     "hash": "e1277ade19bea5145167e0168be86c5166b3763fe696fca43d6327e03d7f553e",
     "pre_install": [
         "ensure \"$persist_dir\" | Out-Null",
-        "Expand-InnoArchive \"$dir\\IE_Install.exe\" \"$dir\" -Removal",
-        "Copy-Item \"$persist_dir\\Config.ini\" \"$dir\\Config.ini\" -ErrorAction 'SilentlyContinue'"
+        "Expand-InnoArchive \"$dir\\IE_Install.exe\" \"$dir\" -Removal"
     ],
     "bin": "InnoExtractor.exe",
     "shortcuts": [
@@ -20,10 +19,7 @@
             "InnoExtractor"
         ]
     ],
-    "pre_uninstall": [
-        "Start-Process 'reg' -Wait -WindowStyle 'Hidden' -ArgumentList @('delete', 'HKCU\\SOFTWARE\\Classes\\exefile\\shell\\InnoExtractor', '/f')",
-        "Copy-Item \"$dir\\Config.ini\" \"$persist_dir\\Config.ini\" -ErrorAction 'SilentlyContinue'"
-    ],
+    "pre_uninstall": "Start-Process 'reg' -Wait -WindowStyle 'Hidden' -ArgumentList @('delete', 'HKCU\\SOFTWARE\\Classes\\exefile\\shell\\InnoExtractor', '/f')",
     "checkver": {
         "url": "http://www.havysoft.cl/descargar.html",
         "regex": "\\s+<td\\swidth=\"\\d+\">([\\d.]+)</td>"
