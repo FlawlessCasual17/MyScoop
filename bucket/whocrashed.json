@@ -1,5 +1,5 @@
 {
-    "version": "7.05-705.30105",
+    "version": "7.05-705.30106",
     "homepage": "https://www.resplendence.com/whocrashed",
     "description": "A utility application that reveals the drivers responsible for crashing your computer.",
     "license": {
@@ -7,7 +7,7 @@
         "url": "https://www.resplendence.com/licensing"
     },
     "url": "https://www.resplendence.com/download/whocrashedSetup.exe",
-    "hash": "6b09163756a1bafdb61cd2b9ba8c1e36e62fe28605a808ff28928729d6badb7c",
+    "hash": "89ae06acf8e4fc9a06a82dd0a4cd3244448858c6364ffd4aa2a3132eac4d625f",
     "innosetup": true,
     "pre_install": [
         "if ($architecture -eq '32bit') {",
