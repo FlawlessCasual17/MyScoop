@@ -1,10 +1,10 @@
 {
-    "version": "2.4.11",
+    "version": "2.4.13",
     "homepage": "https://files.community/",
     "description": "A modern file explorer that pushes the boundaries of the Windows platform.",
     "license": "MIT",
-    "url": "https://github.com/files-community/Files/releases/download/v2.4.11/Files.Package_2.4.11.0_x64_arm64_Sideload.msixbundle#/setup.msixbundle",
-    "hash": "f629e648f28264d4cc0d7e993809053fd9c4d1a17c6a212c6e6b5c63ec1ef676",
+    "url": "https://github.com/files-community/Files/releases/download/v2.4.13/Files.Package_2.4.13.0_x64_arm64_Sideload.msixbundle#/setup.msixbundle",
+    "hash": "7f0fbbd669055063195e445779e955da7a3af180f7f4a78aa379043c2f819113",
     "pre_install": [
         "Start-Process 'powershell' -Wait -WindowStyle 'Hidden' -ArgumentList @('-C', \"Add-AppxPackage \"\"$dir\\setup.msixbundle\"\"\")",
         "Remove-Item \"$dir\\setup.msixbundle\""
