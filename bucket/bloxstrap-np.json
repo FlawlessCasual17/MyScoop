@@ -14,8 +14,8 @@
         }
     },
     "pre_install": [
-        "if ($cmd -eq 'install') { Start-Process \"$dir\\setup.exe\" -Wait -Args @('-quiet', '-nolaunch'); Remove-Item \"$dir\\setup.exe\" }",
-        "elseif ($cmd -eq 'update') { Start-Process \"$dir\\setup.exe\" -Wait -Args @('-quiet', '-nolaunch', '-upgrade'); Remove-Item \"$dir\\setup.exe\" }"
+        "if ($cmd -eq 'update') { Start-Process \"$dir\\setup.exe\" -Wait -Args @('-quiet', '-nolaunch', '-upgrade'); Remove-Item \"$dir\\setup.exe\" }",
+        "else { Start-Process \"$dir\\setup.exe\" -Wait -Args @('-quiet', '-nolaunch'); Remove-Item \"$dir\\setup.exe\" }"
     ],
     "pre_uninstall": [
         "if ($cmd -eq 'uninstall') {",
