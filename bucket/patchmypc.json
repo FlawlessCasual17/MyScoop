@@ -10,7 +10,7 @@
     "hash": "41d5c364192ed6a05a5105654d7a2e3d13a6651ae376275223343be5673b1351",
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\PatchMyPC.log\")) { New-Item \"$dir\\PatchMyPC.log\" | Out-Null }",
-        "if (!(Test-Path \"$persist_dir\\'PatchMyPC.ini\")) {",
+        "if (!(Test-Path \"$persist_dir\\PatchMyPC.ini\")) {",
         "    Set-Content \"$dir\\PatchMyPC.ini\" -Value \";Options`nChk_Options_EnableVerboseLogging`nChk_Options_DisablePatchMyPCSelfUpdater\" -Encoding 'utf8' -Force",
         "}"
     ],
