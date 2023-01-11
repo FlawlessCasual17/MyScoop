@@ -13,13 +13,6 @@
             "hash": "60d1c22b09f3e4f14f0d50facd5d798d8be1b598706637937ed64a5771013844"
         }
     },
-    "installer": {
-        "args": [
-            "-quiet",
-            "-nolaunch"
-        ],
-        "keep": true
-    },
     "pre_install": [
         "if ($cmd -eq 'install') { Start-Process \"$dir\\setup.exe\" -Wait -Args @('-quiet', '-nolaunch'); Remove-Item \"$dir\\setup.exe\" }",
         "elseif ($cmd -eq 'update') { Start-Process \"$dir\\setup.exe\" -Wait -Args @('-quiet', '-nolaunch', '-upgrade'); Remove-Item \"$dir\\setup.exe\" }"
