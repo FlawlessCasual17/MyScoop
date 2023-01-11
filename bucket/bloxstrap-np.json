@@ -19,7 +19,7 @@
             "-nolaunch"
         ]
     },
-    "pre_install": "Start-Process \"$env:LOCALAPPDATA\\Bloxstrap\\Bloxstrap.exe\" -Wait -Args @('-quiet','-uninstall')",
+    "pre_uninstall": "Start-Process \"$env:LOCALAPPDATA\\Bloxstrap\\Bloxstrap.exe\" -Wait -Args @('-quiet','-uninstall')",
     "checkver": "github",
     "autoupdate": {
         "architecture": {
