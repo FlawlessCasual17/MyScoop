@@ -1,0 +1,40 @@
+{
+    "version": "1.6.1",
+    "homepage": "https://github.com/pizzaboxer/bloxstrap",
+    "description": "An open-source, feature-packed alternative bootstrapper for Roblox.",
+    "license": "MIT",
+    "architecture": {
+        "32bit": {
+            "url": "https://github.com/pizzaboxer/bloxstrap/releases/download/v1.6.1/Bloxstrap-v1.6.1-x86.exe",
+            "hash": "098131f4926fd4eb0a4502a7e9233e6bd916c10aa39504c880f44bdf9bb73945"
+        },
+        "64bit": {
+            "url": "https://github.com/pizzaboxer/bloxstrap/releases/download/v1.6.1/Bloxstrap-v1.6.1-x64.exe",
+            "hash": "60d1c22b09f3e4f14f0d50facd5d798d8be1b598706637937ed64a5771013844"
+        }
+    },
+    "installer": {
+        "args": [
+            "-quiet",
+            "-nolaunch"
+        ]
+    },
+    "uninstaller": {
+        "file": "$env:LOCALAPPDATA\\Bloxstrap\\Bloxstrap.exe",
+        "args": [
+            "-quiet",
+            "-uninstall"
+        ]
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://github.com/pizzaboxer/bloxstrap/releases/download/v$version/Bloxstrap-v$version-x86.exe"
+            },
+            "64bit": {
+                "url": "https://github.com/pizzaboxer/bloxstrap/releases/download/v$version/Bloxstrap-v$version-x64.exe"
+            }
+        }
+    }
+}
