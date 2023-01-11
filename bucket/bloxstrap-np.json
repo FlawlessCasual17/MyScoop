@@ -19,7 +19,10 @@
             "-nolaunch"
         ]
     },
-    "pre_uninstall": "Start-Process \"$env:LOCALAPPDATA\\Bloxstrap\\Bloxstrap.exe\" -Wait -Args @('-quiet','-uninstall')",
+    "pre_uninstall": [
+        "Start-Process \"$env:LOCALAPPDATA\\Bloxstrap\\Bloxstrap.exe\" -Wait -Args @('-quiet','-uninstall')",
+        "Remove-Item 'HKCU:\\SOFTWARE\\Classes\\roblox\\', 'HKCU:\\SOFTWARE\\Classes\\roblox-player\\' -Recurse -Force"
+    ],
     "checkver": "github",
     "autoupdate": {
         "architecture": {
