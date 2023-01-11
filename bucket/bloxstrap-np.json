@@ -17,7 +17,8 @@
         "args": [
             "-quiet",
             "-nolaunch"
-        ]
+        ],
+        "keep": true
     },
     "pre_uninstall": [
         "Start-Process \"$env:LOCALAPPDATA\\Bloxstrap\\Bloxstrap.exe\" -Wait -Args @('-quiet','-uninstall')",
