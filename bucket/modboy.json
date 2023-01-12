@@ -12,6 +12,14 @@
             "Modboy"
         ]
     ],
+    "post_install": [
+        "Write-Host 'Registering the 'modboy://' Protocol...'",
+        "New-Item 'HKCU:\\SOFTWARE\\Classes\\modboy\\shell\\open\\command' -Value \"\"\"$dir\\Modboy.exe\"\" \"\"%1\"\"\" -Force | Out-Null",
+        "New-Item 'HKCU:\\SOFTWARE\\Classes\\modboy\\DefaultIcon' -Value \"$dir\\Modboy.exe,1\" -Force | Out-Null",
+        "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\modboy' -Name '(Default)' -PropertyType 'String' -Value 'URL:modboy' | Out-Null",
+        "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\modboy' -Name 'URL Protocol' -PropertyType 'String' -Value '' | Out-Null"
+    ],
+    "pre_uninstall": "Write-Host 'Unregistering the 'modboy://' Protocol...'; Remove-Item 'HKCU:\\SOFTWARE\\Classes\\modboy' -Recurse -Force",
     "checkver": {
         "script": [
             "$userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'",
