@@ -1,12 +1,12 @@
 {
-    "version": "1.6.0",
+    "version": "1.6.1",
     "homepage": "https://gajim.org/",
     "description": "A fully-featured open source XMPP client.",
     "license": "GPL-3.0",
     "architecture": {
         "64bit": {
-            "url": "https://gajim.org/downloads/1.6/Gajim-Portable-1.6.0-64bit.exe#/dl.7z",
-            "hash": "532a4dc6bdd7e4588fd25f56ebcacbf368836a5a07dd7a3c1521cc3321bad1bb"
+            "url": "https://gajim.org/downloads/1.6/Gajim-Portable-1.6.1-64bit.exe#/dl.7z",
+            "hash": "0718e735abc87ce3b6d3daf256b883da11d7015f7f794c41c24d631c945ed40b"
         }
     },
     "shortcuts": [
