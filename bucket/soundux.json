@@ -7,8 +7,8 @@
         "This app depends on MSEdgeWebview2 and VB-Cable Virtual Audio Device to function properly.",
         "Click below to download the latest verison of MSEdgeWebview2:",
         "https://developer.microsoft.com/en-us/microsoft-edge/webview2/#download-section",
-        "Click below to download the latest version of VB-Cable Virtual Audio Device: (Make sure to execute the x64 .exe file, not the x86 .exe file.)",
-        "https://download.vb-audio.com/Download_CABLE/VBCABLE_Driver_Pack43.zip"
+        "Use the following commands to install 'vb-cable':",
+        "scoop install vb-cable"
     ],
     "architecture": {
         "64bit": {
