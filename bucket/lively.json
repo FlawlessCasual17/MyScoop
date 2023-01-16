@@ -6,7 +6,7 @@
     "notes": [
         "To add 'lively' as a system startup option, run:",
         "add-startup.ps1",
-        "To remove 'lively' from the system startup , run:",
+        "To remove 'lively' from the system startup, run:",
         "remove-startup.ps1"
     ],
     "suggest": {
