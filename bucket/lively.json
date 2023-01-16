@@ -33,6 +33,7 @@
             "Lively"
         ]
     ],
+    "pre_uninstall": "Remove-ItemProperty 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run' -Name 'Lively' -Force",
     "checkver": {
         "github": "https://github.com/rocksdanister/lively"
     },
