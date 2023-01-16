@@ -92,7 +92,7 @@
     "checkver": {
         "url": "https://www.petges.lu/download/",
         "regex": "ac-([\\d]+)_([\\w]+).exe",
-        "replace": "${1}.${2}"
+        "replace": "$1.$2"
     },
     "autoupdate": {
         "url": "https://www.petges.lu/pubfiles/ac-$underscoreVersion.exe",
