@@ -9,6 +9,10 @@
         "To remove 'lively' from the system startup , run:",
         "remove-startup.ps1"
     ],
+    "suggest": {
+        "Microsoft .NET Desktop Runtime": "extras/windowsdesktop-runtime",
+        "VCRedist": "extras/vcredist"
+    },
     "url": "https://github.com/rocksdanister/lively/releases/download/v2.0.5.0/lively_setup_x86_full_v2050.exe",
     "hash": "00446677990be6841dd83b9e3b736d71a70a094f3babbdfb5fb9139f97d95b94",
     "pre_install": [
