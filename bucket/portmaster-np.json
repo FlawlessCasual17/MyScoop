@@ -24,7 +24,7 @@
         "Copy-item \"$env:ProgramData\\Safing\\Portmaster\" \"$persist_dir\" -Include @('config.json', 'databases', 'logs') -Recurse -Force -ErrorAction 'SilentlyContinue'; Start-Sleep -Seconds 4",
         "if ($cmd -eq 'uninstall') { Start-Process \"$env:ProgramData\\Safing\\Portmaster\\portmaster-uninstaller.exe\" -Verb RunAs -ArgumentList '/S' -Wait; Start-Sleep -Seconds 5 }"
     ],
-    "post_uninstall": "if ($cmd -eq 'uninstall') {Write-Host 'Please restart your computer to uninstall Portmaster properly' -F 'Red'}",
+    "post_uninstall": "if ($cmd -eq 'uninstall') { Write-Host 'Please restart your computer to uninstall Portmaster properly' -F 'Red' }",
     "checkver": {
         "github": "https://github.com/safing/portmaster"
     },
