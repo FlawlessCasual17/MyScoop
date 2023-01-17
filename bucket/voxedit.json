@@ -17,7 +17,7 @@
         "$content2 = $content.Replace('pause >nul', '')",
         "$content2 | Set-Content \"$dir\\uninstall.bat\"",
         "",
-        "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "Start-Process 'cmd' -Wait -Verb 'RunAs' -ArgumentList @('/C', \"$dir\\install.bat\"); Start-Sleep -Seconds 2"
     ],
     "bin": "VoxEdit.bat",
@@ -30,7 +30,7 @@
         ]
     ],
     "pre_uninstall": [
-        "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "Start-Process 'cmd' -Wait -Verb 'RunAs' -ArgumentList @('/C', \"$dir\\uninstall.bat\"); Start-Sleep -Seconds 2"
     ],
     "checkver": {
