@@ -16,7 +16,7 @@
         "   Remove-Item \"$dir\\CloneSpy64.exe\"",
         "}",
         "'CloneSpy.log', 'CSDefault.cst', 'CloneSpy.ini' | ForEach-Object {",
-        "    if (!(Test-Path \"$persist_dir\\$_\")) {New-Item \"$dir\\$_\" | Out-Null}",
+        "    if (!(Test-Path \"$persist_dir\\$_\")) { New-Item \"$dir\\$_\" | Out-Null }",
         "}"
     ],
     "bin": "CloneSpy.exe",
