@@ -20,7 +20,7 @@
             "hash": "552bbe4aee4b0fc009fa5aff8529e13f90d092c68d7d982b0b12f5b8d98c7848"
         }
     },
-    "pre_install": "if (!(Test-Path \"$dir\\settings.ini\")) {New-Item \"$dir\\settings.ini\" -ItemType File | Out-Null}",
+    "pre_install": "if (!(Test-Path \"$dir\\settings.ini\")) { New-Item \"$dir\\settings.ini\" -ItemType File | Out-Null }",
     "bin": "ImageFinder.exe",
     "shortcuts": [
         [
