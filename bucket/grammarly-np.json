@@ -11,7 +11,7 @@
     "pre_install": [
         "Start-Process \"$dir\\GrammarlyInstaller.exe\" -Args '/S'",
         "while (!(Test-Path \"$env:LOCALAPPDATA\\Grammarly\\DesktopIntegrations\\Uninstall.exe\")) {",
-        "   Start-Sleep -Seconds 3",
+        "   Start-Sleep -Seconds 5",
         "}",
         "Remove-Item \"$dir\\GrammarlyInstaller.exe\" -Force",
         "Stop-Process -Name 'Grammarly.Desktop' -ErrorAction 'SilentlyContinue' -Force"
