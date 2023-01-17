@@ -65,6 +65,7 @@
         "   }",
         "}",
         "elseif ($cmd -eq 'uninstall') {",
+		"   if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "   reg delete 'HKEY_CLASSES_ROOT\\AllFileSystemObjects\\shell\\PeaZip' /f",
         "   reg delete 'HKEY_CLASSES_ROOT\\*\\shell\\PeaZip' /f",
         "}"
