@@ -2,7 +2,7 @@
     "version": "2.0.5.0",
     "homepage": "https://livelywallpaper.net/",
     "description": "A free and open-source software that allows users to set animated desktop wallpapers and screensavers. ",
-    "license": "GPL-3.0",
+    "license": "GPL-3.0-only",
     "suggest": {
         "Microsoft .NET Desktop Runtime": "extras/windowsdesktop-runtime",
         "VCRedist": "extras/vcredist"
