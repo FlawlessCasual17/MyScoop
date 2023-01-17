@@ -33,6 +33,6 @@
         "regex": "([\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://download-windows.grammarly.com/versions/$version/GrammarlyInstaller.exe#/dl.7z"
+        "url": "https://download-windows.grammarly.com/versions/$version/GrammarlyInstaller.exe"
     }
 }
