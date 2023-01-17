@@ -23,7 +23,7 @@
         "script": [
             "$userAgent = [Microsoft.PowerShell.Commands.PSUserAgent].GetMembers('Static, NonPublic').Where{$_.Name -eq 'UserAgent'}.GetValue($null,$null)",
             "#Credits to @vedantmgoyal2009 for the PowerShell script. Link to their GitHub profile: https://github.com/vedantmgoyal2009",
-            "(Invoke-RestMethod 'https://update-windows.grammarly.com/update' -Method 'Post' -Body '{\"currentVersion\": \"0.0.0.0\" -UserAgent $userAgent}').version"
+            "(Invoke-RestMethod 'https://update-windows.grammarly.com/update' -Method 'Post' -Body '{\"currentVersion\": \"0.0.0.0\"}' -UserAgent $userAgent).version"
         ],
         "regex": "([\\d.]+)"
     },
