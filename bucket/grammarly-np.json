@@ -21,7 +21,7 @@
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "Remove-Item 'HKCU:\\SOFTWARE\\Grammarly', 'REGISTRY::HKEY_CLASSES_ROOT\\grammarly.windows-extension' -ErrorAction 'SilentlyContinue' -Recurse -Force",
         "Start-Process \"$env:LOCALAPPDATA\\Grammarly\\DesktopIntegrations\\Uninstall.exe\" -Wait -Verb 'RunAs' -Args '/S'",
-        "Remove-Item 'HKCU:\\SOFTWARE\\Grammarly', 'REGISTRY::HKEY_CLASSES_ROOT\\grammarly.windows-extension' -ErrorAction 'SilentlyContinue' -Recurse -Force"
+        "Remove-Item 'HKCU:\\SOFTWARE\\Grammarly', 'REGISTRY::HKEY_CLASSES_ROOT\\grammarly.windows-extension', \"$env:LOCALAPPDATA\\Grammarly\" -ErrorAction 'SilentlyContinue' -Recurse -Force"
     ],
     "checkver": {
         "script": [
