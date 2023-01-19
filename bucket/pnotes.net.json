@@ -1,10 +1,10 @@
 {
-    "version": "3812",
+    "version": "3822",
     "homepage": "https://pnotes-1932d.firebaseapp.com/home",
     "description": "A simple sticky notes application for the user's desktop. It's light-weight, flexible, and skinnable.",
     "license": "GPL-2.0",
-    "url": "https://sourceforge.net/projects/pnotes/files/PNotes.NET/Bin/PNotesNET3812.zip",
-    "hash": "md5:e5ad8f4904eea1ef9dd2eb68cd0ad319",
+    "url": "https://sourceforge.net/projects/pnotes/files/PNotes.NET/Bin/PNotesNET3822.zip",
+    "hash": "md5:6f7235b91b9eeecb87835942c7f42967",
     "extract_dir": "PNotes.NET",
     "pre_install": [
         "'settings.db3', 'pnotes.log','contacts.db3' | ForEach-Object { if (!(Test-Path \"$dir\\$_\")) { New-Item \"$dir\\$_\" | Out-Null } }",
