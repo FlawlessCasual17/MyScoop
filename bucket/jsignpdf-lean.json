@@ -1,5 +1,5 @@
 {
-    "version": "2.2.0",
+    "version": "1.6.5",
     "homepage": "https://jsignpdf.sourceforge.net/",
     "description": "A Java application which adds digital signatures to PDF documents. (Without bundled JRE.)",
     "license": "MPL-2.0|LGPL-2.1",
@@ -7,9 +7,9 @@
         "JDK": "java/openjdk",
         "JRE": "java/temurin-jre"
     },
-    "url": "https://sourceforge.net/projects/jsignpdf/files/stable/JSignPdf%202.2.0/jsignpdf-2.2.0.zip",
-    "hash": "md5:327182016506f57109270d4875851784",
-    "extract_dir": "jsignpdf-2.2.0",
+    "url": "https://sourceforge.net/projects/jsignpdf/files/stable/JSignPdf%201.6.5/jsignpdf-1.6.5.zip",
+    "hash": "md5:0e6c9519478586e4aa9865d958df51ec",
+    "extract_dir": "jsignpdf-1.6.5",
     "pre_install": [
         "$currentDir = $dir.Replace(\"$version\", 'current')",
         "Set-Content \"$dir\\InstallCert.cmd\" -Value \"@start javaw -jar \"\"$currentDir\\InstallCert.jar\"\"\" -Encoding 'utf8' -Force",
