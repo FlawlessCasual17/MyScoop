@@ -18,7 +18,8 @@
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process \"$dir\\UninstallHPSA.exe\" -Wait -Verb 'RunAs' -ArgumentList '/s'; Start-Sleep -Seconds 4"
+        "$HP_Uninstaller = (Get-ChildItem \"$env:SystemDrive\\SWSetup\" -Recurse -Filter 'Uninstall*').FullName",
+        "Start-Process $HP_Uninstaller -Wait -Verb 'RunAs' -ArgumentList @('-s', '-f'); Start-Sleep -Seconds 4"
     ],
     "checkver": {
         "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",
