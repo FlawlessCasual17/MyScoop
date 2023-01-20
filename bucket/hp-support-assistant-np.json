@@ -8,13 +8,13 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://ftp.ext.hp.com/pub/softpaq/sp142501-143000/sp142943.exe#/installer.exe",
+            "url": "https://ftp.ext.hp.com/pub/softpaq/sp142501-143000/sp142943.exe#/setup.exe",
             "hash": "fbcc4c56bccabeec8f2d7d04b650a25b0b43718531bff4175d593c5d99d771f3"
         }
     },
     "post_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process \"$dir\\installer.exe\" -Wait -Verb 'RunAs' -ArgumentList @('/f', \"$dir\", '/s'); Remove-Item \"$dir\\installer.exe\""
+        "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -ArgumentList @('/f', \"$dir\", '/s'); Remove-Item \"$dir\\installer.exe\""
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
