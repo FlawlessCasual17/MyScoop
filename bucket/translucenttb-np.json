@@ -7,7 +7,7 @@
     "hash": "ed15932b0e4782b03c2689281e2af42e181987d836ecf06c0e1c86508295ba41",
     "pre_install": [
         "Start-Process 'powershell' -Wait -WindowStyle 'Hidden' -ArgumentList @('-C', \"Add-AppxPackage \"\"$dir\\TranslucentTB.msixbundle\"\"\")",
-        "Remove-Item \"$dir\\bundle.msixbundle\""
+        "Remove-Item \"$dir\\TranslucentTB.msixbundle\""
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
