@@ -62,7 +62,7 @@
         ],
         [
             "OpenConfigFolder.cmd",
-            "Open Config Folder",
+            "Open Nilesoft Shell config folder",
             "",
             "shell.exe"
         ]
