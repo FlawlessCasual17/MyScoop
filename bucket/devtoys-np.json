@@ -11,7 +11,7 @@
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process 'powershell' -Wait -WindowStyle 'Hidden' -ArgumentList @('-Command', \"Get-AppxPackage *VelerSoftware.DevToys | Remove-AppxPackage\") | Out-Null",
+        "Start-Process 'powershell' -Wait -WindowStyle 'Hidden' -ArgumentList @('-Command', \"Get-AppxPackage '*VelerSoftware.DevToys' | Remove-AppxPackage\") | Out-Null",
         "Remove-Item \"$env:ProgramFiles\\WindowsApps\\*VelerSoftware.DevToys_*\" -Force -Recurse -ErrorAction 'SilentlyContinue'",
         "Start-Sleep -Seconds 2"
     ],
