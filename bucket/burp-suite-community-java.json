@@ -27,7 +27,7 @@
     ],
     "checkver": {
         "url": "https://portswigger.net/burp/releases/data",
-        "jsonpath": "$.ResultSet.Results[0].version",
+        "jsonpath": "$.ResultSet.Results..version",
         "regex": "([\\d.]+)"
     },
     "autoupdate": {

@@ -19,7 +19,7 @@
     "checkver": {
         "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",
         "url": "https://api.github.com/repos/primodotso/primo/releases/latest",
-        "jsonpath": "$.assets[0].browser_download_url",
+        "jsonpath": "$.assets..browser_download_url",
         "regex": "v([\\w.-]+)/(?<File>[\\w.-]+\\.exe)"
     },
     "autoupdate": {

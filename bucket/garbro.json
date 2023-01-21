@@ -20,7 +20,7 @@
     ],
     "checkver": {
         "url": "https://api.github.com/repos/morkt/GARbro/releases/latest",
-        "jsonpath": "$.assets[0].browser_download_url",
+        "jsonpath": "$.assets..browser_download_url",
         "regex": "/v(?<Half>[\\d.]+)/GARbro-v([\\d.]+).rar"
     },
     "autoupdate": {
