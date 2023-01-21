@@ -41,20 +41,18 @@
             "Copy-Item \"$persist_dir\\imports\\*\" \"$dir\\imports\" -ErrorAction SilentlyContinue"
         ]
     },
-    "uninstaller": {
-        "script": [
-            "Copy-Item \"$dir\\shell.nss\" \"$persist_dir\\shell.nss\" -ErrorAction SilentlyContinue",
-            "Copy-Item \"$dir\\imports\\*\" \"$persist_dir\\imports\" -ErrorAction SilentlyContinue",
-            "if ($cmd -eq 'uninstall') {",
-            "    $regkey = Get-ItemProperty -Path 'HKLM:\\SOFTWARE\\Classes\\Directory\\background\\shellex\\ContextMenuHandlers\\nilesoft.shell' -ErrorAction SilentlyContinue",
-            "    if ($regkey) {",
-            "        if (!(is_admin)) { error 'Admin right is required to unregister nilesoft shell'; break }",
-            "        Invoke-ExternalCommand \"$dir\\shell.exe\" -ArgumentList @('-unregister', '-restart', '-silent') -RunAs | Out-Null",
-            "        Start-Sleep -Seconds 2",
-            "    }",
-            "}"
-        ]
-    },
+    "pre_uninstall": [
+        "Copy-Item \"$dir\\shell.nss\" \"$persist_dir\\shell.nss\" -ErrorAction SilentlyContinue",
+        "Copy-Item \"$dir\\imports\\*\" \"$persist_dir\\imports\" -ErrorAction SilentlyContinue",
+        "if ($cmd -eq 'uninstall') {",
+        "    $regkey = Get-ItemProperty -Path 'HKLM:\\SOFTWARE\\Classes\\Directory\\background\\shellex\\ContextMenuHandlers\\nilesoft.shell' -ErrorAction SilentlyContinue",
+        "    if ($regkey) {",
+        "        if (!(is_admin)) { error 'Admin right is required to unregister nilesoft shell'; break }",
+        "        Invoke-ExternalCommand \"$dir\\shell.exe\" -ArgumentList @('-unregister', '-restart', '-silent') -RunAs | Out-Null",
+        "        Start-Sleep -Seconds 2",
+        "    }",
+        "}"
+    ],
     "bin": "shell.exe",
     "shortcuts": [
         [
