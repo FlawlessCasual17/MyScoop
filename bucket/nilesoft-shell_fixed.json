@@ -37,6 +37,7 @@
     },
     "installer": {
         "script": [
+            "Set-Content \"$dir\\OpenConfigFolder.cmd\" -Value '@start \"%windir%\\explorer.exe\" \"%~dp0\"' -Encoding 'utf8' -Force",
             "Copy-Item \"$persist_dir\\shell.nss\" \"$dir\\shell.nss\" -ErrorAction SilentlyContinue",
             "Copy-Item \"$persist_dir\\imports\\*\" \"$dir\\imports\" -ErrorAction SilentlyContinue"
         ]
@@ -58,6 +59,12 @@
         [
             "shell.exe",
             "Nilesoft Shell"
+        ],
+        [
+            "OpenConfigFolder.cmd",
+            "Open Config Folder",
+            "",
+            "shell.exe"
         ]
     ],
     "persist": "shell.log",
