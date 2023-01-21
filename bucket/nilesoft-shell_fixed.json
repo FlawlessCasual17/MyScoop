@@ -37,8 +37,7 @@
     },
     "installer": {
         "script": [
-            "$currentDir = $dir.Replace($version, 'current')",
-            "Set-Content \"$dir\\OpenConfigFolder.cmd\" -Value \"start \"\"%windir%\\explorer.exe\"\" $currentDir\" -Encoding 'utf8' -Force",
+            "Set-Content \"$dir\\OpenConfigFolder.cmd\" -Value '@start explorer \"%~dp0\"' -Encoding 'utf8' -Force",
             "Copy-Item \"$persist_dir\\shell.nss\" \"$dir\\shell.nss\" -ErrorAction SilentlyContinue",
             "Copy-Item \"$persist_dir\\imports\\*\" \"$dir\\imports\" -ErrorAction SilentlyContinue"
         ]
