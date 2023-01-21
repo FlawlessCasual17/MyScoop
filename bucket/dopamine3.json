@@ -19,7 +19,7 @@
     ],
     "checkver": {
         "url": "https://api.github.com/repos/digimezzo/dopamine/releases",
-        "jsonpath": "$..assets..browser_download_url",
+        "jsonpath": "$[0].assets[0].browser_download_url",
         "regex": "v([\\w.-]+)/Dopamine-(?<Version>[\\w.-]+)\\.exe"
     },
     "autoupdate": {

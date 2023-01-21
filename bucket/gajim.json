@@ -17,7 +17,7 @@
     ],
     "post_install": [
         "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
-        "Write-Host 'Registering the XMPP Protocol...'",
+        "Write-Host 'Registering the XMPP Protocol[0]..'",
         "New-Item 'HKCU:\\SOFTWARE\\Classes\\xmpp\\shell\\open\\command' -Value \"\"\"$dir\\bin\\Gajim.exe\"\" \"\"%1\"\"\" -Force | Out-Null",
         "New-Item 'HKCU:\\SOFTWARE\\Classes\\xmpp\\DefaultIcon' -Value \"$dir\\bin\\Gajim.exe,1\" -Force | Out-Null",
         "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\xmpp\\shell\\open' -Name 'FriendlyAppName' -PropertyType 'String' -Value 'Gajim' | Out-Null",
@@ -25,7 +25,7 @@
         "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\xmpp' -Name 'URL Protocol' -PropertyType 'String' -Value '' | Out-Null",
         "Write-Host 'Done!'"
     ],
-    "pre_uninstall": "Write-Host 'Unregistering the XMPP Protocol...'; Remove-Item 'HKCU:\\SOFTWARE\\Classes\\xmpp' -Force -Recurse; Write-Host 'Done!'",
+    "pre_uninstall": "Write-Host 'Unregistering the XMPP Protocol[0]..'; Remove-Item 'HKCU:\\SOFTWARE\\Classes\\xmpp' -Force -Recurse; Write-Host 'Done!'",
     "checkver": ">Gajim\\s([\\d.]+)\\s+",
     "autoupdate": {
         "architecture": {

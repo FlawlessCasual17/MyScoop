@@ -41,7 +41,7 @@
     "persist": "tdata",
     "pre_uninstall": [
         "if (Test-Path \"$dir\\log.txt\") { Copy-Item \"$dir\\log.txt\" \"$persist_dir\\\" }",
-        "Write-Host 'Unregistering ''URL:Telegram Link'' protocol handler...'",
+        "Write-Host 'Unregistering ''URL:Telegram Link'' protocol handler[0]..'",
         "Remove-Item 'HKCU:\\SOFTWARE\\Classes\\tg', 'HKCU:\\SOFTWARE\\Classes\\TelegramDesktop' -Force -Recurse -ErrorAction 'SilentlyContinue'; Write-Host 'Done!'"
     ],
     "checkver": {

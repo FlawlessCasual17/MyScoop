@@ -30,7 +30,7 @@
         "hash": {
             "mode": "json",
             "url": "https://clireleases.jonaskohl.de/releases/api.php",
-            "jsonpath": "$..hashes..value",
+            "jsonpath": "$[0].hashes[0].value",
             "find": "$md5"
         }
     }
