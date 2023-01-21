@@ -11,7 +11,7 @@
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Remove-Item \"$env:ProgramData\\Packages\\Files_*\" -Force -Recurse -ErrorAction 'SilentlyContinue'",
+        "Remove-Item \"$env:ProgramData\\Microsoft\\Windows\\AppRepository\\Packages\\Files_*\" -Force -Recurse -ErrorAction 'SilentlyContinue'",
         "Start-Process 'powershell' -Wait -WindowStyle 'Hidden' -ArgumentList @('-C', 'Get-AppxPackage ''Files'' | Remove-AppxPackage')",
         "Start-Sleep -Seconds 2"
     ],
