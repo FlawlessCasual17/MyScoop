@@ -11,8 +11,8 @@
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Remove-Item \"$env:ProgramData\\WindowsApps\\*.TranslucentTB_*\" -Force -Recurse -ErrorAction 'SilentlyContinue'",
         "Start-Process 'powershell' -Wait -WindowStyle 'Hidden' -ArgumentList @('-C', 'Get-AppxPackage ''*.TranslucentTB'' | Remove-AppxPackage')",
+        "Remove-Item \"$env:ProgramData\\WindowsApps\\*.TranslucentTB_*\" -Force -Recurse -ErrorAction 'SilentlyContinue'",
         "Start-Sleep -Seconds 2"
     ],
     "checkver": "github",
