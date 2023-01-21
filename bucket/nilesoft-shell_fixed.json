@@ -50,7 +50,7 @@
             "    if ($regkey) {",
             "        if (!(is_admin)) { error 'Admin right is required to unregister nilesoft shell'; break }",
             "        Invoke-ExternalCommand \"$dir\\shell.exe\" -ArgumentList @('-unregister', '-restart', '-silent') -RunAs | Out-Null",
-            "        if (Get-Process -Name 'shell' -ErrorAction SilentlyContinue) { Start-Sleep -Seconds 2 }",
+            "        Start-Sleep -Seconds 2",
             "    }",
             "}"
         ]
