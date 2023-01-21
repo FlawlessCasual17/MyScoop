@@ -36,11 +36,15 @@
         }
     },
     "installer": {
-        "script": "Copy-Item \"$persist_dir\\shell.nss\" \"$dir\\shell.nss\" -ErrorAction SilentlyContinue"
+        "script": [
+            "Copy-Item \"$persist_dir\\shell.nss\" \"$dir\\shell.nss\" -ErrorAction SilentlyContinue",
+            "Copy-Item \"$persist_dir\\imports\\*\" \"$dir\\imports\" -ErrorAction SilentlyContinue"
+        ]
     },
     "uninstaller": {
         "script": [
             "Copy-Item \"$dir\\shell.nss\" \"$persist_dir\\shell.nss\" -ErrorAction SilentlyContinue",
+            "Copy-Item \"$dir\\imports\\*\" \"$persist_dir\\imports\" -ErrorAction SilentlyContinue",
             "if ($cmd -eq 'uninstall') {",
             "    $regkey = Get-ItemProperty -Path 'HKLM:\\SOFTWARE\\Classes\\Directory\\background\\shellex\\ContextMenuHandlers\\nilesoft.shell' -ErrorAction SilentlyContinue",
             "    if ($regkey) {",
