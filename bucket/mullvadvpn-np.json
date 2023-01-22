@@ -11,7 +11,9 @@
     },
     "pre_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -Args @('/allusers', '/S'); Remove-Item \"$dir\\setup.exe\""
+        "Start-Process \"$dir\\setup.exe\" -Verb 'RunAs' -Args @('/allusers', '/S')",
+        "while (!(Get-Service -Name 'MullvadVPN' -ErrorAction 'SilentlyContinue')) { Start-Sleep -Seconds 3 }",
+        "Stop-Service -Name 'MullvadVPN' -ErrorAction 'SilentlyContinue' -Force; Remove-Item \"$dir\\setup.exe\""
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
