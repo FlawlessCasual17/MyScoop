@@ -13,7 +13,7 @@
             "hash": "349f40c2b2906003ce82c4a8a37fc4dee4cf85bb3eb783020cc7e8ae815a6a0d"
         }
     },
-    "post_install": "Start-Process \"$dir\\setup.exe\" -Wait -Args @('/SP-', \"/DIR=$dir\", '/VERYSILENT', '/CURRENTUSER', '/SUPPRESSMSGBOXES')",
+    "post_install": "Start-Process \"$dir\\setup.exe\" -Wait -Args @('/SP-', \"/DIR=$dir\", '/VERYSILENT', '/CURRENTUSER', '/SUPPRESSMSGBOXES'); Remove-Item \"$dir\\setup.exe\"",
     "uninstaller": {
         "file": "unins000.exe",
         "args": [
