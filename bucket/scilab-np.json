@@ -14,14 +14,7 @@
         }
     },
     "post_install": "Start-Process \"$dir\\setup.exe\" -Wait -Args @('/SP-', \"/DIR=$dir\", '/VERYSILENT', '/CURRENTUSER', '/SUPPRESSMSGBOXES'); Remove-Item \"$dir\\setup.exe\"",
-    "uninstaller": {
-        "file": "unins000.exe",
-        "args": [
-            "/VERYSILENT",
-            "/SUPPRESSMSGBOXES"
-        ],
-        "script": "Start-Sleep -Seconds 2"
-    },
+    "pre_install": "Start-Process \"$dir\\unins000.exe\" -Wait -Args @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/SUPPRESSMSGBOXES'); Start-Sleep -Seconds 2",
     "checkver": "Scilab\\s([\\d.]+)",
     "autoupdate": {
         "architecture": {
