@@ -26,10 +26,10 @@
     "autoupdate": {
         "architecture": {
             "32bit": {
-                "url": "https://oos.eu-west-2.outscale.com/scilab-releases/6.1.1/scilab-6.1.1.exe#/setup.exe"
+                "url": "https://oos.eu-west-2.outscale.com/scilab-releases/$version/scilab-$version.exe#/setup.exe"
             },
             "64bit": {
-                "url": "https://oos.eu-west-2.outscale.com/scilab-releases/6.1.1/scilab-6.1.1_x64.exe#/setup.exe"
+                "url": "https://oos.eu-west-2.outscale.com/scilab-releases/$version/scilab-$version_x64.exe#/setup.exe"
             }
         }
     }
