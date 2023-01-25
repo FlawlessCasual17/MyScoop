@@ -12,14 +12,6 @@
             "hash": "6a446840b5106882931870f8b0f51458e0827fa3699a8b8c952fa24c50201d9b"
         }
     },
-    "pre_install": [
-        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process \"$dir\\10xInstaller.exe\" -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -Args '/silent'"
-    ],
-    "pre_uninstall": [
-        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process \"$dir\\10xInstaller.exe\" -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -Args @('/silent', '/uninstall'); Start-Sleep -Seconds 2"
-    ],
     "checkver": {
         "url": "https://www.10xeditor.com/versions.htm",
         "regex": "Version\\s\\(([\\d.]+)\\)"
