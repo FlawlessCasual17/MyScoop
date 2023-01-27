@@ -8,9 +8,9 @@
     },
     "notes": [
         "To install file associations, run:",
-        "install-associations.ps1",
+        "install-associations",
         "To remove file associations, run:",
-        "remove-associations.ps1"
+        "remove-associations"
     ],
     "architecture": {
         "64bit": {
@@ -53,9 +53,16 @@
         "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\pttp' -Name 'URL Protocol' -PropertyType 'String' -Force | Out-Null"
     ],
     "pre_uninstall": [
-        "if (Get-Command 'pwsh' -ErrorAction 'SilentlyContinue') { Start-Process 'pwsh' -Wait -NoNewWindow -Args @('-F', \"$dir\\remove-associations.ps1\") }",
-        "else { Start-Process 'powershell' -Wait -NoNewWindow -Args @('-F', \"$dir\\remove-associations.ps1\") }",
-        "Write-Host 'Unregistering the ''URL:pttp'' protocol'",
+        "Write-Host 'Unregistering the ''URL:pttp'' protocol, and removing file associations.'",
+        "$majorVersion = $version.Split('.')[0]",
+        "",
+        "'.pkt', '.pka', '.pkz', '.pks', '.pksz' | ForEach-Object {",
+        "    Remove-Item \"HKCU:\\SOFTWARE\\Classes\\$_\" -ErrorAction 'SilentlyContinue' -Force",
+        "}",
+        "",
+        "\"PacketTracer$majorVersion\", \"PacketTracer$majorVersion.Activity\", \"PacketTracer$majorVersion.PKZ\", \"PacketTracer$majorVersion.ActivitySequence\", \"PacketTracer$majorVersion.ActivitySequencePackage\" | ForEach-Object {",
+        "    Remove-Item \"HKCU:\\SOFTWARE\\Classes\\$_\" -Recurse -ErrorAction 'SilentlyContinue' -Force",
+        "}",
         "Remove-Item 'HKCU:\\SOFTWARE\\Classes\\pttp' -Recurse -Force"
     ],
     "checkver": {
