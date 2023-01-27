@@ -1,7 +1,10 @@
+$version = 'VERSION_HERE'
+$majorVersion = $version.Split('.')[0]
+
 '.pkt', '.pka', '.pkz', '.pks', '.pksz' | ForEach-Object {
     Remove-Item "HKCU:\SOFTWARE\Classes\$_" -ErrorAction 'SilentlyContinue' -Force
 }
 
-'PacketTracer8', 'PacketTracer8.Activity', 'PacketTracer8.PKZ', 'PacketTracer8.ActivitySequence', 'PacketTracer8.ActivitySequencePackage' | ForEach-Object {
+"PacketTracer$majorVersion", "PacketTracer$majorVersion.Activity", "PacketTracer$majorVersion.PKZ", "PacketTracer$majorVersion.ActivitySequence", "PacketTracer$majorVersion.ActivitySequencePackage" | ForEach-Object {
     Remove-Item "HKCU:\SOFTWARE\Classes\$_" -Recurse -ErrorAction 'SilentlyContinue' -Force
 }

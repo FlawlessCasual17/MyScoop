@@ -1,10 +1,13 @@
-New-Item 'HKCU:\SOFTWARE\Classes\.pkt' -Value 'PacketTracer8' | Out-Null
-New-Item 'HKCU:\SOFTWARE\Classes\.pka' -Value 'PacketTracer8.Activity' | Out-Null
-New-Item 'HKCU:\SOFTWARE\Classes\.pkz' -Value 'PacketTracer8.PKZ' | Out-Null
-New-Item 'HKCU:\SOFTWARE\Classes\.pks' -Value 'PacketTracer8.ActivitySequence' | Out-Null
-New-Item 'HKCU:\SOFTWARE\Classes\.pksz' -Value 'PacketTracer8.ActivitySequencePackage' | Out-Null
+$version = 'VERSION_HERE'
+$majorVersion = $version.Split('.')[0]
 
-'PacketTracer8', 'PacketTracer8.Activity', 'PacketTracer8.PKZ', 'PacketTracer8.ActivitySequence', 'PacketTracer8.ActivitySequencePackage' | ForEach-Object {
+New-Item 'HKCU:\SOFTWARE\Classes\.pkt' -Value "PacketTracer$majorVersion" | Out-Null
+New-Item 'HKCU:\SOFTWARE\Classes\.pka' -Value "PacketTracer$majorVersion.Activity" | Out-Null
+New-Item 'HKCU:\SOFTWARE\Classes\.pkz' -Value "PacketTracer$majorVersion.PKZ" | Out-Null
+New-Item 'HKCU:\SOFTWARE\Classes\.pks' -Value "PacketTracer$majorVersion.ActivitySequence" | Out-Null
+New-Item 'HKCU:\SOFTWARE\Classes\.pksz' -Value "PacketTracer$majorVersion.ActivitySequencePackage" | Out-Null
+
+"PacketTracer$majorVersion", "PacketTracer$majorVersion.Activity", "PacketTracer$majorVersion.PKZ", "PacketTracer$majorVersion.ActivitySequence", "PacketTracer$majorVersion.ActivitySequencePackage" | ForEach-Object {
     New-Item "HKCU:\SOFTWARE\Classes\$_\shell\open\command" -Value '"REPLACE_HERE\bin\PacketTracer.exe" "%1"' | Out-Null
     New-Item "HKCU:\SOFTWARE\Classes\$_\DefaultIcon" -Value 'REPLACE_HERE\art\pkt.ico' | Out-Null
 }
