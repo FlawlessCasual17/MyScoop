@@ -48,8 +48,8 @@
     },
     "post_install": [
         "Write-Host 'Registering the ''URL:pttp'' protocol'",
-        "New-Item 'HKCU:\\SOFTWARE\\Classes\\pttp\\shell\\open\\command' -Value \"$dir\\bin\\PacketTracer.exe -uri=%1\" -Force | Out-Null",
         "New-Item 'HKCU:\\SOFTWARE\\Classes\\pttp' -Value 'URL:pttp' -Force | Out-Null",
+        "New-Item 'HKCU:\\SOFTWARE\\Classes\\pttp\\shell\\open\\command' -Value \"$dir\\bin\\PacketTracer.exe -uri=%1\" -Force | Out-Null",
         "New-ItemProperty 'HKCU:\\SOFTWARE\\Classes\\pttp' -Name 'URL Protocol' -PropertyType 'String' -Force | Out-Null"
     ],
     "pre_uninstall": [
