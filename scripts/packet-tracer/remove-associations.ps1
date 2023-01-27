@@ -8,3 +8,5 @@ $majorVersion = $version.Split('.')[0]
 "PacketTracer$majorVersion", "PacketTracer$majorVersion.Activity", "PacketTracer$majorVersion.PKZ", "PacketTracer$majorVersion.ActivitySequence", "PacketTracer$majorVersion.ActivitySequencePackage" | ForEach-Object {
     Remove-Item "HKCU:\SOFTWARE\Classes\$_" -Recurse -ErrorAction 'SilentlyContinue' -Force
 }
+
+Remove-Item 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.pkt', 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.pka' -Recurse -Force
