@@ -11,10 +11,7 @@
             "WinPaletter"
         ]
     ],
-    "uninstaller": {
-        "file": "WinPaletter.exe",
-        "args": "/uninstall-quiet"
-    },
+    "pre_uninstall": "Start-Process \"$dir\\WinPaletter.exe\" -Wait -Args '/uninstall-quiet'; Start-Sleep -Seconds 2",
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/Abdelrhman-AK/WinPaletter/releases/download/v$version/WinPaletter.exe"
