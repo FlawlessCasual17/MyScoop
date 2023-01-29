@@ -6,6 +6,7 @@
     "suggest": {
         "vcredist": "extras/vcredist"
     },
+    "notes": "'freelan-np' won't be able to start because its configuration is incomplete. For help with the configuration see, https://www.freelan.org/get_help.html",
     "architecture": {
         "32bit": {
             "url": "https://github.com/freelan-developers/freelan/releases/download/2.2/freelan-2.2.0-x86-install.exe#/setup.exe",
@@ -24,6 +25,7 @@
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "Start-Process \"$dir\\unins000.exe\" -Wait -Verb 'RunAs' -Args @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/SUPPRESSMSGBOXES'); Start-Sleep -Seconds 2"
     ],
+    "env_add_path": "bin",
     "checkver": {
         "url": "https://api.github.com/repos/freelan-developers/freelan/releases/latest",
         "jsonpath": "$.assets..browser_download_url",
