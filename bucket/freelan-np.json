@@ -19,10 +19,12 @@
     },
     "post_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -Args @('/SP-', \"/DIR=$dir\", '/VERYSILENT', '/ALLUSERS', '/SUPPRESSMSGBOXES'); Remove-Item \"$dir\\setup.exe\""
+        "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -Args @('/SP-', \"/DIR=$dir\", '/VERYSILENT', '/ALLUSERS', '/SUPPRESSMSGBOXES'); Remove-Item \"$dir\\setup.exe\"",
+        "Stop-Service -Name 'FreeLAN Service' -ErrorAction 'SilentlyContinue' -Force"
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "Stop-Service -Name 'FreeLAN Service' -ErrorAction 'SilentlyContinue' -Force",
         "Start-Process \"$dir\\unins000.exe\" -Wait -Verb 'RunAs' -Args @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/SUPPRESSMSGBOXES'); Start-Sleep -Seconds 2"
     ],
     "env_add_path": "bin",
