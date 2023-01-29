@@ -3,6 +3,9 @@
     "homepage": "https://www.freelan.org/",
     "description": "A free, open-source, multi-platform, peer-to-peer VPN software that abstracts a LAN over the Internet.",
     "license": "GPL-3.0",
+    "suggest": {
+        "vcredist": "extras/vcredist"
+    },
     "architecture": {
         "32bit": {
             "url": "https://github.com/freelan-developers/freelan/releases/download/2.2/freelan-2.2.0-x86-install.exe#/setup.exe",
