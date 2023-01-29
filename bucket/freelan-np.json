@@ -19,6 +19,7 @@
     },
     "post_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "Write-Host \"If you are running this for the first time, you will get a prompt asking you to install the 'FreeLAN Driver'. When prompted, please click the 'Yes' option.\"",
         "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -Args @('/SP-', \"/DIR=$dir\", '/VERYSILENT', '/ALLUSERS', '/SUPPRESSMSGBOXES'); Remove-Item \"$dir\\setup.exe\"",
         "Stop-Service -Name 'FreeLAN Service' -ErrorAction 'SilentlyContinue' -Force"
     ],
