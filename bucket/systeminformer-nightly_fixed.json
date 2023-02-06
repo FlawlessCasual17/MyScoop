@@ -43,7 +43,7 @@
         "}",
         "else {",
         "   if ($taskmgr -match '\\\\*\\\\([\\d.]+)\\\\SystemInformer\\.exe') {",
-        "       Set-ItemProperty 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\taskmgr.exe' -Name 'Debugger' -Value \"$dir\\SystemInformer.exe\"",
+        "       Set-ItemProperty 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\taskmgr.exe' -Name 'Debugger' -Value \"\"$dir\\SystemInformer.exe\"\"",
         "   }",
         "}"
     ],
