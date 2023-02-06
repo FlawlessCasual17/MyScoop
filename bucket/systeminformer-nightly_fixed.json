@@ -39,7 +39,7 @@
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "$taskmgr = (Get-ItemProperty 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\taskmgr.exe' -ErrorAction 'SilentlyContinue').Debugger",
         "if ($cmd -eq 'uninstall') {",
-        "   Remove-ItemProperty 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\taskmgr.exe' -Name 'Debugger'",
+        "   Remove-ItemProperty 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\taskmgr.exe' -Name 'Debugger' -Force",
         "}",
         "else {",
         "   if ($taskmgr -match '\\\\*\\\\([\\d.]+)\\\\SystemInformer\\.exe') {",
