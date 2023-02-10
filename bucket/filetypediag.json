@@ -1,8 +1,8 @@
 {
     "version": "1.0.0.7",
     "homepage": "https://www.pretentiousname.com/miscsoft",
-    "description": "",
-    "license": "",
+    "description": "A tool to help diagnose problems or differences with file-types",
+    "license": "Freeware",
     "url": "https://www.pretentiousname.com/miscsoft/FileTypeDiag1007.zip",
     "hash": "e93226cade548b678396e0edfaa1eea41d872144699b1d7aa1b2490288498c69",
     "bin": "FileTypeDiag.exe",
