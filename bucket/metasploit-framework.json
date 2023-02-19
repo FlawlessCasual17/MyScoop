@@ -5,7 +5,7 @@
     "license": "BSD-3-Clause",
     "architecture": {
         "64bit": {
-            "url": "https://windows.metasploit.com/metasploit-framework-6.3.4%2B20230219163302-1rapid7-1-x64.msi",
+            "url": "https://windows.metasploit.com/metasploit-framework-6.3.4+20230219163302-1rapid7-1-x64.msi",
             "hash": "1d49994bb73bb77aede049d059eec53269825fbdc7c69e52938f3eed914f33d6"
         }
     },
@@ -19,7 +19,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://windows.metasploit.com/metasploit-framework-$matchVer%2B$matchRelease-1rapid7-1-x64.msi"
+                "url": "https://windows.metasploit.com/metasploit-framework-$matchVer+$matchRelease-1rapid7-1-x64.msi"
             }
         }
     }
