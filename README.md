@@ -4,7 +4,7 @@ How do I add this bucket?
 ---------------------------------
 
 To add this bucket, run
-```
+```pwsh
 scoop bucket add MyScoop 'https://github.com/Zliced13/MyScoop'
 ```
 To install, do
