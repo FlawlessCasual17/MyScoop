@@ -9,6 +9,7 @@
         "ensure $persist_dir | Out-Null",
         "if ($architecture -eq '32bit') { Remove-Item \"$dir\\App\\lib\\_win64\\tesseract.exe\" }",
         "else { Remove-Item \"$dir\\App\\lib\\_win32\\tesseract.exe\" }",
+        "Remove-Item \"$dir\\NAPS2.Portable.exe\"",
         "Copy-Item \"$persist_dir\\Data\\*\" \"$dir\\Data\" -ErrorAction 'SilentlyContinue' -Recurse"
     ],
     "bin": [
