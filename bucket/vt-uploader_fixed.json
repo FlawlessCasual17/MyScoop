@@ -27,7 +27,6 @@
             "VirusTotalUploader"
         ]
     ],
-    "persist": "vtu_settings.json",
     "post_uninstall": [
         "if ($cmd -eq 'uninstall') {",
         "    $registryPath = 'HKCU\\Software\\Classes\\*\\shell\\Upload to VirusTotal'",
