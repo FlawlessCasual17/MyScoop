@@ -21,7 +21,7 @@
     "shortcuts": [
         [
             "App\\NAPS2.exe",
-            "NAPS2"
+            "NAPS2 Beta"
         ]
     ],
     "pre_uninstall": "Copy-Item \"$dir\\Data\\*\" \"$persist_dir\\Data\" -ErrorAction 'SilentlyContinue' -Recurse",
