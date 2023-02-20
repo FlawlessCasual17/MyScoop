@@ -1,0 +1,17 @@
+{
+    "version": "2.8.4.Build-185",
+    "homepage": "https://tlh.easytree.org/",
+    "description": "",
+    "license": "",
+    "url": "https://tlh.easytree.org/files/tralih284185.exe",
+    "hash": "md5:14c37bedfa2ea9e12dcea7d7491c7a03",
+    "bin": "",
+    "shortcuts": [],
+    "checkver": {
+        "regex": "([\\d.]+)\\s\\(Build\\s([\\d]+)\\)",
+        "replace": "$1.Build-$2"
+    },
+    "autoupdate": {
+
+    }
+}
