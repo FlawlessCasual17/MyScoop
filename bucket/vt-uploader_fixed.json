@@ -24,7 +24,7 @@
     "shortcuts": [
         [
             "uploader.exe",
-            "VirusTotal Uploader"
+            "VirusTotalUploader"
         ]
     ],
     "persist": "vtu_settings.json",
