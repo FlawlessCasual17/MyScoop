@@ -73,6 +73,6 @@
         "regex": "Shell\\s(?:v|V)ersion\\s([\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://nilesoft.org/download/shell/$version/setup.exe"
+        "url": "https://nilesoft.org/download/shell/$majorVersion.$minorVersion/setup.exe"
     }
 }
