@@ -77,7 +77,7 @@
     ],
     "bin": [
         "acmain.exe",
-        "change_language.ps1"
+        "change-ac-language.ps1"
     ],
     "checkver": {
         "url": "https://www.petges.lu/download/",
