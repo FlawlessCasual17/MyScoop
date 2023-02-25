@@ -46,8 +46,8 @@
     ],
     "bin": [
         "mp3tag.exe",
-        "install-context.ps1",
-        "uninstall-context.ps1"
+        "install-mp3tag-context.ps1",
+        "uninstall-mp3tag-context.ps1"
     ],
     "shortcuts": [
         [
@@ -64,11 +64,14 @@
     ],
     "pre_uninstall": [
         "Copy-Item \"$dir\\export\\*\" \"$persist_dir\\export\" -Recurse -ErrorAction SilentlyContinue",
-        "if (($cmd -eq 'uninstall') -and (Test-Path 'HKLM:\\SOFTWARE\\Classes\\*\\shellex\\ContextMenuHandlers\\Mp3tagShell')) {",
+        "if (($architecture -eq '32bit') -and (Test-Path 'HKLM:\\SOFTWARE\\Classes\\AppID\\Mp3tagShell32.DLL')) {",
         "    if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "    Start-Process 'regsvr32' -Wait -Verb RunAs -ArgumentList @('/u', \"$dir\\Mp3tagShell32.dll\", '/s')",
+        "    Stop-Process -Name 'explorer' -Force; Start-Sleep -Seconds 2",
+        "}",
+        "elseif (($architecture -eq '64bit') -and (Test-Path 'HKLM:\\SOFTWARE\\Classes\\AppID\\Mp3tagShell.DLL')) {",
+        "    if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "    Start-Process 'regsvr32' -Wait -Verb RunAs -ArgumentList @('/u', \"$dir\\Mp3tagShell.dll\", '/s')",
-        "    Start-Process 'regsvr32' -Wait -Verb RunAs -ArgumentList @('/u', \"$dir\\Mp3tagShell64.dll\", '/s')",
         "    Stop-Process -Name 'explorer' -Force; Start-Sleep -Seconds 2",
         "}"
     ],
