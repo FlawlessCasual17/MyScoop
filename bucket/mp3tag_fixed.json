@@ -11,10 +11,7 @@
         "To Install:",
         "install-mp3tag-context.ps1",
         "To Uninstall:",
-        "uninstall-mp3tag-context.ps1",
-        "",
-        "To find out if you have a have 32bit or 64bit Windows OS, run the following command:",
-        "(Get-CimInstance win32_operatingsystem).OSArchitecture"
+        "uninstall-mp3tag-context.ps1"
     ],
     "architecture": {
         "64bit": {
