@@ -7,7 +7,7 @@
     "notes": [
         "IMPORTANT FOR NON-ENGLISH SPEAKERS!!!",
         "If you want this application translated to your native language, please run the following command:",
-        "change_language.ps1",
+        "change-ac-language.ps1",
         "**The powershell script will prompt you to enter the number that corresponds to your native language.**",
         "",
         "1 = BRAZILIAN PORTUGUESE",
