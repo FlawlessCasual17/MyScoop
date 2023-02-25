@@ -9,7 +9,7 @@
     "notes": [
         "If you want 'mp3tag' as a context menu option run the following commands:",
         "To Install:",
-        "install-context.ps1",
+        "install-mp3tag-context.ps1",
         "To Uninstall:",
         "uninstall-context.ps1",
         "",
@@ -28,11 +28,11 @@
     },
     "pre_install": [
         "if ($architecture -eq '32bit') {",
-        "   Set-Content \"$dir\\install-context.ps1\" \"Start-Process 'regsvr32' -Verb 'RunAs' -Args @(\"\"$dir\\Mp3tagShell32.dll\"\", '/s')\" -Force",
+        "   Set-Content \"$dir\\install-mp3tag-context.ps1\" \"Start-Process 'regsvr32' -Verb 'RunAs' -Args @(\"\"$dir\\Mp3tagShell32.dll\"\", '/s')\" -Force",
         "   Set-Content \"$dir\\uninstall-context.ps1\" \"Start-Process 'regsvr32' -Verb 'RunAs' -Args @('/u', \"\"$dir\\Mp3tagShell32.dll\"\", '/s')\" -Force",
         "}",
         "else {",
-        "   Set-Content \"$dir\\install-context.ps1\" \"Start-Process 'regsvr32' -Verb 'RunAs' -Args @(\"\"$dir\\Mp3tagShell.dll\"\", '/s')\" -Force",
+        "   Set-Content \"$dir\\install-mp3tag-context.ps1\" \"Start-Process 'regsvr32' -Verb 'RunAs' -Args @(\"\"$dir\\Mp3tagShell.dll\"\", '/s')\" -Force",
         "   Set-Content \"$dir\\uninstall-context.ps1\" \"Start-Process 'regsvr32' -Verb 'RunAs' -Args @('/u', \"\"$dir\\Mp3tagShell.dll\"\", '/s')\" -Force",
         "}",
         "'mp3tag.cfg', 'data\\columns.ini' | ForEach-Object {",
@@ -45,13 +45,13 @@
         "Copy-Item \"$persist_dir\\export\\*\" \"$dir\\export\" -Recurse -ErrorAction SilentlyContinue"
     ],
     "bin": [
-        "mp3tag.exe",
+        "Mp3tag.exe",
         "install-mp3tag-context.ps1",
         "uninstall-mp3tag-context.ps1"
     ],
     "shortcuts": [
         [
-            "mp3tag.exe",
+            "Mp3tag.exe",
             "Mp3tag"
         ]
     ],
