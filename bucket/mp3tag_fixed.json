@@ -9,9 +9,9 @@
     "notes": [
         "If you want 'mp3tag' as a context menu option run the following commands:",
         "To Install:",
-        "start 'regsvr32' -Verb 'RunAs' -Args @(\"$dir\\Mp3tagShell.dll\", '/s')",
+        "install-context.ps1",
         "To Uninstall:",
-        "start 'regsvr32' -Verb 'RunAs' -Args @('/u', \"$dir\\Mp3tagShell.dll\", '/s')",
+        "uninstall-context.ps1",
         "",
         "To find out if you have a have 32bit or 64bit Windows OS, run the following command:",
         "(Get-CimInstance win32_operatingsystem).OSArchitecture"
