@@ -52,7 +52,7 @@
             "Copy-Item \"$dir\\messages,`$ac_language.ini\" \"$dir\\messages.ini\" -Force",
             "Copy-Item \"$dir\\ac,`$ac_language.pdf\" \"$dir\\ac.pdf\" -Force",
             "\"@",
-            "Set-Content \"$dir\\change_language.ps1\" $value -Encoding 'utf8' -Force"
+            "Set-Content \"$dir\\change-ac-language.ps1\" $value -Encoding 'utf8' -Force"
         ]
     },
     "bin": [
