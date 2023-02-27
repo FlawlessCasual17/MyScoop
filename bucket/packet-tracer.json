@@ -8,9 +8,9 @@
     },
     "notes": [
         "To install file associations, run:",
-        "install-associations",
+        "install-pt-associations",
         "To remove file associations, run:",
-        "remove-associations"
+        "remove-pt-associations"
     ],
     "architecture": {
         "64bit": {
