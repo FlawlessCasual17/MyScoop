@@ -31,7 +31,7 @@
         "",
         "Get-ChildItem \"$scriptsDir\\harmonoid\\*.ps1\" | ForEach-Object {",
         "    $content = ($_ | Get-Content).Replace('CURRENT_DIRECTORY', $newDir)",
-        "    Set-Content \"$dir\\$_\" $content -Encoding 'utf8' -Force",
+        "    Write-Output $_",
         "}"
     ],
     "bin": [
