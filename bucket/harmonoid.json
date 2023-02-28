@@ -35,7 +35,11 @@
         "}"
     ],
     "bin": [
-        "harmonoid.exe"
+        "harmonoid.exe",
+        "install-harmonoid-associations.ps1",
+        "uninstall-harmonoid-associations.ps1",
+        "install-harmonoid-context.ps1",
+        "uninstall-harmonoid-context.ps1"
     ],
     "shortcuts": [
         [
