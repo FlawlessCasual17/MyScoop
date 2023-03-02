@@ -10,9 +10,7 @@
         }
     },
     "installer": {
-        "file": "Setup.exe",
-        "args": "/s",
-        "script": "Start-Sleep -Seconds 2"
+        "script": "Start-Process \"$dir\\Setup.exe\" -Wait -Verb 'RunAs' -Args '/S'; Remove-Item \"$dir\\Setup.exe\""
     },
     "uninstaller": {
         "script": [
