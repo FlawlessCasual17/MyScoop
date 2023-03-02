@@ -13,7 +13,7 @@
         "script": [
             "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
             "Start-Process \"$dir\\Setup.exe\" -Wait -Verb 'RunAs' -Args '/S'",
-            "while (!(Test-Path \"$env:LOCALAPPDATA\\SidebarDiagnostics\")) { Start-Sleep -Seconds 3 }",
+            "while (!(Test-Path \"$env:LOCALAPPDATA\\SidebarDiagnostics\\SidebarDiagnostics.exe\")) { Start-Sleep -Seconds 3 }",
             "Stop-Process -Name 'SidebarDiagnostics' -Force; Remove-Item \"$dir\\Setup.exe\""
         ]
     },
