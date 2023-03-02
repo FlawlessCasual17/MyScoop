@@ -11,7 +11,8 @@
     },
     "installer": {
         "file": "Setup.exe",
-        "args": "/s"
+        "args": "/s",
+        "script": "Start-Sleep -Seconds 2"
     },
     "uninstaller": {
         "script": [
