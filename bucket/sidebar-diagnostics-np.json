@@ -10,7 +10,7 @@
         }
     },
     "installer": {
-        "script": "Start-Process \"$dir\\Setup.exe\" -Wait -Verb 'RunAs' -Args '/S'; Remove-Item \"$dir\\Setup.exe\""
+        "script": "Start-Process \"$dir\\Setup.exe\" -Wait -Args '/S'; Remove-Item \"$dir\\Setup.exe\""
     },
     "uninstaller": {
         "script": [
