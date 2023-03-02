@@ -11,8 +11,7 @@
     },
     "installer": {
         "script": [
-            "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-            "Start-Process \"$dir\\Setup.exe\" -Wait -Verb 'RunAs' -Args '-s'",
+            "Start-Process \"$dir\\Setup.exe\" -Wait -Args '-s'",
             "if (\"$dir\\Setup.exe\" -match (Get-Process -Name 'Setup' -ErrorAction 'SilentlyContinue').Path[0]) { Stop-Process -Name 'Setup' -Force }",
             "Start-Sleep -Seconds 3; Remove-Item \"$dir\\Setup.exe\" -Force"
         ]
