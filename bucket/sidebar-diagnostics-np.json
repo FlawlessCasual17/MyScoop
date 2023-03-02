@@ -10,7 +10,10 @@
         }
     },
     "installer": {
-        "script": "Start-Process \"$dir\\Setup.exe\" -Wait -Args '/S'; Remove-Item \"$dir\\Setup.exe\""
+        "script": [
+            "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+            "Start-Process \"$dir\\Setup.exe\" -Wait -Args '/S'; Remove-Item \"$dir\\Setup.exe\""
+        ]
     },
     "uninstaller": {
         "script": [
