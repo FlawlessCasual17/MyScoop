@@ -37,7 +37,7 @@
                 ]
             ],
             "env_set": {
-                "RSTUDIO_WHICH_R": "$dir\\bin\\x64\\R.exe"
+                "RSTUDIO_WHICH_R": "$dir\\bin\\x64"
             }
         }
     },
