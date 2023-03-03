@@ -42,7 +42,7 @@
         "New-Item \"HKCU:\\Software\\R-core\\R\\$version\" -Force | Out-Null",
         "New-Item \"HKCU:\\Software\\R-core\\R64\\$version\" -Force | Out-Null",
         "Set-ItemProperty \"HKCU:\\Software\\R-core\\R\\$version\" -Name 'InstallPath' -Value $dir -Force",
-        "Set-ItemProperty \"HKCU:\\Software\\R-core\\R\\R64\\$version\" -Name 'InstallPath' -Value $dir -Force",
+        "Set-ItemProperty \"HKCU:\\Software\\R-core\\R64\\$version\" -Name 'InstallPath' -Value $dir -Force",
         "Set-ItemProperty 'HKCU:\\Software\\R-core\\R' -Name 'InstallPath' -Value $dir -Force",
         "Set-ItemProperty 'HKCU:\\Software\\R-core\\R' -Name 'Current Version' -Value $version -Force",
         "Set-ItemProperty 'HKCU:\\Software\\R-core\\R64' -Name 'InstallPath' -Value $dir -Force",
