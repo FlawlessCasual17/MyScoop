@@ -35,12 +35,20 @@
                     "bin\\x64\\Rgui.exe",
                     "R"
                 ]
-            ],
-            "env_set": {
-                "RSTUDIO_WHICH_R": "$dir\\bin\\x64\\R.exe"
-            }
+            ]
         }
     },
+    "post_install": [
+        "New-Item \"HKCU:\\Software\\R-core\\R\\$version\" -Force | Out-Null",
+        "New-Item \"HKCU:\\Software\\R-core\\R\\R64\\$version\" -Force | Out-Null",
+        "Set-ItemProperty \"HKCU:\\Software\\R-core\\R\\$version\" -Name 'InstallPath' -Value $dir -Force",
+        "Set-ItemProperty \"HKCU:\\Software\\R-core\\R\\R64\\$version\" -Name 'InstallPath' -Value $dir -Force",
+        "Set-ItemProperty 'HKCU:\\Software\\R-core\\R' -Name 'InstallPath' -Value $dir -Force",
+        "Set-ItemProperty 'HKCU:\\Software\\R-core\\R' -Name 'Current Version' -Value $version -Force",
+        "Set-ItemProperty 'HKCU:\\Software\\R-core\\R64' -Name 'InstallPath' -Value $dir -Force",
+        "Set-ItemProperty 'HKCU:\\Software\\R-core\\R64' -Name 'Current Version' -Value $version -Force"
+    ],
+    "pre_uninstall": "Remove-Item 'HKCU:\\Software\\R-core\\R', 'HKCU:\\Software\\R-core\\R64' -Recurse -Force",
     "persist": "site-library",
     "checkver": {
         "url": "https://cloud.r-project.org/bin/windows/base/",
