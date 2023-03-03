@@ -22,7 +22,7 @@
     "architecture": {
         "64bit": {
             "url": "https://cloud.r-project.org/bin/windows/base/old/4.2.2/R-4.2.2-win.exe",
-            "hash": "md5:eaa06020ec663918c580050038f1d1d5",
+            "hash": "md5:eaa06020ec663918c580050038f1d1d5"
         }
     },
     "bin": [
