@@ -35,8 +35,8 @@
         "   }",
         "}",
         "else {",
-        "   $reg_key = @('HKLM\\SOFTWARE\\Classes\\*\\shell\\PeaZip', 'HKLM\\SOFTWARE\\Classes\\AllFilesystemObjects\\shell\\PeaZip')",
-        "   reg export $reg_key \"$persist_dir\\peazip_context_menu.reg\" /y",
+        "   reg export 'HKLM\\SOFTWARE\\Classes\\*\\shell\\PeaZip' \"$persist_dir\\peazip_context_menu1.reg\" /y",
+        "   reg export 'HKLM\\SOFTWARE\\Classes\\AllFilesystemObjects\\shell\\PeaZip' \"$persist_dir\\peazip_context_menu2.reg\" /y",
         "}"
     ],
     "checkver": {
