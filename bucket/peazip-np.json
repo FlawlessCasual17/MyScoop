@@ -13,7 +13,7 @@
             "hash": "4535722b3d475a841b835e6097e10f9786a95ab1ce10329e6b676f587a43f230"
         }
     },
-    "post_install": [
+    "pre_install": [
         "ensure $persist_dir | Out-Null",
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -Args @('/VERYSILENT', \"/DIR=$dir\", '/ALLUSERS', '/SUPPRESSMSGBOXES')",
@@ -21,14 +21,6 @@
         "if (Get-ChildItem \"$persist_dir\\unins000.*\" | Test-Path) {",
         "   Get-ChildItem \"$persist_dir\\unins000.*\" | Copy-Item -ErrorAction 'SilentlyContinue' -Destination $dir",
         "}"
-    ],
-    "bin": [
-        "peazip.exe",
-        "pea.exe",
-        [
-            "res\\bin\\Configure PeaZip.exe",
-            "configure-peazip"
-        ]
     ],
     "pre_uninstall": [
         "if ($cmd -eq 'uninstall') {",
