@@ -21,7 +21,7 @@
         "$peazip_shortcuts_path = \"$env:ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\PeaZip\"",
         "Remove-Item \"$peazip_shortcuts_path\\Extract here (smart new folder).lnk\", \"$peazip_shortcuts_path\\Uninstall PeaZip.lnk\" -Force",
         "if (Test-Path \"$persist_dir\\peazip_context_menu.reg\") {",
-        "   ",
+        "   reg import \"$persist_dir\\peazip_context_menu.reg\"",
         "}",
         "else {",
         "   Start-Process \"$dir\\res\\bin\\Configure PeaZip.exe\" -Wait -Verb 'RunAs' -Args @('/VERYSILENT', \"/DIR=$dir\", '/CURRENTUSER', '/SUPPRESSMSGBOXES')",
