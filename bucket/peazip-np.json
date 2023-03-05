@@ -19,8 +19,9 @@
         "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -Args @('/VERYSILENT', \"/DIR=$dir\", '/ALLUSERS', '/SUPPRESSMSGBOXES')",
         "Remove-Item \"$dir\\setup.exe\"",
         "Start-Process \"$dir\\res\\bin\\Configure PeaZip.exe\" -Wait -Verb 'RunAs' -Args @('/VERYSILENT', \"/DIR=$dir\\PeaZip-Config\", '/ALLUSERS', '/SUPPRESSMSGBOXES')",
-        "if (Get-ChildItem \"$persist_dir\\unins000.*\" | Test-Path) {",
+        "if (Get-ChildItem \"$persist_dir\\unins000.*\", \"$persist_dir\\PeaZip-Config\\unins000.*\"  | Test-Path) {",
         "   Get-ChildItem \"$persist_dir\\unins000.*\" | Copy-Item -ErrorAction 'SilentlyContinue' -Destination $dir",
+        "   Get-ChildItem \"$persist_dir\\PeaZip-Config\\unins000.*\" | Copy-Item -ErrorAction 'SilentlyContinue' -Destination \"$dir\\PeaZip-Config\"",
         "}"
     ],
     "pre_uninstall": [
@@ -33,6 +34,7 @@
         "}",
         "else {",
         "   Get-ChildItem \"$dir\\unins000.*\" | Copy-Item -ErrorAction 'SilentlyContinue' -Destination $persist_dir",
+        "   Get-ChildItem \"$dir\\PeaZip-Config\\unins000.*\" | Copy-Item -ErrorAction 'SilentlyContinue' -Destination \"$persist_dir\\PeaZip-Config\"",
         "}"
     ],
     "checkver": {
