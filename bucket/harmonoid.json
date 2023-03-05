@@ -8,14 +8,14 @@
     },
     "notes": [
         "To install harmonoid file associations, run:",
-        "install-harmonoid-associations.ps1",
+        "$dir\\install-harmonoid-associations.ps1",
         "To install the harmonoid context menu, run:",
-        "install-harmonoid-context.ps1",
+        "$dir\\install-harmonoid-context.ps1",
         "",
         "To uninstall harmonoid file associations, run:",
-        "uninstall-harmonoid-associations.ps1",
+        "$dir\\uninstall-harmonoid-associations.ps1",
         "To uninstall the harmonoid context menu, run:",
-        "uninstall-harmonoid-context.ps1"
+        "$dir\\uninstall-harmonoid-context.ps1"
     ],
     "architecture": {
         "64bit": {
@@ -27,20 +27,14 @@
     "pre_install": [
         "$newDir = $dir.Replace($version, 'current')",
         "",
-        "$scriptsDir = \"$bucketsdir\\MyScoop\\scripts\"",
+        "$scriptsDir = \"$bucketsdir\\extras\\scripts\"",
         "",
         "Get-ChildItem \"$scriptsDir\\harmonoid\\*.ps1\" | ForEach-Object {",
         "    $content = ($_ | Get-Content).Replace('CURRENT_DIRECTORY', $newDir)",
         "    Set-Content \"$dir\\$($_.Name)\" $content -Encoding 'utf8' -Force",
         "}"
     ],
-    "bin": [
-        "harmonoid.exe",
-        "install-harmonoid-associations.ps1",
-        "uninstall-harmonoid-associations.ps1",
-        "install-harmonoid-context.ps1",
-        "uninstall-harmonoid-context.ps1"
-    ],
+    "bin": "harmonoid.exe",
     "shortcuts": [
         [
             "harmonoid.exe",
