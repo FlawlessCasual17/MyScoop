@@ -24,7 +24,6 @@
     ],
     "pre_uninstall": [
         "if ($cmd -eq 'uninstall') {",
-        "   if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "   foreach ($uninstall_exe in \"$dir\\PeaZip-Config\\unins000.exe\", \"$dir\\unins000.exe\") {",
         "       Start-Process $uninstall_exe -Wait -Verb 'RunAs' -ArgumentList @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/SUPPRESSMSGBOXES')",
         "   }",
