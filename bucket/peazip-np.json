@@ -33,8 +33,8 @@
         "   }",
         "}",
         "else {",
-        "   Start-Process \"$dir\\unins000.exe\" -Wait -Verb 'RunAs' -ArgumentList @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/SUPPRESSMSGBOXES')",
         "   Get-ChildItem \"$dir\\unins001.*\" | Copy-Item -ErrorAction 'SilentlyContinue' -Destination \"$persist_dir\\PeaZip-Config\"",
+        "   Start-Process \"$dir\\unins000.exe\" -Wait -Verb 'RunAs' -ArgumentList @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/SUPPRESSMSGBOXES')",
         "}"
     ],
     "checkver": {
