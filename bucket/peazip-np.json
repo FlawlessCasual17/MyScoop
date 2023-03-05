@@ -15,6 +15,7 @@
     },
     "post_install": [
         "ensure $persist_dir | Out-Null",
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -Args @('/VERYSILENT', \"/DIR=$dir\", '/CURRENTUSER', '/SUPPRESSMSGBOXES')",
         "Remove-Item \"$dir\\setup.exe\"",
         "if (Get-ChildItem \"$persist_dir\\PeaZip-Config\\unins000.*\" -ErrorAction 'SilentlyContinue' | Test-Path) {",
