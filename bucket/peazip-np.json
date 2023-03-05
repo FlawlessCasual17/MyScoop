@@ -21,7 +21,7 @@
         "   Get-ChildItem \"$persist_dir\\PeaZip-Config\\unins000.*\" | Copy-Item -ErrorAction 'SilentlyContinue' -Destination \"$dir\\PeaZip-Config\"",
         "}",
         "else {",
-        "   Start-Process \"$dir\\res\\bin\\Configure PeaZip.exe\" -Wait -Verb -Args @('/VERYSILENT', \"/DIR=$dir\\PeaZip-Config\", '/CURRENTUSER', '/SUPPRESSMSGBOXES')",
+        "   Start-Process \"$dir\\res\\bin\\Configure PeaZip.exe\" -Wait -Args @('/VERYSILENT', \"/DIR=$dir\\PeaZip-Config\", '/CURRENTUSER', '/SUPPRESSMSGBOXES')",
         "}"
     ],
     "pre_uninstall": [
