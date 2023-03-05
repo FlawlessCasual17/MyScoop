@@ -15,10 +15,9 @@
     },
     "post_install": [
         "ensure $persist_dir | Out-Null",
-        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -Args @('/VERYSILENT', \"/DIR=$dir\", '/ALLUSERS', '/SUPPRESSMSGBOXES')",
+        "Start-Process \"$dir\\setup.exe\" -Wait -Args @('/VERYSILENT', \"/DIR=$dir\", '/CURRENTUSER', '/SUPPRESSMSGBOXES')",
         "Remove-Item \"$dir\\setup.exe\"",
-        "Start-Process \"$dir\\res\\bin\\Configure PeaZip.exe\" -Wait -Verb 'RunAs' -Args @('/VERYSILENT', \"/DIR=$dir\\PeaZip-Config\", '/ALLUSERS', '/SUPPRESSMSGBOXES')",
+        "Start-Process \"$dir\\res\\bin\\Configure PeaZip.exe\" -Wait -Verb -Args @('/VERYSILENT', \"/DIR=$dir\\PeaZip-Config\", '/CURRENTUSER', '/SUPPRESSMSGBOXES')",
         "if (Get-ChildItem \"$persist_dir\\PeaZip-Config\\unins000.*\" -ErrorAction 'SilentlyContinue' | Test-Path) {",
         "   Get-ChildItem \"$persist_dir\\PeaZip-Config\\unins000.*\" | Copy-Item -ErrorAction 'SilentlyContinue' -Destination \"$dir\\PeaZip-Config\"",
         "}"
