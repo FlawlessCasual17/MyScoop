@@ -15,13 +15,13 @@
     },
     "post_install": [
         "ensure $persist_dir | Out-Null",
-        "Start-Process \"$dir\\setup.exe\" -Wait -Args @('/VERYSILENT', \"/DIR=$dir\", '/CURRENTUSER', '/SUPPRESSMSGBOXES')",
+        "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -Args @('/VERYSILENT', \"/DIR=$dir\", '/CURRENTUSER', '/SUPPRESSMSGBOXES')",
         "Remove-Item \"$dir\\setup.exe\"",
         "if (Get-ChildItem \"$persist_dir\\PeaZip-Config\\unins000.*\" -ErrorAction 'SilentlyContinue' | Test-Path) {",
         "   Get-ChildItem \"$persist_dir\\PeaZip-Config\\unins000.*\" | Copy-Item -ErrorAction 'SilentlyContinue' -Destination \"$dir\\PeaZip-Config\"",
         "}",
         "else {",
-        "   Start-Process \"$dir\\res\\bin\\Configure PeaZip.exe\" -Wait -Args @('/VERYSILENT', \"/DIR=$dir\\PeaZip-Config\", '/CURRENTUSER', '/SUPPRESSMSGBOXES')",
+        "   Start-Process \"$dir\\res\\bin\\Configure PeaZip.exe\" -Wait -Verb 'RunAs' -Args @('/VERYSILENT', \"/DIR=$dir\\PeaZip-Config\", '/CURRENTUSER', '/SUPPRESSMSGBOXES')",
         "}"
     ],
     "pre_uninstall": [
