@@ -18,6 +18,7 @@
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -Args @('/VERYSILENT', \"/DIR=$dir\", '/ALLUSERS', '/SUPPRESSMSGBOXES')",
         "Remove-Item \"$dir\\setup.exe\"",
+        "Start-Process \"$dir\\res\\bin\\Configure PeaZip.exe\" -Wait -Verb 'RunAs' -Args @('/VERYSILENT', \"/DIR=$dir\", '/ALLUSERS', '/SUPPRESSMSGBOXES')",
         "if (Get-ChildItem \"$persist_dir\\unins000.*\" | Test-Path) {",
         "   Get-ChildItem \"$persist_dir\\unins000.*\" | Copy-Item -ErrorAction 'SilentlyContinue' -Destination $dir",
         "}"
