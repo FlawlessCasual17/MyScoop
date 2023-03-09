@@ -11,7 +11,7 @@
         "JRE": "java/temurin-jre"
     },
     "url": "https://portswigger-cdn.net/burp/releases/download?product=pro&version=2023.2&type=Jar#/burpsuite-pro.jar",
-    "hash": "e9a35ebc8cf1f9c0ebf24bb0abccd333d277e24b18a72724c4b1fa9b4bb56874",
+    "hash": "dcbed2d7c95f4dfcf301277d11a849a3437378ab513a3d9db79aecb00dbd6d4c",
     "pre_install": [
         "$currentDir = $dir.Replace(\"$version\", 'current')",
         "Set-Content \"$dir\\burpsuite-pro.cmd\" -Value '@start javaw -jar \"%~dp0burpsuite-pro.jar\"' -Encoding 'utf8' -Force"
