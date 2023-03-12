@@ -14,7 +14,8 @@
     },
     "pre_install": [
         "Expand-7zipArchive \"$dir\\aegisub-portable-64.zip\" $dir -ExtractDir 'aegisub-portable' -Removal; Remove-Item \"$dir\\Microsoft.CRT\" -Recurse",
-        "foreach ($settings_files in 'config', 'hotkey') { New-Item \"$dir\\$settings_files.json\" | Out-Null }"
+        "Set-Content \"$dir\\hotkey.json\" '' -Encoding 'utf8' -Force",
+        "Copy-Item \"$persist_dir\\config.json\" \"$dir\\config.json\" -ErrorAction 'SilentlyContinue'"
     ],
     "shortcuts": [
         [
@@ -23,12 +24,12 @@
         ]
     ],
     "persist": [
-        "config.json",
         "hotkey.json",
         "config",
         "feedDump",
         "log"
     ],
+    "pre_uninstall": "Copy-Item \"$dir\\config.json\" \"$persist_dir\\config.json\" -ErrorAction 'SilentlyContinue'",
     "checkver": "releases/tag/([\\w_]+)",
     "autoupdate": {
         "architecture": {
