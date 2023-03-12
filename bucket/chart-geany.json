@@ -26,7 +26,7 @@
                 "url": "https://sourceforge.net/projects/chart-geany/files/$matchBase/chartgeany-$version-setup-win10.exe",
                 "hash": {
                     "url": "https://sourceforge.net/projects/chart-geany/rss?path=/6.0",
-                    "regex": "files/$matchBase/$basename/download\"\\sfilesize=\"[\\d]+\"><media:hash algo=\"md5\">$md5"
+                    "regex": "files/$matchBase/$basename/download\"\\sfilesize=\"[\\d]+\"><media:hash\\salgo=\"md5\">$md5"
                 }
             }
         }
