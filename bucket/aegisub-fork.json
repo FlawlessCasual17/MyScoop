@@ -13,13 +13,13 @@
         }
     },
     "pre_install": [
-        "Expand-7zipArchive \"$dir\\aegisub-portable-64.zip\" \"$dir\\Aegisub\" -ExtractDir 'aegisub-portable' -Removal; Remove-Item \"$dir\\Microsoft.CRT\" -Recurse",
+        "Expand-7zipArchive \"$dir\\aegisub-portable-64.zip\" \"$dir\\Aegisub\" -ExtractDir 'aegisub-portable' -Removal; Remove-Item \"$dir\\Aegisub\\Microsoft.CRT\" -Recurse",
         "Set-Content \"$dir\\Aegisub\\hotkey.json\" '' -Encoding 'utf8' -Force",
         "Copy-Item \"$persist_dir\\Aegisub\\config.json\" \"$dir\\Aegisub\\config.json\" -ErrorAction 'SilentlyContinue'"
     ],
     "shortcuts": [
         [
-            "aegisub.exe",
+            "Aegisub\\aegisub.exe",
             "Aegisub"
         ]
     ],
