@@ -12,8 +12,8 @@
     "extract_dir": "jsignpdf-2.2.0",
     "pre_install": [
         "$currentDir = $dir.Replace(\"$version\", 'current')",
-        "Set-Content \"$dir\\InstallCert.cmd\" -Value \"@start javaw -jar \"\"$currentDir\\InstallCert.jar\"\"\" -Encoding 'utf8' -Force",
-        "Set-Content \"$dir\\JSignPdf.cmd\" -Value \"@start javaw -jar \"\"$currentDir\\JSignPdf.jar\"\"\" -Encoding 'utf8' -Force",
+        "Set-Content \"$dir\\InstallCert.cmd\" -Value '@start javaw -jar \"%~dp0InstallCert.jar\"' -Encoding 'utf8' -Force",
+        "Set-Content \"$dir\\JSignPdf.cmd\" -Value '@start javaw -jar \"%~dp0JSignPdf.jar\"' -Encoding 'utf8' -Force",
         "ensure \"$persist_dir\" | Out-Null",
         "Copy-Item \"$persist_dir\\conf\" \"$dir\\conf\" -Recurse -ErrorAction 'SilentlyContinue'"
     ],
