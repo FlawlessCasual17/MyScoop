@@ -6,6 +6,17 @@
         "identifier": "Freeware",
         "url": "https://github.com/arch1t3cht/Aegisub/blob/feature/LICENCE"
     },
+    "notes": [
+        "To install associations, run:",
+        "reg import \"$dir\\install-associations.reg\"",
+        "To install the context menu, run:",
+        "reg import \"$dir\\install-context.reg\"",
+        "",
+        "To uninstall associations, run:",
+        "reg import \"$dir\\uninstall-associations.reg\"",
+        "To uninstall the context menu, run:",
+        "reg import \"$dir\\uninstall-context.reg\""
+    ],
     "architecture": {
         "64bit": {
             "url": "https://github.com/arch1t3cht/Aegisub/releases/download/feature_09/Windows.MSVC.Release.-.portable.zip",
@@ -23,9 +34,19 @@
         ]
     ],
     "post_install": [
-        ""
+        "$scriptsDir = \"$bucketsdir\\MyScoop\\scripts\"",
+        "Get-ChildItem \"$scriptsDir\\aegisub\\*.reg\" | ForEach-Object {",
+        "   $content = Get-Content $_",
+        "   $content = $content.Replace('REPLACE_HERE', $dir)",
+        "   if ($global) { $content = $content.Replace('HKEY_CURRENT_USER', 'HKEY_LOCAL_MACHINE') }",
+        "   Set-Content \"$dir\\$($_.Name)\" $content -Force",
+        "}"
     ],
-    "pre_uninstall": "",
+    "pre_uninstall": [
+        "if ($cmd -eq 'uninstall') {",
+        "   foreach ($regFile in 'uninstall-associations', 'uninstall-context') { reg import \"$dir\\$regFile\" }",
+        "}"
+    ],
     "checkver": "releases/tag/([\\w_]+)",
     "autoupdate": {
         "architecture": {
