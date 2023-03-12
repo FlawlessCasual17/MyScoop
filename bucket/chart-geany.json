@@ -18,7 +18,7 @@
     ],
     "checkver": {
         "url": "https://sourceforge.net/projects/chart-geany/rss?path=/6.0",
-        "regex": "files/(?<Base>[\\d]+)/chartgeany-([\\d.]+)-setup-win10\\.exe"
+        "regex": "files/(?<Base>[\\d.]+)/chartgeany-([\\d.]+)-setup-win10\\.exe"
     },
     "autoupdate": {
         "architecture": {
