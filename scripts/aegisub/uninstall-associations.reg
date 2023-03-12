@@ -216,87 +216,87 @@ Windows Registry Editor Version 5.00
 [-HKEY_CURRENT_USER\SOFTWARE\Classes\.ass\Aegisub.ASSA.1\ShellNew]
 "FileName"=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.ass\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.ass\OpenWithProgids]
+@=-
 
 [-HKEY_CURRENT_USER\SOFTWARE\Classes\.ssa]
 @=-
 "PerceivedType"=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.ssa\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.ssa\OpenWithProgids]
+@=-
 
 [-HKEY_CURRENT_USER\SOFTWARE\Classes\.srt]
 @=-
 "PerceivedType"=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.srt\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.srt\OpenWithProgids]
+@=-
 
 [-HKEY_CURRENT_USER\SOFTWARE\Classes\.ttxt]
 @=-
 "PerceivedType"=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.ttxt\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.ttxt\OpenWithProgids]
+@=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.mks]
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.mks]
 @=-
 "PerceivedType"=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.mks\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.mks\OpenWithProgids]
+@=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.sub\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.sub\OpenWithProgids]
+@=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.txt\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.txt\OpenWithProgids]
+@=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.mkv\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.mkv\OpenWithProgids]
+@=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.mka\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.mka\OpenWithProgids]
+@=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.avi\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.avi\OpenWithProgids]
+@=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.mp3\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.mp3\OpenWithProgids]
+@=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.mp4\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.mp4\OpenWithProgids]
+@=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.aac\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.aac\OpenWithProgids]
+@=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.m4a\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.m4a\OpenWithProgids]
+@=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.wav\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.wav\OpenWithProgids]
+@=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.ogg\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.ogg\OpenWithProgids]
+@=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.avs\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.avs\OpenWithProgids]
+@=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.vpy\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.vpy\OpenWithProgids]
+@=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.opus\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.opus\OpenWithProgids]
+@=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.h264\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.h264\OpenWithProgids]
+@=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.hevc\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.hevc\OpenWithProgids]
+@=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.eac3\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.eac3\OpenWithProgids]
+@=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.webm\OpenWithProgids]
--=-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.webm\OpenWithProgids]
+@=-
