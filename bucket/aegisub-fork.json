@@ -44,7 +44,7 @@
     ],
     "pre_uninstall": [
         "if ($cmd -eq 'uninstall') {",
-        "   foreach ($regFile in 'uninstall-associations', 'uninstall-context') { reg import \"$dir\\$regFile\" | Out-Null }",
+        "   foreach ($regFile in 'uninstall-associations', 'uninstall-context') { reg import \"$dir\\$regFile.reg\" | Out-Null }",
         "}"
     ],
     "checkver": "releases/tag/([\\w_]+)",
