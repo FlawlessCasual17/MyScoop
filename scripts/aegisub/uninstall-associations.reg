@@ -207,7 +207,7 @@ Windows Registry Editor Version 5.00
 [-HKEY_CURRENT_USER\SOFTWARE\RegisteredApplications]
 "Aegisub"=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.ass]
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.ass]
 @=-
 "PerceivedType"=-
 
@@ -219,21 +219,21 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\SOFTWARE\Classes\.ass\OpenWithProgids]
 @=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.ssa]
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.ssa]
 @=-
 "PerceivedType"=-
 
 [HKEY_CURRENT_USER\SOFTWARE\Classes\.ssa\OpenWithProgids]
 @=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.srt]
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.srt]
 @=-
 "PerceivedType"=-
 
 [HKEY_CURRENT_USER\SOFTWARE\Classes\.srt\OpenWithProgids]
 @=-
 
-[-HKEY_CURRENT_USER\SOFTWARE\Classes\.ttxt]
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.ttxt]
 @=-
 "PerceivedType"=-
 
