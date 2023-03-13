@@ -15,14 +15,14 @@
     },
     "post_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process 'msiexec' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('/i', \"$dir\\setup.msi_\", '/qn', \"INSTALLDIR=$dir\\StExBar\", \"TARGETDIR=$dir\\StExBar\")",
+        "Start-Process 'msiexec' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('/i', \"$dir\\setup.msi_\", '/qn')",
         "Stop-Process -Name 'explorer' -Force; Start-Sleep -Seconds 3"
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "Start-Process 'msiexec' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('/x', \"$dir\\setup.msi_\", '/qn')",
         "Start-Process 'taskkill' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList ('/F', '/IM', 'explorer.exe')",
-        "while (Test-Path \"$dir\\StExBar\") { Start-Sleep -Seconds 2 }; Start-Sleep -Seconds 3; Start-Process 'explorer.exe' -Wait -Verb 'RunAs' -WindowStyle 'Hidden'"
+        "while (Test-Path \"$env:ProgramFiles\\StExBar\") { Start-Sleep -Seconds 2 }; Start-Sleep -Seconds 3; Start-Process 'explorer.exe' -Wait -Verb 'RunAs' -WindowStyle 'Hidden'"
     ],
     "checkver": {
         "url": "https://github.com/stefankueng/tools/releases",
