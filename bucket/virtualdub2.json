@@ -38,6 +38,7 @@
         "}",
         "Set-Content \"$dir\\uninstall-associations.reg\" $uninstall_content -Encoding 'unicode' -Force"
     ],
+    "pre_uninstall": "if ($cmd -eq 'uninstall') { reg import \"$dir\\uninstall-associations.reg\"; Start-Sleep -Seconds 2 }",
     "checkver": {
         "url": "https://sourceforge.net/projects/vdfiltermod/rss?path=/VirtualDub%20pack/version%2020",
         "regex": "version\\s([\\d]+)/VirtualDub2_(?<Release>[\\d]+).zip"
