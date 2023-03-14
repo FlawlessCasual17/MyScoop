@@ -43,6 +43,7 @@
         "regex": "AviSynthPlus_([\\d.]+)_(?<Date>[\\d]+)-filesonly\\.7z"
     },
     "autoupdate": {
-        "url": "https://github.com/AviSynth/AviSynthPlus/releases/download/v$version/AviSynthPlus_$version_$matchDate-filesonly.7z"
+        "url": "https://github.com/AviSynth/AviSynthPlus/releases/download/v$version/AviSynthPlus_$version_$matchDate-filesonly.7z",
+        "extract_dir": "AviSynthPlus_$matchDate-filesonly"
     }
 }
