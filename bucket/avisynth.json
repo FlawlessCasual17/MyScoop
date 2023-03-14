@@ -27,6 +27,8 @@
         "$content2 = $content2.Replace(\"\"\"{$key_2}\"\"\", '-')",
         "$content2 = $content2.Replace(\"\"\"{$key_1}\"\"\", '-')",
         "$content2 = $content2.Replace('\"%INSTALLDIR%\\plugins\"', '-')",
+        "$content2 = $content2.Replace('HKEY_CLASSES_ROOT\\AVIFile\\Extensions\\AVS', '-HKEY_CLASSES_ROOT\\AVIFile\\Extensions\\AVS')",
+        "$content2 = $content2.Replace('HKEY_LOCAL_MACHINE\\SOFTWARE\\Avisynth', '-HKEY_LOCAL_MACHINE\\SOFTWARE\\Avisynth')",
         "Set-Content \"$dir\\uninstall.reg\" $content2 -Encoding 'unicode' -Force",
         "reg import \"$dir\\install.reg\""
     ],
