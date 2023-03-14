@@ -27,7 +27,8 @@
         "$content2 = $content2.Replace(\"\"\"{$key_2}\"\"\", '-')",
         "$content2 = $content2.Replace(\"\"\"{$key_1}\"\"\", '-')",
         "$content2 = $content2.Replace('\"%INSTALLDIR%\\plugins\"', '-')",
-        "Set-Content \"$dir\\uninstall.reg\" $content2 -Encoding 'unicode' -Force"
+        "Set-Content \"$dir\\uninstall.reg\" $content2 -Encoding 'unicode' -Force",
+        "reg import \"$dir\\install.reg\""
     ],
     "pre_uninstall": "if ($cmd -eq 'uninstall') { reg import \"$dir\\uninstall.reg\" }"
 }
