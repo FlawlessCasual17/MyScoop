@@ -48,7 +48,7 @@
         "url": "https://sourceforge.net/projects/vdfiltermod/files/VirtualDub%20pack/version%20$version/VirtualDub2_$matchRelease.zip",
         "hash": {
             "url": "https://sourceforge.net/projects/vdfiltermod/rss?path=/VirtualDub%20pack/version%20$version",
-            "regex": "files/VirtualDub%20pack/version%20$version/$basename/download\"\\sfilesize=\"35326827\"><media:hash\\salgo=\"md5\">$md5"
+            "regex": "files/VirtualDub%20pack/version%20$version/$basename/download\"\\sfilesize=\"[\\d]+\"><media:hash\\salgo=\"md5\">$md5"
         }
     }
 }
