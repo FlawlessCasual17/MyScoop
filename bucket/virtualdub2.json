@@ -1,0 +1,12 @@
+{
+    "version": "20",
+    "homepage": "",
+    "description": "",
+    "license": "GPL-2.0",
+    "url": "https://sourceforge.net/projects/vdfiltermod/files/VirtualDub%20pack/version%2020/VirtualDub2_44282.zip",
+    "hash": "md5:dfcb4d4bf350b91487603da3e887487e",
+    "bin": "",
+    "shortcuts": [],
+    "checkver": "",
+    "autoupdate": {}
+}
