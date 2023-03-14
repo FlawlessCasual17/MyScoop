@@ -36,6 +36,7 @@
         "    $uninstall_content = $uninstall_content.Replace(\"$item\\CLSID\\{$entry}\", \"-$item\\CLSID\\{$entry}\")",
         "    $uninstall_content = $uninstall_content.Replace(\"$item\\AVIFile\", \"-$item\\AVIFile\")",
         "}",
+        "$uninstall_content = $uninstall_content.Replace(\"\"\"{$entry}\"\"\", '-')",
         "Set-Content \"$dir\\uninstall-associations.reg\" $uninstall_content -Encoding 'unicode' -Force"
     ],
     "pre_uninstall": "if ($cmd -eq 'uninstall') { reg import \"$dir\\uninstall-associations.reg\"; Start-Sleep -Seconds 2 }",
