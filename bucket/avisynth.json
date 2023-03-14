@@ -5,7 +5,7 @@
     "license": "",
     "url": "https://sourceforge.net/projects/avisynth2/files/AviSynth_Alpha_Releases/AVS%202.6.1%20Alpha%201%20%5B20160517%5D/AviSynth_20160517_VC6.exe#/dl.7z",
     "hash": "a2df523717abb4e0a79d2d225f830792e3c390a93f7cffad2b7f8fc3dcfb6c70",
-    "pre_install": [
+    "post_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "$content1 = (Get-Content \"$dir\\Avisynth_Template.reg\").Replace('%INSTALLDIR%', $dir)",
         "Set-Content \"$dir\\install.reg\" $content1 -Encoding 'unicode' -Force",
@@ -14,6 +14,7 @@
         "(Select-String \"$dir\\Avisynth_Template.reg\" -Pattern '\"\\{([\\w-]+)\\}\"')[0] -match '\\{(?<key_2>[\\w-]+)\\}' | Out-Null",
         "$key_2 = $Matches['key_2']",
         "$content2 = Get-Content \"$dir\\Avisynth_Template.reg\"",
+        "$content2 = $content2 -replace ('@=\"[\\w]+\"', '@=-')",
         "$content2 = $content2 -replace ('@=\"[\\w?\\s]+\"', '@=-')",
         "$content2 = $content2.Replace('\"%INSTALLDIR%\\AviSynth.dll\"', '-')",
         "$content2 = $content2.Replace('\"%INSTALLDIR%\\AviSynth.dll,0\"', '-')",
