@@ -13,7 +13,7 @@
     "hash": "md5:dfcb4d4bf350b91487603da3e887487e",
     "pre_install": [
         "if ($architecture -eq '32bit') { Remove-Item $dir -Include '*64.exe', 'plugins64' -Recurse }",
-        "else { Remove-Item $dir -Include '*.exe', 'plugins32' -Recurse; Rename-Item \"$dir\\VirtualDub64.exe\" 'VirtualDub.exe'; Rename-Item \"$dir\\vdub64.exe\" 'vdub.exe' }"
+        "else { Remove-Item $dir -Include '*Dub.exe', 'plugins32' -Recurse; Rename-Item \"$dir\\VirtualDub64.exe\" 'VirtualDub.exe'; Rename-Item \"$dir\\vdub64.exe\" 'vdub.exe' }"
     ],
     "bin": "vdub.exe",
     "shortcuts": [
