@@ -30,5 +30,5 @@
         "Set-Content \"$dir\\uninstall.reg\" $content2 -Encoding 'unicode' -Force",
         "reg import \"$dir\\install.reg\""
     ],
-    "pre_uninstall": "if ($cmd -eq 'uninstall') { reg import \"$dir\\uninstall.reg\" }"
+    "pre_uninstall": "if ($cmd -eq 'uninstall') { reg import \"$dir\\uninstall.reg\"; Start-Sleep -Seconds 2 }"
 }
