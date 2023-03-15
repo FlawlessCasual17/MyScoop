@@ -15,7 +15,7 @@
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process \"$env:ProgramFiles\\VirtualMIDISynth\\uninstall.exe\" -Wait -Verb 'RunAs' -Args '/S' && Stop-Process -Name 'Un_A' -Force",
+        "Start-Process \"$env:ProgramFiles\\VirtualMIDISynth\\uninstall.exe\" -Wait -Verb 'RunAs' -Args '/S'; Stop-Process -Name 'Un_A' -Force",
         "Remove-Item \"$env:ProgramFiles\\VirtualMIDISynth\" -Force -Recurse"
     ],
     "checkver": {
