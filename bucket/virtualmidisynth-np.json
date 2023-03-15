@@ -5,7 +5,7 @@
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://coolsoft.altervista.org/download/CoolSoft_VirtualMIDISynth_2.13.5.exe?tckt=1678918011#/setup.exe",
+            "url": "https://coolsoft.altervista.org/download/CoolSoft_VirtualMIDISynth_2.13.5.exe?#/setup.exe",
             "hash": "md5:45b5aa72e6de449b1bf9dfc1bcab6e52"
         }
     },
