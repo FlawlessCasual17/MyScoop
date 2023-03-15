@@ -1,7 +1,7 @@
 {
     "version": "0.53.9",
     "homepage": "https://lbry.com/",
-    "description": "The official browser for the blockchain-based video-sharing, and payment network.",
+    "description": "The official browser for the blockchain-based file-sharing, and payment network.",
     "license": "MIT",
     "architecture": {
         "64bit": {
