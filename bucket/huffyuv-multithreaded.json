@@ -5,6 +5,7 @@
     "license": "GPL-2.0-or-later",
     "url": "https://www.videohelp.com/download/huffyuv_mt_712.zip",
     "hash": "81b1243938cd2ee7a1eed6d0aa96c7150f371438aeb806f599fb02b93b3928c6",
+    "extract_dir": "huffyuv_mt",
     "post_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "if ([CultureInfo]::InstalledUICulture.Name -match 'en-*') { Rename-Item \"$dir\\huffyuv_mt_en.dll\" 'huffyuv_mt.dll'; Remove-Item \"$dir\\huffyuv_mt_jp.dll\" }",
