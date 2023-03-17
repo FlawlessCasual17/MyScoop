@@ -13,7 +13,7 @@
     "post_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "# x86 version does not work, which is why it's being removed",
-        "Remove-Item $dir -Include 'x86', 'utvideo-x86.reg', 'utvideo-x86-unreg.reg' -Recurse",
+        "Remove-Item $dir -Include 'utvideo-x86.reg', 'utvideo-x86-unreg.reg' -Recurse",
         "$value = Get-Content \"$dir\\install.bat\"",
         "$value = $value.Replace('pause', '')",
         "$value = $value.Replace('%windir%\\regedit.exe /s utvideo-x64.reg', 'reg import \"%~dp0utvideo-x64.reg\"')",
