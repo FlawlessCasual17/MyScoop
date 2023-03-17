@@ -19,7 +19,7 @@
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process 'rundll32.exe' -Wait -Verb 'RunAs' -Args @('setupapi,InstallHinfSection', 'Remove_HFYU', '132', 'C:\\WINDOWS\\INF\\HUFFYUV.INF')",
+        "Start-Process 'rundll32.exe' -Wait -Verb 'RunAs' -Args @('setupapi,InstallHinfSection', 'Remove_HFYU', '132', \"$env:windir\\INF\\HUFFYUV.INF\")",
         "Remove-Item 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\MediaResources\\icm\\VIDC.HFYU' -ErrorAction 'SilentlyContinue' -Recurse -Force",
         "Remove-ItemProperty 'HKLM:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\drivers.desc' -ErrorAction 'SilentlyContinue' -Name 'huffyuv.dll' -Force",
         "Remove-ItemProperty 'HKLM:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Drivers32' -ErrorAction 'SilentlyContinue' -Name 'VIDC.HFYU' -Force",

@@ -6,8 +6,15 @@
     "url": "",
     "hash": "",
     "architecture": {},
-    "bin": "",
-    "shortcuts": [],
-    "checkver": "",
-    "autoupdate": {}
+    "post_install": [
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "Start-Process 'InfDefaultInstall' -Wait -Verb 'RunAs' -Args \"$dir\\huffyuv.inf\""
+    ],
+    "pre_uninstall": [
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "Start-Process 'rundll32.exe' -Wait -Verb 'RunAs' -Args @('setupapi,InstallHinfSection', 'Remove_HFYU', '132', \"$env:windir\\INF\\HUFFYUV.INF\")",
+        "Remove-Item 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\MediaResources\\icm\\VIDC.HFYU' -ErrorAction 'SilentlyContinue' -Recurse -Force",
+        "Remove-Item \"$env:windir\\System32\\HUFFYUV.*\" -ErrorAction 'SilentlyContinue' -Force",
+        "Remove-Item \"$env:windir\\inf\\HUFFYUV.*\" -ErrorAction 'SilentlyContinue' -Force"
+    ]
 }
