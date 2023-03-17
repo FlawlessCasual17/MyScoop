@@ -6,6 +6,7 @@
     "url": "https://lags.leetcode.net/LagarithSetup_1327.exe",
     "hash": "9406b1ceebd9020c12823604530abc40f884e4f9e0d42d8a96dc77f79933c199",
     "innosetup": true,
+    "extract_dir": "{sys}",
     "post_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "if ($architecture -eq '32bit') { Remove-Item \"$dir\\lagarith,1.dll\"; Rename-Item \"$dir\\lagarith,2.dll\" 'lagarith.dll' }",
