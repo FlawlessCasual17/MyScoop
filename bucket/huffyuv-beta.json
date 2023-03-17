@@ -1,8 +1,8 @@
 {
     "version": "2.2",
-    "homepage": "",
-    "description": "",
-    "license": "",
+    "homepage": "https://web.archive.org/web/20020607190222/http://www.math.berkeley.edu/~benrg/huffyuv.html#Installation",
+    "description": "A very fast, lossless Win32 video codec. (Beta release)",
+    "license": "GPL-2.0-or-later",
     "url": "",
     "hash": "",
     "architecture": {},
