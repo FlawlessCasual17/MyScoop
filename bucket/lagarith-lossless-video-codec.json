@@ -16,16 +16,16 @@
         "foreach ($name in 'Description', 'FriendlyName') {",
         "    Set-ItemProperty 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\MediaResources\\icm\\VIDC.LAGS' -Name $name -Value 'Lagarith lossless codec [LAGS]' -Force",
         "}",
-        "Set-ItemProperty 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\MediaResources\\icm\\VIDC.LAGS' -Name 'Driver' -Value \"$dir\\lagarith.dll\" -Force",
-        "Set-ItemProperty 'HKLM:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\drivers.desc' -Name \"$dir\\lagarith.dll\" -Value 'Lagarith lossless codec [LAGS]' -Force",
-        "Set-ItemProperty 'HKLM:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Drivers32' -Name 'VIDC.LAGS' -Value \"$dir\\lagarith.dll\" -Force"
+        "Set-ItemProperty 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\MediaResources\\icm\\VIDC.LAGS' -Name 'Driver' -Value \"\"\"$dir\\lagarith.dll\"\"\" -Force",
+        "Set-ItemProperty 'HKLM:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\drivers.desc' -Name \"\"\"$dir\\lagarith.dll\"\"\" -Value 'Lagarith lossless codec [LAGS]' -Force",
+        "Set-ItemProperty 'HKLM:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Drivers32' -Name 'VIDC.LAGS' -Value \"\"\"$dir\\lagarith.dll\"\"\" -Force"
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "$newDir = $dir.Replace($version, 'current')",
         "# Unregister the Lagarith Lossless Video Codec",
         "Remove-Item 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\MediaResources\\icm' -Force -Recurse",
-        "Remove-ItemProperty 'HKLM:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\drivers.desc' -Name \"$newDir\\lagarith.dll\" -Force",
+        "Remove-ItemProperty 'HKLM:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\drivers.desc' -Name \"\"\"$newDir\\lagarith.dll\"\"\" -Force",
         "Remove-ItemProperty 'HKLM:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Drivers32' -Name 'VIDC.LAGS' -Force"
     ],
     "checkver": "Lagarith\\sInstaller\\s\\(v([\\d.]+)\\)",
