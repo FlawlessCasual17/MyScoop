@@ -26,7 +26,7 @@
         "",
         "$value = $value.Replace('pause', '')",
         "$value = $value.Replace($to_be_replaced, '')",
-        "Set-Content \"$dir\\install.bat\" -Encoding 'utf8'",
+        "Set-Content \"$dir\\install.bat\" $value -Encoding 'utf8'",
         "Start-Process 'cmd' -Wait -NoNewWindow -Args @('/C', \"$dir\\install.bat\")"
     ],
     "uninstaller": {
