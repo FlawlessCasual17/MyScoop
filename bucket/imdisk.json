@@ -12,6 +12,13 @@
         "Set-Content \"$dir\\install.cmd\" $value -Encoding 'utf8'",
         "Start-Process 'cmd' -Wait -NoNewWindow -Args @('/C', \"$dir\\install.cmd\")"
     ],
+    "bin": [
+        [
+            "install.cmd",
+            "install_imdisk"
+        ],
+        "uninstall_imdisk.cmd"
+    ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "Start-Process 'cmd' -Wait -NoNewWindow -Args @('/C', \"$dir\\uninstall_imdisk.cmd\")"
