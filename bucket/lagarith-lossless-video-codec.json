@@ -8,13 +8,17 @@
     "extract_dir": "Lagarith_1327",
     "architecture": {
         "32bit": {
-            "pre_install": "Copy-Item \"$dir\\lagarith32\\Lagarith.dll\" \"$env:windir\\System32\\LAGARITH.DLL\" -Force",
+            "pre_install": [
+                "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+                "Copy-Item \"$dir\\lagarith32\\Lagarith.dll\" \"$env:windir\\System32\\LAGARITH.DLL\" -Force"
+            ],
             "uninstaller": {
                 "script": "Remove-Item \"$env:windir\\System32\\LAGARITH.DLL\" -Force"
             }
         },
         "64bit": {
             "pre_install": [
+                "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
                 "Copy-Item \"$dir\\lagarith32\\Lagarith.dll\" \"$env:windir\\System32\\LAGARITH.DLL\" -Force",
                 "Copy-Item \"$dir\\lagarith64\\Lagarith.dll\" \"$env:windir\\SysWOW64\\LAGARITH.DLL\" -Force"
             ],
@@ -28,7 +32,6 @@
         }
     },
     "post_install": [
-        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "Remove-Item \"$dir\\install.bat\", \"$dir\\lagarith.inf\"",
         "# Register the Lagarith Lossless Video Codec",
         "New-Item 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\MediaResources\\icm\\VIDC.LAGS' -Force | Out-Null",
