@@ -8,7 +8,7 @@
     "checkver": "ImDisk\\sVirtual\\sDisk\\sDriver</h2>\\s\\n\\s+<h3>Current\\sversion\\s([\\d.]+)",
     "pre_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process 'cmd' -Wait -NoNewWindow -Args @('/C', \"$dir\\install.cmd\"); Start-Sleep -Seconds 2; Stop-Process -Name 'msgboxw' -Force"
+        "Start-Process 'cmd' -Wait -NoNewWindow -Args @('/C', \"$dir\\install.cmd\"); Start-Sleep -Seconds 6; Stop-Process -Name 'msgboxw' -Force"
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
