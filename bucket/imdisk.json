@@ -8,7 +8,9 @@
     "checkver": "ImDisk\\sVirtual\\sDisk\\sDriver</h2>\\s\\n\\s+<h3>Current\\sversion\\s([\\d.]+)",
     "pre_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process 'cmd' -Wait -NoNewWindow -Args @('/C', \"$dir\\install.cmd\"); Start-Sleep -Seconds 6; Stop-Process -Name 'msgboxw' -Force"
+        "$value = (Get-Content \"$dir\\install.cmd\").Replace('.\\msgboxw.exe', 'echo')",
+        "Set-Content \"$dir\\install.cmd\" $value -Encoding 'utf8'",
+        "Start-Process 'cmd' -Wait -NoNewWindow -Args @('/C', \"$dir\\install.cmd\")"
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
