@@ -44,7 +44,6 @@
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "$newDir = $dir.Replace($version, 'current')",
         "# Unregister the Lagarith Lossless Video Codec",
         "Remove-Item 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\MediaResources\\icm\\VIDC.LAGS' -Force -Recurse",
         "Remove-ItemProperty 'HKLM:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\drivers.desc' -Name 'LAGARITH.DLL' -Force",
