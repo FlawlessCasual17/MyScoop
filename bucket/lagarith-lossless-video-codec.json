@@ -8,15 +8,15 @@
     "extract_dir": "Lagarith_1327",
     "architecture": {
         "32bit": {
-            "pre_install": "Copy-Item \"$dir\\lagarith32\\lagarith.dll\" \"$env:windir\\System32\\LAGARITH.DLL\" -Force",
+            "pre_install": "Copy-Item \"$dir\\lagarith32\\Lagarith.dll\" \"$env:windir\\System32\\LAGARITH.DLL\" -Force",
             "uninstaller": {
                 "script": "Remove-Item \"$env:windir\\System32\\LAGARITH.DLL\" -Force"
             }
         },
         "64bit": {
             "pre_install": [
-                "Copy-Item \"$dir\\lagarith32\\lagarith.dll\" \"$env:windir\\System32\\LAGARITH.DLL\" -Force",
-                "Copy-Item \"$dir\\lagarith64\\lagarith.dll\" \"$env:windir\\SysWOW64\\LAGARITH.DLL\" -Force"
+                "Copy-Item \"$dir\\lagarith32\\Lagarith.dll\" \"$env:windir\\System32\\LAGARITH.DLL\" -Force",
+                "Copy-Item \"$dir\\lagarith64\\Lagarith.dll\" \"$env:windir\\SysWOW64\\LAGARITH.DLL\" -Force"
             ],
             "uninstaller": {
                 "script": [
