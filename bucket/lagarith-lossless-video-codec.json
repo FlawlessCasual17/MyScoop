@@ -29,7 +29,7 @@
     },
     "post_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Remove-Item $dir -Include 'install.bat', 'lagarith.inf'",
+        "Remove-Item \"$dir\\install.bat\", \"$dir\\lagarith.inf\"",
         "# Register the Lagarith Lossless Video Codec",
         "New-Item 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\MediaResources\\icm\\VIDC.LAGS' -Force | Out-Null",
         "foreach ($name in 'Description', 'FriendlyName') {",
