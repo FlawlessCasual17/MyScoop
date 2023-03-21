@@ -23,6 +23,11 @@
             "Processing"
         ]
     ],
+    "pre_uninstall": [
+        "if ($cmd -eq 'uninstall') {",
+        "   Remove-Item 'HKCU:\\SOFTWARE\\Classes\\pde', 'HKCU:\\SOFTWARE\\Classes\\Processing.Contribution.Document', 'HKCU:\\SOFTWARE\\Classes\\Processing.Document', 'HKCU:\\SOFTWARE\\Classes\\Processing.Sketch.Document' -Recurse -Force",
+        "}"
+    ],
     "checkver": {
         "github": "https://github.com/processing/processing4",
         "regex": "tag/processing-([\\d-.]+)"
@@ -32,6 +37,7 @@
             "64bit": {
                 "url": "https://github.com/processing/processing4/releases/download/processing-$version/processing-$preReleaseVersion-windows-x64.zip"
             }
-        }
+        },
+        "env_add_path": "processing-$preReleaseVersion"
     }
 }
