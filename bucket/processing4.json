@@ -39,6 +39,6 @@
                 "url": "https://github.com/processing/processing4/releases/download/processing-$version/processing-$preReleaseVersion-windows-x64.zip"
             }
         },
-        "env_add_path": "processing-$preReleaseVersion"
+        "extract_dir": "processing-$preReleaseVersion"
     }
 }
