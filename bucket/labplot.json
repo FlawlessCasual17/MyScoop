@@ -21,7 +21,7 @@
     ],
     "checkver": {
         "url": "https://labplot.kde.org/download/",
-        "regex": "stable/labplot/([\\d.]+)"
+        "regex": "labplot-([\\d.]+)\\.exe"
     },
     "autoupdate": {
         "architecture": {
