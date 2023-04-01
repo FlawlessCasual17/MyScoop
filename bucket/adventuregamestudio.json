@@ -4,7 +4,7 @@
     "description": "An IDE and the engine meant for creating and running videogames of adventure (aka “quest”) genre.",
     "license": "Artistic-2.0",
     "url": "https://github.com/adventuregamestudio/ags/releases/download/v.3.6.0.47/AGS-3.6.0.47.zip",
-    "hash": "f9564f5c7257912c50001ebadfad9ee8a540001ab97aac855f4d0308b33f670e",
+    "hash": "359b660a024e7ad6643d3d7118f38b998fc3a7cc96056ca30086232f9cacd1fb",
     "shortcuts": [
         [
             "ags-help.chm",
