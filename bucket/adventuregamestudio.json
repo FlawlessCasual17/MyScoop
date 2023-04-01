@@ -17,10 +17,10 @@
     ],
     "checkver": {
         "github": "https://github.com/adventuregamestudio/ags",
-        "regex": "tag/v.([\\d.]+)"
+        "regex": "tag/v\\.([\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://github.com/adventuregamestudio/ags/releases/download/v$version/AGS-$version.zip",
+        "url": "https://github.com/adventuregamestudio/ags/releases/download/v.$version/AGS-$version.zip",
         "hash": {
             "url": "$baseurl/checksums.sha256",
             "regex": "$basename\\s$sha256"
