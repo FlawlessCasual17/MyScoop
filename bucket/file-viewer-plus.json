@@ -1,8 +1,11 @@
 {
     "version": "4.3.0.61fi",
-    "homepage": "https://fileinfo.com/software/windows_file_viewer",
+    "homepage": "https://fileviewerplus.com/",
     "description": "A universal file opener for Windows that allows you to view, edit, save, and convert files.",
-    "license": "Shareware",
+    "license": {
+        "identifier": "Shareware",
+        "url": "https://fileviewerplus.com/eula"
+    },
     "url": "https://objects.liquidweb.services/fvp/fvp_setup_4.3.0.61fi.exe",
     "hash": "b0fab5463e0d71955674b9631cb75b864412cbdf7bbd4c5ee5e3d641457526c3",
     "innosetup": true,
