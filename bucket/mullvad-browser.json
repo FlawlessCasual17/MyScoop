@@ -9,14 +9,17 @@
             "hash": "4f7008f3b26d682564e798d968455d326bcfe12196ba4d402826f4d5d42a1616"
         }
     },
-    "pre_install": "Remove-Item \"$dir\\`$*\" -Recurse",
+    "pre_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Browser\\update*\" -Recurse",
     "shortcuts": [
         [
             "Browser\\mullvadbrowser.exe",
             "Mullvad Browser"
         ]
     ],
-    "persist": "Data",
+    "persist": [
+        "Data",
+        "UpdateInfo"
+    ],
     "checkver": {
         "script": [
             "$ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'",
