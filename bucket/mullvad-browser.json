@@ -1,7 +1,7 @@
 {
     "version": "12.0.4",
     "homepage": "https://mullvad.net/en/browser",
-    "description": "a privacy-focused web browser developed in a collaboration between Mullvad VPN and the Tor Project. ",
+    "description": "A privacy-focused web browser developed in a collaboration between Mullvad VPN and the Tor Project.",
     "license": "MPL-2.0",
     "architecture": {
         "64bit": {
