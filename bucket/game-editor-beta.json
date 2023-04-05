@@ -22,6 +22,7 @@
         "regex": "id=(?<Id>[\\w]+)\\sattachment;\\sfilename=gameEditor([\\w.]+)\\.zip"
     },
     "autoupdate": {
-        "url": "http://game-editor.com/forum/download/file.php?id=$matchId#/dl.zip"
+        "url": "http://game-editor.com/forum/download/file.php?id=$matchId#/dl.zip",
+        "extract_dir": "gameEditor$version"
     }
 }
