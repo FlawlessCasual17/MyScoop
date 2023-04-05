@@ -10,7 +10,7 @@
     "shortcuts": [
         [
             "gameEditor.exe",
-            "GameEditor"
+            "GameEditor Beta"
         ]
     ],
     "pre_uninstall": "Copy-Item \"$dir\\GameEditor.ini\" \"$persist_dir\\GameEditor.ini\" -ErrorAction 'SilentlyContinue'",
