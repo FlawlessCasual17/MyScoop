@@ -6,12 +6,14 @@
     "url": "http://game-editor.com/forum/download/file.php?id=10346#/dl.zip",
     "hash": "93a65ad345a602771f1d3bf678e3124c03f706f7f9603acefff2a1ae6e68d04f",
     "extract_dir": "gameEditor1.4.1b",
+    "pre_install": "ensure $persist_dir | Out-Null; Copy-Item \"$persist_dir\\GameEditor.ini\" \"$dir\\GameEditor.ini\" -ErrorAction 'SilentlyContinue'",
     "shortcuts": [
         [
             "gameEditor.exe",
             "GameEditor"
         ]
     ],
+    "pre_uninstall": "Copy-Item \"$dir\\GameEditor.ini\" \"$persist_dir\\GameEditor.ini\" -ErrorAction 'SilentlyContinue'",
     "checkver": {
         "script": [
             "$ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'",
