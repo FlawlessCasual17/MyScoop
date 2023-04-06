@@ -20,13 +20,15 @@
             "hash": "c3ec554301ca2117356d9bb3c87ddf51438f4b082d0a29964e7915777ee877e5"
         }
     },
-    "post_install": [
+    "pre_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "Start-Process 'msiexec' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -Args @('/i', \"$dir\\setup.msi_\", '/qn', '/norestart')"
     ],
     "pre_uninstall": [
-        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process 'msiexec' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -Args @('/x', \"$dir\\setup.msi_\", '/qn', '/norestart')"
+        "if ($cmd -eq 'uninstall') {",
+        "   if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "   Start-Process 'msiexec' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -Args @('/x', \"$dir\\setup.msi_\", '/qn', '/norestart')",
+        "}"
     ],
     "checkver": {
         "url": "https://downloadarchive.documentfoundation.org/libreoffice/old/latest/win/x86_64/",
