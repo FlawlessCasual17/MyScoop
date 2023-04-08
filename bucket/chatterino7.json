@@ -10,11 +10,16 @@
         }
     },
     "extract_dir": "Chatterino2",
-    "bin": "chatterino.exe",
+    "bin": [
+        [
+            "chatterino.exe",
+            "chatterino7"
+        ]
+    ],
     "shortcuts": [
         [
             "chatterino.exe",
-            "Chatterino"
+            "Chatterino7"
         ]
     ],
     "persist": [
