@@ -15,14 +15,15 @@
     },
     "installer": {
         "script": [
-            "foreach ($c_file in 'Effekseer.imgui.ini', 'config.option.xml', 'config.network.xml', 'config.recent.xml', 'Effekseer.config.Dock.xml') {",
+            "foreach ($c_file in 'Effekseer.imgui.ini', 'config.option.xml', 'config.recent.xml', 'Effekseer.config.Dock.xml') {",
             "    Copy-Item \"$persist_dir\\Tool\\$c_file\" \"$dir\\Tool\\$c_file\" -ErrorAction 'SilentlyContinue'",
-            "}"
+            "}",
+            "if (!(Test-Item \"$persist_dir\\Tool\\config.network.xml\")) { New-Item \"$dir\\Tool\\config.network.xml\" | Out-Null }"
         ]
     },
     "uninstaller": {
         "script": [
-            "foreach ($c_file in 'Effekseer.imgui.ini', 'config.option.xml', 'config.network.xml', 'config.recent.xml', 'Effekseer.config.Dock.xml') {",
+            "foreach ($c_file in 'Effekseer.imgui.ini', 'config.option.xml', 'config.recent.xml', 'Effekseer.config.Dock.xml') {",
             "    Copy-Item \"$dir\\Tool\\$c_file\" \"$persist_dir\\Tool\\$c_file\" -ErrorAction 'SilentlyContinue'",
             "}"
         ]
@@ -33,7 +34,10 @@
             "Effekseer"
         ]
     ],
-    "persist": "Tool\\scripts",
+    "persist": [
+        "Tool\\config.network.xml",
+        "Tool\\scripts"
+    ],
     "checkver": {
         "github": "https://github.com/effekseer/Effekseer",
         "regex": "tag/([\\w]+)"
