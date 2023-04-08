@@ -18,7 +18,7 @@
             "foreach ($c_file in 'Effekseer.imgui.ini', 'config.option.xml', 'config.recent.xml', 'Effekseer.config.Dock.xml') {",
             "    Copy-Item \"$persist_dir\\Tool\\$c_file\" \"$dir\\Tool\\$c_file\" -ErrorAction 'SilentlyContinue'",
             "}",
-            "if (!(Test-Item \"$persist_dir\\Tool\\config.network.xml\")) { New-Item \"$dir\\Tool\\config.network.xml\" | Out-Null }"
+            "if (!(Test-Path \"$persist_dir\\Tool\\config.network.xml\")) { New-Item \"$dir\\Tool\\config.network.xml\" | Out-Null }"
         ]
     },
     "uninstaller": {
