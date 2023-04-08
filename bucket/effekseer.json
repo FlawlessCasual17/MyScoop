@@ -35,7 +35,8 @@
         "Tool\\scripts"
     ],
     "checkver": {
-        "github": "https://github.com/effekseer/Effekseer"
+        "github": "https://github.com/effekseer/Effekseer",
+        "regex": "tag/([\\w]+)"
     },
     "autoupdate": {
         "architecture": {
