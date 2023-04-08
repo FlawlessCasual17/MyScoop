@@ -16,7 +16,7 @@
     "installer": {
         "script": [
             "foreach ($c_file in 'Effekseer.imgui.ini', 'config.option.xml', 'config.network.xml', 'config.recent.xml', 'Effekseer.config.Dock.xml') {",
-            "    if (Test-Path \"$persist_dir\\Tool\\$c_file\") { New-Item \"$dir\\Tool\\$c_file\" | Out-Null }",
+            "    if (Test-Path \"$persist_dir\\Tool\\$c_file\") { New-Item \"$dir\\Tool\\$c_file\" -ItemType 'File' | Out-Null }",
             "}"
         ]
     },
