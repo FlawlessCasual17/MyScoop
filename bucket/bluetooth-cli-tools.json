@@ -6,7 +6,15 @@
     "url": "https://bluetoothinstaller.com/bluetooth-command-line-tools/BluetoothCLTools-1.2.0.56.exe",
     "hash": "a110c457e26a42debb5008038190a5f4a1c8ddeb828b8cd4676fb28eeddfc075",
     "innosetup": true,
-    "env_add_path": "bin",
+    "bin": [
+        "bin\\btdiscovery.exe",
+        "bin\\btftp.exe",
+        "bin\\btinfo.exe",
+        "bin\\btobex.exe",
+        "bin\\btpair.exe",
+        "bin\\btcom.exe",
+        "bin\\btconfig.exe"
+    ],
     "checkver": "([\\d.]+)</strong>\\s",
     "autoupdate": {
         "url": "https://bluetoothinstaller.com/bluetooth-command-line-tools/BluetoothCLTools-$version.exe"
