@@ -50,10 +50,15 @@
         "Remove-Item \"$dir\\010EditorPortable.exe\"; $scriptsDir = \"$bucketsdir\\MyScoop\\scripts\"",
         "$appDir = $dir.Replace('\\', '\\\\')",
         "Get-ChildItem \"$scriptsDir\\010editor\\*.reg\" | ForEach-Object {",
-        "   $content = Get-Content $_",
-        "   $content = $content.Replace('REPLACE_HERE', $appDir)",
-        "   if ($global) { $content = $content.Replace('HKEY_CURRENT_USER', 'HKEY_LOCAL_MACHINE') }",
-        "   Set-Content \"$dir\\$($_.Name)\" $content -Encoding 'unicode' -Force",
+        "    $content = Get-Content $_",
+        "    $content = $content.Replace('REPLACE_HERE', $appDir)",
+        "    if ($global) { $content = $content.Replace('HKEY_CURRENT_USER', 'HKEY_LOCAL_MACHINE') }",
+        "    Set-Content \"$dir\\$($_.Name)\" $content -Encoding 'unicode' -Force",
+        "}"
+    ],
+    "pre_uninstall": [
+        "if ($cmd -eq 'uninstall') {",
+        "    foreach ($regFile in 'uninstall-file-associations.reg', 'uninstall-context-menu.reg') { reg import \"$dir\\$regFile\" }",
         "}"
     ],
     "checkver": {
