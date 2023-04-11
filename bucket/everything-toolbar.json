@@ -12,6 +12,20 @@
         "d1bbf650adf1ea2786bdd6944b746f762db134ef6aa02225a746e35731141e8a",
         "f78117a74a924cfed75a304962b251add651f4e87f9b4a552b216e2c9bcba37a"
     ],
+    "pre_install": [
+        "$replacer1 = (Get-Content \"$dir\\install.cmd\")",
+        "$replacer1 = $replacer1.Replace('pause', '')",
+        "$replacer1 | Set-Content \"$dir\\install.cmd\"",
+        "$replacer2 = (Get-Content \"$dir\\uninstall.cmd\")",
+        "$replacer2 = $replacer2.Replace('pause', '')",
+        "$replacer2 | Set-Content \"$dir\\uninstall.cmd\"",
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "Start-Process 'cmd' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('/c', \"$dir\\install.cmd\"); Stop-Process -Name 'explorer' -Force"
+    ],
+    "pre_uninstall": [
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "Start-Process 'cmd' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('/c', \"$dir\\uninstall.cmd\"); Start-Sleep -Seconds 2"
+    ],
     "extract_dir": "EverythingToolbar",
     "checkver": {
         "script": [
