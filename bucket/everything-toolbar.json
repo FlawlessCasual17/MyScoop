@@ -33,7 +33,9 @@
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process 'cmd' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('/c', \"$dir\\uninstall.cmd\"); Start-Sleep -Seconds 2; Start-Process 'explorer.exe' -Wait -WindowStyle 'Hidden'"
+        "Start-Process 'cmd' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('/c', \"$dir\\uninstall.cmd\"); Start-Sleep -Seconds 2",
+        "Start-Process 'taskkill' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList ('/F', '/IM', 'explorer.exe')",
+        "Start-Process 'explorer.exe' -Wait -WindowStyle 'Hidden'"
     ],
     "extract_dir": "EverythingToolbar",
     "checkver": {
