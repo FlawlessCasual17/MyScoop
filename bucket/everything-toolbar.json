@@ -28,7 +28,7 @@
     "shortcuts": [
         [
             "EverythingToolbar.Launcher.exe",
-            "EverythingToolbar Assistant"
+            "EverythingToolbar Launcher"
         ]
     ],
     "pre_uninstall": [
