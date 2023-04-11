@@ -27,13 +27,13 @@
     ],
     "shortcuts": [
         [
-            "EverythingToolbar.Launcher",
+            "EverythingToolbar.Launcher.exe",
             "EverythingToolbar Assistant⁄Setup"
         ]
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process 'cmd' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('/c', \"$dir\\uninstall.cmd\"); Start-Sleep -Seconds 2"
+        "Start-Process 'cmd' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('/c', \"$dir\\uninstall.cmd\"); Start-Sleep -Seconds 2; Start-Process 'explorer.exe' -Wait"
     ],
     "extract_dir": "EverythingToolbar",
     "checkver": {
