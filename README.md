@@ -1,8 +1,5 @@
 [![Excavator](https://github.com/Zliced13/MyScoop/actions/workflows/excavator.yml/badge.svg)](https://github.com/Zliced13/MyScoop/actions/workflows/excavator.yml)
 
-How do I add this bucket?
----------------------------------
-
 To add this bucket, run
 ```pwsh
 scoop bucket add MyScoop 'https://github.com/Zliced13/MyScoop'
