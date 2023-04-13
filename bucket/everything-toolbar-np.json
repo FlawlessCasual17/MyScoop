@@ -19,7 +19,7 @@
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process 'msiexec' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -Args @('/x', \"$dir\\setup.msi_\", '/qn'); Start-Sleep -Seconds 2",
+        "Start-Process 'msiexec' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -Args @('/x', \"$dir\\setup.msi_\", '/qn', '/norestart'); Start-Sleep -Seconds 2",
         "taskkill /F /IM 'explorer.exe' | Out-Null; Start-Process 'explorer.exe' -Wait -WindowStyle 'Hidden'"
     ],
     "extract_dir": "EverythingToolbar",
