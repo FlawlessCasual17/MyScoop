@@ -5,10 +5,10 @@
     "license": "AGPL-3.0-only",
     "notes": [
         "To register the 'zotero://' URL protocol, run:",
-        "install-zotero-url-protocol.ps1",
+        "$dir\\install-zotero-url-protocol.ps1",
         "",
         "To unregister the 'zotero://' URL protocol, run:",
-        "uninstall-zotero-url-protocol.ps1"
+        "$dir\\uninstall-zotero-url-protocol.ps1"
     ],
     "url": "https://download.zotero.org/client/release/6.0.23/Zotero-6.0.23_setup.exe#/dl.7z",
     "hash": "bb30a173f54295ddb52e40cea739bfd6535b59da389166b943980b29e7321f27",
@@ -36,9 +36,7 @@
         "Set-Content \"$dir\\uninstall-zotero-url-protocol.ps1\" $content2 -Encoding 'utf8' -Force"
     ],
     "bin": [
-        "zotero.exe",
-        "install-zotero-url-protocol.ps1",
-        "uninstall-zotero-url-protocol.ps1"
+        "zotero.exe"
     ],
     "shortcuts": [
         [
