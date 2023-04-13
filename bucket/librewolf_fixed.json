@@ -21,7 +21,7 @@
     "pre_uninstall": [
         "if (Test-Path \"$dir\\Librewolf\\*.js\") { Copy-Item \"$dir\\Librewolf\\*.js\" \"$persist_dir\\Librewolf\\\" }",
         "foreach ($userfolders in 'Profiles', 'LibreWolf\\defaults\\pref') {",
-        "    Copy-Item  \"$dir\\$userfolders\\*\" \"$persist_dir\\$userfolders\" -ErrorAction 'SilentlyContinue' -Recurse",
+        "    Copy-Item \"$dir\\$userfolders\\*\" \"$persist_dir\\$userfolders\" -ErrorAction 'SilentlyContinue' -Recurse",
         "}"
     ],
     "bin": [
