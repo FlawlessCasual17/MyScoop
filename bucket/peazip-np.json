@@ -22,7 +22,7 @@
         "foreach ($shortcut in 'Extract here (smart new folder).lnk', 'Uninstall PeaZip.lnk', 'Add to archive.lnk', 'Extract....lnk') {",
         "    Remove-Item \"$peazip_shortcuts_path\\$shortcut\" -Force",
         "}",
-        "New-Item \"$dir\\configure-peaZip.exe\" -ItemType 'SymbolicLink' -Target \"$dir\\res\\bin\\Configure PeaZip.exe\" | Out-Null",
+        "New-Item \"$dir\\configure-peazip.exe\" -ItemType 'SymbolicLink' -Target \"$dir\\res\\bin\\Configure PeaZip.exe\" | Out-Null",
         "Start-Process \"$dir\\res\\bin\\Configure PeaZip.exe\" -Wait -Verb 'RunAs' -Args @('/VERYSILENT', \"/DIR=$dir\", '/CURRENTUSER', '/SUPPRESSMSGBOXES')",
         "Start-Sleep -Seconds 2",
         "foreach ($regFile in \"$persist_dir\\peazip_context_menu1.reg\", \"$persist_dir\\peazip_context_menu2.reg\") {",
