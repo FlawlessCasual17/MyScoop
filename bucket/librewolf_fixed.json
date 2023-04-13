@@ -11,9 +11,7 @@
         }
     },
     "pre_install": [
-        "$lw_name = (Get-Item \"$dir\\librewolf-*\").FullName",
-        "Move-Item \"$lw_name\\*\" \"$dir\"",
-        "Remove-Item \"$lw_name\"",
+        "ensure $persist_dir | Out-Null",
         "Remove-Item \"$dir\\LibreWolf-WinUpdater.exe\"",
         "if (Test-Path \"$persist_dir\\Librewolf\\*.js\") { Copy-Item \"$persist_dir\\Librewolf\\*.js\" \"$dir\\Librewolf\\\" }",
         "foreach ($userfolders in 'Profiles', 'LibreWolf\\defaults\\pref') {",
