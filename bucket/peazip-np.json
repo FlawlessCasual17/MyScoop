@@ -19,7 +19,7 @@
         "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -Args @('/VERYSILENT', \"/DIR=$dir\", '/CURRENTUSER', '/SUPPRESSMSGBOXES')",
         "Remove-Item \"$dir\\setup.exe\"",
         "$peazip_shortcuts_path = \"$env:ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\PeaZip\"",
-        "Remove-Item $peazip_shortcuts_path -Include 'Extract here (smart new folder).lnk', 'Uninstall PeaZip.lnk', 'Add to archive.lnk', 'Extract....lnk'  -Force",
+        "Remove-Item $peazip_shortcuts_path -Include 'Extract here*', 'Uninstall PeaZip.lnk', 'Add to archive.lnk', 'Extract...*'  -Force",
         "New-Item \"$dir\\configure-peaZip.exe\" -ItemType 'SymbolicLink' -Target \"$dir\\res\\bin\\Configure PeaZip.exe\" | Out-Null",
         "Start-Process \"$dir\\res\\bin\\Configure PeaZip.exe\" -Wait -Verb 'RunAs' -Args @('/VERYSILENT', \"/DIR=$dir\", '/CURRENTUSER', '/SUPPRESSMSGBOXES'); Start-Sleep -Seconds 2",
         "foreach ($regFile in \"$persist_dir\\peazip_context_menu1.reg\", \"$persist_dir\\peazip_context_menu2.reg\") {",
