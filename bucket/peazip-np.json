@@ -19,7 +19,8 @@
         "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -Args @('/VERYSILENT', \"/DIR=$dir\", '/CURRENTUSER', '/SUPPRESSMSGBOXES')",
         "Remove-Item \"$dir\\setup.exe\"",
         "$peazip_shortcuts_path = \"$env:ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\PeaZip\"",
-        "Remove-Item \"$peazip_shortcuts_path\\Extract here (smart new folder).lnk\", \"$peazip_shortcuts_path\\Uninstall PeaZip.lnk\" -Force",
+        "Remove-Item $peazip_shortcuts_path -Include 'Extract here (smart new folder).lnk', 'Uninstall PeaZip.lnk', 'Add to archive.lnk', 'Extract....lnk'  -Force",
+        "New-Item \"$dir\\configure-peaZip.exe\" -ItemType 'SymbolicLink' -Target \"$dir\\res\\bin\\Configure PeaZip.exe\" | Out-Null",
         "Start-Process \"$dir\\res\\bin\\Configure PeaZip.exe\" -Wait -Verb 'RunAs' -Args @('/VERYSILENT', \"/DIR=$dir\", '/CURRENTUSER', '/SUPPRESSMSGBOXES'); Start-Sleep -Seconds 2",
         "foreach ($regFile in \"$persist_dir\\peazip_context_menu1.reg\", \"$persist_dir\\peazip_context_menu2.reg\") {",
         "   if (Test-Path $regFile) {",
@@ -27,6 +28,7 @@
         "   }",
         "}"
     ],
+    "env_add_path": ".",
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "if (Test-Path 'HKLM:\\SOFTWARE\\Classes\\AllFilesystemObjects\\shell\\PeaZip') {",
