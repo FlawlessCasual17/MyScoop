@@ -5,7 +5,10 @@
     "license": "Apache-2.0",
     "notes": [
         "Make sure you decrypt your disks (encrypted with VeraCrypt) before uninstalling the app.",
-        "You may have to restart your computer in order for 'veracrypt-np' to work correctly."
+        "You may have to restart your computer in order for VeraCrypt to work correctly.",
+        "If you are having any VeraCrypt-related issues, please see,",
+        "https://www.veracrypt.fr/en/Troubleshooting.html",
+        "https://www.veracrypt.fr/en/Issues%20and%20Limitations.html"
     ],
     "architecture": {
         "64bit": {
