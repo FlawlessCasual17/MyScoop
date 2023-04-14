@@ -36,7 +36,7 @@
                 "url": "https://launchpad.net/veracrypt/trunk/$version/+download/VeraCrypt_Setup_x64_$version.msi#/setup.msi_",
                 "hash": {
                     "url": "$url/+md5",
-                    "regex": "$md5\\s$basename"
+                    "regex": "$md5\\s+$basename"
                 }
             }
         }
