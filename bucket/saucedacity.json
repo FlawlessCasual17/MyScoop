@@ -1,7 +1,7 @@
 {
     "version": "1.2.1",
     "homepage": "https://tenacityaudio.org/",
-    "description": "A free, open source audio editor based on Audacity icon Audacity with the same features and the same project format, but without the autoupdater and telemetry that originally came with Audacity.",
+    "description": "A free, open source audio editor based on Audacity with the same features and the same project format, but without the autoupdater and telemetry that originally came with Audacity.",
     "license": "GPL-2.0",
     "notes": [
         "To add file associations, run:",
