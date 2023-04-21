@@ -3,7 +3,7 @@
     "description": "Tracker and ad-blocking browser",
     "homepage": "https://duckduckgo.com/windows",
     "license": "Freeware",
-    "url": "https://staticcdn.duckduckgo.com/d5c04536-5379-4709-8d19-d13fdd456ff6/0.39.0.0/DuckDuckGo_0.39.0.0.msixbundle#/dl.zip_",
+    "url": "https://staticcdn.duckduckgo.com/d5c04536-5379-4709-8d19-d13fdd456ff6/DuckDuckGo_0.38.0.0_Test/DuckDuckGo_0.38.0.0_x86_x64.msixbundle#/dl.zip_",
     "hash": "1771aa0fdaf33d3580c077f5d59a54182dbcc967deae17fdc99b4d864a1bed83",
     "architecture": {
         "64bit": {
@@ -32,6 +32,6 @@
         "regex": "(?<Uuid>[\\w-]+)/([\\d.]+)/"
     },
     "autoupdate": {
-        "url": "https://staticcdn.duckduckgo.com/$matchUuid/DuckDuckGo_$version_Test/DuckDuckGo_$version_x86_x64.msixbundle#/dl.zip_"
+        "url": "https://staticcdn.duckduckgo.com/$matchUuid/$version/DuckDuckGo_$version.msixbundle#/dl.zip_"
     }
 }
