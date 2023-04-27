@@ -1,12 +1,12 @@
 {
-    "version": "1.7.0",
+    "version": "1.7.1",
     "homepage": "https://github.com/dheijl/swyh-rs",
     "description": "Bare-bones, more robust and modern version of Stream What You Hear (SWYH). Written in Rust.",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/dheijl/swyh-rs/releases/download/1.7.0/swyh-rs.zip",
-            "hash": "72c12005a5fb26e26444dfe5781bf938b72736284ed70e719ee4e8654ac3d5fa"
+            "url": "https://github.com/dheijl/swyh-rs/releases/download/1.7.1/swyh-rs.zip",
+            "hash": "b7e99a30ad7e627c8533ec2b5414410ec0094d4d1b9b5b0adae3dd00c6d0fa30"
         }
     },
     "shortcuts": [
