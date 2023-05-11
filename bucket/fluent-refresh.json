@@ -24,7 +24,7 @@
     "checkver": {
         "url": "https://api.github.com/repos/bonzibudd/Fluent-Refresh/releases",
         "jsonpath": "$..assets..browser_download_url",
-        "regex": "v([\\w.?-]+)/Fluent-Refresh_(?<Filever>[\\w.]+)\\.zip"
+        "regex": "download/v([\\w.?-]+)/Fluent-Refresh_(?<Filever>[\\w.]+)\\.zip"
     },
     "autoupdate": {
         "url": "https://github.com/bonzibudd/Fluent-Refresh/releases/download/v$version/Fluent-Refresh_$matchFilever.zip"
