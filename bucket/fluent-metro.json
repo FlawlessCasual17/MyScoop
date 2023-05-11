@@ -7,7 +7,7 @@
     "hash": "7d50f7deac9af1c60640d7b40a7bc9b7e68ade421237a293958c4bcb03f6b868",
     "pre_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\" }",
-        "if (!(Test-Path \"$env:ProgramFiles\\Open-Shell\")) { error 'Open Shell needs to be installed before you can install this skin!' }",
+        "if (!(Test-Path \"$env:ProgramFiles\\Open-Shell\")) { error 'Open Shell needs to be installed before you can install this skin!'; break }",
         "if ($cmd -in 'install') {",
         "    foreach ($i in (Get-ChildItem \"$dir\\Fluent-Metro.*\")) {",
         "        New-Item \"$env:ProgramFiles\\Open-Shell\\Skins\\$($i.Name)\" -ItemType 'HardLink' -Target $i.FullName -Force | Out-Null",
