@@ -16,8 +16,11 @@
     ],
     "pre_uninstall": [
         "if ($cmd -in 'uninstall') {",
-        "    foreach ($i in (Get-ChildItem \"$dir\\Fluent-Refresh*.*\")) {",
-        "        Remove-Item \"$env:ProgramFiles\\Open-Shell\\Skins\\$($i.Name)\" -Recurse -Force",
+        "    if (!(Test-Path \"$env:ProgramFiles\\Open-Shell\")) { continue }",
+        "    else {",
+        "        foreach ($i in (Get-ChildItem \"$dir\\Fluent-Refresh*.*\")) {",
+        "            Remove-Item \"$env:ProgramFiles\\Open-Shell\\Skins\\$($i.Name)\" -Recurse -Force",
+        "        }",
         "    }",
         "}"
     ],
