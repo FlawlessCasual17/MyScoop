@@ -18,7 +18,7 @@
         "64bit": {
             "url": "https://codeberg.org/tenacityteam/tenacity/releases/download/v1.3-beta3-1/tenacity-win-v1.3-beta3-x86_64.zip",
             "hash": "ce86d558c23ed1630bdae4e1ec9cf1be8c500e0844153a4fad9abaf855ddf6a4",
-            "extract_dir": "tenacit-win-v1.3-beta3-x86_64"
+            "extract_dir": "tenacity-win-v1.3-beta3-x86_64"
         }
     },
     "shortcuts": [
