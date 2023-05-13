@@ -8,7 +8,7 @@
     "installer": {
         "script": [
             "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-            "Start-Process \"$dir\\$fname\" -Wait -Verb 'RunAs' -Args @('in', '--am', '--confirm-command', '--al')",
+            "Start-Process \"$dir\\$fname\" -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -Args @('in', '--am', '--confirm-command', '--al')",
             "Remove-Item \"$dir\\$fname\""
         ]
     },
