@@ -1,5 +1,5 @@
 {
-    "version": "1.0.5",
+    "version": "1.1.0",
     "homepage": "https://github.com/srwi/EverythingToolbar",
     "description": "Everything integration for the Windows taskbar.",
     "license": "MIT",
@@ -12,11 +12,11 @@
         "everything": "extras/everything"
     },
     "url": [
-        "https://github.com/srwi/EverythingToolbar/releases/download/1.0.5/EverythingToolbar-1.0.5.msi",
+        "https://github.com/srwi/EverythingToolbar/releases/download/1.1.0/EverythingToolbar-1.1.0.msi",
         "https://github.com/srwi/EverythingToolbar/files/8919288/EverythingToolbar_install_uninstall.zip"
     ],
     "hash": [
-        "d1bbf650adf1ea2786bdd6944b746f762db134ef6aa02225a746e35731141e8a",
+        "deaef3e58fe14a67e90578b9d4d8e026dce3181c1ec21a35d5bf8f7d07a6985a",
         "f78117a74a924cfed75a304962b251add651f4e87f9b4a552b216e2c9bcba37a"
     ],
     "pre_install": [
