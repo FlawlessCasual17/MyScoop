@@ -1,5 +1,5 @@
 {
-    "version": "7.18.0.22",
+    "version": "nightly",
     "homepage": "https://www.icloud.com/",
     "description": "The official Windows 10/11 client for iCloud.",
     "license": {
@@ -7,7 +7,6 @@
         "url": "https://www.apple.com/legal/internet-services/terms/site.html"
     },
     "url": "https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe",
-    "hash": "1100052f27c8ebf6eea57b05682eb4a5a75efd50d7ed1c943bd0108acdc5e692",
     "pre_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "if ((Get-WindowsCapability -Online -Name 'Media.WindowsMediaPlayer*').State -ne 'Installed') {",
