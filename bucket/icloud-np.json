@@ -22,7 +22,7 @@
     "pre_uninstall": [
         "if ($cmd -eq 'uninstall') {",
         "    if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "    Start-Process 'msiexec' -Wait -Verb 'RunAs' -Args '/I{11727D12-D910-486F-9B36-B496F4AB334D}'",
+        "    Start-Process 'msiexec' -Wait -Verb 'RunAs' -Args @('/i{11727D12-D910-486F-9B36-B496F4AB334D}', '/qn')",
         "}"
     ]
 }
