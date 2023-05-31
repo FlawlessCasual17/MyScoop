@@ -1,13 +1,13 @@
 {
-    "version": "2.16.9",
+    "version": "2.17.2",
     "homepage": "https://imazing.com/",
     "description": "An app that lets you manage your iPhone, iPod, or iPad without iTunes.",
     "license": {
         "identifier": "Shareware",
         "url": "https://imazing.com/terms-and-conditions"
     },
-    "url": "https://downloads.imazing.com/windows/iMazing/2.16.9/iMazing_2.16.9.exe",
-    "hash": "4bc641cab1cf7260b55cd2564db529b2eed88d266def0ea7c0f587db5f32498c",
+    "url": "https://downloads.imazing.com/windows/iMazing/2.17.2/iMazing_2.17.2.exe",
+    "hash": "f63cb91b25ce5d81072333fc7a2c2e27b3de81492dd0ba13b4410b3764924314",
     "innosetup": true,
     "pre_install": [
         "if ($architecture -eq '32bit') {",
