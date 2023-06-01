@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://www.touch-portal.com/downloads/TouchPortal_Setup_release.exe",
-            "hash": "148c81e517f87cf42617aede220874b7b3f4149c5851aaf75cac3194c8f38a8d"
+            "hash": "e43016bc99f41a5af7c09e9898057bb2c5ecc817f3a39857f5f7ec6aef3635c0"
         }
     },
     "innosetup": true,
