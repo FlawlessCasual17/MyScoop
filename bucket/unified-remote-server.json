@@ -85,7 +85,7 @@
         "    Start-Process \"$dir\\RemoteServerWin.exe\" -Wait -Verb 'RunAs' -Args '/unregisterService'",
         "    Write-Host 'Uninstalling Unified Virtual HID...'",
         "    Write-Host 'Removing Windows Firewall exceptions...'",
-        "    $arg1 = @('firewall', 'delete', 'allowedprogram', \"$dir\\\\RemoteServerWin.exe\")",
+        "    $arg1 = @('firewall', 'delete', 'allowedprogram', \"$dir\\RemoteServerWin.exe\")",
         "    $arg2 = @('advfirewall', 'firewall', 'delete', 'rule', 'name=Unified Remote', 'dir=out')",
         "    $arg3 = @('advfirewall', 'firewall', 'delete', 'rule', 'name=Unified Remote', 'dir=in')",
         "    foreach ($argument in $arg1, $arg2, $arg3) {",
