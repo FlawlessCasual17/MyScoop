@@ -1,0 +1,30 @@
+{
+    "version": "3.1.12",
+    "homepage": "https://www.touch-portal.com/",
+    "description": "An app that lets you control your desktop software and machine with your mobile device. (Desktop portion.)",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://www.touch-portal.com/downloads/TouchPortal_Setup_release.exe",
+            "hash": "148c81e517f87cf42617aede220874b7b3f4149c5851aaf75cac3194c8f38a8d"
+        }
+    },
+    "innosetup": true,
+    "shortcuts": [
+        [
+            "TouchPortal.exe",
+            "TouchPortal"
+        ]
+    ],
+    "checkver": {
+        "regex": "v([\\d.]+)\\s*build\\s([\\d.]+)",
+        "replace": "$1.$2"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.touch-portal.com/downloads/TouchPortal_Setup_release.exe"
+            }
+        }
+    }
+}
