@@ -108,7 +108,7 @@
         "    $arg2 = @('advfirewall', 'firewall', 'delete', 'rule', 'name=Unified Remote', 'dir=out')",
         "    $arg3 = @('advfirewall', 'firewall', 'delete', 'rule', 'name=Unified Remote', 'dir=in')",
         "    foreach ($argument in @($arg1, $arg2, $arg3)) {",
-        "        Start-Process 'netsh' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -Args $argument",
+        "        Start-Process 'netsh' -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -Args @($argument)",
         "    }",
         "    Write-Host 'Done!'",
         "} catch {",
