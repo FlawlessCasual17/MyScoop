@@ -7,6 +7,7 @@
         "url": "https://www.unifiedremote.com/terms"
     },
     "notes": [
+        "NOTE: Unified Remote requires all of these to be installed so it can work properly.",
         "If you want to add/remove firewall exceptions, run:",
         "$dir\\add_windows_firewall_exceptions.cmd",
         "$dir\\remove_windows_firewall_exceptions.cmd",
