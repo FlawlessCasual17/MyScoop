@@ -95,6 +95,7 @@
         "Server.config"
     ],
     "pre_uninstall": [
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "try {",
         "    # Removing Unified Remote releated services, drivers, and firewall modifications.",
         "    Write-Host 'Removing Unified Remote server service...'",
