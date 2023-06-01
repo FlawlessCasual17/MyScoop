@@ -2,7 +2,23 @@
     "version": "3.13.0.2501",
     "description": "The official server part for the Unified Remote, the remote control for your computer.",
     "homepage": "https://www.unifiedremote.com/",
-    "license": "Freeware",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://www.unifiedremote.com/terms"
+    },
+    "notes": [
+        "If you want to add/remove firewall exceptions, run:",
+        "$dir\\add_windows_firewall_exceptions.cmd",
+        "$dir\\remove_windows_firewall_exceptions.cmd",
+        "",
+        "If you want to add/remove the Unified Remote server service, run:",
+        "$dir\\add_windows_firewall_exceptions.cmd",
+        "$dir\\remove_windows_firewall_exceptions.cmd",
+        "",
+        "If you want to add/remove the Unified Virtual HID driver, run:",
+        "$dir\\uvhid-Install.bat",
+        "$dir\\uvhid-Remove.bat"
+    ],
     "suggest": {
         "vcredist": "extras/vcredist"
     },
@@ -83,7 +99,8 @@
         "    Write-Host 'Removing Unified Remote server service...'",
         "    Start-Process 'net' -Wait -Verb 'RunAs' -Args @('stop', 'RemoteServerWin')",
         "    Start-Process \"$dir\\RemoteServerWin.exe\" -Wait -Verb 'RunAs' -Args '/unregisterService'",
-        "    Write-Host 'Uninstalling Unified Virtual HID...'",
+        "    Write-Host 'Uninstalling Unified Virtual HID driver...'",
+        "    Start-Process \"$dir\\uvhid\\uvhid.exe\" -Wait -Verb 'RunAs' -Args 'remove' -WorkingDirectory \"$dir\\uvhid\"",
         "    Write-Host 'Removing Windows Firewall exceptions...'",
         "    $arg1 = @('firewall', 'delete', 'allowedprogram', \"$dir\\RemoteServerWin.exe\")",
         "    $arg2 = @('advfirewall', 'firewall', 'delete', 'rule', 'name=Unified Remote', 'dir=out')",
