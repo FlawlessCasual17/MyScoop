@@ -17,7 +17,8 @@
         "",
         "If you want to add/remove the Unified Virtual HID driver, run:",
         "$dir\\uvhid-Install.bat",
-        "$dir\\uvhid-Remove.bat"
+        "$dir\\uvhid-Remove.bat",
+        ""
     ],
     "suggest": {
         "vcredist": "extras/vcredist"
