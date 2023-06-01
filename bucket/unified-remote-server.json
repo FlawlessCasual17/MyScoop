@@ -80,6 +80,7 @@
         "    }",
         "    # Create configuration files.",
         "    foreach ($extension in 'log', 'config') { New-Item \"$dir\\Server.$extension\" | Out-Null }",
+        "    New-Item \"$dir\\Service.log\" | Out-Null",
         "",
         "} catch {",
         "    Write-Host \"Something is wrong`n$_\"",
