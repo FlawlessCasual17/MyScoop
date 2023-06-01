@@ -94,7 +94,8 @@
     ],
     "persist": [
         "Server.log",
-        "Server.config"
+        "Server.config",
+        "Service.log"
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
