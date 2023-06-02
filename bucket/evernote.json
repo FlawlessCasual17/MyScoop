@@ -21,8 +21,8 @@
     ],
     "checkver": {
         "script": [
-            "$userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'",
-            "(Invoke-RestMethod 'https://evernote.com/download' -UserAgent $userAgent) -match '(?<File>Evernote-(?<Ver>[\\d.]+)-win-ddl-ga-(?<Build>[\\w-]+)-setup\\.exe)' | Out-Null",
+            "$ua = [Microsoft.PowerShell.Commands.PSUserAgent]::Chrome",
+            "(Invoke-RestMethod 'https://evernote.com/download' -UserAgent $ua) -match '(?<File>Evernote-(?<Ver>[\\d.]+)-win-ddl-ga-(?<Build>[\\w-]+)-setup\\.exe)' | Out-Null",
             "$getFile = $Matches['File']; $getVersion = $Matches['Ver']; $getBuild = $Matches['Build']",
             "Write-Output \"$getFile, $getVersion.$getBuild\""
         ],
