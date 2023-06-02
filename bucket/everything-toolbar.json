@@ -43,11 +43,9 @@
     "extract_dir": "EverythingToolbar",
     "checkver": {
         "script": [
-            "$ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'",
-            "$url = 'https://github.com/srwi/EverythingToolbar/wiki/Installation-per-user-(experimental)'",
-            "(Invoke-RestMethod $url -UserAgent $ua) -match 'files/(?<scriptVer>[\\w]+)' | Out-Null",
+            "(Invoke-RestMethod 'https://github.com/srwi/EverythingToolbar/wiki/Installation-per-user-(experimental)') -match 'files/(?<scriptVer>[\\w]+)' | Out-Null",
             "$scriptVersion = $Matches['scriptVer']",
-            "(Invoke-RestMethod 'https://github.com/srwi/EverythingToolbar/releases/latest' -UserAgent $ua) -match 'tag/(?<mainVer>[\\d.]+)' | Out-Null",
+            "(Invoke-RestMethod 'https://github.com/srwi/EverythingToolbar/releases/latest') -match 'tag/(?<mainVer>[\\d.]+)' | Out-Null",
             "$mainVersion = $Matches['mainVer']",
             "Write-Output \"$scriptVersion $mainVersion\""
         ],
