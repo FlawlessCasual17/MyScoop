@@ -1,6 +1,6 @@
 {
     "##": "The license will be inside the app directory after installation.",
-    "version": "11.20",
+    "version": "11.10",
     "homepage": "https://www.petges.lu",
     "description": "A Windows Explorer shell extension that allows users to easily change file and folder properties with a right-click.",
     "license": "Freeware",
@@ -24,7 +24,7 @@
         "12 = TURKISH",
         "13 = ENGLISH   (ONLY IF YOU NEED TO RESET THE 'messages.ini' FILE BACK TO ENGLISH.)"
     ],
-    "url": "https://www.petges.lu/pubfiles/ac-11_20.exe",
+    "url": "https://www.petges.lu/pubfiles/ac-11_10.exe",
     "hash": "md5:3c85013c4cf3c3bb411ce392d821d7c2",
     "innosetup": true,
     "architecture": {
@@ -83,7 +83,7 @@
         "url": "https://www.petges.lu/pubfiles/ac-$underscoreVersion.exe",
         "hash": {
             "url": "https://www.petges.lu/download/",
-            "regex": "<p>MD5\\sChecksum:\\s$md5</p>"
+            "regex": "$version\\s&#[\\d]+;\\sFULL\\sSETUP\\</a\\>\\</div\\>\\n\\</div\\>\\n+<p>(?:Size\\:\\s[\\d,]+\\s[\\w]+\\s/\\s)MD5\\sChecksum\\:\\s$md5"
         }
     }
 }
