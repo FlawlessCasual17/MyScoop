@@ -78,7 +78,7 @@
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "Start-Process 'regsvr32' -ArgumentList @('/u', \"$dir\\acshell.dll\", '/s') -Verb 'RunAs' -Wait; Stop-Process -Name 'explorer' -Force",
-        "Start-Sleep -Seconds 2"
+        "Stop-Process -Name 'dllhost' -Force; Start-Sleep -Seconds 2"
     ],
     "checkver": "Version\\s([\\w.]+)",
     "autoupdate": {
