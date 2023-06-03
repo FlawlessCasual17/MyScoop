@@ -10,7 +10,7 @@
         "IMPORTANT FOR NON-ENGLISH SPEAKERS!!!",
         "If you want this application translated to your native language, please run the following command:",
         "change-ac-language.ps1",
-        "`e[5mThe powershell script will prompt you to enter the number that corresponds to your native language.",
+        "** The powershell script will prompt you to enter the number that corresponds to your native language. **",
         "",
         "1 = CZECH",
         "2 = DANISH",
