@@ -71,7 +71,7 @@
         "Remove-Item \"$dir\\ac,$(($documents - $subtract) - 2).pdf\"",
         "$Value = $documents - $subtract",
         "for ($count = 0; $count -le ($documents - 3); $count++) {",
-        "    $OriginalValue = $Value + $count; $NewValue = $OriginalValue - 2; Rename-Item \"$dir\\ac,$OriginalValue.pdf\" \"ac,$NewValue.pdf\" -ErrorAction 'SilentlyContinue'",
+        "    $OriginalValue = $Value + $count; $NewValue = $OriginalValue - (1 + $count); Rename-Item \"$dir\\ac,$OriginalValue.pdf\" \"ac,$NewValue.pdf\" -ErrorAction 'SilentlyContinue'",
         "}",
         "Copy-Item \"$dir\\ac.pdf\" \"$dir\\ac,$documents.pdf\""
     ],
