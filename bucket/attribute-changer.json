@@ -67,11 +67,11 @@
     ],
     "post_install": [
         "$documents = (Get-ChildItem $dir -Filter '*.pdf').Length; $subtract = $documents - 5",
-        "Copy-Item \"$dir\\template.ini\" \"$dir\\messages,$documents.ini\"; Copy-Item \"$dir\\template.ini\" \"$dir\\messages.ini\"; Copy-Item \"$dir\\ac,$($documents - $subtract).pdf\" \"$dir\\ac.pdf\"",
-        "Remove-Item \"$dir\\ac,$($documents - $subtract).pdf\"",
+        "Copy-Item \"$dir\\template.ini\" \"$dir\\messages,$documents.ini\"; Copy-Item \"$dir\\template.ini\" \"$dir\\messages.ini\"; Copy-Item \"$dir\\ac,$(($documents - $subtract) - 2).pdf\" \"$dir\\ac.pdf\"",
+        "Remove-Item \"$dir\\ac,$(($documents - $subtract) - 2).pdf\"",
         "$Value = $documents - $subtract",
         "for ($count = 0; $count -le ($documents - 3); $count++) {",
-        "    $OriginalValue = $Value + $count; $NewValue = $OriginalValue - 1; Rename-Item \"$dir\\ac,$OriginalValue.pdf\" \"ac,$NewValue.pdf\" -ErrorAction 'SilentlyContinue'",
+        "    $OriginalValue = $Value + $count; $NewValue = $OriginalValue - 2; Rename-Item \"$dir\\ac,$OriginalValue.pdf\" \"ac,$NewValue.pdf\" -ErrorAction 'SilentlyContinue'",
         "}",
         "Copy-Item \"$dir\\ac.pdf\" \"$dir\\ac,$documents.pdf\""
     ],
