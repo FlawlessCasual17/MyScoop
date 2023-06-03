@@ -5,7 +5,8 @@
     "description": "A Windows Explorer shell extension that allows users to easily change file and folder properties with a right-click.",
     "license": "Freeware",
     "notes": [
-        "SORRY BRAZILIAN PORTUGUESE SPEAKERS, THE DEVELOPER CUT SUPPORT FOR THE LANGUAGE.",
+        "SORRY BRAZILIAN PORTUGUESE SPEAKERS, THE DEVELOPER CUT SUPPORT FOR YOUR LANGUAGE.",
+        "",
         "IMPORTANT FOR NON-ENGLISH SPEAKERS!!!",
         "If you want this application translated to your native language, please run the following command:",
         "change-ac-language.ps1",
