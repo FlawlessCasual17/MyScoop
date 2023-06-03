@@ -59,8 +59,14 @@
         "acmain.exe",
         "change-ac-language.ps1"
     ],
+    "shortcuts": [
+        [
+            "acmain.exe",
+            "Attribute Changer"
+        ]
+    ],
     "post_install": [
-        "$documents = (Get-ChildItem $dir -Filter '*.pdf').Length; $subtract = $documents - 5",
+        "$documents = (Get-ChildItem $dir -Filter '*.pdf').Length; $subtract = $documents - 4",
         "Copy-Item \"$dir\\template.ini\" \"$dir\\messages,$documents.ini\"; Copy-Item \"$dir\\template.ini\" \"$dir\\messages.ini\"; Copy-Item \"$dir\\ac,$(($documents - $subtract) - 1 ).pdf\" \"$dir\\ac.pdf\"",
         "Remove-Item \"$dir\\ac,$(($documents - $subtract) - 1 ).pdf\"",
         "$Value = $documents - $subtract",
