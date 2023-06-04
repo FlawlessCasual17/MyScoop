@@ -14,8 +14,8 @@
         "    if (!(Test-Path \"$persist_dir\\$f\")) {",
         "        Start-Process \"$dir\\3uTools.exe\" -WindowStyle 'Minimized' -Verb 'RunAs'",
         "        while (!(Test-Path \"$dir\\$f\")) { Start-Sleep -Seconds 2 }",
-        "        Start-Sleep -Seconds 2; Stop-Process -Name '3uTools' -Force",
-        "        Wait-Process -Name '3uTools'",
+        "        Start-Sleep -Seconds 2; Stop-Process '3uTools' -Force",
+        "        Wait-Process '3uTools' -Timeout 10",
         "    }",
         "}",
         "Remove-Item \"$dir\\cache\", \"$dir\\Download\" -Recurse -Force"
@@ -34,7 +34,7 @@
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }; Write-Host 'A GUI UNINSTALLATION PROMPT WILL POP UP IN A FEW SECONDS!'",
-        "Start-Process \"$dir\\uninstall.exe\" -Wait -Verb 'RunAs'; Start-Sleep -Seconds 2; Stop-Process -Name 'explorer' -Force",
+        "Start-Process \"$dir\\uninstall.exe\" -Wait -Verb 'RunAs'; Start-Sleep -Seconds 2; Stop-Process 'explorer' -Force",
         "foreach ($rkey in 'HKLM:\\SOFTWARE\\Classes\\PC3uTools', 'HKCU:\\SOFTWARE\\Classes\\iTunes.ipa\\shell', 'HKCU:\\SOFTWARE\\Classes\\PlistEditor.plist\\shell', 'HKCU:\\SOFTWARE\\Classes\\i4ap\\shell', 'HKCU:\\SOFTWARE\\Classes\\3uViewer.heic', 'HKCU:\\SOFTWARE\\Classes\\3uViewer.svg') {",
         "    Remove-Item $rkey -ErrorAction 'SilentlyContinue' -Recurse -Force",
         "}"
