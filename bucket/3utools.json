@@ -12,10 +12,10 @@
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "foreach ($f in 'record.db', 'setting.cfg') {",
         "    if (!(Test-Path \"$persist_dir\\$f\")) {",
-        "        Start-Process \"$dir\\3uTools.exe\" -Verb 'RunAs'",
+        "        Start-Process \"$dir\\3uTools.exe\" -WindowStyle 'Hidden' -Verb 'RunAs'",
         "        while (!(Test-Path \"$dir\\$f\")) { Start-Sleep -Milliseconds 5500 }",
         "        Stop-Process -Name '3uTools' -Force",
-        "        Remove-Item $dir -Include 'cache', 'Download' -Recurse",
+        "        Remove-Item $dir -Include 'cache', 'Download' -Recurse -Force",
         "    }",
         "}"
     ],
