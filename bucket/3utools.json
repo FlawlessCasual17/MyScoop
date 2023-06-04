@@ -15,7 +15,7 @@
         "        Start-Process \"$dir\\3uTools.exe\" -WindowStyle 'Hidden' -Verb 'RunAs'",
         "        while (!(Test-Path \"$dir\\$f\")) { Start-Sleep -Milliseconds 5500 }",
         "        Stop-Process -Name '3uTools' -Force",
-        "        Remove-Item $dir -Include 'cache', 'Download' -Recurse -Force",
+        "        Remove-Item \"$dir\\cache\", \"$dir\\Download\" -Recurse -Force",
         "    }",
         "}"
     ],
