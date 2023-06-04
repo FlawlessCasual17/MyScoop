@@ -15,6 +15,7 @@
         "        Start-Process \"$dir\\3uTools.exe\" -WindowStyle 'Minimized' -Verb 'RunAs'",
         "        while (!(Test-Path \"$dir\\$f\")) { Start-Sleep -Seconds 2 }",
         "        Start-Sleep -Seconds 2; Stop-Process -Name '3uTools' -Force",
+        "        Wait-Process -Name '3uTools'",
         "    }",
         "}",
         "Remove-Item \"$dir\\cache\", \"$dir\\Download\" -Recurse -Force"
