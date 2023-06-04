@@ -10,7 +10,7 @@
     "hash": "84f885bf443d5070412cb86c1c49b22963e65187000ba665c12b3c623ab59951",
     "pre_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "foreach ($f in 'record.db', 'setting.cfg', 'cache' 'Download') {",
+        "foreach ($f in @('record.db', 'setting.cfg', 'cache' 'Download')) {",
         "    if (!(Test-Path \"$persist_dir\\$f\")) {",
         "        Start-Process \"$dir\\3uTools.exe\" -WindowStyle 'Minimized' -Verb 'RunAs'",
         "        while (!(Test-Path \"$dir\\$f\")) { Start-Sleep -Seconds 2 }",
