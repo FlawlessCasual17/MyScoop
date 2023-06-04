@@ -13,7 +13,7 @@
         "foreach ($f in 'record.db', 'setting.cfg') {",
         "    if (!(Test-Path \"$persist_dir\\$f\")) {",
         "        Start-Process \"$dir\\3uTools.exe\" -WindowStyle 'Minimized' -Verb 'RunAs'",
-        "        while (!(Test-Path \"$dir\\$f\")) { Start-Sleep -Milliseconds 5500 }",
+        "        while (!(Test-Path \"$dir\\$f\")) { Start-Sleep -Seconds 2 }",
         "        Start-Sleep -Seconds 2; Stop-Process -Name '3uTools' -Force",
         "    }",
         "}",
