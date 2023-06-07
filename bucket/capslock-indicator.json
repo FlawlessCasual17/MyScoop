@@ -29,7 +29,7 @@
         "url": "https://cli.jonaskohl.de/!/download/$version#/cli.exe",
         "hash": {
             "url": "https://clireleases.jonaskohl.de/releases/api.php",
-            "regex": "$version\\/CLIv$version\\.exe\"\\],\"mirrors\"\\:\\[\\]\\},\"hashes\"\\:\\[\\{\"algo\"\\:\"md4\",\"value\"\\:\"[\\w]+\"\\},\\{\"algo\"\\:\"md5\",\"value\"\\:\"$md5"
+            "regex": "$version\\/CLIv$majorVersion-$version\\.exe\"\\],\"mirrors\":\\[\\]\\},\"hashes\":\\[\\{\"algo\"\\:\"md4\",\"value\"\\:\"[\\w]+\"\\},\\{\"algo\":\"md5\",\"value\":\"$md5"
         }
     }
 }
