@@ -23,7 +23,8 @@
         "}"
     ],
     "checkver": {
-        "github": "https://github.com/jonaskohl/CapsLockIndicator"
+        "url": "https://clireleases.jonaskohl.de/releases/api.php",
+        "jsonpath": "$[0].version"
     },
     "autoupdate": {
         "url": "https://cli.jonaskohl.de/!/download/$version#/cli.exe",
