@@ -31,8 +31,7 @@
         "hash": {
             "mode": "json",
             "url": "https://clireleases.jonaskohl.de/releases/api.php",
-            "jsonpath": "$[?(@.version == '$version')].hashes[?(@.algo == 'md5')].value",
-            "find": "$md5"
+            "jsonpath": "$[?(@.version == '$version')].hashes[?(@.algo == 'md5')].value"
         }
     }
 }
