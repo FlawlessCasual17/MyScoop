@@ -4,7 +4,7 @@
     "description": "Open Source VPN with AdBlocking Proxy.",
     "homepage": "https://windscribe.com/",
     "license": "GPL-2.0",
-    "url": "https://deploy.totallyacdn.com/desktop-apps/2.5.18/Windscribe_2.5.18.exe#/vpnsetup.exe",
+    "url": "https://deploy.totallyacdn.com/desktop-apps/2.5.18/Windscribe_2.5.18.exe#/windscribe-setup.exe",
     "hash": "a58515e3c3b350de864bfd41ebd570724efdffe44e17de571f78da74b5ef7475",
     "post_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
@@ -25,12 +25,12 @@
     ],
     "checkver": {
         "script": [
-            "$userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.26 Safari/537.36'",
-            "(Invoke-WebRequest 'https://windscribe.com/install/desktop/windows' -UserAgent $userAgent -MaximumRedirection 1 -Method 'Get').BaseResponse.RequestMessage.RequestUri.AbsoluteUri"
+            "$ua = [Microsoft.PowerShell.Commands.PSUserAgent]::Chrome",
+            "(Invoke-WebRequest 'https://windscribe.com/install/desktop/windows' -UserAgent $ua).BaseResponse.RequestMessage.RequestUri.AbsoluteUri"
         ],
         "regex": "/desktop-apps/([\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://deploy.totallyacdn.com/desktop-apps/$version/Windscribe_$version.exe#/vpnsetup.exe"
+        "url": "https://deploy.totallyacdn.com/desktop-apps/$version/Windscribe_$version.exe#/windscribe-setup.exe"
     }
 }
