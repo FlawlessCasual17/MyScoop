@@ -15,9 +15,10 @@
         "Start-Process \"$dir\\windscribe-setup.exe\" -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -Args '-silent'",
         "Stop-Process -Name 'Windscribe' -Force -ErrorAction SilentlyContinue",
         "Stop-Service -Name 'WindscribeService' -Force -ErrorAction SilentlyContinue",
-        "Remove-Item \"$dir\\windscribe-setup.exe\"; Out-Null (New-Item \"$dir\\Windscribe\" -ItemType 'Junction' -Target \"$env:ProgramFiles\\Windscribe\")"
+        "Out-Null (New-Item \"$dir\\Windscribe\" -ItemType 'Junction' -Target \"$env:ProgramFiles\\Windscribe\")",
+        "Remove-Item \"$dir\\windscribe-setup.exe\", \"$dir\\Windscribe\\uninstall.exe\""
     ],
-    "env_add_path": "Windscribe",
+    "bin": "Windscribe\\windscribe-cli.exe",
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "Stop-Service -Name 'WindscribeService' -Force -ErrorAction SilentlyContinue",
