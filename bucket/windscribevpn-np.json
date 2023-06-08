@@ -8,11 +8,11 @@
     "hash": "f5534fd03b47615cac91ddbcbd204a4ce35fe5ad2d420f9fde019f4612db0281",
     "post_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process \"$dir\\vpnsetup.exe\" -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -ArgumentList @('-silent', '-dir', \"$dir\\Windscribe\")",
+        "Start-Process \"$dir\\windscribe-setup.exe\" -Wait -Verb 'RunAs' -WindowStyle 'Hidden' -Args @('-silent', '-dir', \"$dir\\WindscribeVPN\")",
         "Stop-Process -Name \"Windscribe\" -Force -ErrorAction SilentlyContinue",
         "Stop-Service -Name \"WindscribeService\" -Force -ErrorAction SilentlyContinue",
         "Remove-Item \"$Env:Public\\Desktop\\Windscribe.lnk\" -Force",
-        "Remove-Item \"$dir\\vpnsetup.exe\""
+        "Remove-Item \"$dir\\windscribe-setup.exe\""
     ],
     "pre_uninstall": [
         "$currentDir = $dir.Replace($version, 'current')",
@@ -20,7 +20,7 @@
         "Stop-Service -Name \"WindscribeService\" -Force -ErrorAction SilentlyContinue",
         "Remove-Service -Name \"WindscribeService\" -ErrorAction SilentlyContinue",
         "Stop-Process -Name \"Windscribe\" -Force -ErrorAction SilentlyContinue",
-        "Start-Process \"$currentDir\\Windscribe\\uninstall.exe\" -WindowStyle 'Hidden' -Verb 'RunAs' -ArgumentList '/VERYSILENT' -Wait",
+        "Start-Process \"$currentDir\\Windscribe\\uninstall.exe\" -Wait -WindowStyle 'Hidden' -Verb 'RunAs' -Args '/VERYSILENT'",
         "Start-Sleep -Seconds 2"
     ],
     "checkver": {
