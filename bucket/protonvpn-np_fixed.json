@@ -9,7 +9,7 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://protonvpn.com/download/ProtonVPN_v3.0.5.exe#/setup.exe",
+            "url": "https://download.protonvpn.net/download/ProtonVPN_v3.0.5.exe#/setup.exe",
             "hash": "04d3b827e5a2c3899d797d2c5a19433fda43c3abc4e3e8b3fa5548c525973e4f"
         }
     },
@@ -36,7 +36,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://protonvpn.com/download/ProtonVPN_v$version.exe#/setup.exe",
+                "url": "https://download.protonvpn.net/download/ProtonVPN_v$version.exe#/setup.exe",
                 "hash": {
                     "url": "https://protonvpn.com/download/windows-releases.json",
                     "jsonpath": "$.Categories[?(@.Name == 'Stable')].Releases[?(@.Version == '$version')].File.SHA256CheckSum"
