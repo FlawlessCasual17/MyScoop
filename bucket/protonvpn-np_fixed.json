@@ -39,7 +39,7 @@
                 "url": "https://protonvpn.com/download/ProtonVPN_v$version.exe#/setup.exe",
                 "hash": {
                     "url": "https://protonvpn.com/download/windows-releases.json",
-                    "jsonpath": "$.Categories[?(@.Name == 'Stable')].Releases[?(@.Version == '$version')].SHA256CheckSum"
+                    "jsonpath": "$.Categories[?(@.Name == 'Stable')].Releases[?(@.Version == '$version')].File.SHA256CheckSum"
                 }
             }
         }
