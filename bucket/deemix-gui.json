@@ -16,11 +16,11 @@
             ]
         }
     },
-    "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" $dir; Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
+    "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\\deemix-gui\"; Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
     "bin": "deemix-server.exe",
     "shortcuts": [
         [
-            "deemix-gui.exe",
+            "deemix-gui\\deemix-gui.exe",
             "deemix-gui"
         ]
     ]
