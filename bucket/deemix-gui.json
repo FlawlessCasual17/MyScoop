@@ -3,9 +3,7 @@
     "homepage": "https://archive.org/details/deemix",
     "description": "A Deezer downloader library and application.",
     "license": "GPL-3.0-only",
-    "notes": [
-        "You may have to run the server binary if deemix-gui fails to run."
-    ],
+    "notes": "You may have to run the server binary if deemix-gui fails to run.",
     "architecture": {
         "64bit": {
             "url": [
