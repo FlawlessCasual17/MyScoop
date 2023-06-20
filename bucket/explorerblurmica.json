@@ -4,7 +4,7 @@
     "description": "Add a background Blur effect or Acrylic or Mica effect to explorer for Windows 10 and Windows 11.",
     "license": "LGPL-3.0-or-later",
     "notes": [
-        "To register ExplorerBlurMica into your explorer, use",
+        "To register/unregister ExplorerBlurMica into your explorer, use",
         "register-explorerblurmica.cmd",
         "unregister-explorerblurmica.cmd"
     ],
@@ -17,6 +17,7 @@
     "extract_dir": "Release",
     "pre_install": [
         "ensure $persist_dir | Out-Null; Remove-Item \"$dir\\*.cmd\"",
+        "Copy-Item \"$persist_dir\\config.ini\" \"$dir\\config.ini\" -ErrorAction 'SilentlyContinue'",
         "$content1 = @'",
         "@echo off",
         "fltmc >nul 2>&1 || (",
@@ -26,7 +27,7 @@
         "    )",
         "    exit 0",
         ")",
-        "regsvr42 \"%~dp0ExplorerBlurMica.dll\" /s && echo ExplorerBlurMica was successfully registered! && powershell -ex \"unrestricted\" -c \"Stop-Process -Name 'explorer' -Force\"",
+        "regsvr32 \"%~dp0ExplorerBlurMica.dll\" /s && echo ExplorerBlurMica was successfully registered! && powershell -ex \"unrestricted\" -c \"Stop-Process -Name 'explorer' -Force\"",
         "exit /b",
         "'@",
         "",
@@ -39,14 +40,13 @@
         "    )",
         "    exit 0",
         ")",
-        "regsvr42 /u \"%~dp0ExplorerBlurMica.dll\" /s && echo ExplorerBlurMica was successfully unregistered! && powershell -ex \"unrestricted\" -c \"Stop-Process -Name 'explorer' -Force\"",
+        "regsvr32 /u \"%~dp0ExplorerBlurMica.dll\" /s && echo ExplorerBlurMica was successfully unregistered! && powershell -ex \"unrestricted\" -c \"Stop-Process -Name 'explorer' -Force\"",
         "exit /b",
         "'@",
         "",
         "Set-Content \"$dir\\register-explorerblurmica.cmd\" $content1 -Encoding 'utf8'",
         "Set-Content \"$dir\\unregister-explorerblurmica.cmd\" $content2 -Encoding 'utf8'",
-        "Set-Content \"$dir\\Open-ExplorerBlurMica-Folder.cmd\" '@start explorer \"%~dp0\"' -Encoding 'utf8'",
-        "Copy-Item \"$persist_dir\\config.ini\" \"$dir\\config.ini\" -ErrorAction 'SilentlyContinue'"
+        "Set-Content \"$dir\\Open-ExplorerBlurMica-Folder.cmd\" '@start explorer \"%~dp0\"' -Encoding 'utf8'"
     ],
     "bin": [
         "register-explorerblurmica.cmd",
@@ -58,7 +58,12 @@
             "Open ExplorerBlurMica Folder"
         ]
     ],
-    "pre_uninstall": "Copy-Item \"$dir\\config.ini\" \"$persist_dir\\config.ini\" -ErrorAction 'SilentlyContinue'",
+    "pre_uninstall": [
+        "Copy-Item \"$dir\\config.ini\" \"$persist_dir\\config.ini\" -ErrorAction 'SilentlyContinue'",
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "Start-Process 'regsvr32' -Wait -Verb 'RunAs' -Args @('/u', \"$dir\\ExplorerBlurMica.dll\"); Stop-Process -Name 'explorer' -Forces",
+        "Start-Sleep -Seconds 2"
+    ],
     "checkver": "github",
     "autoupdate": {
         "architecture": {
