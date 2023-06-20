@@ -33,10 +33,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://sourceforge.net/projects/davmail/files/davmail/6.1.0/davmail-6.1.0-3423-windows-standalone.zip",
+                "url": "https://sourceforge.net/projects/davmail/files/davmail/$preReleaseVersion/davmail-$version-windows-standalone.zip",
                 "hash": {
                     "url": "https://sourceforge.net/projects/davmail/rss?path=/davmail",
-                    "regex": ""
+                    "xpath": "/"
                 }
             }
         }
