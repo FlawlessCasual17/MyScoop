@@ -19,7 +19,7 @@
     },
     "pre_install": [
         "Get-ChildItem \"$dir\\*.exe\" | Rename-Item -NewName { $_ -replace ('64', '') }",
-        "Set-Content \"$dir\\remove-davmail-service.ps1\" \"Stop-Service -Name 'DavMail' -Force; Remove-Service -Name 'DavMail'; Write-Output 'DavMail service was unregistered!'\" -Encoding 'utf8'",
+        "Set-Content \"$dir\\remove-davmail-service.ps1\" \"Stop-Service -Name 'DavMail' -Force -Verbose; Remove-Service -Name 'DavMail' -Verbose; Write-Output 'DavMail service was unregistered!'\" -Encoding 'utf8'",
         "Set-Content \"$dir\\add-davmail-service.ps1\" '& \"$PSScriptRoot\\davmailservice.exe\" ''--WinRun4J:RegisterService''; Write-Output ''DavMail service was registered!''' -Encoding 'utf8'"
     ],
     "bin": [
