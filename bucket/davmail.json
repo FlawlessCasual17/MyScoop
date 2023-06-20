@@ -34,6 +34,11 @@
             "DavMail"
         ]
     ],
+    "pre_uninstall": [
+        "if (Get-Service -Name 'DavMail' -ErrorAction 'SilentlyContinue') {",
+        "    Stop-Service -Name 'DavMail' -Force -Verbose; Remove-Service -Name 'DavMail' -Verbose; Write-Output 'DavMail service was unregistered!'",
+        "}"
+    ],
     "checkver": {
         "sourceforge": "davmail",
         "regex": "davmail-([\\d.-]+)-windows"
