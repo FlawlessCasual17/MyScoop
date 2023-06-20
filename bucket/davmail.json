@@ -3,6 +3,14 @@
     "homepage": "http://davmail.sourceforge.net/",
     "description": "A POP/IMAP/SMTP/Caldav/Carddav/LDAP exchange gateway allowing users to use any mail/calendar client with an Exchange server, even from the internet or behind a firewall through Outlook Web Access (OWA).",
     "license": "GPL-2.0",
+    "notes": [
+        "To register the DavMail service, run either of the following commands:",
+        "davmailservice --WinRun4J:RegisterService",
+        "add-davmail-service",
+        "",
+        "To register the DavMail service, run:",
+        "remove-davmail-service"
+    ],
     "architecture": {
         "64bit": {
             "url": "https://sourceforge.net/projects/davmail/files/davmail/6.1.0/davmail-6.1.0-3423-windows-standalone.zip",
