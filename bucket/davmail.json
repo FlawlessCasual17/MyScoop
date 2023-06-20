@@ -1,5 +1,5 @@
 {
-    "version": "6.1.0-3423",
+    "version": "1",
     "homepage": "http://davmail.sourceforge.net/",
     "description": "A POP/IMAP/SMTP/Caldav/Carddav/LDAP exchange gateway allowing users to use any mail/calendar client with an Exchange server, even from the internet or behind a firewall through Outlook Web Access (OWA).",
     "license": "GPL-2.0",
