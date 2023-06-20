@@ -36,8 +36,7 @@
                 "url": "https://sourceforge.net/projects/davmail/files/davmail/$matchHead/davmail-$version-windows-standalone.zip",
                 "hash": {
                     "url": "https://sourceforge.net/projects/davmail/rss?path=/davmail",
-                    "xpath": "/content[?(@.url == '$basename/download')]/hash",
-                    "regex": "$md5"
+                    "xpath": "/content[?(@.url == '$basename/download')]/hash"
                 }
             }
         }
