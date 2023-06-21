@@ -17,7 +17,7 @@
         "davmailservice --WinRun4J:RegisterService",
         "add-davmail-service",
         "",
-        "To register the DavMail service, run:",
+        "To unregister the DavMail service, run:",
         "remove-davmail-service",
         ""
     ],
