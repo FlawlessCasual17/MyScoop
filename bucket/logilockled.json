@@ -1,8 +1,8 @@
 {
     "version": "1.5",
     "homepage": "https://github.com/infra223/LogiLockLED",
-    "description": "",
-    "license": "",
+    "description": "A system tray application to monitor Num, Caps and Scroll lock states using icons in system tray, on screen display/popups and Logitech users can change the key backlight.",
+    "license": "MIT",
     "architecture": {
         "64bit": {
             "url": "https://github.com/infra223/LogiLockLED/releases/download/v1.5/Setup.LogiLockLED_1.5.exe",
