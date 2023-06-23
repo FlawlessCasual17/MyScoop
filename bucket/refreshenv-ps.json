@@ -1,5 +1,5 @@
 {
-    "version": "2023.04.05",
+    "version": "0.0.1",
     "homepage": "https://www.powershellgallery.com/packages/RefreshEnv",
     "description": "Provides a command to refresh environment variables in PowerShell/pwsh.",
     "license": "Freeware",
