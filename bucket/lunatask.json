@@ -1,0 +1,33 @@
+{
+    "version": "1.7.0",
+    "homepage": "https://lunatask.app/",
+    "description": "An all-in-one encrypted to-do list, notebook, habit and mood tracker, and journaling app. Built with ADHD brains in mind",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://lunatask.app/terms"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://lunatask.app/download/Lunatask-Setup-1.7.0.exe#/dl.zip",
+            "hash": "f17391d0f7d8d2ed7f7280227068cb856e43077e1ac8db42b3e0949d2609837d"
+        }
+    },
+    "pre_install": "Remove-Item \"$dir\\*\" -Exclude '$PLUGINSDIR' -Recurse; Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" $dir; Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
+    "shortcuts": [
+        [
+            "Lunatask.exe",
+            "Lunatask"
+        ]
+    ],
+    "checkver": {
+        "url": "https://lunatask.app/releases",
+        "regex": "releases/([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://lunatask.app/download/Lunatask-Setup-$version.exe#/dl.zip"
+            }
+        }
+    }
+}
