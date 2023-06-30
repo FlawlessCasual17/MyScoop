@@ -12,7 +12,7 @@
             "hash": "f17391d0f7d8d2ed7f7280227068cb856e43077e1ac8db42b3e0949d2609837d"
         }
     },
-    "pre_install": "Get-ChildItem \"$dir\\*\" -Exclude '$PLUGINSDIR' | Remove-Item -Recurse; Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" $dir; Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
+    "pre_install": "Get-Item \"$dir\\*\" -Exclude '$PLUGINSDIR' | Remove-Item -Recurse; Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" $dir; Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
     "shortcuts": [
         [
             "Lunatask.exe",
