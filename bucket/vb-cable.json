@@ -6,12 +6,7 @@
         "identifier": "Freeware",
         "url": "https://vb-audio.com/Services/licensing.htm"
     },
-    "notes": [
-        "If the pre_install/pre_uninstall script didn't work, you can manually install/uninstall the VBCable driver using the shims or the shortcuts.",
-        "",
-        "You can now remove these installers with,",
-        "scoop uninstall vb-cable"
-    ],
+    "notes": "If the pre_install/pre_uninstall script didn't work, you can manually install/uninstall the VBCable driver using the shims or the shortcuts.",
     "url": "https://download.vb-audio.com/Download_CABLE/VBCABLE_Driver_Pack43.zip",
     "hash": "66fd0a4d9f4896ff41632b7e3d53892c085c4561f53e8ae8d0f0bc10eedd1cdd",
     "architecture": {
