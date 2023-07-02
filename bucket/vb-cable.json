@@ -12,24 +12,26 @@
     "architecture": {
         "32bit": {
             "pre_install": [
-                "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }; & \"$dir\\VBCABLE_Setup.exe\" -i -h",
-                "Wait-Process -Name 'VBCABLE_Setup.exe' -Timeout 4"
+                "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+                "& \"$dir\\VBCABLE_Setup.exe\" -i -h; Wait-Process -Name 'VBCABLE_Setup.exe'"
             ],
             "pre_uninstall": [
                 "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-                "& \"$dir\\VBCABLE_Setup.exe\" -u -h; Wait-Process -Name 'VBCABLE_Setup.exe' -Timeout 4",
-                "info 'Restarting explorer so the driver can be uninstalled properly...'; Stop-Process -Name 'explorer'; Start-Sleep -Seconds 2"
+                "& \"$dir\\VBCABLE_Setup.exe\" -u -h; Wait-Process -Name 'VBCABLE_Setup.exe'",
+                "info 'Restarting explorer so the driver can be uninstalled properly...'",
+                "Stop-Process -Name 'explorer'; Start-Sleep -Seconds 2"
             ]
         },
         "64bit": {
             "pre_install": [
-                "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }; & \"$dir\\VBCABLE_Setup_x64.exe\" -i -h",
-                "Wait-Process -Name 'VBCABLE_Setup_x64.exe' -Timeout 4"
+                "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+                "& \"$dir\\VBCABLE_Setup_x64.exe\" -i -h; Wait-Process -Name 'VBCABLE_Setup_x64.exe'"
             ],
             "pre_uninstall": [
                 "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-                "& \"$dir\\VBCABLE_Setup_x64.exe\" -u -h; Wait-Process -Name 'VBCABLE_Setup_x64.exe' -Timeout 4",
-                "info 'Restarting explorer so the driver can be uninstalled properly...'; Stop-Process -Name 'explorer'; Start-Sleep -Seconds 2"
+                "& \"$dir\\VBCABLE_Setup_x64.exe\" -u -h; Wait-Process -Name 'VBCABLE_Setup_x64.exe'",
+                "info 'Restarting explorer so the driver can be uninstalled properly...'",
+                "Stop-Process -Name 'explorer'; Start-Sleep -Seconds 2"
             ]
         }
     },
