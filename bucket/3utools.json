@@ -10,8 +10,8 @@
     "hash": "84f885bf443d5070412cb86c1c49b22963e65187000ba665c12b3c623ab59951",
     "pre_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Add-Type -AssemblyName 'UIAutomationClient'",
         "foreach ($f in @('record.db', 'setting.cfg', 'cache', 'Download')) {",
+        "    Add-Type -AssemblyName 'UIAutomationClient'",
         "    if (!(Test-Path \"$persist_dir\\$f\")) {",
         "        Start-Process \"$dir\\3uTools.exe\" -Verb 'RunAs'",
         "        $procHandle = [System.Windows.Automation.AutomationElement]::FromHandle((Get-Process -Name '3uTools').MainWindowHandle)",
