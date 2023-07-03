@@ -11,12 +11,8 @@
     "pre_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "foreach ($f in @('record.db', 'setting.cfg', 'cache', 'Download')) {",
-        "    Add-Type -AssemblyName 'UIAutomationClient'",
         "    if (!(Test-Path \"$persist_dir\\$f\")) {",
         "        Start-Process \"$dir\\3uTools.exe\" -Verb 'RunAs'",
-        "        $procHandle = [System.Windows.Automation.AutomationElement]::FromHandle((Get-Process -Name '3uTools').MainWindowHandle)",
-        "        $windowPattern = $procHandle.GetCurrentPattern([System.Windows.Automation.WindowPatternIdentifiers]::Pattern)",
-        "        # Forcefully Minimize 3uTools.exe",
         "        $windowPattern.SetWindowVisualState('Minimized')",
         "        while (!(Test-Path \"$dir\\$f\")) { Start-Sleep -Milliseconds 1312 }",
         "        Start-Sleep -Seconds 2; Stop-Process -Name '3uTools' -Force",
@@ -36,7 +32,7 @@
         "Download"
     ],
     "pre_uninstall": [
-        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }; Write-Host 'A GUI UN-INSTALLATION PROMPT WILL POP UP IN A FEW SECONDS!'",
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }; Write-Host 'A GUI UN-INSTALLATION PROMPT WILL POP UP IN A FEW SECONDS!' -B 'Red'",
         "Start-Process \"$dir\\uninstall.exe\" -Wait -Verb 'RunAs'; Start-Sleep -Seconds 2; Stop-Process -Name 'explorer' -Force",
         "$rkeys = @(",
         "'HKLM:\\SOFTWARE\\Classes\\PC3uTools', 'HKCU:\\SOFTWARE\\Classes\\iTunes.ipa\\shell',",
