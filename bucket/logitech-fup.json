@@ -30,10 +30,10 @@
     "autoupdate": {
         "architecture": {
             "32bit": {
-                "url": "https://download01.logi.com/web/ftp/pub/techsupport/keyboards/FirmwareUpdateTool_3.2.276959_x86.exe#/dl.rar"
+                "url": "https://download01.logi.com/web/ftp/pub/techsupport/keyboards/FirmwareUpdateTool_$version_x86.exe#/dl.rar"
             },
             "64bit": {
-                "url": "https://download01.logi.com/web/ftp/pub/techsupport/keyboards/FirmwareUpdateTool_3.2.276959_x64.exe#/dl.rar"
+                "url": "https://download01.logi.com/web/ftp/pub/techsupport/keyboards/FirmwareUpdateTool_$version_x64.exe#/dl.rar"
             }
         }
     }
