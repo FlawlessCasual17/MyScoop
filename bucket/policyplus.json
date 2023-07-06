@@ -5,13 +5,10 @@
     "license": "CC-BY-4.0",
     "url": "https://github.com/Fleex255/PolicyPlus/releases/download/June2021/PolicyPlus.exe",
     "hash": "md5:412e1ca22a531bb23f5878e6e3c0bb5b",
-    "pre_install": "Copy-Item \"$env:SystemRoot\\System32\\gpedit.msc\" \"$dir\\gpedit.msc\" -Force",
     "shortcuts": [
         [
             "PolicyPlus.exe",
-            "Policy Plus",
-            "",
-            "gpedit.msc"
+            "Policy Plus"
         ]
     ],
     "checkver": {
