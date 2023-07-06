@@ -3,7 +3,7 @@
     "homepage": "https://github.com/Fleex255/PolicyPlus",
     "description": "Local Group Policy Editor plus more, for all Windows editions.",
     "license": "CC-BY-4.0",
-    "url": "https://s3-us-west-2.amazonaws.com/policy-plus/Policy%20Plus.exe#/PolicyPlus.exe",
+    "url": "https://github.com/Fleex255/PolicyPlus/releases/download/June2021/PolicyPlus.exe",
     "hash": "md5:412e1ca22a531bb23f5878e6e3c0bb5b",
     "pre_install": "New-Item \"$dir\\icon.dll\" -ItemType 'HardLink' -Target \"$env:SystemRoot\\System32\\gpedit.dll\" | Out-Null",
     "shortcuts": [
@@ -18,15 +18,15 @@
         "script": [
             "$cont = Invoke-RestMethod 'https://s3-us-west-2.amazonaws.com/policy-plus/'",
             "$date = $cont.ListBucketResult.Contents['Key' -eq ('Policy Plus.exe' -or 'PolicyPlus.exe')].LastModified",
-            "$dateVersion = $date -replace ('\\:|-', '.')",
-            "Write-Output $dateVersion"
+            "$dateVersion = $date -replace ('\\:|-', '.'); $date = ([datetime]$date).toString('MMMMyyyy')",
+            "Write-Output \"$dateVersion $date\""
         ],
-        "regex": "([\\w.]+)"
+        "regex": "([\\w.]+)\\s(?<Date>[\\w]+)"
     },
     "autoupdate": {
-        "url": "https://s3-us-west-2.amazonaws.com/policy-plus/Policy%20Plus.exe#/PolicyPlus.exe",
+        "url": "https://github.com/Fleex255/PolicyPlus/releases/download/$matchDate/PolicyPlus.exe",
         "hash": {
-            "url": "$baseurl",
+            "url": "https://s3-us-west-2.amazonaws.com/policy-plus/",
             "regex": "$basename.*?\\</LastModified\\>\\<ETag\\>&quot;$md5"
         }
     }
