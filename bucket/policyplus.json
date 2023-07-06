@@ -1,5 +1,5 @@
 {
-    "version": "6.5",
+    "version": "2021",
     "homepage": "https://github.com/Fleex255/PolicyPlus",
     "description": "Local Group Policy Editor plus more, for all Windows editions.",
     "license": "CC-BY-4.0",
@@ -27,7 +27,7 @@
         "url": "https://s3-us-west-2.amazonaws.com/policy-plus/Policy%20Plus.exe#/PolicyPlus.exe",
         "hash": {
             "url": "$baseurl",
-            "regex": "$matchDate</LastModified><ETag>&quot;$md5"
+            "regex": "$matchDate\\</LastModified\\>\\<ETag\\>&quot;$md5"
         }
     }
 }
