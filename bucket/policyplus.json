@@ -19,15 +19,15 @@
             "$cont = Invoke-RestMethod 'https://s3-us-west-2.amazonaws.com/policy-plus/'",
             "$date = $cont.ListBucketResult.Contents['Key' -eq ('Policy Plus.exe' -or 'PolicyPlus.exe')].LastModified",
             "$dateVersion = $date -replace ('\\:|-', '.')",
-            "Write-Output \"$date $dateVersion\""
+            "Write-Output $dateVersion"
         ],
-        "regex": "(?<Date>[\\w\\:\\-.]+)\\s([\\w.]+)"
+        "regex": "([\\w.]+)"
     },
     "autoupdate": {
         "url": "https://s3-us-west-2.amazonaws.com/policy-plus/Policy%20Plus.exe#/PolicyPlus.exe",
         "hash": {
             "url": "$baseurl",
-            "regex": "\\</LastModified\\>\\<ETag\\>&quot;$md5"
+            "regex": "$basename.*?\\</LastModified\\>\\<ETag\\>&quot;$md5"
         }
     }
 }
