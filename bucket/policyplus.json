@@ -27,7 +27,7 @@
         "url": "https://s3-us-west-2.amazonaws.com/policy-plus/Policy%20Plus.exe#/PolicyPlus.exe",
         "hash": {
             "url": "$baseurl",
-            "regex": "$matchDate\\</LastModified\\>\\<ETag\\>&quot;$md5"
+            "regex": "\\</LastModified\\>\\<ETag\\>&quot;$md5"
         }
     }
 }
