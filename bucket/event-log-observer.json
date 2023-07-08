@@ -17,7 +17,8 @@
     ],
     "checkver": {
         "script": [
-            "# Using a custom script to get the date when it was last modified, due to the version provided in the website (eg. '1.6') being unreliable for updates.",
+            "# Using a custom script to get the date for when it was last modified, due to the",
+            "# version provided in the website (eg. '1.6') being unreliable for future updates.",
             "[datetime][string]$date = (Invoke-WebRequest 'https://www.lizard-labs.com/Downloads/EventLogObserverSetup.msi').Headers['Last-Modified']",
             "Write-Output ($date.ToString('yyyy.MM.dd-HH.mm.ss'))"
         ],
