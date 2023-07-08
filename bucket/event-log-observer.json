@@ -1,0 +1,12 @@
+{
+    "version": "1.6",
+    "homepage": "https://www.lizard-labs.com/",
+    "description": "An easy and customizable tool for exploring, and analyzing Windows event logs.",
+    "license": "",
+    "url": "https://www.lizard-labs.com/Downloads/EventLogObserverSetup.msi",
+    "hash": "7d2c013988b21a10aa8f1532515652e533dfa18da8f725283174f4bcf296b4be",
+    ""
+    "shortcuts": [],
+    "checkver": "<strong>([\\d.]+).*?\"/event_log_observer\\.aspx",
+    "autoupdate": {}
+}
