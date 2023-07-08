@@ -13,7 +13,7 @@
     ],
     "checkver": {
         "url": "https://eventlogxp.com/version-history.html",
-        "regex": "<h4>([\\d.]+)\\s\\("
+        "regex": ">([\\d.]+)\\s\\("
     },
     "autoupdate": {
         "url": "https://eventlogxp.com/download/elex_setup.exe"
