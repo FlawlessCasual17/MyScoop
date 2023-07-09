@@ -6,7 +6,7 @@
         "identifier": "Shareware",
         "url": "https://lizard-labs.com/Docs/TERMS_AND_CONDITIONS.html"
     },
-    "url": "https://www.lizard-labs.com/Downloads#/remove.this",
+    "url": "https://github.com/Zliced13/MyScoop/blob/master/bucket/vb-cable.json#/remove.this",
     "hash": "7d2c013988b21a10aa8f1532515652e533dfa18da8f725283174f4bcf296b4be",
     "pre_install": [
         "# Manually downloading the file with `Invoke-WebRequest` because when scoop downloads the file,",
@@ -31,6 +31,6 @@
         "regex": "([\\d.-]+)"
     },
     "autoupdate": {
-        "url": "https://www.lizard-labs.com/Downloads#/remove.this"
+        "url": "https://github.com/Zliced13/MyScoop/blob/master/bucket/vb-cable.json#/remove.this"
     }
 }
