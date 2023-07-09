@@ -14,10 +14,10 @@
         "$url = 'https://www.lizard-labs.com/Downloads/EventLogObserverSetup.msi'",
         "Remove-Item \"$dir\\*\"; warn 'Downloading EventLogObserverSetup.msi...'",
         "Invoke-WebRequest $url -OutFile \"$dir\\EventLogObserverSetup.msi\"; info 'Checking hash for EventLogObserverSetup.msi...'",
-        "$hash = (Get-FileHash \"$dir\\EventLogObserverSetup.msi\").Hash;",
+        "$hash = (Get-FileHash \"$dir\\EventLogObserverSetup.msi\").Hash.ToLower();",
         "if (!($hash)) { error 'HASH CHECK FAILED!'; error 'Please try again or create an issue for this bug!'; break }",
         "elseif ($hash) { Write-Host 'Successfully calculated the hash!' -F 'Green'; info \"Sha256 Hash: $hash\" }",
-        "Expand-MsiArchive \"$dir\\EventLogObserverSetup.msi\" $dir -Removal; Remove-Item \"$dir\\updater.exe\""
+        "Expand-MsiArchive \"$dir\\EventLogObserverSetup.msi\" \"$dir\\Event Log Observer\" -Removal; Remove-Item \"$dir\\updater.exe\""
     ],
     "pre_uninstall": "if ($purge) { Remove-Item \"$env:USERPROFILE\\Event Log Observer\" -ErrorAction 'SilentlyContinue' -Recurse }",
     "checkver": {
