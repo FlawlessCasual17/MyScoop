@@ -10,7 +10,7 @@
     "hash": "7d2c013988b21a10aa8f1532515652e533dfa18da8f725283174f4bcf296b4be",
     "pre_install": [
         "Expand-MsiArchive \"$dir\\elob.msi_\" \"$env:USERPROFILE\\temp\" -Removal",
-        "Move-Item \"$env:USERPROFILE\\temp\\*\" $dir; Remove-Item \"$env:USERPROFILE\\temp\" -Recurse"
+        "Move-Item \"$env:USERPROFILE\\temp\\*\" $dir; Remove-Item \"$env:USERPROFILE\\temp\", \"$dir\\updater.exe\" -Recurse"
     ],
     "pre_uninstall": "if ($purge) { Remove-Item \"$env:USERPROFILE\\Event Log Observer\" -ErrorAction 'SilentlyContinue' -Recurse }",
     "checkver": {
