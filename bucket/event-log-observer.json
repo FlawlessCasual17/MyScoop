@@ -18,7 +18,7 @@
         "if (!($hash)) { error 'HASH CHECK FAILED!'; error 'Please try again or create an issue for this bug!'; break }",
         "elseif ($hash) { Write-Host 'Successfully calculated the hash!' -F 'Green'; info \"Sha256 Hash: $hash\" }",
         "Expand-MsiArchive \"$dir\\EventLogObserverSetup.msi\" \"$env:USERPROFILE\\temp\" -Removal",
-        "Move-Item \"$env:USERPROFILE\\temp\\*\" $dir -Recurse; Remove-Item \"$env:USERPROFILE\\temp\" -Recurse"
+        "Move-Item \"$env:USERPROFILE\\temp\\*\" $dir; Remove-Item \"$env:USERPROFILE\\temp\" -Recurse"
     ],
     "pre_uninstall": "if ($purge) { Remove-Item \"$env:USERPROFILE\\Event Log Observer\" -ErrorAction 'SilentlyContinue' -Recurse }",
     "checkver": {
