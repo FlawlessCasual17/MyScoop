@@ -26,7 +26,7 @@
     ],
     "checkver": {
         "script": [
-            "# Using a custom script to get the date for when it was last modified, due to the",
+            "# Using a custom script to get the date for when the installer was last modified, due to the",
             "# version provided in the website (eg. '1.6') being unreliable for future updates.",
             "$url = 'https://www.lizard-labs.com/Downloads/EventLogObserverSetup.msi'",
             "[datetime][string]$date = (Invoke-WebRequest $url).Headers['Last-Modified']",
