@@ -7,7 +7,7 @@
         "url": "https://lizard-labs.com/Docs/TERMS_AND_CONDITIONS.html"
     },
     "url": "https://github.com/ScoopInstaller/Versions/blob/master/bucket/stunnel549.json#/remove.this",
-    "hash": "fcdedbaa18c63e008ab8a4e7e2d5610d55fadc54a17179f97ed28e49e7ee1d1f",
+    "hash": "e7d26600ea674b5574fd5c936dcbc7bfae4259221ed8f8e101235a12fc17f9fd",
     "pre_install": [
         "# Manually downloading the file with `Invoke-WebRequest` because when scoop downloads the file,",
         "# it causes an extraction error when scoop tries to extract the installer afterwards.",
