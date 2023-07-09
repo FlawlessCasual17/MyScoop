@@ -28,6 +28,6 @@
         "regex": "([\\d.-]+)"
     },
     "autoupdate": {
-        "url": "https://www.lizard-labs.com/Downloads/EventLogObserverSetup.msi#/evob-setup.msi_"
+        "url": "https://www.lizard-labs.com/Downloads/EventLogObserverSetup.msi#/elob-setup.msi_"
     }
 }
