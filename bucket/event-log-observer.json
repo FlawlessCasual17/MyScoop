@@ -1,5 +1,4 @@
 {
-    "##": "The reason for this not being portable is because the installer cannot be extracted properly.",
     "version": "2022.01.04-13.42.14",
     "homepage": "https://www.lizard-labs.com/",
     "description": "An easy and customizable tool for exploring, and analyzing Windows event logs.",
@@ -7,16 +6,20 @@
         "identifier": "Shareware",
         "url": "https://lizard-labs.com/Docs/TERMS_AND_CONDITIONS.html"
     },
-    "url": "https://www.lizard-labs.com/Downloads/EventLogObserverSetup.msi#/elob-setup.msi_",
+    "url": "https://www.lizard-labs.com/Downloads#/remove.this",
     "hash": "7d2c013988b21a10aa8f1532515652e533dfa18da8f725283174f4bcf296b4be",
     "pre_install": [
-        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process 'msiexec' -Wait -Verb 'RunAs' -Args @('/i', \"$dir\\elob-setup.msi_\", '/qn')"
+        "# Manually downloading the file with `Invoke-WebRequest` because when scoop downloads the file,",
+        "# it causes an extraction error when scoop tries to extract the installer afterwards.",
+        "$url = 'https://www.lizard-labs.com/Downloads/EventLogObserverSetup.msi'",
+        "Remove-Item \"$dir\\*\"; warn 'Downloading EventLogObserverSetup.msi...'",
+        "Invoke-WebRequest $url -OutFile \"$dir\\EventLogObserverSetup.msi\"; info 'Checking hash for EventLogObserverSetup.msi...'",
+        "$hash = (Get-FileHash \"$dir\\EventLogObserverSetup.msi\").Hash;",
+        "if (!($hash)) { error 'HASH CHECK FAILED!'; error 'Please try again or create an issue for this bug!'; break }",
+        "elseif ($hash) { Write-Host 'Successfully calculated the hash!' -F 'Green'; info \"Sha256 Hash: $hash\" }",
+        "Expand-MsiArchive \"$dir\\EventLogObserverSetup.msi\" $dir -Removal; Remove-Item \"$dir\\updater.exe\""
     ],
-    "pre_uninstall": [
-        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process 'msiexec' -Wait -Verb 'RunAs' -Args @('/x', \"$dir\\elob-setup.msi_\", '/qn')"
-    ],
+    "pre_uninstall": "if ($purge) { Remove-Item \"$env:USERPROFILE\\Event Log Observer\" -ErrorAction 'SilentlyContinue' -Recurse }",
     "checkver": {
         "script": [
             "# Using a custom script to get the date for when it was last modified, due to the",
@@ -28,6 +31,6 @@
         "regex": "([\\d.-]+)"
     },
     "autoupdate": {
-        "url": "https://www.lizard-labs.com/Downloads/EventLogObserverSetup.msi#/elob-setup.msi_"
+        "url": "https://www.lizard-labs.com/Downloads#/remove.this"
     }
 }
