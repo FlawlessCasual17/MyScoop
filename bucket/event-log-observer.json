@@ -6,7 +6,7 @@
         "identifier": "Shareware",
         "url": "https://lizard-labs.com/Docs/TERMS_AND_CONDITIONS.html"
     },
-    "url": "https://github.com/ScoopInstaller/Versions/blob/master/bucket/stunnel549.json#/remove.this",
+    "url": "https://github.com/ScoopInstaller/Versions/raw/master/bucket/stunnel549.json#/remove.this",
     "hash": "e7d26600ea674b5574fd5c936dcbc7bfae4259221ed8f8e101235a12fc17f9fd",
     "pre_install": [
         "# Manually downloading the file with `Invoke-WebRequest` because when scoop downloads the file,",
@@ -31,6 +31,6 @@
         "regex": "([\\d.-]+)"
     },
     "autoupdate": {
-        "url": "https://github.com/ScoopInstaller/Versions/blob/master/bucket/stunnel549.json#/remove.this"
+        "url": "https://github.com/ScoopInstaller/Versions/raw/master/bucket/stunnel549.json#/remove.this"
     }
 }
