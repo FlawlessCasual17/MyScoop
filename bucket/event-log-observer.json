@@ -18,7 +18,12 @@
             "Event Log Observer"
         ]
     ],
-    "pre_uninstall": "if ($purge) { Remove-Item \"$env:USERPROFILE\\Documents\\Event Log Observer\", \"$env:LOCALAPPDATA\\LizardLabs\" -ErrorAction 'SilentlyContinue' -Recurse }",
+    "pre_uninstall": [
+        "if ($purge) {",
+        "    Remove-Item \"$env:USERPROFILE\\Documents\\Event Log Observer\" -ErrorAction 'SilentlyContinue' -Recurse",
+        "    Remove-Item \"$env:LOCALAPPDATA\\LizardLabs\" -ErrorAction 'SilentlyContinue' -Recurse",
+        "}"
+    ],
     "checkver": {
         "script": [
             "# Using a custom script to get the date for when it was last modified, due to the",
