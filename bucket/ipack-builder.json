@@ -3,8 +3,8 @@
     "homepage": "https://mrbladedesigns.com/ipack-builder/",
     "description": "A tool that allows you to make icon pack installers in `.exe` format. The installer will work perfectly on Windows 7, 8, 8.1, 10 both x86 and x64.",
     "license": "Freeware",
-    "url": "https://bitbucket.org/old_binaries/windowsbinaries/downloads/iPack_Builder_v2.2.7z",
-    "hash": "6ad2bc744c2b7522177f5d54ef763b34b531bdd0b0d0eb2517b8a219e1b32931",
+    "url": "https://bitbucket.org/old_binaries/windowsbinaries/downloads/ipack-builder-v2_2.zip",
+    "hash": "3e62c4548230a1a33ab121f88a7e5c8340f13d6633b90de032522d6304d0a08a",
     "pre_install": "Get-Item \"$dir\\iPack Builder*.exe\" | Rename-Item -NewName 'iPack-Builder.exe'",
     "bin": "iPack-Builder.exe",
     "shortcuts": [
@@ -13,7 +13,7 @@
             "iPack Builder"
         ],
         [
-            "Reload Icons.exe",
+            "Reload Icons.cmd",
             "Reload Icons (iPack Builder)"
         ]
     ]
