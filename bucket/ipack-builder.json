@@ -5,7 +5,10 @@
     "license": "Freeware",
     "url": "https://bitbucket.org/old_binaries/windowsbinaries/downloads/ipack-builder-v2_2.zip",
     "hash": "3e62c4548230a1a33ab121f88a7e5c8340f13d6633b90de032522d6304d0a08a",
-    "pre_install": "Get-Item \"$dir\\iPack Builder*.exe\" | Rename-Item -NewName 'iPack-Builder.exe'",
+    "pre_install": [
+        "Get-Item \"$dir\\iPack Builder*.exe\" | Rename-Item -NewName 'iPack-Builder.exe'",
+        "Expand-7zipArchive \"$dir\\Theme Guide.zip\" $dir -ExtractDir 'Theme Guide' -Removal"
+    ],
     "bin": "iPack-Builder.exe",
     "shortcuts": [
         [
