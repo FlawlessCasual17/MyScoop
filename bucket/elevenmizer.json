@@ -19,7 +19,7 @@
     "shortcuts": [
         [
             "ElevenMizer_setup.exe",
-            "ElevenMizer Setup"
+            "ElevenMizer Lite Setup"
         ]
     ],
     "checkver": "Changes\\s([\\d.]+)\\s\\(",
