@@ -8,7 +8,7 @@
     "pre_install": [
         "Remove-Item \"$dir\\*\"; info 'Downloading ElevenMizer_setup.exe ...'",
         "$does_exist = Test-Path \"$persist_dir\\ElevenMizer_setup.exe\"",
-        "if ((Get-Command 'curl.exe' -ErrorAction 'SilentlyContinue') -and !($does_exist))) {",
+        "if ((Get-Command 'curl.exe' -ErrorAction 'SilentlyContinue') -and !($does_exist)) {",
         "    curl 'https://mhoefs.eu/software_count.php' -X 'POST' -H 'Content-Type: application/x-www-form-urlencoded' --data-raw 'ElevenMizer=ElevenMizer&id=ElevenMizer' --output \"$dir\\ElevenMizer_setup.exe\"",
         "    Wait-Process -Name 'curl' -ErrorAction 'SilentlyContinue'",
         "} elseif (!($does_exist)) {",
