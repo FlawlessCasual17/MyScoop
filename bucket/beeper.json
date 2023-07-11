@@ -12,7 +12,7 @@
             "hash": "34fcb700825527c88f9b2a3aef6ddba2b2d4afdc29055c2d9ec838cd3028ee9d"
         }
     },
-    "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" $dir; Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
+    "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" $dir; Remove-Item \"$dir\\`$*\" -Recurse",
     "shortcuts": [
         [
             "Beeper.exe",
