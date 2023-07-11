@@ -18,7 +18,7 @@
         "if (!($LASTEXITCODE -eq 0)) { error 'FILE INTEGRITY TEST FAILED!'; error 'Please try again later...'; break }",
         "else { Write-Host 'File integrity is ok!' -ForegroundColor 'Green' }"
     ],
-    "pre_uninstall": "if (Test-Path \"$dir\\ElevenMizer_setup.exe\") { Copy-Item \"$dir\\ElevenMizer_setup.exe\" \"$persist_dir\\ElevenMizer_setup.exe\" }",
+    "pre_uninstall": "ensure $persist_dir | Out-Null; if (Test-Path \"$dir\\ElevenMizer_setup.exe\") { Copy-Item \"$dir\\ElevenMizer_setup.exe\" \"$persist_dir\\ElevenMizer_setup.exe\" }",
     "shortcuts": [
         [
             "ElevenMizer_setup.exe",
