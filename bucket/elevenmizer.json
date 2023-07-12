@@ -31,6 +31,7 @@
         "Copy-Item \"$dir\\$fileName\" \"$dir\\$newFileName\"; Move-Item \"$dir\\$fileName\" \"$persist_dir\\$fileName\"",
         "foreach ($f in (Get-ChildItem \"$persist_dir\\*.exe\" -ErrorAction 'SilentlyContinue' -Exclude $fileName).FullName) {",
         "    if (Test-Path $f) {",
+        "        info 'Compressing old versions of ''ElevenMizer''...'",
         "        $7zOptions = @(",
         "            'a', '-t7z',",
         "            '-m0=LZMA2', '-mmt=8',",
