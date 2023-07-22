@@ -1,6 +1,6 @@
 {
     "version": "1.6",
-    "homepage": "https://www.lizard-labs.com/",
+    "homepage": "https://www.lizard-labs.com/event_log_observer.aspx",
     "description": "An easy and customizable tool for exploring, and analyzing Windows event logs.",
     "license": {
         "identifier": "Shareware",
@@ -25,7 +25,11 @@
         "    }",
         "}"
     ],
-    "checkver": "([\\d.]+)</strong>.*?\"/event_log_observer.aspx",
+    "checkver": {
+        "url": "https://www.mozilla.org/",
+        "script": "Invoke-RestMethod 'https://www.lizard-labs.com/' -UserAgent $([Microsoft.PowerShell.Commands.PSUserAgent]::Chrome) -SkipCertificateCheck",
+        "regex": "([\\d.]+)</strong>.*?\"/event_log_observer.aspx"
+    },
     "autoupdate": {
         "url": "https://www.lizard-labs.com/Downloads/EventLogObserverSetup.msi#/elob.msi_"
     }
