@@ -25,8 +25,8 @@
         "}"
     ],
     "checkver": {
-        "url": "https://cli.jonaskohl.de/!/version",
-        "regex": "([\\d.]+)"
+        "url": "https://clireleases.jonaskohl.de/releases/api.php",
+        "jsonpath": "$[0].version"
     },
     "autoupdate": {
         "url": "https://cli.jonaskohl.de/!/download/$version#/cli.exe",
