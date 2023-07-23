@@ -19,7 +19,10 @@
             "RVGL Launcher"
         ]
     ],
-    "checkver": "Version\\s+\\n\\s+<span\\sclass=\"badge\">([\\w.]+)</span>",
+    "checkver": {
+        "url": "https://gitlab.com/re-volt/rvgl-launcher/-/tags?format=atom",
+        "xpath": "//entry/title"
+    },
     "autoupdate": {
         "architecture": {
             "32bit": {
