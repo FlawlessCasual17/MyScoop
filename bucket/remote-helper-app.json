@@ -25,7 +25,10 @@
         ]
     ],
     "checkver": {
-        "script": "(Invoke-WebRequest 'https://www.cherpake.com/latest.php?os=win').BaseResponse.RequestMessage.RequestUri.AbsolutePath"
+        "script": "(Invoke-WebRequest 'https://www.cherpake.com/latest.php?os=win').BaseResponse.RequestMessage.RequestUri.AbsolutePath",
+        "re": "RemoteSetup-([\\d.]+)\\.exe"
     },
-    "autoupdate": {}
+    "autoupdate": {
+        "url": "https://downloads.cherpake.com/RemoteSetup-$version.exe"
+    }
 }
