@@ -24,7 +24,7 @@
             "pre_uninstall": [
                 "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
                 "Start-Process \"${env:ProgramFiles(x86)}\\CutePDF Writer\\unInstcpw64.exe\" -Wait -Verb 'RunAs' -Args @('/uninstall', '/s')",
-                "Start-Sleep -Seconds 2; Remove-Item \"${env:ProgramFiles(x86)}\\CutePDF Writer\" -Recurse -Force",
+                "Stop-Process -Name 'explorer'; Start-Sleep -Seconds 2",
                 "warn 'If you''ve used CutePDF for creating PDF files, you may have to restart your computer to properly uninstall it.'"
             ]
         }
