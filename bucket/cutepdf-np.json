@@ -8,8 +8,8 @@
     "hash": "b8cab489c46b5a6bb978b90c3ef06cc0c454f53d5cde773734dcdce9514b79a1",
     "pre_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process \"$dir\\CuteWriter.exe\" -Wait -Verb 'RunAs' -Args @('/verysilent', '/allusers', '/suppressmsgboxes', '/sp-', '/restartapplications', '/norestart')",
-        "Remove-Item \"$dir\\CuteWriter.exe\""
+        "Start-Process \"$dir\\CuteWriter.exe\" -Verb 'RunAs' -Args @('/verysilent', '/allusers', '/suppressmsgboxes', '/sp-', '/restartapplications', '/norestart')",
+        "while (!(Test-Path \"${env:ProgramFiles(x86)}\\CutePDF Writer\")) { Start-Sleep -Milliseconds 5432 }; Start-Sleep -Seconds 2; Remove-Item \"$dir\\CuteWriter.exe\""
     ],
     "architecture": {
         "32bit": {
