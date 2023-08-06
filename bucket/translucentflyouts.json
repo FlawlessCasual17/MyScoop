@@ -1,12 +1,12 @@
 {
-    "version": "2.0.0-alpha",
+    "version": "2.0.0-alpha.3",
     "homepage": "https://github.com/ALTaleX531/TranslucentFlyouts",
     "description": "A lightweight utility that makes the Windows flyouts translucent/transparent on Windows 10/11",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/ALTaleX531/TranslucentFlyouts/releases/download/v2.0.0-alpha/TranslucentFlyoutsV2.rar",
-            "hash": "866a945f414a8c4fab0dd1dc3e84b31fbea43d61f0215ba14812d8c1cca3baef"
+            "url": "https://github.com/ALTaleX531/TranslucentFlyouts/releases/download/v2.0.0-alpha.3/TranslucentFlyoutsV2.rar",
+            "hash": "c21118016e9874a1f4ead904f7edab2757fc14fc37ef450578b682e4953fdd1d"
         }
     },
     "bin": [
