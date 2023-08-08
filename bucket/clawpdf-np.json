@@ -16,7 +16,8 @@
     "uninstaller": {
         "script": [
             "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-            "Start-Process 'msiexec' -Wait -Verb 'RunAs' -Args @('/x', \"$dir\\setup.msi_\", '/qn', '/norestart', '/log', \"$dir\\clawPDF_uninstall.log\")"
+            "Start-Process 'msiexec' -Wait -Verb 'RunAs' -Args @('/x', \"$dir\\setup.msi_\", '/qn', '/norestart', '/log', \"$dir\\clawPDF_uninstall.log\")",
+            "Get-ChildItem \"$dir\\*.log\" | Move-Item -Destination \"$persist_dir\\MSI_Logs\""
         ]
     },
     "bin": [
@@ -25,7 +26,6 @@
     ],
     "persist": "MSI_Logs",
     "post_install": "Get-ChildItem \"$dir\\*.log\" | Move-Item -Destination \"$persist_dir\\MSI_Logs\"",
-    "post_uninstall": "Get-ChildItem \"$dir\\*.log\" | Move-Item -Destination \"$persist_dir\\MSI_Logs\"",
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/clawsoftware/clawPDF/releases/download/$version/clawPDF_$version_setup.msi#/setup.msi_"
