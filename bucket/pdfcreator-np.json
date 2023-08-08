@@ -42,6 +42,10 @@
             ]
         }
     },
+    "bin": [
+        "pdfcreator.cmd",
+        "pdfcreator-cli.cmd"
+    ],
     "checkver": {
         "url": "https://download.pdfforge.org/download/pdfcreator/list",
         "regex": "PDFCreator\\s([\\d.]+)"
