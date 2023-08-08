@@ -24,8 +24,8 @@
         "setuphelper.cmd"
     ],
     "persist": "MSI_Logs",
-    "post_install": "GetChild-Item \"$dir\\*.log\" | Move-Item -Destination \"$persist_dir\\MSI_Logs\"",
-    "post_uninstall": "GetChild-Item \"$dir\\*.log\" | Move-Item -Destination \"$persist_dir\\MSI_Logs\"",
+    "post_install": "Get-ChildItem \"$dir\\*.log\" | Move-Item -Destination \"$persist_dir\\MSI_Logs\"",
+    "post_uninstall": "Get-ChildItem \"$dir\\*.log\" | Move-Item -Destination \"$persist_dir\\MSI_Logs\"",
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/clawsoftware/clawPDF/releases/download/$version/clawPDF_$version_setup.msi#/setup.msi_"
