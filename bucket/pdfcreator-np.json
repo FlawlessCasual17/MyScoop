@@ -21,7 +21,7 @@
             },
             "pre_uninstall": [
                 "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-                "Start-Process 'msiexec' -Wait -Verb 'RunAs' -Args @('/i', \"$dir\\PDFCreator_Setup_x86.msi\", '/qn')",
+                "Start-Process 'msiexec' -Wait -Verb 'RunAs' -Args @('/x', \"$dir\\PDFCreator_Setup_x86.msi\", '/qn')",
                 "Start-Sleep -Seconds 2"
             ]
         },
@@ -31,7 +31,7 @@
             },
             "pre_uninstall": [
                 "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-                "Start-Process 'msiexec' -Wait -Verb 'RunAs' -Args @('/i', \"$dir\\PDFCreator_Setup_x64.msi\", '/qn')",
+                "Start-Process 'msiexec' -Wait -Verb 'RunAs' -Args @('/x', \"$dir\\PDFCreator_Setup_x64.msi\", '/qn')",
                 "Start-Sleep -Seconds 2"
             ]
         }
