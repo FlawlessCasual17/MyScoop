@@ -8,7 +8,7 @@
     "installer": {
         "script": [
             "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-            "Start-Process 'msiexec' -Wait -Verb 'RunAs' -Args @('/i', \"$dir\\setup.msi_\", '/qn', '/norestart', '/log', '\"$dir\\clawPDF_install.log\"')",
+            "Start-Process 'msiexec' -Wait -Verb 'RunAs' -Args @('/i', \"$dir\\setup.msi_\", '/qn', '/norestart', '/log', \"$dir\\clawPDF_install.log\")",
             "Set-Content \"$dir\\clawpdf.cmd\" '@\"%ProgramFiles(x86)%\\clawPDF\\clawPDF.exe\"  %*' -Encoding 'utf8'",
             "Set-Content \"$dir\\setuphelper.cmd\" '@\"%ProgramFiles(x86)%\\clawPDF\\SetupHelper.exe\"  %*' -Encoding 'utf8'"
         ]
@@ -16,7 +16,7 @@
     "uninstaller": {
         "script": [
             "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-            "Start-Process 'msiexec' -Wait -Verb 'RunAs' -Args @('/x', \"$dir\\setup.msi_\", '/qn', '/norestart', '/log', '\"$dir\\clawPDF_uninstall.log\"')"
+            "Start-Process 'msiexec' -Wait -Verb 'RunAs' -Args @('/x', \"$dir\\setup.msi_\", '/qn', '/norestart', '/log', \"$dir\\clawPDF_uninstall.log\")"
         ]
     },
     "bin": [
