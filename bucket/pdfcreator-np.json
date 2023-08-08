@@ -8,7 +8,7 @@
     "notes": "You may have to restart your computer to properly install/uninstall PDFCreator if you used the virtual printer feature.",
     "pre_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process \"$dir\\PDFCreatorSetup.exe\" -Wait -Verb 'RunAs' -Args @('/COMPONENTS=program', '/VERYSILENT', '/NORESTART')"
+        "Start-Process \"$dir\\PDFCreatorSetup.exe\" -Wait -Verb 'RunAs' -Args @('/COMPONENTS=images2pdf', '/VERYSILENT', '/NORESTART')"
     ],
     "architecture": {
         "32bit": {
