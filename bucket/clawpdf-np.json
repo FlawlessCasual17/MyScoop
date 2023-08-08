@@ -19,13 +19,13 @@
             "Start-Process 'msiexec' -Wait -Verb 'RunAs' -Args @('/x', \"$dir\\setup.msi_\", '/qn', '/norestart', '/log', '\"$dir\\clawPDF_uninstall.log\"')"
         ]
     },
-    "persist": "MSI_Logs",
-    "post_install": "GetChild-Item \"$dir\\*.log\" | Move-Item -Destination \"$persist_dir\\MSI_Logs\"",
-    "post_uninstall": "GetChild-Item \"$dir\\*.log\" | Move-Item -Destination \"$persist_dir\\MSI_Logs\"",
     "bin": [
         "clawpdf.cmd",
         "setuphelper.cmd"
     ],
+    "persist": "MSI_Logs",
+    "post_install": "GetChild-Item \"$dir\\*.log\" | Move-Item -Destination \"$persist_dir\\MSI_Logs\"",
+    "post_uninstall": "GetChild-Item \"$dir\\*.log\" | Move-Item -Destination \"$persist_dir\\MSI_Logs\"",
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/clawsoftware/clawPDF/releases/download/$version/clawPDF_$version_setup.msi#/setup.msi_"
