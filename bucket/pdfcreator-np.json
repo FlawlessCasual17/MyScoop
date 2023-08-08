@@ -44,7 +44,7 @@
         "url": "https://cdn.download.pdfforge.org/pdfcreator/$version/PDFCreator-$underscoreVersion-Setup.exe#/dl.7z",
         "hash": {
             "url": "https://download.pdfforge.org/download/pdfcreator/list",
-            "regex": "$basename\\n\\s+\\</a\\>\\n\\s+\\</p\\>\\<.*?MD5\\:\\s$md5"
+            "regex": "$basename\\n\\s+\\</a\\>\\n\\s+\\</p\\>\\<small\\sclass=\"text-muted\"\\>MD5\\:\\s$md5\\<"
         }
     }
 }
