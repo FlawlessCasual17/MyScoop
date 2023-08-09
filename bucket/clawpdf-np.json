@@ -11,7 +11,8 @@
             "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
             "Start-Process 'msiexec' -Wait -Verb 'RunAs' -Args @('/i', \"$dir\\setup.msi_\", '/qn', '/norestart', '/log', \"$dir\\clawPDF_install.log\")",
             "Set-Content \"$dir\\clawpdf.cmd\" '@\"%ProgramFiles(x86)%\\clawPDF\\clawPDF.exe\"  %*' -Encoding 'utf8'",
-            "Set-Content \"$dir\\setuphelper.cmd\" '@\"%ProgramFiles(x86)%\\clawPDF\\SetupHelper.exe\"  %*' -Encoding 'utf8'"
+            "Set-Content \"$dir\\setuphelper.cmd\" '@\"%ProgramFiles(x86)%\\clawPDF\\SetupHelper.exe\"  %*' -Encoding 'utf8'",
+            "Set-Content \"$dir\\clawpdf.bridge.cmd\" '@\"%ProgramFiles(x86)%\\clawPDF\\clawPDF.Bridge.exe\"  %*' -Encoding 'utf8'"
         ]
     },
     "uninstaller": {
@@ -24,7 +25,8 @@
     },
     "bin": [
         "clawpdf.cmd",
-        "setuphelper.cmd"
+        "setuphelper.cmd",
+        "clawpdf.bridge.cmd"
     ],
     "persist": "MSI_Logs",
     "post_install": "Get-ChildItem \"$dir\\*.log\" | Move-Item -Destination \"$persist_dir\\MSI_Logs\"",
