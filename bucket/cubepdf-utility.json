@@ -15,10 +15,7 @@
     },
     "innosetup": true,
     "installer": {
-        "script": [
-            "Remove-Item $dir -Include 'de', 'ja' -Recurse; Get-ChildItem \"$dir\\*,2.*\" | Remove-Item",
-            "Get-ChildItem \"$dir\\*,1*\" | Rename-Item -NewName { $_.Name -replace ('\\,1', '') }"
-        ]
+        "script": "Get-ChildItem \"$dir\\*,2.*\" | Remove-Item; Get-ChildItem \"$dir\\*,1*\" | Rename-Item -NewName { $_.Name -replace ('\\,1', '') }"
     },
     "shortcuts": [
         [
