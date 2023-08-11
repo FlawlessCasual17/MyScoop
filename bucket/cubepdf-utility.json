@@ -1,0 +1,43 @@
+{
+    "version": "2.4.1",
+    "homepage": "https://www.cube-soft.jp/en/cubepdfutility/",
+    "description": "A thumbnail-based Windows PDF editor designed for users who want to edit PDF files in a simple and intuitive way, such as merging, extracting, splitting, changing page order, setting passwords, and so on.",
+    "license": "AGPL-3.0",
+    "architecture": {
+        "32bit": {
+            "url": "https://dl.cube-soft.jp/archive/cubepdf-utility-2.4.1.exe",
+            "hash": "5ef13fd993546123fbc0b0a7d632a993c9c6c1bfbd225136ecf9296e06e1a23c"
+        },
+        "64bit": {
+            "url": "https://dl.cube-soft.jp/archive/cubepdf-utility-2.4.1-x64.exe",
+            "hash": "997ffc0af89c8be3f5288334694a9e6b6773118f1f35db00b6cc2a549196cd1f"
+        }
+    },
+    "innosetup": true,
+    "installer": {
+        "script": [
+            "Remove-Item $dir -Include 'de', 'ja' -Recurse; Get-ChildItem \"$dir\\*,2.*\" | Remove-Item",
+            "Get-ChildItem \"$dir\\*,1*\" | Rename-Item -NewName { $_.Name -replace ('\\,1', '') }"
+        ]
+    },
+    "shortcuts": [
+        [
+            "CubePdfUtility.exe",
+            "CubePdf Utility2"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.cube-soft.jp/en/cubepdfutility/releases.php",
+        "regex": "cubepdf-utility-([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://dl.cube-soft.jp/archive/cubepdf-utility-$version.exe"
+            },
+            "64bit": {
+                "url": "https://dl.cube-soft.jp/archive/cubepdf-utility-$version-x64.exe"
+            }
+        }
+    }
+}
