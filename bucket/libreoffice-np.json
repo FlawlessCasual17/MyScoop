@@ -31,6 +31,10 @@
     },
     "bin": [
         "soffice.cmd",
+        [
+            "soffice.cmd",
+            "libreoffice"
+        ],
         "unopkg.cmd"
     ],
     "pre_uninstall": [
