@@ -49,7 +49,7 @@
                 "url": "https://clients.chime.aws/win-nme/AmazonChime-$version-full.nupkg",
                 "hash": {
                     "url": "$baseurl/RELEASES",
-                    "regex": "(?ï»¿)$md5\\s$basename"
+                    "regex": "(?:ï»¿)$md5\\s$basename"
                 }
             }
         }
