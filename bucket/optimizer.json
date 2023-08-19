@@ -17,7 +17,7 @@
         "url": "https://github.com/hellzerg/optimizer/releases/download/$version/Optimizer-$version.exe#/optimizer.exe",
         "hash": {
             "url": "https://github.com/hellzerg/optimizer/releases/$version",
-            "find": "<p>$sha256</p></div>"
+            "regex": "<p>$sha256</p>"
         }
     }
 }
