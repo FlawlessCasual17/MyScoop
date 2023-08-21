@@ -54,7 +54,7 @@
         "url": "https://github.com/winsiderss/si-builds/releases/download/$version/systeminformer-$version-bin.zip",
         "hash": {
             "url": "https://systeminformer.sourceforge.io/nightly.php",
-            "regex": "(?sm)Binaries.*?\\((SHA2?56)\\).*?\\>$sha256\\<"
+            "regex": "(?sm)Binaries.*?\\>\\((SHA2?SHA256)\\<\\).*?\\>$sha256\\<"
         }
     }
 }
