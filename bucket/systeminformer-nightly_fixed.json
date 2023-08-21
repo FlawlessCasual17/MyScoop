@@ -1,5 +1,5 @@
 {
-    "version": "3.0.7029",
+    "version": "3",
     "description": "A powerful, multi-purpose tool that helps you monitor system resources, debug software and detect malware.",
     "homepage": "https://systeminformer.sourceforge.io",
     "license": "MIT",
@@ -54,7 +54,7 @@
         "url": "https://github.com/winsiderss/si-builds/releases/download/$version/systeminformer-$version-bin.zip",
         "hash": {
             "url": "https://systeminformer.sourceforge.io/nightly.php",
-            "regex": "(?sm)Binaries\\s.*?\\(SHA2\\)\\n.*?>$sha256<"
+            "regex": "(?s)Binaries\\s.*?\\(SHA2\\)\\n.*?>$sha256<"
         }
     }
 }
