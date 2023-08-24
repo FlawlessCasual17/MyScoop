@@ -32,7 +32,7 @@
         "url": "https://cli.jonaskohl.de/!/download/$version#/cli.exe",
         "hash": {
             "url": "https://clireleases.jonaskohl.de/releases/simple.php?css=true",
-            "regex": "(?s)$version\"\\>Build\\s\\(cli\\.jonaskohl\\.de\\)\\</a\\>\\s+\\<div\\>.*?\\<td\\>MD5:\\</td\\>.*?\\<td\\>.*?value=\"$md5"
+            "regex": "(?s)$version\"\\>Build\\s\\(cli\\.jonaskohl\\.de\\).*?\\<td\\>MD5:\\</td\\>.*?\\<td\\>.*?value=\"$md5"
         }
     }
 }
