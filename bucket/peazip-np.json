@@ -17,18 +17,20 @@
     "post_install": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "$setupArgs = @('/VERYSILENT', \"/DIR=$persist_dir\\PeaZip\", '/CURRENTUSER', '/SUPPRESSMSGBOXES'); ",
-        "if ($cmd -eq ) {Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -Args $setupArgs; Remove-Item \"$dir\\setup.exe\"}",
+        "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -Args $setupArgs; Remove-Item \"$dir\\setup.exe\"",
         "New-Item \"$dir\\configure-peazip.exe\" -ItemType 'SymbolicLink' -Target \"$persist_dir\\PeaZip\\res\\bin\\Configure PeaZip.exe\" | Out-Null",
         "foreach ($f in (Get-ChildItem \"$persist_dir\\PeaZip\" -Exclude 'unins*.*')) {",
         "    $name = $f.Name; New-Item \"$dir\\$n\" -ItemType 'SymbolicLink' -Target $f.FullName | Out-Null",
         "}",
-        "Start-Process \"$persist_dir\\PeaZip\\res\\bin\\Configure PeaZip.exe\" -Wait -Verb 'RunAs' -Args $setupArgs; Start-Sleep -Seconds 2"
+        "if ($cmd -eq 'install') { Start-Process \"$persist_dir\\PeaZip\\res\\bin\\Configure PeaZip.exe\" -Wait -Verb 'RunAs' -Args $setupArgs; Start-Sleep -Seconds 2 }"
     ],
     "env_add_path": ".",
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "foreach ($uninstall_exe in (Get-ChildItem \"$persist_dir\\PeaZip\\unins*.exe\").FullName) {",
-        "    Start-Process $uninstall_exe -Wait -Verb 'RunAs' -ArgumentList @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/SUPPRESSMSGBOXES')",
+        "if ($cmd -eq 'uninstall') {",
+        "    foreach ($uninstall_exe in (Get-ChildItem \"$persist_dir\\PeaZip\\unins*.exe\").FullName) {",
+        "        Start-Process $uninstall_exe -Wait -Verb 'RunAs' -ArgumentList @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/SUPPRESSMSGBOXES')",
+        "    }",
         "}"
     ],
     "checkver": {
