@@ -6,51 +6,44 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/peazip/PeaZip/releases/download/9.4.0/peazip-9.4.0.WIN64.exe#/setup.exe",
-            "hash": "md5:07b4038a4dfd9ce5d6f45e3b8ae8be0d",
-            "installer": {
-                "script": [
-                    "New-Item \"$dir\\configure-peazip.exe\" -ItemType 'SymbolicLink' -Target \"$env:ProgramFiles\\PeaZip\\res\\bin\\Configure PeaZip.exe\" | Out-Null",
-                    "foreach ($f in (Get-ChildItem \"$env:ProgramFiles\\PeaZip\" -Exclude 'unins*.*', '*.lnk')) {",
-                    "    $name = $f.Name; New-Item \"$dir\\$name\" -ItemType 'SymbolicLink' -Target $f.FullName | Out-Null",
-                    "}"
-                ]
-            },
-            "pre_uninstall": [
-                "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-                "if ($cmd -eq 'uninstall') {",
-                "    foreach ($uninstall_exe in (Get-ChildItem \"$env:ProgramFiles\\PeaZip\\unins*.exe\").FullName) {",
-                "        Start-Process $uninstall_exe -Wait -Verb 'RunAs' -ArgumentList @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/SUPPRESSMSGBOXES')",
-                "    }",
-                "}"
-            ]
+            "hash": "md5:07b4038a4dfd9ce5d6f45e3b8ae8be0d"
         },
         "32bit": {
             "url": "https://github.com/peazip/PeaZip/releases/download/9.4.0/peazip-9.4.0.WINDOWS.exe#/setup.exe",
-            "hash": "md5:b443a3086116ee890745ccfe19a58015",
-            "installer": {
-                "script": [
-                    "New-Item \"$dir\\configure-peazip.exe\" -ItemType 'SymbolicLink' -Target \"${env:ProgramFiles(x86)}\\PeaZip\\res\\bin\\Configure PeaZip.exe\" | Out-Null",
-                    "foreach ($f in (Get-ChildItem \"${env:ProgramFiles(x86)}\\PeaZip\" -Exclude 'unins*.*', '*.lnk')) {",
-                    "    $name = $f.Name; New-Item \"$dir\\$name\" -ItemType 'SymbolicLink' -Target $f.FullName | Out-Null",
-                    "}"
-                ]
-            },
-            "pre_uninstall": [
-                "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-                "if ($cmd -eq 'uninstall') {",
-                "    foreach ($uninstall_exe in (Get-ChildItem \"${env:ProgramFiles(x86)}\\PeaZip\\unins*.exe\").FullName) {",
-                "        Start-Process $uninstall_exe -Wait -Verb 'RunAs' -ArgumentList @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/SUPPRESSMSGBOXES')",
-                "    }",
-                "}"
-            ]
+            "hash": "md5:b443a3086116ee890745ccfe19a58015"
         }
     },
-    "pre_install": [
+    "persist": "PeaZip",
+    "post_install": [
         "if (!(is_admin)) { error \"$app requires admin. rights to $cmd\"; break }",
-        "$setupArgs = @('/VERYSILENT', '/ALLUSERS', '/SP-', '/SUPPRESSMSGBOXES')",
-        "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -Args $setupArgs; Remove-Item \"$dir\\setup.exe\""
+        "$setupArgs = @('/VERYSILENT', '/ALLUSERS', \"/DIR=$persist_dir\\PeaZip\", '/SP-', '/SUPPRESSMSGBOXES')",
+        "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -Args $setupArgs; Remove-Item \"$dir\\setup.exe\"",
+        "New-Item \"$dir\\configure-peazip.exe\" -ItemType 'SymbolicLink' -Target \"$persist_dir\\PeaZip\\res\\bin\\Configure PeaZip.exe\" | Out-Null",
+        "foreach ($f in (Get-ChildItem \"$persist_dir\\PeaZip\\*.exe\" -Exclude 'unins*.*')) {",
+        "    $name = $f.Name; New-Item \"$dir\\$name\" -ItemType 'SymbolicLink' -Target $f.FullName | Out-Null",
+        "}",
+        "foreach ($regFile in \"$persist_dir\\peazip_context_menu1.reg\", \"$persist_dir\\peazip_context_menu2.reg\") {",
+        "    if (Test-Path $regFile) {",
+        "        reg import $regFile",
+        "    }",
+        "}"
     ],
     "env_add_path": ".",
+    "pre_uninstall": [
+        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "if (Test-Path 'HKLM:\\SOFTWARE\\Classes\\AllFilesystemObjects\\shell\\PeaZip') {",
+        "    reg export 'HKLM\\SOFTWARE\\Classes\\*\\shell\\PeaZip' \"$persist_dir\\peazip_context_menu1.reg\" /y",
+        "    reg export 'HKLM\\SOFTWARE\\Classes\\AllFilesystemObjects\\shell\\PeaZip' \"$persist_dir\\peazip_context_menu2.reg\" /y",
+        "} elseif (Test-Path 'HKCU:\\SOFTWARE\\Classes\\AllFilesystemObjects\\shell\\PeaZip') {",
+        "    reg export 'HKCU\\SOFTWARE\\Classes\\*\\shell\\PeaZip' \"$persist_dir\\peazip_context_menu1.reg\" /y",
+        "    reg export 'HKCU\\SOFTWARE\\Classes\\AllFilesystemObjects\\shell\\PeaZip' \"$persist_dir\\peazip_context_menu2.reg\" /y",
+        "}",
+        "if ($cmd -eq 'uninstall') {",
+        "    foreach ($uninstall_exe in (Get-ChildItem \"$persist_dir\\PeaZip\\unins*.exe\").FullName) {",
+        "        Start-Process $uninstall_exe -Wait -Verb 'RunAs' -ArgumentList @('/VERYSILENT', '/FORCECLOSEAPPLICATIONS', '/SUPPRESSMSGBOXES')",
+        "    }",
+        "}"
+    ],
     "checkver": {
         "github": "https://github.com/peazip/PeaZip"
     },
