@@ -10,7 +10,7 @@
             "installer": {
                 "script": [
                     "New-Item \"$dir\\configure-peazip.exe\" -ItemType 'SymbolicLink' -Target \"$env:ProgramFiles\\PeaZip\\res\\bin\\Configure PeaZip.exe\" | Out-Null",
-                    "foreach ($f in (Get-ChildItem \"$env:ProgramFiles\\PeaZip\\*.exe\" -Exclude 'unins*.*')) {",
+                    "foreach ($f in (Get-ChildItem \"$env:ProgramFiles\\PeaZip\" -Exclude 'unins*.*', '*.lnk')) {",
                     "    $name = $f.Name; New-Item \"$dir\\$name\" -ItemType 'SymbolicLink' -Target $f.FullName | Out-Null",
                     "}"
                 ]
@@ -30,7 +30,7 @@
             "installer": {
                 "script": [
                     "New-Item \"$dir\\configure-peazip.exe\" -ItemType 'SymbolicLink' -Target \"${env:ProgramFiles(x86)}\\PeaZip\\res\\bin\\Configure PeaZip.exe\" | Out-Null",
-                    "foreach ($f in (Get-ChildItem \"${env:ProgramFiles(x86)}\\PeaZip\\*.exe\" -Exclude 'unins*.*')) {",
+                    "foreach ($f in (Get-ChildItem \"${env:ProgramFiles(x86)}\\PeaZip\" -Exclude 'unins*.*', '*.lnk')) {",
                     "    $name = $f.Name; New-Item \"$dir\\$name\" -ItemType 'SymbolicLink' -Target $f.FullName | Out-Null",
                     "}"
                 ]
