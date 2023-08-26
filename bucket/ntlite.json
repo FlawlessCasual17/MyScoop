@@ -26,7 +26,7 @@
         "</GeneralOptions>",
         "'@",
         "if (!(Test-Path \"$persist_dir\\settings.xml\")) {",
-        "    Set-Content \"$dir\\settings.xml\" $value -Encoding 'ascii'",
+        "    Set-Content \"$dir\\settings.xml\" $value -Encoding 'utf8bom'",
         "}"
     ],
     "bin": "NTLite.exe",
