@@ -21,7 +21,7 @@
         "foreach ($f in (Get-ChildItem \"$persist_dir\\PeaZip\\*.exe\" -Exclude 'unins*.*')) {",
         "    $name = $f.Name; New-Item \"$dir\\$name\" -ItemType 'SymbolicLink' -Target $f.FullName | Out-Null",
         "}",
-        "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -Args @('/VERYSILENT', '/CURRENTUSER', \"/DIR=$persist_dir\\PeaZip\", '/SP-', '/SUPPRESSMSGBOXES')",
+        "Start-Process \"$persist_dir\\PeaZip\\res\\bin\\Configure PeaZip.exe\" -Wait -Verb 'RunAs' -Args @('/VERYSILENT', '/CURRENTUSER', \"/DIR=$persist_dir\\PeaZip\", '/SP-', '/SUPPRESSMSGBOXES')",
         "foreach ($regFile in \"$persist_dir\\peazip_context_menu1.reg\", \"$persist_dir\\peazip_context_menu2.reg\") {",
         "    if (Test-Path $regFile) {",
         "        reg import $regFile",
