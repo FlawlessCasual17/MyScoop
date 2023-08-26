@@ -72,7 +72,8 @@
         "    $OriginalValue = $Value + $count; $NewValue = $OriginalValue - 1; Rename-Item \"$dir\\ac,$OriginalValue.pdf\" \"ac,$NewValue.pdf\" -ErrorAction 'SilentlyContinue'",
         "}",
         "Copy-Item \"$dir\\ac.pdf\" \"$dir\\ac,$documents.pdf\"",
-        "change-ac-language.ps1 12"
+        "Copy-Item \"$dir\\messages,12.ini\" \"$dir\\messages.ini\" -Force",
+        "Copy-Item \"$dir\\ac,12.pdf\" \"$dir\\ac.pdf\" -Force"
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
