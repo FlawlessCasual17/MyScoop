@@ -45,7 +45,7 @@
     "installer": {
         "script": [
             "$value = @\"",
-            "if (!(`$args.Count -eq 1)) { Write-Host 'INVALID USAGE! Please run `scoop info attribute-changer` for help on proper command usage.'; exit }",
+            "if (!(`$args.Count -eq 1)) { Write-Host 'INVALID USAGE! Please run ``scoop info attribute-changer`` for help on proper command usage.'; exit }",
             "`$ac_language = `$args[0].toString()",
             "Copy-Item \"$dir\\messages,`$ac_language.ini\" \"$dir\\messages.ini\" -Force",
             "Copy-Item \"$dir\\ac,`$ac_language.pdf\" \"$dir\\ac.pdf\" -Force",
