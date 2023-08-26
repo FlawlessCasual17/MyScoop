@@ -66,14 +66,12 @@
     "post_install": [
         "$documents = (Get-ChildItem $dir -Filter '*.pdf').Length; $subtract = $documents - 5",
         "Copy-Item \"$dir\\template.ini\" \"$dir\\messages,$documents.ini\"; Copy-Item \"$dir\\template.ini\" \"$dir\\messages.ini\"; Copy-Item \"$dir\\ac,$(($documents - $subtract) - 2).pdf\" \"$dir\\ac.pdf\"",
-        "Remove-Item \"$dir\\ac,$(($documents - $subtract) - 2).pdf\"",
+        "Remove-Item \"$dir\\ac,$(($documents - $subtract) - 2).pdf\"; Copy-Item \"$dir\\messages,$(($documents - $subtract) - 2).ini\" \"$dir\\messages.ini\"",
         "$Value = $documents - $subtract",
         "for ($count = 0; $count -le ($documents - 3); $count++) {",
         "    $OriginalValue = $Value + $count; $NewValue = $OriginalValue - 1; Rename-Item \"$dir\\ac,$OriginalValue.pdf\" \"ac,$NewValue.pdf\" -ErrorAction 'SilentlyContinue'",
         "}",
-        "Copy-Item \"$dir\\ac.pdf\" \"$dir\\ac,$documents.pdf\"",
-        "Copy-Item \"$dir\\messages,12.ini\" \"$dir\\messages.ini\" -Force",
-        "Copy-Item \"$dir\\ac,12.pdf\" \"$dir\\ac.pdf\" -Force"
+        "Copy-Item \"$dir\\ac.pdf\" \"$dir\\ac,$documents.pdf\""
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
