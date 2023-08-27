@@ -25,7 +25,7 @@
         "    <AutoUpdate>false</AutoUpdate>",
         "</GeneralOptions>",
         "'@",
-        "if (!(Test-Path \"$persist_dir\\settings.xml\")) { Set-Content \"$dir\\settings.xml\" $value -Encoding utf8BOM }"
+        "if (!(Test-Path \"$persist_dir\\settings.xml\")) { Set-Content \"$dir\\settings.xml\" $value -Encoding 'utf8BOM' }"
     ],
     "bin": "NTLite.exe",
     "shortcuts": [
