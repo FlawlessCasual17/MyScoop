@@ -35,6 +35,7 @@
         ]
     ],
     "persist": [
+        "Cache",
         "Presets",
         "Updates",
         "settings.xml"
