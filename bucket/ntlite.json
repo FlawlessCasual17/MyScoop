@@ -26,7 +26,7 @@
         "</GeneralOptions>",
         "'@",
         "if (!(Test-Path \"$persist_dir\\settings.xml\")) {",
-        "    Set-Content \"$dir\\settings.xml\" $value -Encoding $(if ($PSEdition -eq 'Core') { return 'utf8bom' } else { return 'utf8' })",
+        "    Set-Content \"$dir\\settings.xml\" $value -Encoding $(if ($PSEdition -eq 'Core') { 'utf8bom' } else { 'utf8' })",
         "}"
     ],
     "bin": "NTLite.exe",
