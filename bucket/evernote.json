@@ -1,13 +1,13 @@
 {
-    "version": "10.61.4.20230829093334-c5f25cd742c827a190975c8ce28aff0a4d9d4e87",
+    "version": "10.61.5.20230831054637-ce5a1255fff78e49e8a7bdf417e8f4e2deaac541",
     "homepage": "https://evernote.com/",
     "description": "Remember everything and tackle any project with your notes, tasks, and schedule all in one place.",
     "license": {
         "identifier": "Freeware",
         "url": "https://evernote.com/legal"
     },
-    "url": "https://cdn1.evernote.com/boron/win/builds/Evernote-10.61.4-win-ddl-stage-20230829093334-c5f25cd742c827a190975c8ce28aff0a4d9d4e87-setup.exe#/dl.7z",
-    "hash": "b8c55f65a88f108093b13823217c9bcbc953ee49c9ef93a26ddd90eca08dbed3",
+    "url": "https://cdn1.evernote.com/boron/win/builds/Evernote-10.61.5-win-ddl-stage-20230831054637-ce5a1255fff78e49e8a7bdf417e8f4e2deaac541-setup.exe#/dl.7z",
+    "hash": "ca43b07cd279a7366df649cbd21d9b0b74dcc76729efae500b2148fffb1141ed",
     "extract_dir": "$PLUGINSDIR",
     "pre_install": [
         "if ($architecture -eq '32bit') { Expand-7zipArchive \"$dir\\app-32.7z\" \"$dir\" -Removal; Remove-Item \"$dir\\app-64.7z\" }",
