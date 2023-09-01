@@ -16,9 +16,7 @@
                     "Start-Process \"$dir\\setup.exe\" -Verb 'RunAs' -Args '/S'; if (!(Test-Path \"${env:ProgramFiles(x86)}\\PowerISO\")) { Start-Sleep -Seconds 2 }",
                     "Start-Sleep -Seconds 2; Stop-Process -Name 'PWRISOVM' -Force; Remove-Item \"$dir\\setup.exe\"",
                     "$utf8Only = New-Object System.Text.UTF8Encoding($false)",
-                    "#Set-Content \"$dir\\piso.cmd\" '@\"%ProgramFiles(x86)%\\PowerISO\\piso.exe\"  %*' -Encoding 'utf8'",
-                    "#if ($PSEdition -eq 'Desktop') {  }",
-                    "[System.IO.File]::WriteAllLines(\"$dir\\piso.cmd\", '@\"%ProgramFiles(x86)%\\PowerISO\\piso.exe\"  %*', $utf8Only)"
+                    "[System.IO.File]::WriteAllText(\"$dir\\piso.cmd\", '@\"%ProgramFiles(x86)%\\PowerISO\\piso.exe\"  %*', $utf8Only)"
                 ]
             },
             "uninstaller": {
@@ -43,7 +41,7 @@
                     "$UTF8Only = New-Object System.Text.UTF8Encoding($false)",
                     "#Set-Content \"$dir\\piso.cmd\" '@\"%ProgramFiles%\\PowerISO\\piso.exe\"  %*' -Encoding 'utf8'",
                     "#if ($PSEdition -eq 'Desktop') {  }",
-                    "[System.IO.File]::WriteAllLines(\"$dir\\piso.cmd\", '@\"%ProgramFiles%\\PowerISO\\piso.exe\"  %*', $utf8Only)"
+                    "[System.IO.File]::WriteAllText(\"$dir\\piso.cmd\", '@\"%ProgramFiles%\\PowerISO\\piso.exe\"  %*', $utf8Only)"
                 ]
             },
             "uninstaller": {
