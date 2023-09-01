@@ -14,7 +14,7 @@
                 "script": [
                     "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
                     "Start-Process \"$dir\\setup.exe\" -Verb 'RunAs' -Args '/S'; if (!(Test-Path \"${env:ProgramFiles(x86)}\\PowerISO\")) { Start-Sleep -Seconds 4 }",
-                    "Start-Sleep -Seconds 2; Stop-Process -Name 'PWRISOVM' -ErrorAction 'SilentlyContinue' -Force; Remove-Item \"$dir\\setup.exe\"",
+                    "Start-Sleep -Seconds 2; Stop-Process -Name 'PWRISOVM', 'explorer' -ErrorAction 'SilentlyContinue' -Force; Remove-Item \"$dir\\setup.exe\"",
                     "[System.IO.File]::WriteAllLines(\"$dir\\piso.cmd\", '@\"%ProgramFiles(x86)%\\PowerISO\\piso.exe\"  %*', [System.text.UTF8Encoding]($false))"
                 ]
             },
@@ -36,7 +36,7 @@
                 "script": [
                     "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
                     "Start-Process \"$dir\\setup.exe\" -Verb 'RunAs' -Args '/S'; if (!(Test-Path \"$env:ProgramFiles\\PowerISO\")) { Start-Sleep -Seconds 4 }",
-                    "Start-Sleep -Seconds 2; Stop-Process -Name 'PWRISOVM' -ErrorAction 'SilentlyContinue' -Force; Remove-Item \"$dir\\setup.exe\"",
+                    "Start-Sleep -Seconds 2; Stop-Process -Name 'PWRISOVM', 'explorer' -ErrorAction 'SilentlyContinue' -Force; Remove-Item \"$dir\\setup.exe\"",
                     "[System.IO.File]::WriteAllLines(\"$dir\\piso.cmd\", '@\"%ProgramFiles%\\PowerISO\\piso.exe\"  %*', [System.text.UTF8Encoding]($false))"
                 ]
             },
