@@ -1,8 +1,11 @@
 {
     "version": "8.5",
     "homepage": "https://www.poweriso.com/index.htm",
-    "description": "",
-    "license": "",
+    "description": "A powerful CD / DVD / BD image file processing tool, which allows you to open, extract, burn, create, edit, compress, encrypt, split and convert ISO files, and mount ISO files with internal virtual drive.",
+    "license": {
+        "identifier": "Shareware",
+        "url": "https://www.poweriso.com/tutorials/eula.htm"
+    },
     "architecture": {
         "32bit": {
             "url": "https://www.poweriso.net/PowerISO8.exe#/setup.exe",
