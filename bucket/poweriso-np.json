@@ -14,7 +14,7 @@
                 "script": [
                     "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
                     "Start-Process \"$dir\\setup.exe\" -Verb 'RunAs' -Args '/S'; if (!(Test-Path \"${env:ProgramFiles(x86)}\\PowerISO\")) { Start-Sleep -Seconds 2 }",
-                    "Start-Sleep -Seconds 2; Stop-Process -Name 'PWRISOVM' -Force; Remove-Item \"$dir\\setup.exe\"",
+                    "Start-Sleep -Seconds 2; Stop-Process -Name 'PWRISOVM' -ErrorAction 'SilentlyContinue' -Force; Remove-Item \"$dir\\setup.exe\"",
                     "$utf8Only = New-Object System.Text.UTF8Encoding($false)",
                     "[System.IO.File]::WriteAllText(\"$dir\\piso.cmd\", '@\"%ProgramFiles(x86)%\\PowerISO\\piso.exe\"  %*', $utf8Only)"
                 ]
@@ -39,8 +39,6 @@
                     "Start-Process \"$dir\\setup.exe\" -Verb 'RunAs' -Args '/S'; if (!(Test-Path \"$env:ProgramFiles\\PowerISO\")) { Start-Sleep -Seconds 2 }",
                     "Start-Sleep -Seconds 2; Stop-Process -Name 'PWRISOVM' -Force; Remove-Item \"$dir\\setup.exe\"",
                     "$UTF8Only = New-Object System.Text.UTF8Encoding($false)",
-                    "#Set-Content \"$dir\\piso.cmd\" '@\"%ProgramFiles%\\PowerISO\\piso.exe\"  %*' -Encoding 'utf8'",
-                    "#if ($PSEdition -eq 'Desktop') {  }",
                     "[System.IO.File]::WriteAllText(\"$dir\\piso.cmd\", '@\"%ProgramFiles%\\PowerISO\\piso.exe\"  %*', $utf8Only)"
                 ]
             },
@@ -48,7 +46,7 @@
                 "script": [
                     "if ($cmd -eq 'uninstall') {",
                     "    if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-                    "    Stop-Process -Name 'PWRISOVM', 'explorer' -Force",
+                    "    Stop-Process -Name 'PWRISOVM', 'explorer' -ErrorAction 'SilentlyContinue' -Force",
                     "    Start-Process \"$env:ProgramFiles\\PowerISO\\uninstall.exe\" -Wait -Verb 'RunAs' -Args '/S'",
                     "    Remove-Item 'HKCU:\\SOFTWARE\\PowerISO1' -Recurse",
                     "}"
