@@ -42,7 +42,7 @@
             "aegisub.cmd",
             "Aegisub",
             "",
-            "icon.exe_"
+            "aegisub.ico"
         ]
     ],
     "post_install": [
