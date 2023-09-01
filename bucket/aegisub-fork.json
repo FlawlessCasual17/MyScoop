@@ -28,9 +28,9 @@
         }
     },
     "pre_install": [
-        "ensure \"$persist_dir\\Aegisub\" | Out-Null",
-        "Expand-7zipArchive \"$dir\\aegisub-portable-64.zip\" \"$dir\\Aegisub\" -ExtractDir 'aegisub-portable' -Removal",
-        "Remove-Item \"$dir\\Aegisub\\Microsoft.CRT\" -Recurse",
+        "if (!(Test-Path $persist_dir)) { ensure $persist_dir | Out-Null }",
+        "Expand-7zipArchive \"$dir\\aegisub-portable-64.zip\" \"$persist_dir\\Aegisub\" -ExtractDir 'aegisub-portable' -Removal",
+        "Remove-Item \"$$persist_dir\\Aegisub\\Microsoft.CRT\" -Recurse",
         "if (!(Test-Path \"$persist_dir\\Aegisub\\hotkey.json\")) {",
         "    [System.IO.File]::WriteAllLines(\"$persist_dir\\Aegisub\\hotkey.json\", '', [System.text.UTF8Encoding]($false))",
         "}"
@@ -42,7 +42,6 @@
         ]
     ],
     "persist": [
-        "Aegisub\\hotkey.json",
         "Aegisub\\config",
         "Aegisub\\feedDump",
         "Aegisub\\log"
