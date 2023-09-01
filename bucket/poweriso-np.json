@@ -20,10 +20,12 @@
             },
             "uninstaller": {
                 "script": [
-                    "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-                    "Stop-Process -Name 'PWRISOVM', 'explorer' -Force",
-                    "Start-Process \"${env:ProgramFiles(x86)}\\PowerISO\\uninstall.exe\" -Wait -Verb 'RunAs' -Args '/S'",
-                    "Remove-Item 'HKCU:\\SOFTWARE\\PowerISO1' -Recurse"
+                    "if ($cmd -eq 'uninstall') {",
+                    "    if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+                    "    Stop-Process -Name 'PWRISOVM', 'explorer' -Force",
+                    "    Start-Process \"${env:ProgramFiles(x86)}\\PowerISO\\uninstall.exe\" -Wait -Verb 'RunAs' -Args '/S'",
+                    "    Remove-Item 'HKCU:\\SOFTWARE\\PowerISO1' -Recurse",
+                    "}"
                 ]
             }
         },
@@ -40,10 +42,12 @@
             },
             "uninstaller": {
                 "script": [
-                    "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-                    "Stop-Process -Name 'PWRISOVM', 'explorer' -Force",
-                    "Start-Process \"$env:ProgramFiles\\PowerISO\\uninstall.exe\" -Wait -Verb 'RunAs' -Args '/S'",
-                    "Remove-Item 'HKCU:\\SOFTWARE\\PowerISO1' -Recurse"
+                    "if ($cmd -eq 'uninstall') {",
+                    "    if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+                    "    Stop-Process -Name 'PWRISOVM', 'explorer' -Force",
+                    "    Start-Process \"$env:ProgramFiles\\PowerISO\\uninstall.exe\" -Wait -Verb 'RunAs' -Args '/S'",
+                    "    Remove-Item 'HKCU:\\SOFTWARE\\PowerISO1' -Recurse",
+                    "}"
                 ]
             }
         }
