@@ -16,7 +16,7 @@
         "64bit": {
             "extract_dir": "DisplayPowerOff-4.1/x64",
             "pre_install": [
-                "Remove-Item $dir -Include '*.bat' -Recurse",
+                "Remove-Item $dir -Include '*.bat', 'DisplayPowerOff-*' -Recurse",
                 "if (Test-Path \"$persist_dir\\doff.ini\") { ensure $persist_dir | Out-Null; Copy-Item \"$persist_dir\\doff.ini\" \"$dir\\doff.ini\" }"
             ]
         }
