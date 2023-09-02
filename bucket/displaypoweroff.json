@@ -5,6 +5,7 @@
     "license": "MIT|LGPL-3.0",
     "url": "https://sourceforge.net/projects/doff/files/DisplayPowerOff/DisplayPowerOff-4.1.7z",
     "hash": "sha1:ce3a0dadfeba5894bec8086fe9c5c2b8369b43ca",
+    "extract_dir": "DisplayPowerOff-4.1",
     "architecture": {
         "32bit": {
             "pre_install": [
@@ -44,6 +45,7 @@
         "hash": {
             "url": "$baseurl",
             "regex": "$basename\",.*?sha1\":\"$sha1"
-        }
+        },
+        "extract_dir": "DisplayPowerOff-$version"
     }
 }
