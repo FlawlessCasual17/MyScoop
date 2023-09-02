@@ -40,7 +40,7 @@
         "CSDefault.cst",
         "CloneSpy.ini"
     ],
-    "checkver": "<strong>([\\d.]+)</strong>",
+    "checkver": "\\<strong\\>([\\d.]+)\\</strong\\>",
     "autoupdate": {
         "url": "https://clonespy.com/english/download/cspy$cleanVersion.exe#/dl.7z"
     }
