@@ -32,14 +32,14 @@
         "Expand-7zipArchive \"$dir\\aegisub-portable-64.zip\" \"$persist_dir\\Aegisub\" -ExtractDir 'aegisub-portable' -Removal",
         "[System.IO.File]::WriteAllLines(\"$dir\\aegisub.cmd\", \"@start $persist_dir\\Aegisub\\aegisub.exe\", [System.text.UTF8Encoding]($false))",
         "# This is just to give the shortcut an icon.",
-        "New-Item \"$dir\\icon.exe_\" -Type 'SymbolicLink' -Value \"$persist_dir\\Aegisub\\aegisub.exe\" | Out-Null",
+        "New-Item \"$dir\\icon\" -Type 'SymbolicLink' -Value \"$persist_dir\\Aegisub\\aegisub.exe\" | Out-Null",
     ],
     "shortcuts": [
         [
             "aegisub.cmd",
             "Aegisub",
             "",
-            "icon.exe_"
+            "icon"
         ]
     ],
     "post_install": [
