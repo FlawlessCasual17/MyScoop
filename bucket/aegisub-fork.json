@@ -32,7 +32,7 @@
         "Expand-7zipArchive \"$dir\\aegisub-portable-64.zip\" \"$persist_dir\\Aegisub\" -ExtractDir 'aegisub-portable' -Removal",
         "[System.IO.File]::WriteAllLines(\"$dir\\aegisub.cmd\", \"@start $persist_dir\\Aegisub\\aegisub.exe\", [System.text.UTF8Encoding]($false))",
         "# This is just to give the shortcut an icon.",
-        "New-Item \"$dir\\aegisub.exe_\" -Type 'SymbolicLink' -Value \"$persist_dir\\Aegisub\\aegisub.exe\" | Out-Null",
+        "New-Item \"$dir\\aegisub.exe_\" -Type 'SymbolicLink' -Target \"$persist_dir\\Aegisub\\aegisub.exe\" | Out-Null",
         "if (!(Test-Path \"$persist_dir\\Aegisub\\hotkey.json\")) {",
         "    [System.IO.File]::WriteAllLines(\"$persist_dir\\Aegisub\\hotkey.json\", '', [System.text.UTF8Encoding]($false))",
         "}"
