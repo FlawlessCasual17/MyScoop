@@ -5,18 +5,18 @@
     "license": "MIT|LGPL-3.0",
     "url": "https://sourceforge.net/projects/doff/files/DisplayPowerOff/DisplayPowerOff-4.1.7z",
     "hash": "sha1:ce3a0dadfeba5894bec8086fe9c5c2b8369b43ca",
-    "extract_dir": "DisplayPowerOff-4.1",
     "architecture": {
         "32bit": {
+            "extract_dir": "DisplayPowerOff-4.1",
             "pre_install": [
                 "Remove-Item $dir -Include 'x64', '*.bat' -Recurse",
                 "if (Test-Path \"$persist_dir\\doff.ini\") { ensure $persist_dir | Out-Null; Copy-Item \"$persist_dir\\doff.ini\" \"$dir\\doff.ini\" }"
             ]
         },
         "64bit": {
+            "extract_dir": "DisplayPowerOff-4.1/x64",
             "pre_install": [
-                "Remove-Item \"$dir\\*\" -Exclude 'x64' -Recurse",
-                "Move-Item \"$dir\\x64\" $dir -Exclude '*.bat'; Remove-Item \"$dir\\x64\" -Recurse",
+                "Remove-Item $dir -Include '*.bat' -Recurse",
                 "if (Test-Path \"$persist_dir\\doff.ini\") { ensure $persist_dir | Out-Null; Copy-Item \"$persist_dir\\doff.ini\" \"$dir\\doff.ini\" }"
             ]
         }
@@ -46,6 +46,13 @@
             "url": "$baseurl",
             "regex": "$basename\",.*?sha1\":\"$sha1"
         },
-        "extract_dir": "DisplayPowerOff-$version"
+        "architecture": {
+            "32bit": {
+                "extract_dir": "DisplayPowerOff-$version"
+            },
+            "64bit": {
+                "extract_dir": "DisplayPowerOff-4.1/x64"
+            }
+        }
     }
 }
