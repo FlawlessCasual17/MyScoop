@@ -33,9 +33,6 @@
         "[System.IO.File]::WriteAllLines(\"$dir\\aegisub.cmd\", \"@start $persist_dir\\Aegisub\\aegisub.exe\", [System.text.UTF8Encoding]($false))",
         "# This is just to give the shortcut an icon.",
         "New-Item \"$dir\\icon\" -Type 'SymbolicLink' -Value \"$persist_dir\\Aegisub\\aegisub.exe\" | Out-Null",
-        "if (!(Test-Path \"$persist_dir\\Aegisub\\hotkey.json\")) {",
-        "    [System.IO.File]::WriteAllLines(\"$persist_dir\\Aegisub\\hotkey.json\", '', [System.text.UTF8Encoding]($false))",
-        "}"
     ],
     "shortcuts": [
         [
