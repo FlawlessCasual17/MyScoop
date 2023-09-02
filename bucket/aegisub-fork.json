@@ -45,7 +45,7 @@
             "aegisub.icon_"
         ]
     ],
-    "persist": "Aegisub"
+    "persist": "Aegisub",
     "post_install": [
         "$scriptsDir = \"$bucketsdir\\MyScoop\\scripts\"",
         "Get-ChildItem \"$scriptsDir\\aegisub\\*.reg\" | ForEach-Object {",
