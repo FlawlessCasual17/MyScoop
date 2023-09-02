@@ -27,7 +27,7 @@
             "$releaseDate = Select-String -InputObject $content -AllMatches '([\\d]+-[\\w]+-[\\d]+\\s[\\d:]+)'",
             "$releaseDate = $releaseDate.Matches.Value | Get-Date | Sort-Object -Unique -Descending",
             "$releaseDate = $releaseDate[0] | Get-Date -UFormat '%d-%b-%Y %R'",
-            "$regex = \"RiseupVPN-installer-(?<version>[\\w.-]+)\\.exe</a>\\s+$releaseDate\"",
+            "$regex = \"RiseupVPN-installer-(?<version>[\\w.-]+)\\.exe\\</a\\>\\s+$releaseDate\"",
             "$content -match $regex | Out-Null; $version = $Matches.version",
             "$version | Write-Output"
         ],
