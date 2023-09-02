@@ -16,7 +16,7 @@
         "64bit": {
             "pre_install": [
                 "Remove-Item \"$dir\\*\" -Exclude 'x64' -Recurse",
-                "Move-Item \"$dir\\x64\\*\" $dir -Exclude '*.bat'; Remove-Item \"$dir\\x64\" -Recurse",
+                "Move-Item \"$dir\\x64\" $dir -Exclude '*.bat'; Remove-Item \"$dir\\x64\" -Recurse",
                 "if (Test-Path \"$persist_dir\\doff.ini\") { ensure $persist_dir | Out-Null; Copy-Item \"$persist_dir\\doff.ini\" \"$dir\\doff.ini\" }"
             ]
         }
