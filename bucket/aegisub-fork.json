@@ -1,8 +1,4 @@
 {
-    "##": [
-        "The app currently has a bugged interaction with Scoop's current folder, as a result it does work properly.",
-        "See https://github.com/ScoopInstaller/Extras/issues/10672#issuecomment-1465115400 for more info."
-    ],
     "version": "feature_10",
     "homepage": "https://github.com/arch1t3cht/Aegisub",
     "description": "A fork of the advanced subtitle editor, with new feature branches.",
@@ -19,7 +15,8 @@
         "To uninstall associations, run:",
         "reg import \"$(scoop prefix aegisub-fork)\\uninstall-associations.reg\"",
         "To uninstall the context menu, run:",
-        "reg import \"$(scoop prefix aegisub-fork)\\uninstall-context.reg\""
+        "reg import \"$(scoop prefix aegisub-fork)\\uninstall-context.reg\"",
+        ""
     ],
     "architecture": {
         "64bit": {
