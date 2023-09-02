@@ -53,7 +53,7 @@
         "if ($cmd -eq 'uninstall') {",
         "   foreach ($regFile in 'uninstall-associations', 'uninstall-context') { reg import \"$dir\\$regFile.reg\" | Out-Null }",
         "}",
-        "Remove-Item \"$persist_dir\\Aegisub\" 'https://github.com/Ristellise/AegisubDC' -Exclude 'config', 'feedDump', 'log', 'hotkey.json', 'config.json' -Recurse"
+        "Remove-Item \"$persist_dir\\Aegisub\\*\" -Exclude 'config', 'feedDump', 'log', 'hotkey.json', 'config.json' -Recurse"
     ],
     "checkver": "releases/tag/([\\w_]+)",
     "autoupdate": {
