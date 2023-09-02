@@ -1,6 +1,6 @@
 {
     "##": [
-        "The app currently has a bugged interaction with Scoop's current folder, as a result it does work properly.",
+        "The app currently has a bugged interaction with Scoop's `current` folder, as a result it does not work properly.",
         "See https://github.com/ScoopInstaller/Extras/issues/10672#issuecomment-1465115400 for more info."
     ],
     "version": "feature_10",
