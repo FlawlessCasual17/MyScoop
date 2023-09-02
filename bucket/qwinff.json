@@ -26,7 +26,7 @@
         "url": "http://sourceforge.net/projects/qwinff/files/release/v$version/qwinff-portable-$version.exe#/dl.7z",
         "hash": {
             "url": "https://sourceforge.net/projects/qwinff/rss?path=/release",
-            "regex": "\\s+algo=\"md5\">$md5<"
+            "regex": "$basename/download\".*?md5\"\\>$md5<"
         }
     }
 }
