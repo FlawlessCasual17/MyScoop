@@ -28,7 +28,7 @@
     "checkver": {
         "url": "https://www.mozilla.org/",
         "script": "Invoke-RestMethod 'https://www.lizard-labs.com/' -UserAgent $([Microsoft.PowerShell.Commands.PSUserAgent]::Chrome) -SkipCertificateCheck",
-        "regex": "([\\d.]+)</strong>.*?\"/event_log_observer.aspx"
+        "regex": "([\\d.]+)\\</strong\\>.*?\"/event_log_observer\.aspx"
     },
     "autoupdate": {
         "url": "https://www.lizard-labs.com/Downloads/EventLogObserverSetup.msi#/elob.msi_"
