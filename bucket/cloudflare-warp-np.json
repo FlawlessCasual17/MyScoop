@@ -25,13 +25,8 @@
         ]
     },
     "checkver": {
-        "script": [
-            "$uri_1 = 'https://install.appcenter.ms/api/v0.1/apps/cloudflare/1.1.1.1-windows-1/distribution_groups/release/public_releases?scope=tester&top=10000'",
-            "(Invoke-WebRequest $uri_1).Content -match 'id\"\\:(?<ID>[\\d]+).*?version\"\\:\"(?<Version>[\\d.]+)' | Out-Null; $id = $Matches.ID; $version = $Matches.Version",
-            "$uri_2 = 'https://install.appcenter.ms/api/v0.1/apps/cloudflare/1.1.1.1-windows-1/distribution_groups/release/releases/$id?is_install_page=true'.Replace('$id', $id)",
-            "$jsonCont = Invoke-RestMethod $uri_2; $downloadUri = $jsonCont['version' -eq \"$version\"].download_url; Write-Output \"$downloadUri $id $version\""
-        ],
-        "regex": "https://appcenter-(?<Uri>filemanagement-[\\w]+\\.azureedge.*)\\s(?<Id>[\\d]+)\\s([\\d.]+)"
+        "url": "https://install.appcenter.ms/api/v0.1/apps/cloudflare/1.1.1.1-windows-1/distribution_groups/release/public_releases?scope=tester&top=10000",
+        "regex": "id\"\\:(?<ID>[\\d]+).*?version\"\\:\"([\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
