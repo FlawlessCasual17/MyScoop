@@ -45,7 +45,7 @@
         "extract_dir": "jsignpdf-$version",
         "hash": {
             "url": "https://sourceforge.net/projects/jsignpdf/rss?path=/stable",
-            "regex": "$basename/download\".*?md5\">$md5"
+            "regex": "$basename/download\".*?md5\"\\>$md5"
         }
     }
 }
