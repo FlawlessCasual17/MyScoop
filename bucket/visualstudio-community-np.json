@@ -17,7 +17,7 @@
             "if (!(is_admin)) { error \"Admin privileges are required to $cmd $app\"; break }",
             "if ($cmd -eq 'update') {",
             "    $installDir = (Get-ChildItem \"$env:ProgramFiles\\Microsoft Visual Studio\" -Filter 'Community' -Recurse).FullName",
-            "    Start-Process \"$dir\\vs_community.exe\" -Wait -Verb 'RunAs' -Args @('update', \"$installDir\", '-q', '--norestart', '--wait')",
+            "    Start-Process \"$dir\\vs_community.exe\" -Wait -Verb 'RunAs' -Args @('update', \"'$installDir'\", '-q', '--norestart', '--wait')",
             "}",
             "else { Start-Process \"$dir\\vs_community.exe\" -Wait -Verb 'RunAs' -Args @('-q', '--norestart', '--wait') }",
             "Start-Sleep -Seconds 2; Remove-Item \"$dir\\vs_community.exe\""
@@ -29,7 +29,7 @@
             "if ($cmd -eq 'uninstall') {",
             "    $setupFile = \"${env:ProgramFiles(x86)}\\Microsoft Visual Studio\\Installer\\setup.exe\"",
             "    $installDir = (Get-ChildItem \"$env:ProgramFiles\\Microsoft Visual Studio\" -Filter 'Community' -Recurse).FullName",
-            "    Start-Process ($setupFile) -Wait -Verb 'RunAs' -Args @('uninstall', '--installPath', \"$installDir\", '--force', '-q', '--norestart')",
+            "    Start-Process ($setupFile) -Wait -Verb 'RunAs' -Args @('uninstall', '--installPath', \"'$installDir'\", '--force', '-q', '--norestart')",
             "}"
         ]
     },
