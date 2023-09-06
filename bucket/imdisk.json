@@ -22,7 +22,7 @@
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "Start-Process 'cmd' -Wait -NoNewWindow -Args @('/C', \"$dir\\uninstall_imdisk.cmd\")"
     ],
-    "checkver": "ImDisk\\sVirtual\\sDisk\\sDriver</h2>\\s\\n\\s+<h3>Current\\sversion\\s([\\d.]+)",
+    "checkver": "ImDisk\\sVirtual\\sDisk\\sDriver\\</h2\\>\\s\\n\\s+\\<h3\\>Current\\sversion\\s([\\d.]+)",
     "autoupdate": {
         "url": "https://static.ltr-data.se/files/imdisk.zip"
     }
