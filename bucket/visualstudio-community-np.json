@@ -6,7 +6,7 @@
         "identifier": "Freeware",
         "url": "https://www.microsoft.com/en-ca/legal/terms-of-use"
     },
-    "notes": "You may have to restart your system after installing/uninstalling this app for it to work properly!",
+    "notes": "You may have to restart your system after installing this app for it to work properly!",
     "architecture": {
         "64bit": {
             "url": "https://aka.ms/vs/17/release/vs_community.exe",
