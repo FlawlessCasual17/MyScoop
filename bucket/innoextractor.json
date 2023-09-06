@@ -1,5 +1,5 @@
 {
-    "version": ".",
+    "version": "6.2.1.418",
     "homepage": "http://www.havysoft.cl/innoextractor.html",
     "description": "A GUI frontend for innounp.",
     "license": {
@@ -20,7 +20,7 @@
     "pre_uninstall": "Start-Process 'reg' -Wait -WindowStyle 'Hidden' -ArgumentList @('delete', 'HKCU\\SOFTWARE\\Classes\\exefile\\shell\\InnoExtractor', '/f')",
     "checkver": {
         "url": "http://www.havysoft.cl/descargar.html",
-        "regex": "\\s+\\<.*?\\>([\\d.]+)\\<"
+        "regex": "InnoExtractor\\</td\\>\\n+.*?\\>([\\d.]+)\\<"
     },
     "autoupdate": {
         "url": "http://www.havysoft.cl/download/IE_Install.zip"
