@@ -1,0 +1,46 @@
+{
+    "version": "17.7.34024.191",
+    "homepage": "https://visualstudio.microsoft.com",
+    "description": "The community edition of the comprehensive and feature-packed IDE for .NET and C/C++ developers.",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://www.microsoft.com/en-ca/legal/terms-of-use"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://aka.ms/vs/17/release/vs_community.exe",
+            "hash": "ef3e389f222335676581eddbe7ddec01147969c1d42e19b9dade815c3c0f04b1"
+        }
+    },
+    "installer": {
+        "script": [
+            "if (!(is_admin)) { error \"Admin privileges are required to $cmd $app\"; break }",
+            "Start-Process \"$dir\\vs_community.exe\" -Wait -Verb 'RunAs' -Args @('-q', '--norestart', '--wait')",
+            "Remove-Item \"$dir\\vs_community.exe\""
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "if (!(is_admin)) { error \"Admin privileges are required to $cmd $app\"; break }",
+            "$installDir = (Get-ChildItem \"$env:ProgramFiles\\Microsoft Visual Studio\" -Filter 'Community' -Recurse).FullName",
+            "Start-Process \"${env:ProgramFiles(x86)}\\Microsoft Visual Studio\\Installer\\setup.exe\" -Wait -Verb 'RunAs' `",
+            "  -Args @('--installPath', \"$installDir\", '-q', '--norestart')"
+        ]
+    },
+    "post_uninstall": [
+        "warn \"$app might have left some unwanted files!\"; warn \"You can uninstall the rest of $app using:\"",
+        "Write-Host '& \"${env:ProgramFiles(x86)}\\Microsoft Visual Studio\\Installer\\setup.exe\" /uninstall' -B 'Red'"
+    ],
+    "checkver": {
+        "script": [
+            "$cont = Invoke-RestMethod 'https://visualstudio.microsoft.com/downloads/'",
+            "$cont -match '/releases/(?<Year>[\\d]+)' | Out-Null; $year = $Matches.Year",
+            "$uri = \"https://learn.microsoft.com/visualstudio/releases/$year/release-history\"",
+            "(Invoke-RestMethod $uri) -match 'Tools.*?\\n+\\<td\\>(?<Version>[\\d.]+)\\<'; Write-Output ($Matches.Version)"
+        ],
+        "regex": "([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://aka.ms/vs/$majorVersion/release/vs_community.exe"
+    }
+}
