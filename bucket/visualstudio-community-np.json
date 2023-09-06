@@ -15,21 +15,29 @@
     "installer": {
         "script": [
             "if (!(is_admin)) { error \"Admin privileges are required to $cmd $app\"; break }",
-            "Start-Process \"$dir\\vs_community.exe\" -Wait -Verb 'RunAs' -Args @('-q', '--norestart', '--wait')",
-            "Remove-Item \"$dir\\vs_community.exe\""
+            "if ($cmd -eq 'update') {",
+            "    $installDir = (Get-ChildItem \"$env:ProgramFiles\\Microsoft Visual Studio\" -Filter 'Community' -Recurse).FullName",
+            "    Start-Process \"$dir\\vs_community.exe\" -Wait -Verb 'RunAs' -Args @('update', \"$installDir\" '-q', '--norestart', '--wait')",
+            "}",
+            "else { Start-Process \"$dir\\vs_community.exe\" -Wait -Verb 'RunAs' -Args @('-q', '--norestart', '--wait') }",
+            "Start-Sleep -Seconds 2; Remove-Item \"$dir\\vs_community.exe\""
         ]
     },
     "uninstaller": {
         "script": [
             "if (!(is_admin)) { error \"Admin privileges are required to $cmd $app\"; break }",
-            "$installDir = (Get-ChildItem \"$env:ProgramFiles\\Microsoft Visual Studio\" -Filter 'Community' -Recurse).FullName",
-            "Start-Process \"${env:ProgramFiles(x86)}\\Microsoft Visual Studio\\Installer\\setup.exe\" -Wait -Verb 'RunAs' `",
-            "  -Args @('--installPath', \"$installDir\", '-q', '--norestart')"
+            "if ($cmd -eq 'uninstall') {",
+            "    $setupFile = \"${env:ProgramFiles(x86)}\\Microsoft Visual Studio\\Installer\\setup.exe\"",
+            "    $installDir = (Get-ChildItem \"$env:ProgramFiles\\Microsoft Visual Studio\" -Filter 'Community' -Recurse).FullName",
+            "    Start-Process $setupFile -Wait -Verb 'RunAs' -Args @('uninstall', '--installPath', \"$installDir\", '--force', '-q', '--norestart')",
+            "}"
         ]
     },
     "post_uninstall": [
-        "warn \"$app might have left some unwanted files!\"; warn \"You can uninstall the rest of $app using:\"",
-        "Write-Host '& \"${env:ProgramFiles(x86)}\\Microsoft Visual Studio\\Installer\\setup.exe\" /uninstall' -B 'Red'"
+        "if ($cmd -eq 'uninstall') {",
+        "    warn \"$app might have left some unwanted files!\"; warn \"You can uninstall the rest of $app using:\"",
+        "    Write-Host '& \"${env:ProgramFiles(x86)}\\Microsoft Visual Studio\\Installer\\setup.exe\" /uninstall' -F 'Red'",
+        "}"
     ],
     "checkver": {
         "script": [
