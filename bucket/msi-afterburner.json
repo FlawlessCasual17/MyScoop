@@ -17,7 +17,7 @@
         "MSI Kombustor": "extras/msikombustor",
         "FurMark": "extras/furmark"
     },
-    "url": "https://download.msi.com/uti_exe/vga/MSIAfterburnerSetup.zip?__token__=exp=zzzz~acl=/*~zzzzzzzz#/dl.zip",
+    "url": "https://ftp.nluug.nl/pub/games/PC/guru3d/afterburner/[Guru3D.com]-MSIAfterburnerSetup465.zip",
     "hash": "6a25d3deda56844c6ea3202c239257d94280dd3b3a56c517616e17d0fb8ee60f",
     "pre_install": [
         "ensure \"$persist_dir\" | Out-Null",
@@ -51,6 +51,6 @@
         "reverse": true
     },
     "autoupdate": {
-        "url": "https://download.msi.com/uti_exe/vga/MSIAfterburnerSetup.zip?__token__=exp=zzzz~acl=/*~zzzzzzzz#/dl.zip"
+        "url": "https://ftp.nluug.nl/pub/games/PC/guru3d/afterburner/[Guru3D.com]-MSIAfterburnerSetup$cleanVersion.zip"
     }
 }
