@@ -29,14 +29,15 @@
             "if ($cmd -eq 'uninstall') {",
             "    $setupFile = \"${env:ProgramFiles(x86)}\\Microsoft Visual Studio\\Installer\\setup.exe\"",
             "    $installDir = (Get-ChildItem \"$env:ProgramFiles\\Microsoft Visual Studio\" -Filter 'Community' -Recurse).FullName",
-            "    Start-Process ($setupFile) -Wait -Verb 'RunAs' -Args @('uninstall', '--installPath', \"`\"$installDir`\"\", '-q', '--norestart')",
+            "    Start-Process $setupFile -Wait -Verb 'RunAs' -Args @('uninstall', '--installPath', \"`\"$installDir`\"\", '-q', '--norestart')",
+            "    Start-Sleep -Seconds 2; Start-Process $setupFile -Wait -Verb 'RunAs' -Args @('/uninstall', '-q')",
             "}"
         ]
     },
     "post_uninstall": [
-        "if ($cmd -eq 'uninstall') {",
+        "if (($cmd -eq 'uninstall') -and (Test-Path \"${env:ProgramFiles(x86)}\\Microsoft Visual Studio\\Installer\\setup.exe\")) {",
         "    warn \"$app might have left some unwanted files!\"; warn \"You can uninstall the rest of $app using:\"",
-        "    Write-Host '& \"${env:ProgramFiles(x86)}\\Microsoft Visual Studio\\Installer\\setup.exe\" /uninstall' -F 'Red'",
+        "    Write-Host '& \"${env:ProgramFiles(x86)}\\Microsoft Visual Studio\\Installer\\setup.exe\" /uninstall -q' -F 'Red'",
         "}"
     ],
     "checkver": {
