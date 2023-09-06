@@ -8,7 +8,7 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://appcenter-filemanagement-distrib4ede6f06e.azureedge.net/bdcc0aaa-796d-41f8-9371-e6c99642b847/Cloudflare_WARP_Release-x64.msi?sv=2019-02-02&sr=c&sig=4L8kBLGajBQSUXg9SX4sg8i5LgeTKi2DpCE%2FXzfWYZM%3D&se=2023-09-07T09%3A33%3A35Z&sp=r#/setup.msi_",
+            "url": "https://appcenter-filemanagement-distrib4ede6f06e.azureedge.net/bdcc0aaa-796d-41f8-9371-e6c99642b847/Cloudflare_WARP_Release-x64.msi?sv=2019-02-02&sr=c&sig=4L8kBLGajBQSUXg9SX4sg8i5LgeTKi2DpCE%2FXzfWYZM%3D&se=2023-09-07T09%3A33%3A35Z&sp=r",
             "hash": "md5:518448cbcd28347ca9190dd59ea31dad"
         }
     },
