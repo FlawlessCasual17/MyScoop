@@ -8,7 +8,7 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://appcenter-filemanagement-distrib4ede6f06e.azureedge.net/bdcc0aaa-796d-41f8-9371-e6c99642b847/Cloudflare_WARP_Release-x64.msi?sv=2019-02-02&sr=c&sig=4L8kBLGajBQSUXg9SX4sg8i5LgeTKi2DpCE%2FXzfWYZM%3D&se=2023-09-07T09%3A33%3A35Z&sp=r",
+            "url": "https://1111-releases.cloudflareclient.com/windows/Cloudflare_WARP_Release-x64.msi#/setup.msi_",
             "hash": "md5:518448cbcd28347ca9190dd59ea31dad"
         }
     },
@@ -31,7 +31,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://appcenter-$matchUri#/setup.msi_",
+                "url": "https://1111-releases.cloudflareclient.com/windows/Cloudflare_WARP_Release-x64.msi#/setup.msi_",
                 "hash": {
                     "url": "https://install.appcenter.ms/api/v0.1/apps/cloudflare/1.1.1.1-windows-1/distribution_groups/release/releases/$matchId?is_install_page=true",
                     "jsonpath": "$[?(@.version == '$version')].fingerprint"
