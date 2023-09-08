@@ -1,7 +1,7 @@
 {
     "version": "2022.01.22",
     "homepage": "https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Combining-Blocklists",
-    "description": "A tool for dnscrypt-proxy used to build block lists from local and remote lists in common formats. It converts those lists into entries suitable for a dnscrypt-proxy blocklist.",
+    "description": "A tool for dnscrypt-proxy used to build block lists for dnscrypt-proxy from local and remote lists in common formats.",
     "license": "ISC",
     "suggest": {
         "Python": "main/python"
