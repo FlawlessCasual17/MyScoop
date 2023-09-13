@@ -61,7 +61,7 @@
     "autoupdate": {
         "url": "https://download.visualstudio.microsoft.com/download/pr/$matchUuid/$matchHash/vs_community.exe",
         "hash": {
-            "find": "$matchHash"
+            "regex": "$matchHash"
         }
     }
 }
