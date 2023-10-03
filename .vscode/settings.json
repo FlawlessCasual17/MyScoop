@@ -4,6 +4,9 @@
         "editor.formatOnSave": true
     },
     "powershell.scriptAnalysis.settingsPath": "PSScriptAnalyzerSettings.psd1",
+    "powershell.codeFormatting.preset": "OTBS",
+    "powershell.codeFormatting.alignPropertyValuePairs": true,
+    "powershell.codeFormatting.ignoreOneLineBlock": true,
     "json.schemas": [
         {
             "url": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
@@ -32,8 +35,6 @@
         "allowedprogram",
         "allprofiles",
         "ALLUSERS",
-        "Alparysoft",
-        "amet",
         "anonymization",
         "APPDATA",
         "architecto",
@@ -56,8 +57,6 @@
         "Bwin",
         "Caldav",
         "Carddav",
-        "Catppuccin",
-        "Chab",
         "Chatterino",
         "Checksumid",
         "checkver",
@@ -316,5 +315,6 @@
         "YAPA",
         "Zliced",
         "zoombar"
-    ]
+    ],
+    "files.enableTrash": false
 }
