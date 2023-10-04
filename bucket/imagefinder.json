@@ -1,5 +1,5 @@
 {
-    "version": "1.001",
+    "version": "1.005",
     "homepage": "https://kurtzimmermann.com/index_e.html",
     "description": "An application for finding, comparing, and removing duplicate or simimilar images. Developed by Kurt Zimmermann.",
     "license": {
@@ -13,11 +13,11 @@
     "architecture": {
         "32bit": {
             "url": "https://kurtzimmermann.com/files/ImageFinderX32.zip",
-            "hash": "a5ebbd20229b79fc2a89aa946f5774c92e5c518a11a19ddc627ded598fe11eff"
+            "hash": "76a7f5f659e6a1b8020163d7053cbd2a464051b5b41723f37c11521a145324ba"
         },
         "64bit": {
             "url": "https://kurtzimmermann.com/files/ImageFinderX64.zip",
-            "hash": "552bbe4aee4b0fc009fa5aff8529e13f90d092c68d7d982b0b12f5b8d98c7848"
+            "hash": "90ddf059213041878a00ef85572dcad01edfcbf691c218ab49a7986ea6c95a7a"
         }
     },
     "pre_install": "if (!(Test-Path \"$dir\\settings.ini\")) { New-Item \"$dir\\settings.ini\" -ItemType File | Out-Null }",
