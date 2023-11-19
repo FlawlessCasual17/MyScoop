@@ -14,9 +14,11 @@
         "Start-Process \"$dir\\ep_setup.exe\" -Wait -Verb 'RunAs'"
     ],
     "pre_uninstall": [
-        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process \"$dir\\ep_setup.exe\" -Wait -Verb 'RunAs' -Args '/uninstall'; Stop-Process -Name 'explorer'",
-        "Start-Sleep -Seconds 2"
+        "if ($cmd -eq 'uninstall') {",
+        "    if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+        "    Start-Process \"$dir\\ep_setup.exe\" -Wait -Verb 'RunAs' -Args '/uninstall'; Stop-Process -Name 'explorer'",
+        "    Start-Sleep -Seconds 2",
+        "}"
     ],
     "checkver": {
         "github": "https://github.com/valinet/ExplorerPatcher",
