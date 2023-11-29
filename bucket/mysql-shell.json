@@ -6,7 +6,7 @@
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://cdn.mysql.com/archives/mysql-shell/mysql-shell-8.2.1-windows-x86-64bit.zip",
+            "url": "https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell-8.2.1-windows-x86-64bit.zip",
             "hash": "md5:b97e421bd19d5832c421cc0c5f201e0b",
             "extract_dir": "mysql-shell-8.2.1-windows-x86-64bit"
         }
@@ -22,7 +22,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://cdn.mysql.com/archives/mysql-shell/mysql-shell-$version-windows-x86-64bit.zip",
+                "url": "https://dev.mysql.com/get/Downloads/MySQL-Shell/mysql-shell-$version-windows-x86-64bit.zip",
                 "extract_dir": "mysql-shell-$version-windows-x86-64bit"
             }
         },
