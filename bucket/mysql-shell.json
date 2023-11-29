@@ -28,7 +28,7 @@
         },
         "hash": {
             "url": "https://dev.mysql.com/downloads/shell/",
-            "regex": "$basename\\).*?\\>\\nMD5\\:\\s\\<code\\sclass=\"md5\"\\>$md5"
+            "regex": "$basename\\)\\</td\\>\\n\\<.*?\\>\\nMD5\\:\\s\\<code\\sclass=\"md5\"\\>$md5"
         }
     }
 }
