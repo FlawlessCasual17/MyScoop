@@ -1,0 +1,55 @@
+{
+    "version": "1.4.1",
+    "homepage": "https://windhawk.net/",
+    "description": "The customization marketplace for Windows programs.",
+    "license": "GPL-3.0",
+    "url": "https://github.com/ramensoftware/windhawk/releases/download/v1.4.1/windhawk_setup_offline.exe",
+    "hash": "664b34a30872d93b7136fe0bc814a4e28def58eb746fe43d152e92d52d6090bf",
+    "pre_install": [
+        "$cont_1 = @\"",
+        "[Storage]",
+        "Portable=1",
+        "CompilerPath=Compiler",
+        "EnginePath=\"Engine\\$version\"",
+        "UIPath=UI",
+        "AppDataPath=AppData",
+        "\"@",
+        "if (!(Test-Path \"$persist_dir\\windhawk.ini\")) {",
+        "    Set-Content \"$dir\\windhawk.ini\" $cont_1 -Encoding 'ascii'",
+        "}",
+        "",
+        "$cont_2 = @\"",
+        "[Storage]",
+        "Portable=1",
+        "AppDataPath=\"..\\..\\AppData\\Engine\"",
+        "\"@",
+        "if (!(Test-Path \"$persist_dir\\Engine\\$version\\engine.ini\")) {",
+        "    Set-Content \"$dir\\engine.ini\" $cont_2 -Encoding 'ascii'",
+        "}"
+    ],
+    "bin": "windhawk.exe",
+    "shortcuts": [
+        [
+            "windhawk.exe",
+            "Windhawk"
+        ]
+    ],
+    "persist": [
+        "windhawk.ini",
+        "AppData",
+        "Engine\\1.4.1"
+    ],
+    "post_install": [
+        "$version = $manifest.version",
+        "if (Test-Path \"$dir\\engine.ini\") {",
+        "    Move-Item \"$dir\\engine.ini\" \"$persist_dir\\Engine\\$version\\engine.ini\"",
+        "}"
+    ],
+    "checkver": {
+        "github": "https://github.com/ramensoftware/windhawk"
+    },
+    "autoupdate": {
+        "url": "https://github.com/ramensoftware/windhawk/releases/download/v$version/windhawk_setup_offline.exe",
+        "persist": "Engine\\$version"
+    }
+}
