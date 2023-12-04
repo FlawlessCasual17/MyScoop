@@ -41,7 +41,7 @@
     ],
     "post_install": [
         "$version = $manifest.version",
-        "Move-Item \"$dir\\Engine\\$R1\\*\" \"$dir\\Engine\\$version\" -Recurse",
+        "Move-Item \"$dir\\Engine\\`$R1\\*\" \"$dir\\Engine\\$version\" -Recurse",
         "if (Test-Path \"$dir\\engine.ini\") {",
         "    Move-Item \"$dir\\engine.ini\" \"$persist_dir\\Engine\\$version\\engine.ini\"",
         "}"
