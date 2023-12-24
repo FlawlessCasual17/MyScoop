@@ -57,14 +57,7 @@
         "}"
     ],
     "checkver": {
-        "script": [
-            "$content = Invoke-RestMethod 'https://codeberg.org/tenacityteam/tenacity/releases'",
-            "$regex = @('tag/v(?<Version>[\\w.-]+)', 'tenacity-win-v(?<fVersion>[\\w.-]+)-(?:x86|x86_64)\\.zip')",
-            "$content -match $regex[0] | Out-Null; $version = $Matches.Version",
-            "$content -match $regex[1] | Out-Null; $fVersion = $Matches.fVersion",
-            "Write-Output \"$version $fVersion\""
-        ],
-        "regex": "([\\w.-]+)\\s(?<Fversion>[\\w.-]+)"
+        "github": "https://codeberg.org/tenacityteam/tenacity"
     },
     "autoupdate": {
         "architecture": {
