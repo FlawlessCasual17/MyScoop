@@ -62,11 +62,11 @@
     "autoupdate": {
         "architecture": {
             "32bit": {
-                "url": "https://codeberg.org/tenacityteam/tenacity/releases/download/v$version/tenacity-win-v$matchFversion-x86.zip",
+                "url": "https://codeberg.org/tenacityteam/tenacity/releases/download/v$version/tenacity-win-v$version-x86.zip",
                 "extract_dir": "tenacity-win-v$matchFversion-x86"
             },
             "64bit": {
-                "url": "https://codeberg.org/tenacityteam/tenacity/releases/download/v$version/tenacity-win-v$matchFversion-x86_64.zip",
+                "url": "https://codeberg.org/tenacityteam/tenacity/releases/download/v$version/tenacity-win-v$version-x86_64.zip",
                 "extract_dir": "tenacity-win-v$matchFversion-x86_64"
             }
         }
