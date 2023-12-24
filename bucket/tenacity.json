@@ -12,15 +12,14 @@
     "architecture": {
         "32bit": {
             "url": "https://codeberg.org/tenacityteam/tenacity/releases/download/v1.3.1/tenacity-win-v1.3.1-x86.zip",
-            "hash": "1865bb0bb6866cd67e953469ac9c2866ae926fd9810f72e9b03e8f25cc17c9a9",
-            "extract_dir": "tenacity-win-v1.3.1-x86"
+            "hash": "1865bb0bb6866cd67e953469ac9c2866ae926fd9810f72e9b03e8f25cc17c9a9"
         },
         "64bit": {
             "url": "https://codeberg.org/tenacityteam/tenacity/releases/download/v1.3.1/tenacity-win-v1.3.1-x86_64.zip",
-            "hash": "76c269993b77e68996bf1c3298f810f484c1462f64cd2ec30953f82e2a3fdbd8",
-            "extract_dir": "tenacity-win-v1.3.1-x86_64"
+            "hash": "76c269993b77e68996bf1c3298f810f484c1462f64cd2ec30953f82e2a3fdbd8"
         }
     },
+    "innosetup": true,
     "shortcuts": [
         [
             "Tenacity.exe",
@@ -62,12 +61,10 @@
     "autoupdate": {
         "architecture": {
             "32bit": {
-                "url": "https://codeberg.org/tenacityteam/tenacity/releases/download/v$version/tenacity-win-v$version-x86.zip",
-                "extract_dir": "tenacity-win-v$matchFversion-x86"
+                "url": "https://codeberg.org/tenacityteam/tenacity/releases/download/v$version/tenacity-win-v$version-x86.zip"
             },
             "64bit": {
-                "url": "https://codeberg.org/tenacityteam/tenacity/releases/download/v$version/tenacity-win-v$version-x86_64.zip",
-                "extract_dir": "tenacity-win-v$matchFversion-x86_64"
+                "url": "https://codeberg.org/tenacityteam/tenacity/releases/download/v$version/tenacity-win-v$version-x86_64.zip"
             }
         }
     }
