@@ -9,7 +9,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/lunatask/lunatask/releases/download/v1.7.9/Lunatask-Setup-1.7.9.exe#/dl.zip",
-            "hash": "868eb07fe2b8206c0887e4f7a4172ca4c4c63606d1f08aff617dc3e04d389101"
+            "hash": "sha512:5c3b154b4770e800bf457537ed36b5fd8fdadb5bd0db4561e78245639afb2e634ed6856bc9285b7bad9d6784210a6415612bee06ba0f19bca193e195919516af"
         }
     },
     "pre_install": "Get-Item \"$dir\\*\" -Exclude '$PLUGINSDIR' | Remove-Item -Recurse; Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" $dir; Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
@@ -27,6 +27,10 @@
             "64bit": {
                 "url": "https://github.com/lunatask/lunatask/releases/download/v1.7.9/Lunatask-Setup-1.7.9.exe#/dl.zip"
             }
+        },
+        "hash": {
+            "url": "$baseurl/latest.yml",
+            "regex": "sha512:\\s$base64"
         }
     }
 }
