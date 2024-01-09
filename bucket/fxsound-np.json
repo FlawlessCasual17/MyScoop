@@ -21,10 +21,8 @@
         "if ($cmd -eq 'uninstall') {",
         "    if (Get-Process -Name 'FxSound' -ErrorAction 'SilentlyContinue') { error $msg; break }",
         "",
-        "    foreach ($f in (Get-ChildItem \"$dir\\*.msi\")) {",
-        "        Start-Process 'msiexec' -Wait -Verb 'RunAs' `",
-        "          -Args @('/x', \"$dir\\$f\", '/qn', 'AI_UNINSTALLER_CTP=1')",
-        "    }",
+        "    Start-Process 'msiexec' -Wait -Verb 'RunAs' `",
+        "      -Args @('/x', \"$dir\\fxsound.x64\", '/qn', 'AI_UNINSTALLER_CTP=1')",
         "}"
     ],
     "checkver": {
