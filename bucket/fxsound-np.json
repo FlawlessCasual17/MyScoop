@@ -23,7 +23,7 @@
         "",
         "    foreach ($f in (Get-ChildItem \"$dir\\*.msi\")) {",
         "        Start-Process 'msiexec' -Wait -Verb 'RunAs' `",
-        "          -Args @('/x', \"$dir\\$f\", '/qn')",
+        "          -Args @('/x', \"$dir\\$f\", '/qn', 'AI_UNINSTALLER_CTP=1')",
         "    }",
         "}"
     ],
