@@ -5,7 +5,7 @@
     "license": "GPL-3.0",
     "architecture": {
         "64bit": {
-            "url": "https://drive.fxsound.com/cs/XITRVihzhkzzl72/downloads3.fxsound.com/fxsound/1.1.20.0/fxsound_setup.exe/download",
+            "url": "https://drive.fxsound.com/cs/XITRVihzhkzzl72/downloads3.fxsound.com/fxsound/1.1.20.0/fxsound_setup.exe/download#/fxsound_setup.exe",
             "hash": "3541df625affa384feacf3cd3d64c47d2372eab9a2055d57dde08afe7f85862c"
         }
     },
@@ -29,7 +29,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://drive.fxsound.com/cs/$matchId/downloads3.fxsound.com/fxsound/$version/fxsound_setup.exe/download#/setup.exe"
+                "url": "https://drive.fxsound.com/cs/$matchId/downloads3.fxsound.com/fxsound/$version/fxsound_setup.exe/download#/fxsound_setup.exe"
             }
         }
     }
