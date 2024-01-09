@@ -13,7 +13,7 @@
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "Start-Process \"$dir\\fxsound_setup.exe\" -Wait -Verb 'RunAs' -Args @('/exenoui', '/qn')",
         "Start-Process \"$dir\\fxsound_setup.exe\" -Wait -Verb 'RunAs' -Args @('/extract', \"$dir\")",
-        "Remove-Item \"$dir\\fxsound_setup.exe\"; Start-Sleep -Seconds 3; Stop-Process -Name 'FxSound'"
+        "Remove-Item \"$dir\\fxsound_setup.exe\"; Start-Sleep -Seconds 7; Stop-Process -Name 'FxSound'"
     ],
     "pre_uninstall": [
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
