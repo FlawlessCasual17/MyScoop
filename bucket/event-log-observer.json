@@ -1,5 +1,5 @@
 {
-    "version": "1.6",
+    "version": "2.6.0",
     "homepage": "https://www.lizard-labs.com/event_log_observer.aspx",
     "description": "An easy and customizable tool for exploring, and analyzing Windows event logs.",
     "license": {
@@ -7,7 +7,7 @@
         "url": "https://lizard-labs.com/Docs/TERMS_AND_CONDITIONS.html"
     },
     "url": "https://www.lizard-labs.com/Downloads/EventLogObserverSetup.msi#/elob.msi_",
-    "hash": "7d2c013988b21a10aa8f1532515652e533dfa18da8f725283174f4bcf296b4be",
+    "hash": "a2834d853b7ad15f6ec2289634038f74a71796a60066cd717e2fdd9063c93b42",
     "pre_install": [
         "Expand-MsiArchive \"$dir\\elob.msi_\" \"$env:USERPROFILE\\temp\" -Removal",
         "Move-Item \"$env:USERPROFILE\\temp\\*\" $dir; Remove-Item \"$env:USERPROFILE\\temp\", \"$dir\\updater.exe\" -Recurse"
