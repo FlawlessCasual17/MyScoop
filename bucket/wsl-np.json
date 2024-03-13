@@ -3,7 +3,7 @@
     "homepage": "https://docs.microsoft.com/windows/wsl",
     "description": "Windows Subsystem for Linux (WSL) lets developers run a GNU/Linux environment -- including most command-line tools, utilities, and applications -- directly on Windows, unmodified, without the overhead of a traditional virtual machine or dual-boot setup.",
     "license": "MIT",
-    "notes": "If WSL installed successfully, you can remove this installer by running, `scoop uninstall $app`",
+    "notes": "If WSL installed successfully, you can remove this installer by running, `scoop uninstall wsl-np`",
     "architecture": {
         "arm64": {
             "url": "https://github.com/microsoft/WSL/releases/download/2.1.5/wsl.2.1.5.0.ARM64.msi#/setup.msi_",
