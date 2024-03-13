@@ -17,7 +17,7 @@
     "installer": {
         "script": [
             "if (!(is_admin)) {error \"$app requires admin rights to $cmd\"; break}",
-            "Start-Process 'msiexec' -Wait   -Args @('/i', \"$dir\\setup.msi_\", '/qn')"
+            "Start-Process 'msiexec' -Wait -Args @('/i', \"$dir\\setup.msi_\", '/qn')"
         ]
     },
     "checkver": {
