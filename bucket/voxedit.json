@@ -1,5 +1,5 @@
 {
-    "version": "5ec25cd9",
+    "version": "a9422c20",
     "homepage": "https://www.voxedit.io",
     "description": "An application that allows you to create your own voxel models, rig them and animate them in no time.",
     "license": {
@@ -19,7 +19,7 @@
         "uninstall.cmd"
     ],
     "url": "https://sandbox-voxedit-installers.s3-us-west-2.amazonaws.com/VoxEdit_WIN_latest.zip",
-    "hash": "8646097529dbf32ad53d5eb22ac1ca0c1dfc39649681a69edc996a49478015a4",
+    "hash": "822badea4d9db26389fcf64ccd695201022022f3910d64f25f9dbf3465072f42",
     "pre_install": [
         "Remove-Item \"$dir\\VoxEdit.bat\"",
         "Get-ChildItem \"$dir\\*.bat\" | ForEach-Object {",
