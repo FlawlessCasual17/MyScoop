@@ -9,11 +9,11 @@
     "architecture": {
         "64bit": {
             "url": "https://downloads.ntlite.com/files/NTLite_setup_x64.exe",
-            "hash": "467c772b1a0741fd81364ddd59cfe4ee262732230bbcb81e51cc56786680daa1"
+            "hash": "64831d1bcb96affdc2a1d992dcf440ecaffbe80a079173fbc4306484c8398299"
         },
         "32bit": {
             "url": "https://downloads.ntlite.com/files/NTLite_setup_x86.exe",
-            "hash": "3d0ee0ee700e21dd9afa3cfc7a88984f686274598fb78030cd8cce7c794eb650"
+            "hash": "f1c7dd2f818083ea6faf9426b3ae4164cb45e2def85fba7da1a53cde76ed096a"
         }
     },
     "innosetup": true,
