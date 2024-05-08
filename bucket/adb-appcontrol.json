@@ -15,7 +15,7 @@
             "ADB AppControl"
         ]
     ],
-    "persist":[
+    "persist": [
         "console.log",
         "downloads"
     ],
