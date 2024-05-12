@@ -13,6 +13,13 @@
             "Monitorian"
         ]
     ],
+    "pre_uninstall": [
+        "$rkey = 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run'",
+        "if ((Get-ItemProperty $rkey -ErrorAction 'SilentlyContinue' -Name 'Monitorian') -and",
+        "        ($cmd -eq 'uninstall')) {",
+        "    Remove-ItemProperty $rkey -Name 'Monitorian'",
+        "}"
+    ],
     "checkver": {
         "github": "https://github.com/emoacht/Monitorian",
         "regex": "([\\d.]+)-Installer"
