@@ -15,9 +15,8 @@
     ],
     "pre_uninstall": [
         "$rkey = 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run'",
-        "if ((Get-ItemProperty $rkey -ErrorAction 'SilentlyContinue' -Name 'Monitorian') -and",
-        "        ($cmd -eq 'uninstall')) {",
-        "    Remove-ItemProperty $rkey -Name 'Monitorian'",
+        "if ($cmd -eq 'uninstall') {",
+        "    Remove-ItemProperty $rkey -Name 'Monitorian' -ErrorAction 'SilentlyContinue'",
         "}"
     ],
     "checkver": {
