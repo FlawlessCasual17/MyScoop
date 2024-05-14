@@ -12,16 +12,10 @@
         "}",
         "if (Test-Path \"$persist_dir\\Global\") {",
         "    Copy-Item \"$persist_dir\\Global\" \"$special_k_dir\\Global\" -Recurse",
-        "}"
+        "}",
+        "Start-Process \"$dir\\$fname\" -Wait -Args @('/VERYSILENT', '/SP-', '/NORESTART', '/CURRENTUSER')",
+        "Stop-Process -Name 'SKIF' -Force"
     ],
-    "installer": {
-        "args": [
-            "/VERYSILENT",
-            "/SP-",
-            "/NORESTART",
-            "/CURRENTUSER"
-        ]
-    },
     "env_add_path": ".",
     "uninstaller": {
         "script": [
