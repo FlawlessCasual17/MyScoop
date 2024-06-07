@@ -1,5 +1,5 @@
 {
-    "version": "4",
+    "version": "10.91.3",
     "homepage": "https://evernote.com/",
     "description": "Remember everything and tackle any project with your notes, tasks, and schedule all in one place.",
     "license": {
@@ -7,7 +7,7 @@
         "url": "https://evernote.com/legal"
     },
     "url": "https://win.desktop.evernote.com/builds/Evernote-latest.exe#/dl.zip",
-    "hash": "6bdd64a222992e5de149700c51585e8b0700e5e9c56c60a285ee2e5c6cf79c3d",
+    "hash": "ffddf2531de2991cf7cda0502369afd13ead2cc16ff5de7243165cf55d4dce17",
     "pre_install": [
         "if ($architecture -eq '32bit') {",
         "    Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-32.7z\" $dir; Remove-Item \"$dir\\*\" -Recurse",
