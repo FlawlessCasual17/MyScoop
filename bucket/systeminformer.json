@@ -22,8 +22,8 @@
         "    Copy-Item \"$persist_dir\\$_\" \"$dir\\$_\" -ErrorAction 'SilentlyContinue'",
         "}",
         "$key = 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\taskmgr.exe'",
-        "$taskmgr = (Get-ItemProperty $key -ErrorAction 'SilentlyContinue').Debugger",
-        "if (($cmd -eq 'update') -and ($taskmgr -match '\\\\*\\\\([\\d.]+)\\\\SystemInformer\\.exe')) {",
+        "$get_Taskmgr = Get-ItemProperty $key -Name 'Debugger'",
+        "if (($cmd -eq 'update') -and $get_Taskmgr) {",
         "    if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "    Set-ItemProperty $key -Name 'Debugger' -Value \"\"\"$dir\\SystemInformer.exe\"\"\" -Force",
         "}"
@@ -48,8 +48,8 @@
         "}",
         "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "$key = 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\taskmgr.exe'",
-        "$taskmgr = (Get-ItemProperty $key -ErrorAction 'SilentlyContinue').Debugger",
-        "if (($cmd -eq 'uninstall') -and ($taskmgr -match '\\\\*\\\\([\\d.]+)\\\\SystemInformer\\.exe')) {",
+        "$get_Taskmgr = Get-ItemProperty $key -Name 'Debugger'",
+        "if (($cmd -eq 'uninstall') -and $get_Taskmgr) {",
         "    Remove-ItemProperty $key -Name 'Debugger' -Force",
         "}"
     ],
