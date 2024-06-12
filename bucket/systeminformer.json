@@ -46,10 +46,10 @@
         "'SystemInformer.exe.settings.xml', 'usernotesdb.xml' | ForEach-Object {",
         "    Copy-Item \"$dir\\$_\" \"$persist_dir\\$_\" -ErrorAction 'SilentlyContinue'",
         "}",
-        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "$key = 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\taskmgr.exe'",
         "$get_Taskmgr = Get-ItemProperty $key -Name 'Debugger'",
         "if (($cmd -eq 'uninstall') -and $get_Taskmgr) {",
+        "    if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
         "    Remove-ItemProperty $key -Name 'Debugger' -Force",
         "}"
     ],
