@@ -12,8 +12,7 @@
     "hash": "f110ace008fd764e0ad7e96427eea75163959755de589d5a50c8f4ad0a8ceb34",
     "pre_install": [
         "Remove-Item \"$dir\\_rels\", \"$dir\\package\", \"$dir\\*Content*.xml\" -Recurse",
-        "if (!(Test-Path \"$persist_dir\\config.json\")) { Set-Content \"$dir\\config.json\" '{}' -Encoding 'utf8' }",
-        "Copy-Item \"$persist_dir\\completions.json\" \"$dir\\completions.json\""
+        "if (!(Test-Path \"$persist_dir\\config.json\")) { Set-Content \"$dir\\config.json\" '{}' -Encoding 'utf8' }"
     ],
     "psmodule": {
         "name": "PSCompletions"
@@ -22,7 +21,6 @@
         "completions",
         "config.json"
     ],
-    "pre_uninstall": "Copy-Item \"$dir\\completions.json\" \"$persist_dir\\completions.json\"",
     "checkver": {
         "url": "https://www.powershellgallery.com/packages/PSCompletions",
         "regex": "\\<h2\\>([\\d.]+)\\</h2\\>"
