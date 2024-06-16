@@ -15,7 +15,8 @@
     },
     "pre_install": [
         "Expand-DarkArchive \"$dir\\$fname\" \"$dir\\extracted\" -Removal",
-        "Expand-MsiArchive \"$dir\\extracted\\AttachedContainer\\*.msi\" $dir -ExtractDir 'Msi'",
+        "$msi = Get-Item \"$dir\\extracted\\AttachedContainer\\*.msi\"",
+        "Expand-MsiArchive $msi.FullName $dir -ExtractDir 'Msi'",
         "Remove-Item \"$dir\\extracted\" -Recurse"
     ],
     "shortcuts": [
