@@ -10,10 +10,17 @@
     ],
     "url": "https://psg-prod-eastus.azureedge.net/packages/pscompletions.4.0.6.nupkg",
     "hash": "f110ace008fd764e0ad7e96427eea75163959755de589d5a50c8f4ad0a8ceb34",
-    "pre_install": "Remove-Item \"$dir\\_rels\", \"$dir\\package\", \"$dir\\*Content*.xml\" -Recurse",
+    "pre_install": [
+        "Remove-Item \"$dir\\_rels\", \"$dir\\package\", \"$dir\\*Content*.xml\" -Recurse",
+        "Set-Content \"$dir\\config.json\", \"$dir\\completions.json\" '{}' -Encoding 'utf8'"
+    ],
     "psmodule": {
         "name": "PSCompletions"
     },
+    "persist": [
+        "config.json",
+        "completions.json"
+    ],
     "checkver": {
         "url": "https://www.powershellgallery.com/packages/PSCompletions",
         "regex": "\\<h2\\>([\\d.]+)\\</h2\\>"
