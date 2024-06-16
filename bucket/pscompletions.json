@@ -23,6 +23,6 @@
         "regex": "\\<h2\\>([\\d.]+)\\</h2\\>"
     },
     "autoupdate": {
-        "url": "https://psg-prod-eastus.azureedge.net/packages/PSCompletions.$version.nupkg"
+        "url": "https://psg-prod-eastus.azureedge.net/packages/pscompletions.$version.nupkg"
     }
 }
