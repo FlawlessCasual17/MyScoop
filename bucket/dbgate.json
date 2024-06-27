@@ -5,7 +5,7 @@
     "description": "Database manager for MySQL, PostgreSQL, SQL Server, MongoDB, SQLite and others.",
     "license": "GPL-3.0-or-later",
     "url": "https://github.com/dbgate/dbgate/releases/download/v5.3.1/dbgate-5.3.1-win.exe",
-    "hash": "sha512:ff3f01938b2f738a3f250803217174cabb87c28dad557ec330c4c0ae8b00b68ae31129b4c644a55db5dae00865ab14d0c439b5bf2d0750c6ceb718f163b2c9b9",
+    "hash": "1b52eebe71416754bfc16fbdc4ab5a9b2bf32f2a1e14fe47562fbe62845c114e",
     "pre_install": [
         "if ($architecture -eq '64bit') { Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" $dir }",
         "else if ($architecture -eq 'arm64') { Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-arm64.7z\" $dir }",
@@ -21,10 +21,6 @@
         "github": "https://github.com/dbgate/dbgate"
     },
     "autoupdate": {
-        "url": "https://github.com/dbgate/dbgate/releases/download/v$version/dbgate-$version-win.exe",
-        "hash": {
-            "url": "$baseurl/latest.yml",
-            "regex": "url:\\s$basename\\s\\nsha512:\\s$base64"
-        }
+        "url": "https://github.com/dbgate/dbgate/releases/download/v$version/dbgate-$version-win.exe"
     }
 }
