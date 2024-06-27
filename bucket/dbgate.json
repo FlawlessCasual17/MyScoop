@@ -24,7 +24,7 @@
         "url": "https://github.com/dbgate/dbgate/releases/download/v$version/dbgate-$version-win.exe",
         "hash": {
             "url": "$baseurl/latest.yml",
-            "regex": "path\\:\\s$basename\\nsha512\\:\\s$base64"
+            "regex": "url:\\s$basename\\s\\nsha512:\\s$base64"
         }
     }
 }
