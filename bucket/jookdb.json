@@ -1,7 +1,7 @@
 {
     "version": "6.8",
     "homepage": "https://jookdb.com/",
-    "description": "A free Multi-platform database tool. Supports every popular databases.",
+    "description": "A free Multi-platform database tool. Supports every popular database.",
     "license": "GPL-3.0",
     "architecture": {
         "64bit": {
