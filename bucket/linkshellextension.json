@@ -35,8 +35,7 @@
             "    $currentDir = \"$env:ProgramFiles\\LinkShellExtension\"",
             "    $uninstaller = Get-Item \"$currentDir\\uninst-HardlinkShellExt_*.exe\"",
             "}",
-            "Start-Process $uninstaller -Wait -Verb 'RunAs' -Args '/S'",
-            "Remove-Item \"$env:AppData\\Microsoft\\Windows\\Start Menu\\Programs\\Link Shell Extension\" -Recurse"
+            "Start-Process $uninstaller -Wait -Verb 'RunAs' -Args '/S'"
         ]
     },
     "checkver": "Last\\sUpdated\\s.*?Version\\s([\\d.]+)",
