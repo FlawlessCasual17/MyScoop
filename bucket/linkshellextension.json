@@ -19,7 +19,7 @@
     "installer": {
         "script": [
             "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-            "Start-Process \"$dir\\$fname\" -Verb 'RunAs' -Args @('/S', '/noredist')",
+            "Start-Process \"$dir\\$fname\" -Wait -Verb 'RunAs' -Args @('/S', '/noredist')",
             "$shortcuts = \"$env:AppData\\Microsoft\\Windows\\Start Menu\\Programs\\Link Shell Extension\"",
             "Rename-Item \"$shortcuts\\LSEConfig.lnk\" 'Link Shell Extension Config (LSEConfig).lnk'"
         ]
@@ -38,7 +38,7 @@
             "        $uninstaller = Get-Item \"$currentDir\\uninst-HardlinkShellExt_*.exe\"",
             "        break",
             "}",
-            "Start-Process $uninstaller -Verb 'RunAs' -Args '/S'"
+            "Start-Process $uninstaller -Wait -Verb 'RunAs' -Args '/S'"
         ]
     },
     "checkver": "Last\\sUpdated\\s.*?Version\\s([\\d.]+)",
