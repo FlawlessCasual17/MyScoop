@@ -41,7 +41,8 @@
             "        break",
             "    }",
             "}",
-            "Start-Process $uninstaller -Wait -Verb 'RunAs' -Args '/S'"
+            "Start-Process $uninstaller -Wait -Verb 'RunAs' -Args '/S'",
+            "Remove-Item \"$env:AppData\\Microsoft\\Windows\\Start Menu\\Programs\\Link Shell Extension\" -Recurse"
         ]
     },
     "checkver": "Last\\sUpdated\\s.*?Version\\s([\\d.]+)",
