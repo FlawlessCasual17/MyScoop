@@ -29,14 +29,16 @@
             "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
             "$uninstaller = ''",
             "switch ($architecture) {",
-            "    case '32bit':",
+            "    case '32bit': {",
             "        $currentDir = \"${env:ProgramFiles(x86)}\\LinkShellExtension\"",
             "        $uninstaller = Get-Item \"$currentDir\\uninst-HardlinkShellExt_*.exe\"",
             "        break",
-            "    case '64bit':",
+            "    }",
+            "    case '64bit': {",
             "        $currentDir = \"$env:ProgramFiles\\LinkShellExtension\"",
             "        $uninstaller = Get-Item \"$currentDir\\uninst-HardlinkShellExt_*.exe\"",
             "        break",
+            "    }",
             "}",
             "Start-Process $uninstaller -Wait -Verb 'RunAs' -Args '/S'"
         ]
