@@ -18,12 +18,12 @@
     ],
     "checkver": {
         "github": "https://github.com/Rectify11/Installer",
-        "re": "tag/v-([\\w.]+)"
+        "re": "tag/v([\\w.]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/Rectify11/Installer/releases/download/v-$version/Rectify11Installer.exe"
+                "url": "https://github.com/Rectify11/Installer/releases/download/v$version/Rectify11Installer.exe"
             }
         }
     }
