@@ -1,5 +1,5 @@
 {
-    "version": "4.2.5",
+    "version": "4.2.6",
     "description": "A completion manager for better and simpler use powershell completions.",
     "homepage": "https://github.com/abgox/PSCompletions",
     "license": "MIT",
@@ -8,8 +8,8 @@
         "Import-Module PSCompletions",
         "Add it to your $PROFILE to make it permanent"
     ],
-    "url": "https://psg-prod-eastus.azureedge.net/packages/pscompletions.4.2.5.nupkg",
-    "hash": "7ded41c2c8f3b763bbace1505660270a1ac1f76a8474dd37ab17a3c540be7710",
+    "url": "https://psg-prod-eastus.azureedge.net/packages/pscompletions.4.2.6.nupkg",
+    "hash": "38395271350cd930c94aa8b0473ac5e15aa7f70caf4035fd3cc173200b2a36d8",
     "pre_install": [
         "Remove-Item \"$dir\\_rels\", \"$dir\\package\", \"$dir\\*Content*.xml\" -Recurse",
         "if (!(Test-Path \"$persist_dir\\config.json\")) { Set-Content \"$dir\\config.json\" '{}' -Encoding 'utf8' }"
