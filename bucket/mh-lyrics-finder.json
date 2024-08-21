@@ -17,6 +17,6 @@
     ],
     "checkver": "Version: <span itemprop=\"softwareVersion\">([\\d.]+)",
     "autoupdate": {
-        "url": "https://www.mediahuman.com/files/LyricsFinder.exe#/setup.exe"
+        "url": "https://www.mediahuman.com/download/LyricsFinder.exe#/setup.exe"
     }
 }
