@@ -27,7 +27,7 @@
     "autoupdate": {
         "architecture": {
             "32bit": {
-                "url": "https://www.mediahuman.com/download/MHAudioConverter.exe"
+                "url": "https://www.mediahuman.com/download/MHAudioConverter.exe#/setup.exe"
             },
             "64bit": {
                 "url": "https://www.mediahuman.com/download/MHAudioConverter-x64.exe"
