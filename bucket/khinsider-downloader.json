@@ -11,6 +11,7 @@
             "KhinsiderDownloader"
         ]
     ],
+    "persist": "Downloads",
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/weespin/KhinsiderDownloader/releases/download/$version/Release.zip"
