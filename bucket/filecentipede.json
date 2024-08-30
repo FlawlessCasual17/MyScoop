@@ -59,6 +59,7 @@
         "lib\\fileu_win32.conf"
     ],
     "pre_uninstall": [
+        "Start-Process \"$dir\\lib\\filec.exe\" -Wait -NoNewWindow -Args @('-ss', 'remove')",
         "if ((Get-Service -Name 'filec' -ErrorAction 'SilentlyContinue') -and $purge) {",
         "    Write-Host 'System service detected! Attempting to remove the system service...' -F 'Gray'",
         "    if (!(is_admin)) { error \"$app requires admin rights to remove the system service\"; break }",
