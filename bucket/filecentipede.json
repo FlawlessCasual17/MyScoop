@@ -32,9 +32,9 @@
         "    if (!(Test-Path \"$persist_dir\\$i\")) { New-Item -Path \"$dir\\lib\\$i\" | Out-Null }",
         "}",
         "if ((Get-Service -Name 'filec' -ErrorAction 'SilentlyContinue') -and ($cmd -eq 'update')) {",
-        "    Write-Host 'System service detected! Attempting to update the system service...' -F 'Grey'",
+        "    Write-Host 'System service detected! Attempting to update the system service...' -F 'Gray'",
         "    if (!(is_admin)) { error \"$app requires admin rights to update the system service\"; break }",
-        "    Start-Process \"$dir\\lib\\filec.exe\" -Wait -Verb 'RunAs' -Args @('-i', $dir, 'system_service')",
+        "    Start-Process \"$dir\\lib\\filec.exe\" -Wait -NoNewWindow -Args @('-i', $dir, 'system_service')",
         "}"
     ],
     "bin": [
@@ -60,9 +60,9 @@
     ],
     "pre_uninstall": [
         "if ((Get-Service -Name 'filec' -ErrorAction 'SilentlyContinue') -and ($cmd -eq 'uninstall')) {",
-        "    Write-Host 'System service detected! Attempting to remove the system service...' -F 'Grey'",
+        "    Write-Host 'System service detected! Attempting to remove the system service...' -F 'Gray'",
         "    if (!(is_admin)) { error \"$app requires admin rights to remove the system service\"; break }",
-        "    Start-Process \"$dir\\lib\\filec.exe\" -Wait -Verb 'RunAs' -Args '-u'",
+        "    Start-Process \"$dir\\lib\\filec.exe\" -Wait -NoNewWindow -Args '-u'",
         "}"
     ],
     "checkver": {
