@@ -60,7 +60,7 @@
     ],
     "pre_uninstall": [
         "Start-Process \"$dir\\lib\\filec.exe\" -Wait -NoNewWindow -Args 'stop'",
-        "if ((Get-Service -Name 'filec' -ErrorAction 'SilentlyContinue') -and $purge) {",
+        "if ((Get-Service -Name 'filec' -ErrorAction 'SilentlyContinue') -and ($cmd -eq 'uninstall')) {",
         "    Write-Host 'System service detected! Attempting to remove the system service...' -F 'DarkGray'",
         "    if (!(is_admin)) { error \"$app requires admin rights to remove the system service\"; break }",
         "    Start-Process \"$dir\\lib\\filec.exe\" -Wait -NoNewWindow -Args '-u'",
