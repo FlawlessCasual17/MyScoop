@@ -30,7 +30,7 @@
     ],
     "shortcuts": [
         [
-            "fileu.exe",
+            "lib\\fileu.exe",
             "File Centipede"
         ]
     ],
