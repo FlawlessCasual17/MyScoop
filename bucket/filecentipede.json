@@ -1,0 +1,81 @@
+{
+    "version": "2.82.0",
+    "description": "An internet file download manager",
+    "homepage": "https://filecxx.com/",
+    "license": "Freeware",
+    "notes": [
+        "To install the app WITH the system service, run (with admin privellages),",
+        "filec -i \"$dir\\lib\" system_service",
+        "To install the app WITHOUT the system service, run (with admin privellages),",
+        "filec -i \"$dir\\lib\"",
+        "",
+        "To uninstall the app along with the system service, run (with admin privellages),",
+        "filec -u",
+        "",
+        "To uninstall ONLY the system service, run (with admin privellages),",
+        "filec -ss remove",
+        "",
+        "For more information run,",
+        "filec -h",
+        "",
+        "If you want to scoop to uninstall the service during the un-installation process, use the `-p` switch (this will also remove all persisted files)"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/filecxx/FileCentipede/releases/download/2.82.0/filecxx_2.82_win_x64.zip",
+            "hash": "f0bdef157f45ae1652ede116ebe98d889d163e5c094e88a076e917989742fe1e"
+        }
+    },
+    "pre_install": [
+        "$array = @('libicu.dat', 'data_windows.db', 'data_windows.db-shm', 'data_windows.db-wal', 'fileu_win32.conf')",
+        "foreach ($i in $array) { New-Item -Path \"$dir\\lib\\$i\" | Out-Null }",
+        "$value = '@\"%dp~0filec\"  -i %dp~0 '",
+        "[System.IO.File]::WriteAllLines(\"$dir\\install-service.cmd\", $value + 'system_service', [System.text.UTF8Encoding]($false))",
+        "[System.IO.File]::WriteAllLines(\"$dir\\install.cmd\", $value, [System.text.UTF8Encoding]($false))",
+        "[System.IO.File]::WriteAllLines(\"$dir\\uninstall.cmd\", '@\"%dp~0filec\" -u', [System.text.UTF8Encoding]($false))",
+        "Remove-Item \"$dir\\*.exe\"",
+        "if ((Get-Service -Name 'filec' -ErrorAction 'SilentlyContinue') -and ($cmd -eq 'update')) {",
+        "    Write-Host 'System service detected! Attempting to update the system service...' -F 'Grey'",
+        "    if (!(is_admin)) { error \"$app requires admin rights to update the system service\"; break }",
+        "    Start-Process \"$dir\\filec\" -Wait -Verb 'RunAs' -Args @('-i', $dir, 'system_service')",
+        "}"
+    ],
+    "bin": [
+        "lib\\filec.exe",
+        [
+            "lib\\filec.exe",
+            "filecentipede"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "lib\\fileu.exe",
+            "File Centipede"
+        ]
+    ],
+    "persist": [
+        "lib\\libicu.dat",
+        "lib\\data_windows.db",
+        "lib\\data_windows.db-shm",
+        "lib\\data_windows.db-wal",
+        "lib\\ip.mmdb",
+        "lib\\fileu_win32.conf"
+    ],
+    "pre_uninstall": [
+        "if ((Get-Service -Name 'filec' -ErrorAction 'SilentlyContinue') -and ($cmd -eq 'uninstall')) {",
+        "    Write-Host 'System service detected! Attempting to remove the system service...' -F 'Grey'",
+        "    if (!(is_admin)) { error \"$app requires admin rights to remove the system service\"; break }",
+        "    Start-Process \"$dir\\filec\" -Wait -Verb 'RunAs' -Args '-u'",
+        "}"
+    ],
+    "checkver": {
+        "github": "https://github.com/filecxx/FileCentipede"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/filecxx/FileCentipede/releases/download/$version/filecxx_$majorVersion.$minorVersion_win_x64.zip"
+            }
+        }
+    }
+}
