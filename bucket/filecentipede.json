@@ -5,9 +5,9 @@
     "license": "Freeware",
     "notes": [
         "To install the app WITH the system service, run (with admin privellages),",
-        "filec -i \"$dir\\lib\" system_service",
+        "filec -i \"$dir\" system_service",
         "To install the app WITHOUT the system service, run (with admin privellages),",
-        "filec -i \"$dir\\lib\"",
+        "filec -i \"$dir\"",
         "",
         "To uninstall the app along with the system service, run (with admin privellages),",
         "filec -u",
