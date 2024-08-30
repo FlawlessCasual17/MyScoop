@@ -33,7 +33,6 @@
         "[System.IO.File]::WriteAllLines(\"$dir\\install-service.cmd\", $value + 'system_service', [System.text.UTF8Encoding]($false))",
         "[System.IO.File]::WriteAllLines(\"$dir\\install.cmd\", $value, [System.text.UTF8Encoding]($false))",
         "[System.IO.File]::WriteAllLines(\"$dir\\uninstall.cmd\", '@\"%dp~0filec\" -u', [System.text.UTF8Encoding]($false))",
-        "Remove-Item \"$dir\\*.exe\"",
         "if ((Get-Service -Name 'filec' -ErrorAction 'SilentlyContinue') -and ($cmd -eq 'update')) {",
         "    Write-Host 'System service detected! Attempting to update the system service...' -F 'Grey'",
         "    if (!(is_admin)) { error \"$app requires admin rights to update the system service\"; break }",
