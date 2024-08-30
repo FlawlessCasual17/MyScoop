@@ -29,14 +29,10 @@
     "pre_install": [
         "$array = @('libicu.dat', 'data_windows.db', 'data_windows.db-shm', 'data_windows.db-wal', 'fileu_win32.conf')",
         "foreach ($i in $array) { New-Item -Path \"$dir\\lib\\$i\" | Out-Null }",
-        "$value = '@\"%dp~0filec\"  -i %dp~0 '",
-        "[System.IO.File]::WriteAllLines(\"$dir\\install-service.cmd\", $value + 'system_service', [System.text.UTF8Encoding]($false))",
-        "[System.IO.File]::WriteAllLines(\"$dir\\install.cmd\", $value, [System.text.UTF8Encoding]($false))",
-        "[System.IO.File]::WriteAllLines(\"$dir\\uninstall.cmd\", '@\"%dp~0filec\" -u', [System.text.UTF8Encoding]($false))",
         "if ((Get-Service -Name 'filec' -ErrorAction 'SilentlyContinue') -and ($cmd -eq 'update')) {",
         "    Write-Host 'System service detected! Attempting to update the system service...' -F 'Grey'",
         "    if (!(is_admin)) { error \"$app requires admin rights to update the system service\"; break }",
-        "    Start-Process \"$dir\\filec\" -Wait -Verb 'RunAs' -Args @('-i', $dir, 'system_service')",
+        "    Start-Process \"$dir\\lib\\filec.exe\" -Wait -Verb 'RunAs' -Args @('-i', $dir, 'system_service')",
         "}"
     ],
     "bin": [
@@ -64,7 +60,7 @@
         "if ((Get-Service -Name 'filec' -ErrorAction 'SilentlyContinue') -and ($cmd -eq 'uninstall')) {",
         "    Write-Host 'System service detected! Attempting to remove the system service...' -F 'Grey'",
         "    if (!(is_admin)) { error \"$app requires admin rights to remove the system service\"; break }",
-        "    Start-Process \"$dir\\filec\" -Wait -Verb 'RunAs' -Args '-u'",
+        "    Start-Process \"$dir\\lib\\filec.exe\" -Wait -Verb 'RunAs' -Args '-u'",
         "}"
     ],
     "checkver": {
