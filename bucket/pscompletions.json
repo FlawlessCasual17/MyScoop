@@ -12,14 +12,14 @@
     "hash": "fd9cf3f8c26bf8c164b5e51e7552b0d7e378e0dc318b6e74bda5a62c3f0d590f",
     "pre_install": [
         "Remove-Item \"$dir\\_rels\", \"$dir\\package\", \"$dir\\*Content*.xml\" -Recurse",
-        "if (!(Test-Path \"$persist_dir\\config.json\")) { Set-Content \"$dir\\config.json\" '{}' -Encoding 'utf8' }"
+        "if (!(Test-Path \"$persist_dir\\data.json\")) { Copy-Item \"$bucketsdir\\MyScoop\\scripts\\pscompletions\\data.json\" \"$persist_dir\\data.json\" }"
     ],
     "psmodule": {
         "name": "PSCompletions"
     },
     "persist": [
         "completions",
-        "config.json"
+        "data.json"
     ],
     "checkver": {
         "url": "https://www.powershellgallery.com/packages/PSCompletions",
