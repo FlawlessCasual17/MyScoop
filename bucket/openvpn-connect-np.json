@@ -6,11 +6,11 @@
     "architecture": {
         "64bit": {
             "url": "https://swupdate.openvpn.net/downloads/connect/openvpn-connect-3.5.0.3818_signed.msi#/setup.msi_",
-            "hash": "58973ceba1dfb77ac98977f264b5aebe4ca094c17ada72c4d2767d2a2c7607c5"
+            "hash": "14a16e257eaf1da9003a9202be33ba9833c5a12fc774e05c0b31509b54073187"
         },
         "32bit": {
             "url": "https://swupdate.openvpn.net/downloads/connect/openvpn-connect-3.5.0.3818_signed_x86.msi#/setup.msi_",
-            "hash": "bfd176271cca8c1e7fae446621a985388bf55d023668af8e5dcec9ec4560dd85"
+            "hash": "457e45e09ce9c7f1266956a83e108f64611ec852e1715dd1d4bc0f592e271bca"
         }
     },
     "installer": {
