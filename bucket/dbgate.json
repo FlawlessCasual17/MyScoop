@@ -1,10 +1,10 @@
 {
-    "version": "5.4.4",
+    "version": "5.5.1",
     "homepage": "https://dbgate.org/",
     "description": "Database manager for MySQL, PostgreSQL, SQL Server, MongoDB, SQLite and others.",
     "license": "GPL-3.0-or-later",
-    "url": "https://github.com/dbgate/dbgate/releases/download/v5.4.4/dbgate-5.4.4-win.exe#/dl.7z",
-    "hash": "9104edd14c1f7257c3a754d538e226b5862d2c2f3d67925f89ebb17d94406e68",
+    "url": "https://github.com/dbgate/dbgate/releases/download/v5.5.1/dbgate-5.5.1-win.exe#/dl.7z",
+    "hash": "203910a6d6ef5564e38c95a77a5440364b1b9a856cd3c891425758282265defd",
     "pre_install": [
         "if ($architecture -eq '64bit') { Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" $dir }",
         "elseif ($architecture -eq 'arm64') { Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-arm64.7z\" $dir }",
