@@ -1,6 +1,6 @@
 {
     "version": "1.1.2",
-    "description": "A full-featured download manager.",
+    "description": "A fork of Motrix, the full-featured downloader, but with additional features for movie enthusiasts.",
     "homepage": "https://imfile.io/",
     "license": "MIT",
     "architecture": {
