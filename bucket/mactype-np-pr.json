@@ -14,6 +14,7 @@
     ],
     "url": "https://github.com/snowie2000/mactype/releases/download/v1.2024.9.14/MacTypeInstaller_2024.9.14.exe",
     "hash": "49e8cd4861710a92e656dc1a0afd092cb4d8e850520be706a54085d208631ed7",
+    "innosetup": true,
     "uninstaller": {
         "script": [
             "$text = @(",
