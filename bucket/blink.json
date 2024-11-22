@@ -10,6 +10,7 @@
             "hash": "4276d0a2a81ccfaf6ed40fe5aad7130543577c94562866474fc7ac4d32e2b891"
         }
     },
+    "pre_install": "Remove-Item \"$dir\\*\" -Recurse -Exclude '*.exe'",
     "shortcuts": [
         [
             "blink.exe",
