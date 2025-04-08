@@ -1,12 +1,3 @@
-[![Excavator](https://github.com/FlawlessCasual17/MyScoop/actions/workflows/excavator.yml/badge.svg)](https://github.com/Zliced13/MyScoop/actions/workflows/excavator.yml)
+# Warning
 
-To add this bucket, run
-```pwsh
-scoop bucket add MyScoop 'https://github.com/FlawlessCasual17/MyScoop'
-```
-To install, do
-```
-scoop install <manifest>
-```
-
-If I don't add any manifests or update any broken ones it's probably cuz I am busy.
+This bucket is now archived. Please use another scoop bucket.
